@@ -1,13 +1,13 @@
 ﻿# 🌿 Puebla, Capital de la Biodiversidad | ICCB 2027 · BUAP
 
-Prototipo web interactivo y multi-página desarrollado para la guía pública de actividades, rutas bioculturales y experiencias de conservación en Puebla durante el **33º Congreso Internacional de Biología de la Conservación (ICCB 2027)** en colaboración con la **BUAP**.
+Prototipo web multi-página desarrollado para la guía pública de actividades, rutas bioculturales y experiencias de conservación en Puebla durante el **33º Congreso Internacional de Biología de la Conservación (ICCB 2027)** en colaboración con la **BUAP**.
 
 ---
 
 ## 🚀 ¿Cómo visualizar y ejecutar el prototipo?
 
 ### Opción 1: En línea (GitHub Pages)
-Puedes interactuar con el prototipo directamente desde tu navegador en computadora o celular:
+Interactúa con el prototipo directamente desde tu navegador en computadora o celular:
 👉 **[Ver prototipo en vivo](https://cmrgo11.github.io/Biodiversidad-PueblaV1/)**
 
 *(Para activar este enlace, en GitHub ve a **Settings** > **Pages** > selecciona rama main y carpeta / (root)).*
@@ -18,50 +18,59 @@ Puedes interactuar con el prototipo directamente desde tu navegador en computado
    git clone https://github.com/CMRGO11/Biodiversidad-PueblaV1.git
    cd Biodiversidad-PueblaV1
    ``
-2. Abre index.html con doble clic en tu navegador favorito (Chrome, Edge, Firefox, Safari).
-3. O si usas Visual Studio Code, puedes usar la extensión **Live Server** para recarga en tiempo real.
+2. Abre cualquiera de las páginas (index.html, utas.html, etc.) con doble clic en tu navegador favorito.
+3. O si usas Visual Studio Code, abre la carpeta y haz clic en **Go Live** con la extensión **Live Server**.
 
 ---
 
-## 📁 Estructura Modular del Proyecto
+## 📁 Estructura Multi-Página del Proyecto
 
-La estructura del proyecto está organizada siguiendo el principio de **separación de responsabilidades** para facilitar el trabajo colaborativo en equipo:
+El sitio ahora funciona con **subpáginas independientes interconectadas**, compartiendo el mismo sistema de diseño y componentes globales:
 
 ``text
 Biodiversidad-PueblaV1/
-├── index.html              # Estructura y contenido HTML limpio (~770 líneas)
+│
+├── index.html              # Página principal (Hero, buscador, ejes temáticos)
+├── rutas.html              # Rutas Bioculturales y circuitos guiados
+├── agenda.html             # Calendario de actividades, foros y proyecciones
+├── exploracion.html        # Gran Día de Exploración y Feria de Ciencias
+├── menu.html               # Sabores bioculturales, café de sombra y gastronomía
+├── participa.html          # Formulario de participación, voluntariado y login
+├── info.html               # Información práctica, accesibilidad y sedes
+│
 ├── assets/
 │   ├── css/
-│   │   └── styles.css      # Sistema de diseño, estilos, colores y componentes
+│   │   └── styles.css      # Sistema de diseño, tokens, paleta Talavera y componentes
 │   ├── js/
-│   │   └── main.js         # Interactividad (menú móvil, pestañas de registro/login)
+│   │   └── main.js         # Interactividad global (menú móvil, selector de tabs)
 │   └── img/                # Logotipos institucionales (BUAP, ICCB), especies y banners
-├── README.md               # Documentación e instrucciones
-└── .gitignore              # Archivos ignorados por Git
+│
+├── README.md               # Documentación y guía para colaboradores
+└── .gitignore              # Archivos excluidos de Git
 ``
 
 ---
 
-## 🛠️ ¿Cómo hacer modificaciones y colaborar en equipo?
+## 🛠️ ¿Cómo colaborar y editar cada página?
 
-Al estar modularizado, cada integrante puede trabajar en un área distinta sin generar conflictos de fusión (*merge conflicts*):
+Cada integrante del equipo puede trabajar en una subpágina específica sin causar conflictos en Git:
 
-* **Si vas a modificar textos, tarjetas o secciones:** Edita index.html.
-* **Si vas a cambiar colores, diseño visual o estilos:** Edita ssets/css/styles.css.
-* **Si vas a agregar lógica, filtros o interactividad:** Edita ssets/js/main.js.
-* **Si agregas nuevas imágenes:** Colócalas en ssets/img/.
+* **Para editar una sección en particular:** Abre el archivo HTML correspondiente (utas.html, genda.html, etc.).
+* **Para ajustar el diseño general o colores:** Edita ssets/css/styles.css.
+* **Para añadir interactividad:** Edita ssets/js/main.js.
+* **Para agregar recursos gráficos:** Colócalos en ssets/img/.
 
 ### Flujo de trabajo con Git:
-1. Asegúrate de tener los últimos cambios del equipo:
+1. Obtén los últimos cambios del equipo:
    ``bash
    git pull origin main
    ``
-2. Realiza tus modificaciones en tu editor de código.
-3. Prueba tus cambios abriendo index.html.
-4. Guarda y sube tus cambios:
+2. Trabaja en tu archivo o página asignada.
+3. Prueba tus cambios abriendo la página en el navegador.
+4. Sube tus cambios:
    ``bash
    git add .
-   git commit -m "Descripción clara de los cambios realizados"
+   git commit -m "feat(rutas): agregar mapa interactivo y nuevos circuitos"
    git push origin main
    ``
 
