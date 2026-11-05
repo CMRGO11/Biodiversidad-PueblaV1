@@ -10,7 +10,7 @@ Prototipo web interactivo y multi-página desarrollado para la guía pública de
 Puedes interactuar con el prototipo directamente desde tu navegador en computadora o celular:
 👉 **[Ver prototipo en vivo](https://cmrgo11.github.io/Biodiversidad-PueblaV1/)**
 
-*(Nota: Para activar este enlace, en GitHub ve a **Settings** > **Pages** > selecciona rama main y carpeta / (root)).*
+*(Para activar este enlace, en GitHub ve a **Settings** > **Pages** > selecciona rama main y carpeta / (root)).*
 
 ### Opción 2: Localmente en tu computadora
 1. Clona el repositorio:
@@ -23,26 +23,41 @@ Puedes interactuar con el prototipo directamente desde tu navegador en computado
 
 ---
 
-## 📁 Estructura del Proyecto
+## 📁 Estructura Modular del Proyecto
+
+La estructura del proyecto está organizada siguiendo el principio de **separación de responsabilidades** para facilitar el trabajo colaborativo en equipo:
 
 ``text
 Biodiversidad-PueblaV1/
-├── index.html          # Prototipo completo (HTML, CSS y JS integrados)
+├── index.html              # Estructura y contenido HTML limpio (~770 líneas)
 ├── assets/
-│   └── img/            # Logotipos institucionales (BUAP, ICCB), especies y banners
-└── README.md           # Documentación e instrucciones
+│   ├── css/
+│   │   └── styles.css      # Sistema de diseño, estilos, colores y componentes
+│   ├── js/
+│   │   └── main.js         # Interactividad (menú móvil, pestañas de registro/login)
+│   └── img/                # Logotipos institucionales (BUAP, ICCB), especies y banners
+├── README.md               # Documentación e instrucciones
+└── .gitignore              # Archivos ignorados por Git
 ``
 
 ---
 
-## 🛠️ ¿Cómo hacer modificaciones y colaborar?
+## 🛠️ ¿Cómo hacer modificaciones y colaborar en equipo?
 
-1. Crea o actualiza tu copia local:
+Al estar modularizado, cada integrante puede trabajar en un área distinta sin generar conflictos de fusión (*merge conflicts*):
+
+* **Si vas a modificar textos, tarjetas o secciones:** Edita index.html.
+* **Si vas a cambiar colores, diseño visual o estilos:** Edita ssets/css/styles.css.
+* **Si vas a agregar lógica, filtros o interactividad:** Edita ssets/js/main.js.
+* **Si agregas nuevas imágenes:** Colócalas en ssets/img/.
+
+### Flujo de trabajo con Git:
+1. Asegúrate de tener los últimos cambios del equipo:
    ``bash
    git pull origin main
    ``
-2. Realiza tus modificaciones en index.html (o agrega nuevos recursos en ssets/img/).
-3. Prueba tus cambios abriendo index.html en el navegador.
+2. Realiza tus modificaciones en tu editor de código.
+3. Prueba tus cambios abriendo index.html.
 4. Guarda y sube tus cambios:
    ``bash
    git add .
