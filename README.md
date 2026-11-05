@@ -28,7 +28,7 @@ utas.html, etc.) con doble clic en tu navegador favorito.
 
 El sitio ahora funciona con **subpáginas independientes interconectadas**, compartiendo el mismo sistema de diseño y componentes globales:
 
-``text
+```text
 Biodiversidad-PueblaV1/
 │
 ├── index.html              # Página principal (Hero, buscador, ejes temáticos)
@@ -48,33 +48,32 @@ Biodiversidad-PueblaV1/
 │
 ├── README.md               # Documentación y guía para colaboradores
 └── .gitignore              # Archivos excluidos de Git
-``
+```
 
 ---
 
 ## 🛠️ ¿Cómo colaborar y editar cada página?
 
-Cada integrante del equipo puede trabajar en una subpágina específica sin causar conflictos en Git:
+Cada integrante del equipo puede trabajar en una subpágina específica para repartir el trabajo:
 
-* **Para editar una sección en particular:** Abre el archivo HTML correspondiente (
-utas.html, genda.html, etc.).
-* **Para ajustar el diseño general o colores:** Edita ssets/css/styles.css.
-* **Para añadir interactividad:** Edita ssets/js/main.js.
-* **Para agregar recursos gráficos:** Colócalos en ssets/img/.
+* **Para editar una sección en particular:** Abre el archivo HTML correspondiente (`rutas.html`, `agenda.html`, etc.).
+* **Para ajustar el diseño general o colores:** Edita `assets/css/styles.css`.
+* **Para añadir interactividad:** Edita `assets/js/main.js`.
+* **Para agregar recursos gráficos:** Colócalos en `assets/img/`.
 
 ### Flujo de trabajo con Git:
 1. Obtén los últimos cambios del equipo:
-   ``bash
+   ```bash
    git pull origin main
-   ``
+   ```
 2. Trabaja en tu archivo o página asignada.
 3. Prueba tus cambios abriendo la página en el navegador.
 4. Sube tus cambios:
-   ``bash
+   ```bash
    git add .
    git commit -m "feat(rutas): agregar mapa interactivo y nuevos circuitos"
    git push origin main
-   ``
+   ```
 
 ---
 
