@@ -1,44 +1,67 @@
-﻿<!DOCTYPE html>
-<html lang="es">
+<!DOCTYPE html> <!-- Declaración del estándar HTML5 -->
+<html lang="es"> <!-- Idioma principal del documento en español -->
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rutas Bioculturales | Puebla, Capital de la Biodiversidad · ICCB 2027</title>
+    <meta charset="UTF-8"> <!-- Codificación de caracteres para admitir acentos y caracteres especiales (ñ, etc.) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Diseño responsivo adaptable a pantallas de celulares, tablets y computadoras -->
+    <title>Rutas Bioculturales | Puebla, Capital de la Biodiversidad · ICCB 2027</title> <!-- Título visible en la pestaña del navegador -->
+    
+    <!-- Descripción para motores de búsqueda (SEO) y redes sociales -->
     <meta name="description"
         content="Guía pública de actividades, rutas bioculturales y experiencias de biodiversidad en Puebla durante el 33º Congreso Internacional de Biología de la Conservación (ICCB 2027).">
+    
+    <!-- Optimización y carga de fuentes desde Google Fonts (Plus Jakarta Sans) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
+    
+    <!-- Favicon: icono que aparece en la pestaña del navegador -->
     <link rel="icon" type="image/png" href="assets/img/Logo Main__Logo Complete.png">
+    
+    <!-- ==================== LIBRERÍA LEAFLET (ESTILOS CSS) ==================== -->
+    <!-- Hoja de estilos obligatoria para que el mapa Leaflet dibuje correctamente las capas, pines y controles -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+    
+    <!-- Hoja de estilos principal del proyecto (diseño visual, colores, tipografía) -->
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
 <body>
+    <!-- Enlace de accesibilidad para lectores de pantalla y navegación por teclado -->
     <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
 
-    <!-- ======================== HEADER ======================== -->
+    <!-- ==========================================================================
+         HEADER / BARRA DE NAVEGACIÓN SUPERIOR
+         ========================================================================== -->
     <header class="site-header">
         <div class="header-container">
+            <!-- Logos institucionales del Congreso ICCB 2027 y la BUAP con enlace al inicio -->
             <a href="index.html" class="brand-wrapper" aria-label="ICCB 2027 Puebla · BUAP">
                 <img src="assets/img/Logo Main__Logo Complete.png" alt="ICCB 2027"
                     class="brand-logo-img brand-logo-iccb">
                 <span class="brand-divider" aria-hidden="true"></span>
                 <img src="assets/img/Logo_BUAP.webp" alt="BUAP" class="brand-logo-img brand-logo-buap">
             </a>
+
+            <!-- Controles para vista móvil: selector de idioma y botón hamburguesa -->
             <div class="header-mobile-right">
                 <div class="lang-switcher-vertical mobile-header-lang" aria-label="Selector de idioma">
                     <a href="#" class="lang-pill active" lang="es">ES</a>
                     <a href="#" class="lang-pill" lang="en">EN</a>
                 </div>
+                <!-- Botón hamburguesa (abre y cierra el menú en celulares) -->
                 <button type="button" class="nav-toggle-btn" id="nav-toggle-btn" aria-expanded="false"
                     aria-controls="main-nav" aria-label="Abrir menú">
                     <span></span><span></span><span></span>
                 </button>
             </div>
+
+            <!-- Menú de navegación principal -->
             <nav class="main-nav" id="main-nav" aria-label="Navegación principal">
                 <ul class="nav-list">
+                    <!-- Enlace a Agenda -->
                     <li><a href="agenda.html" class="nav-link"><svg class="nav-icon" width="18" height="18"
                                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
                                 stroke-linecap="round" stroke-linejoin="round">
@@ -46,6 +69,8 @@
                                 <path d="M4 10h16" />
                                 <path d="M8 2v3M16 2v3" stroke-width="2.2" />
                             </svg><span>Agenda</span></a></li>
+                    
+                    <!-- Enlace a Día de Exploración -->
                     <li><a href="exploracion.html" class="nav-link highlight"><svg class="nav-icon-gold" width="18"
                                 height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
                                 stroke-linecap="round" stroke-linejoin="round">
@@ -55,6 +80,8 @@
                                 <circle cx="12" cy="20" r="1" fill="currentColor" />
                                 <circle cx="4" cy="12" r="1" fill="currentColor" />
                             </svg><span>Día de Exploración</span></a></li>
+                    
+                    <!-- Enlace actual a Rutas (marcado con clase .active) -->
                     <li><a href="rutas.html" class="nav-link active"><svg class="nav-icon" width="18" height="18"
                                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
                                 stroke-linecap="round" stroke-linejoin="round">
@@ -62,18 +89,24 @@
                                 <line x1="9" y1="3" x2="9" y2="18" />
                                 <line x1="15" y1="6" x2="15" y2="21" />
                             </svg><span>Rutas</span></a></li>
+                    
+                    <!-- Enlace a Menú -->
                     <li><a href="menu.html" class="nav-link"><svg class="nav-icon" width="18" height="18"
                                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
                                 stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M17 8h1a4 4 0 0 1 0 8h-1" />
                                 <path d="M3 8h14v7a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8z" />
                             </svg><span>Menú</span></a></li>
+                    
+                    <!-- Enlace a Participa -->
                     <li><a href="participa.html" class="nav-link"><svg class="nav-icon" width="18" height="18"
                                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
                                 stroke-linecap="round" stroke-linejoin="round">
                                 <path
                                     d="M11 13.5l-2.5-2.5a3.5 3.5 0 0 0-5 5l4 4a4 4 0 0 0 5.6 0l5.4-5.4a3.5 3.5 0 0 0-5-5L11 12" />
                             </svg><span>Participa</span></a></li>
+                    
+                    <!-- Enlace a Información -->
                     <li><a href="info.html" class="nav-link"><svg class="nav-icon" width="18" height="18"
                                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
                                 stroke-linecap="round" stroke-linejoin="round">
@@ -82,6 +115,8 @@
                                 <circle cx="12" cy="7.5" r="1.5" fill="currentColor" stroke="none" />
                             </svg><span>Información</span></a></li>
                 </ul>
+
+                <!-- Selector de idioma para versión de escritorio -->
                 <div class="nav-user-actions">
                     <div class="lang-switcher-vertical desktop-header-lang" aria-label="Selector de idioma">
                         <a href="#" class="lang-pill active" lang="es" title="Español">ES</a>
@@ -92,60 +127,196 @@
         </div>
     </header>
 
+    <!-- ==========================================================================
+         CONTENIDO PRINCIPAL (MAIN)
+         ========================================================================== -->
     <main class="site-main" id="main-content">
         <section id="rutas-page">
+            
+            <!-- Encabezado / Banner Hero de la página de Rutas -->
             <div class="page-hero-banner">
                 <div class="hero-bg-texture"></div>
                 <h2>Mapa Interactivo y Rutas Bioculturales</h2>
                 <p>Explora los puntos y circuitos caminables de biodiversidad, patrimonio y cultura en Puebla.</p>
             </div>
-            <div class="page-section">
+
+            <!-- ==================================================================
+                 SECCIÓN DEL MAPA INTERACTIVO (LEAFLET + OPENSTREETMAP)
+                 ================================================================== -->
+            <div class="page-section" id="mapa-section">
                 <div class="container">
-                    <div class="map-container">🗺️ Mapa Leaflet con OpenStreetMap (se activará con JS en producción)
+                    
+                    <!-- 1. BARRA DE CONTROLES Y FILTROS DEL MAPA -->
+                    <!-- Permite al usuario filtrar rutas específicas o ver todas a la vez -->
+                    <div class="map-header-controls">
+                        <div class="map-filter-group" role="tablist" aria-label="Filtrar circuitos en el mapa">
+                            <!-- Botón: Ver todas las rutas -->
+                            <button type="button" class="map-filter-btn active" data-route="all" role="tab"
+                                aria-selected="true">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10" />
+                                    <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
+                                    <path d="M2 12h20" />
+                                </svg>
+                                <span>Todas las Rutas</span>
+                            </button>
+                            
+                            <!-- Botón: Filtrar por Centro Histórico -->
+                            <button type="button" class="map-filter-btn" data-route="centro" role="tab"
+                                aria-selected="false">
+                                <span>🏛️ Centro Histórico</span>
+                            </button>
+                            
+                            <!-- Botón: Filtrar por Sierra Norte -->
+                            <button type="button" class="map-filter-btn" data-route="sierra" role="tab"
+                                aria-selected="false">
+                                <span>🌿 Sierra Norte</span>
+                            </button>
+                            
+                            <!-- Botón: Filtrar por Humedales de Valsequillo -->
+                            <button type="button" class="map-filter-btn" data-route="valsequillo" role="tab"
+                                aria-selected="false">
+                                <span>🦅 Humedales Valsequillo</span>
+                            </button>
+                        </div>
+
+                        <!-- Botón para recentrar el mapa rápidamente a Puebla Centro -->
+                        <div class="map-view-actions">
+                            <button type="button" class="btn btn-outline btn-sm" id="btn-reset-map"
+                                title="Restablecer vista a Puebla Centro">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
+                                    <path d="M3 3v5h5" />
+                                </svg>
+                                <span>Centrar Puebla</span>
+                            </button>
+                        </div>
                     </div>
-                    <div class="section-head-center"><span class="section-eyebrow">Circuitos Caminables</span>
+
+                    <!-- 2. RESUMEN DINÁMICO DE LA RUTA SELECCIONADA -->
+                    <!-- Este bloque se actualiza automáticamente con JavaScript al cambiar de filtro -->
+                    <div class="map-route-summary" id="map-route-summary">
+                        <div class="route-summary-item">
+                            <span class="summary-label">Circuito en Exploración</span>
+                            <strong id="summary-title">Todas las Rutas Bioculturales de Puebla</strong>
+                        </div>
+                        <div class="route-summary-meta">
+                            <span class="summary-badge" id="summary-stops">11 paradas bioculturales</span>
+                            <span class="summary-badge" id="summary-distance">3 circuitos temáticos (Centro, Sierra, Humedales)</span>
+                        </div>
+                    </div>
+
+                    <!-- 3. CONTENEDOR DEL MAPA Y LEYENDA -->
+                    <div class="map-wrapper-card">
+                        <!-- 'rutas-map' es el div con id donde Leaflet inyecta el lienzo interactivo -->
+                        <div id="rutas-map" class="map-container" role="region"
+                            aria-label="Mapa interactivo de rutas bioculturales"></div>
+                        
+                        <!-- Leyenda de colores que identifica cada circuito en el mapa -->
+                        <div class="map-legend">
+                            <span class="legend-title">Simbología:</span>
+                            <span class="legend-item"><span class="legend-dot dot-centro"></span> Centro Histórico (Caminable)</span>
+                            <span class="legend-item"><span class="legend-dot dot-sierra"></span> Sierra Norte (Cafetales & Meliponas)</span>
+                            <span class="legend-item"><span class="legend-dot dot-valsequillo"></span> Valsequillo (Humedal & Aves)</span>
+                        </div>
+                    </div>
+
+                    <!-- ==========================================================
+                         SECCIÓN DE TARJETAS DESCRIPTIVAS DE CADA RUTA
+                         ========================================================== -->
+                    <div class="section-head-center">
+                        <span class="section-eyebrow">Circuitos Caminables y Excursiones</span>
                         <h2 class="section-main-title">Rutas Bioculturales de Puebla</h2>
                     </div>
+
+                    <!-- Cuadrícula responsive de tarjetas informativas -->
                     <div class="pillar-cards-grid" style="grid-template-columns:repeat(auto-fit,minmax(300px,1fr))">
+                        
+                        <!-- TARJETA 1: RUTA DEL CENTRO HISTÓRICO -->
                         <div class="route-card">
-                            <div class="route-card-img" style="background:linear-gradient(135deg,#2B4C8C,#151748)">Ruta
-                                del Centro Histórico</div>
+                            <div class="route-card-img" style="background:linear-gradient(135deg,#2B4C8C,#151748)">
+                                Ruta del Centro Histórico
+                            </div>
                             <div class="route-card-body">
-                                <h3>Ruta del Centro Histórico</h3><span class="badge-status propuesta"
-                                    style="margin-bottom:0.75rem;display:inline-flex">Demo</span>
+                                <h3>Ruta del Centro Histórico</h3>
+                                <span class="badge-status propuesta"
+                                    style="margin-bottom:0.75rem;display:inline-flex">Demo · Caminable</span>
                                 <p>Recorrido de 3 km por patios virreinales, templos barrocos, arte en Talavera y
                                     jardines con polinizadores urbanos.</p>
-                                <div class="route-stops"><span class="route-stop">1. Zócalo de Puebla</span><span
-                                        class="route-stop">2. Templo de Santo Domingo — Capilla del Rosario</span><span
-                                        class="route-stop">3. Barrio del Artista — Mercado de Artesanías</span></div>
-                                <a href="#" class="btn btn-outline btn-sm" style="width:100%">Ver en el mapa →</a>
-                            </div>
-                        </div>
-                        <div class="route-card">
-                            <div class="route-card-img"
-                                style="background:linear-gradient(135deg,var(--color-gold),var(--color-gold-hover))">
-                                <span style="color:var(--color-navy-deep)">Ruta Sierra Norte</span></div>
-                            <div class="route-card-body">
-                                <h3>Ruta de la Sierra Norte</h3><span class="badge-status propuesta"
-                                    style="margin-bottom:0.75rem;display:inline-flex">Propuesta</span>
-                                <p>Visita a cultivos de café de sombra, apiarios de abeja melipona y bosque de niebla
-                                    con guías locales.</p>
-                                <div class="route-stops"><span class="route-stop">1. Cuetzalan — Finca
-                                        Cafetalera</span><span class="route-stop">2. Apiario Comunitario
-                                        Melipona</span><span class="route-stop">3. Mirador del Bosque de Niebla</span>
+                                <!-- Paradas destacadas del recorrido -->
+                                <div class="route-stops">
+                                    <span class="route-stop">1. Zócalo y Catedral de Puebla</span>
+                                    <span class="route-stop">2. Templo de Santo Domingo — Capilla del Rosario</span>
+                                    <span class="route-stop">3. Edificio Carolino BUAP</span>
+                                    <span class="route-stop">4. Barrio del Artista — El Parián</span>
                                 </div>
-                                <a href="#" class="btn btn-outline btn-sm" style="width:100%">Ver en el mapa →</a>
+                                <!-- Botón interactivo: enfoca automáticamente el mapa en esta ruta -->
+                                <button type="button" class="btn btn-outline btn-sm" data-focus-route="centro"
+                                    style="width:100%">Ver en el mapa →</button>
                             </div>
                         </div>
+
+                        <!-- TARJETA 2: RUTA DE LA SIERRA NORTE -->
+                        <div class="route-card">
+                            <div class="route-card-img" style="background:linear-gradient(135deg,#2E7D32,#1B5E20)">
+                                <span style="color:#ffffff">Ruta Sierra Norte</span>
+                            </div>
+                            <div class="route-card-body">
+                                <h3>Ruta de la Sierra Norte</h3>
+                                <span class="badge-status propuesta"
+                                    style="margin-bottom:0.75rem;display:inline-flex">Propuesta · Excursión</span>
+                                <p>Visita a cultivos de café de sombra diversificada, apiarios de abeja nativa melipona
+                                    y senderos en bosque de niebla.</p>
+                                <!-- Paradas destacadas del recorrido -->
+                                <div class="route-stops">
+                                    <span class="route-stop">1. Cuetzalan Centro Histórico</span>
+                                    <span class="route-stop">2. Finca Cafetalera Agroecológica</span>
+                                    <span class="route-stop">3. Apiario Comunitario Melipona</span>
+                                    <span class="route-stop">4. Mirador del Bosque de Niebla</span>
+                                </div>
+                                <!-- Botón interactivo: enfoca automáticamente el mapa en esta ruta -->
+                                <button type="button" class="btn btn-outline btn-sm" data-focus-route="sierra"
+                                    style="width:100%">Ver en el mapa →</button>
+                            </div>
+                        </div>
+
+                        <!-- TARJETA 3: RUTA HUMEDALES DE VALSEQUILLO -->
+                        <div class="route-card">
+                            <div class="route-card-img" style="background:linear-gradient(135deg,#00838F,#0D0E31)">
+                                <span style="color:#ffffff">Ruta Humedales de Valsequillo</span>
+                            </div>
+                            <div class="route-card-body">
+                                <h3>Ruta Humedales de Valsequillo</h3>
+                                <span class="badge-status propuesta"
+                                    style="margin-bottom:0.75rem;display:inline-flex">Propuesta · Observación</span>
+                                <p>Sitio Ramsar prioritario: santuario de aves acuáticas migratorias, vegetación riparia
+                                    y restauración ambiental del valle.</p>
+                                <!-- Paradas destacadas del recorrido -->
+                                <div class="route-stops">
+                                    <span class="route-stop">1. Parque Estatal Humedal Valsequillo</span>
+                                    <span class="route-stop">2. Mirador de Aves Acuáticas</span>
+                                    <span class="route-stop">3. Centro de Conservación y Altiplano</span>
+                                </div>
+                                <!-- Botón interactivo: enfoca automáticamente el mapa en esta ruta -->
+                                <button type="button" class="btn btn-outline btn-sm" data-focus-route="valsequillo"
+                                    style="width:100%">Ver en el mapa →</button>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- ======================== FOOTER ======================== -->
+    <!-- ==========================================================================
+         FOOTER / PIE DE PÁGINA INSTITUCIONAL
+         ========================================================================== -->
     <footer class="site-footer">
         <div class="footer-container">
+            <!-- Bloque de marca y descripción de la iniciativa ICCB 2027 + BUAP -->
             <div class="footer-brand">
                 <img src="assets/img/Logo_White_Transparent.png" alt="ICCB 2027 Puebla" class="footer-logo">
                 <h3 style="color:#fff;font-size:1.25rem;font-weight:800">Puebla, Capital de la Biodiversidad</h3>
@@ -159,6 +330,8 @@
                         style="color:var(--color-gold);font-weight:700;text-decoration:underline">Sitio Oficial ICCB
                         2027 ↗</a></div>
             </div>
+
+            <!-- Accesos directos a las páginas principales -->
             <div class="footer-links-col">
                 <h4>Accesos directos</h4>
                 <ul class="footer-nav">
@@ -169,6 +342,8 @@
                     <li><a href="participa.html">Participa</a></li>
                 </ul>
             </div>
+
+            <!-- Enlaces de información práctica y registro -->
             <div class="footer-links-col">
                 <h4>Información</h4>
                 <ul class="footer-nav">
@@ -177,6 +352,8 @@
                 </ul>
             </div>
         </div>
+
+        <!-- Barra inferior: aviso de trabajo en prototipo y derechos reservados -->
         <div class="footer-bottom">
             <div>
                 <p><strong>Aviso de Trabajo:</strong> Prototipo digital de trabajo. No confirma actividades,
@@ -188,7 +365,18 @@
         </div>
     </footer>
 
+    <!-- ==========================================================================
+         SCRIPTS JAVASCRIPT AL FINAL DE LA PÁGINA (MEJORA DE TIEMPO DE CARGA)
+         ========================================================================== -->
+    <!-- 1. Librería externa Leaflet desde CDN oficial: gestiona la interactividad del mapa -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    
+    <!-- 2. Script global del proyecto: controla el menú móvil responsive -->
     <script src="assets/js/main.js"></script>
+    
+    <!-- 3. Script especializado del mapa de rutas: carga puntos, coordenadas, popups y filtros -->
+    <script src="assets/js/rutas-map.js"></script>
 </body>
 
 </html>
