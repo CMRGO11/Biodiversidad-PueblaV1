@@ -1,32 +1,74 @@
 <!DOCTYPE html>
+<!-- ==============================================================================
+     ¡BIENVENIDO A INDEX.HTML! (LA PORTADA DE TU SITIO WEB)
+     ==============================================================================
+     Esta es la página de inicio, la puerta principal por donde entra la gente.
+     Imagina que este archivo es como la fachada y el vestíbulo de un gran museo:
+     
+     1. <head>: El letrero en la puerta y las llaves de la casa (configuración invisible).
+     2. <header>: El mostrador de información arriba con el menú para ir a otras salas.
+     3. <main>: La sala de exposiciones principal:
+        - Hero Banner: La bienvenida monumental con foto de Puebla.
+        - Buscador: Para encontrar conferencias o talleres rápidamente.
+        - Los Cuatro Ejes: Cuatro puertas o tarjetas hacia las demás secciones.
+     4. <footer>: El sótano con los agradecimientos, patrocinadores y derechos.
+     ============================================================================== -->
+
+<!-- lang="es" le avisa a Google y a los navegadores que esta página está en español -->
 <html lang="es">
 
 <head>
+    <!-- ==========================================================================
+         LA CABEZA (<head>): Instrucciones técnicas invisibles para el navegador
+         ========================================================================== -->
+
+    <!-- charset="UTF-8": Permite escribir con acentos (á, é, í), la letra 'ñ' y emojis sin errores -->
     <meta charset="UTF-8">
+
+    <!-- viewport: Hace que la página sea "responsive" (se acomode perfecto a pantallas de celular) -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- <title>: El nombre que aparece en la pestaña superior de tu navegador -->
     <title>Puebla, Capital de la Biodiversidad | ICCB 2027 · BUAP</title>
+
+    <!-- description: El resumen de dos renglones que muestra Google en los resultados de búsqueda -->
     <meta name="description"
         content="Guía pública de actividades, rutas bioculturales y experiencias de biodiversidad en Puebla durante el 33º Congreso Internacional de Biología de la Conservación (ICCB 2027).">
+
+    <!-- Preconexión a Google Fonts para descargar la tipografía bonita "Plus Jakarta Sans" -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
+
+    <!-- Favicon: El iconito diminuto que sale al lado del título en la pestaña del navegador -->
     <link rel="icon" type="image/png" href="assets/img/Logo Main__Logo Complete.png">
+
+    <!-- Hoja de estilos CSS: Conecta el archivo styles.css que contiene todos los colores y medidas -->
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
 <body>
+
+    <!-- skip-link: Enlace invisible para personas con discapacidad visual que usan lectores de pantalla -->
     <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
 
-    <!-- ======================== HEADER ======================== -->
+    <!-- ==========================================================================
+         SECCIÓN 1: EL ENCABEZADO (<header>)
+         La barra blanca fija superior con los logotipos y el menú de navegación.
+         ========================================================================== -->
     <header class="site-header">
         <div class="header-container">
+
+            <!-- Logotipos: Al hacer clic regresas al inicio (index.html) -->
             <a href="index.html" class="brand-wrapper" aria-label="ICCB 2027 Puebla · BUAP">
                 <img src="assets/img/Logo Main__Logo Complete.png" alt="ICCB 2027"
                     class="brand-logo-img brand-logo-iccb">
                 <span class="brand-divider" aria-hidden="true"></span>
                 <img src="assets/img/Logo_BUAP.webp" alt="BUAP" class="brand-logo-img brand-logo-buap">
             </a>
+
+            <!-- Controles para celulares: Selector de idioma y botón de tres rayitas (hamburguesa) -->
             <div class="header-mobile-right">
                 <div class="lang-switcher-vertical mobile-header-lang" aria-label="Selector de idioma">
                     <a href="#" class="lang-pill active" lang="es">ES</a>
@@ -37,51 +79,80 @@
                     <span></span><span></span><span></span>
                 </button>
             </div>
+
+            <!-- Menú de navegación principal con enlaces a cada página del sitio -->
             <nav class="main-nav" id="main-nav" aria-label="Navegación principal">
                 <ul class="nav-list">
-                    <li><a href="agenda.html" class="nav-link"><svg class="nav-icon" width="18" height="18"
-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
-                                stroke-linecap="round" stroke-linejoin="round">
+                    <!-- Cada <li> es un elemento o botón del menú -->
+                    <li>
+                        <a href="agenda.html" class="nav-link">
+                            <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M4 6a3 3 0 0 1 3-3h10a3 3 0 0 1 3 3v13a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V6z" />
                                 <path d="M4 10h16" />
                                 <path d="M8 2v3M16 2v3" stroke-width="2.2" />
-                            </svg><span>Agenda</span></a></li>
-                    <li><a href="exploracion.html" class="nav-link highlight"><svg class="nav-icon-gold" width="18"
-                                height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
-                                stroke-linecap="round" stroke-linejoin="round">
+                            </svg>
+                            <span>Agenda</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="exploracion.html" class="nav-link highlight">
+                            <svg class="nav-icon-gold" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
                                 <circle cx="12" cy="12" r="2.5" fill="currentColor" />
                                 <circle cx="12" cy="4" r="1" fill="currentColor" />
                                 <circle cx="20" cy="12" r="1" fill="currentColor" />
                                 <circle cx="12" cy="20" r="1" fill="currentColor" />
                                 <circle cx="4" cy="12" r="1" fill="currentColor" />
-                            </svg><span>Día de Exploración</span></a></li>
-                    <li><a href="rutas.html" class="nav-link"><svg class="nav-icon" width="18" height="18"
-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
-                                stroke-linecap="round" stroke-linejoin="round">
+                            </svg>
+                            <span>Día de Exploración</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="rutas.html" class="nav-link">
+                            <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                                 <polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21" />
                                 <line x1="9" y1="3" x2="9" y2="18" />
                                 <line x1="15" y1="6" x2="15" y2="21" />
-                            </svg><span>Rutas</span></a></li>
-                    <li><a href="menu.html" class="nav-link"><svg class="nav-icon" width="18" height="18"
-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
-                                stroke-linecap="round" stroke-linejoin="round">
+                            </svg>
+                            <span>Rutas</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="menu.html" class="nav-link">
+                            <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M17 8h1a4 4 0 0 1 0 8h-1" />
                                 <path d="M3 8h14v7a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8z" />
-                            </svg><span>Menú</span></a></li>
-                    <li><a href="participa.html" class="nav-link"><svg class="nav-icon" width="18" height="18"
-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
-                                stroke-linecap="round" stroke-linejoin="round">
+                            </svg>
+                            <span>Menú</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="participa.html" class="nav-link">
+                            <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                                 <path
                                     d="M11 13.5l-2.5-2.5a3.5 3.5 0 0 0-5 5l4 4a4 4 0 0 0 5.6 0l5.4-5.4a3.5 3.5 0 0 0-5-5L11 12" />
-                            </svg><span>Participa</span></a></li>
-                    <li><a href="info.html" class="nav-link"><svg class="nav-icon" width="18" height="18"
-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
-                                stroke-linecap="round" stroke-linejoin="round">
+                            </svg>
+                            <span>Participa</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="info.html" class="nav-link">
+                            <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                                 <circle cx="12" cy="12" r="9.5" />
                                 <line x1="12" y1="11" x2="12" y2="17" stroke-width="2.2" />
                                 <circle cx="12" cy="7.5" r="1.5" fill="currentColor" stroke="none" />
-                            </svg><span>Información</span></a></li>
+                            </svg>
+                            <span>Información</span>
+                        </a>
+                    </li>
                 </ul>
+
+                <!-- Selector de idioma para computadoras de escritorio -->
                 <div class="nav-user-actions">
                     <div class="lang-switcher-vertical desktop-header-lang" aria-label="Selector de idioma">
                         <a href="#" class="lang-pill active" lang="es" title="Español">ES</a>
@@ -92,37 +163,64 @@
         </div>
     </header>
 
+    <!-- ==========================================================================
+         SECCIÓN 2: EL CONTENIDO PRINCIPAL (<main>)
+         Aquí vive todo el contenido exclusivo de la página de inicio.
+         ========================================================================== -->
     <main class="site-main" id="main-content">
+
+        <!-- ======================================================================
+             A. EL HERO BANNER (La gran portada de bienvenida)
+             Dividido en dos grandes columnas:
+             - Columna izquierda (.hero-left): Texto, título h1 y botones de llamado a la acción.
+             - Columna derecha (.hero-right): Fotografía enmarcada de la ciudad de Puebla.
+             ====================================================================== -->
         <section class="hero-section" id="home">
+            <!-- Efectos visuales de fondo (textura y resplandor radial suave) -->
             <div class="hero-bg-media" aria-hidden="true">
                 <div class="hero-bg-texture"></div>
                 <div class="hero-bg-radial"></div>
             </div>
+
             <div class="hero-inner">
+                <!-- COLUMNA IZQUIERDA: Textos y botones -->
                 <div class="hero-left">
+                    <!-- Pastilla con las fechas del evento -->
                     <div class="hero-date-label">Puebla, México &nbsp;·&nbsp; 27 Jun – 2 Jul 2027</div>
+
+                    <!-- <h1>: El título principal y más importante de todo el sitio web -->
                     <h1 class="hero-title">Capital de la<br>Biodiversidad</h1>
+
+                    <!-- Subtítulo explicativo -->
                     <p class="hero-subtitle">Puebla se convierte en escenario mundial del ICCB 2027. Una semana de
                         ciencia, cultura y biodiversidad abierta a toda la ciudad.</p>
+
+                    <!-- Fila de botones de acción rápida -->
                     <div class="hero-cta-row">
-                        <a href="agenda.html" class="hero-btn-primary">Ver Agenda</a>
+                        <a href="rutas.html" class="hero-btn-primary">Ver Rutas</a>
+                        <a href="agenda.html" class="hero-btn-primary">Agenda</a>
                         <a href="exploracion.html" class="hero-btn-secondary">Día de Exploración &rarr;</a>
-                        <a href="exploracion.html" class="hero-btn-secondary">Opcion extra &rarr;</a>
                     </div>
+
+                    <!-- Tira con el logotipo completo del congreso -->
                     <div class="hero-logos-strip">
                         <img src="assets/img/Logos__Logo Full Color White Background.png" alt="ICCB 2027 Logo"
                             class="hero-strip-logo">
                     </div>
                 </div>
+
+                <!-- COLUMNA DERECHA: Marco con la fotografía de Puebla -->
                 <div class="hero-right">
                     <div class="hero-photo-frame">
                         <img src="assets/img/website/Main Banner 1.png" alt="Vista de Puebla, México"
                             class="hero-photo">
+                        <!-- Pequeña etiqueta sobre la foto -->
                         <div class="hero-photo-label">
                             <span class="hero-photo-city">Puebla de Zaragoza</span>
                             <span class="hero-photo-sub">México</span>
                         </div>
                     </div>
+                    <!-- Insignia decorativa con grecas de Talavera -->
                     <div class="hero-pattern-badge">
                         <img src="assets/img/Logo Main__Logo Complete.png" alt="ICCB 2027 Talavera">
                     </div>
@@ -130,137 +228,200 @@
             </div>
         </section>
 
-        <!-- Search -->
+        <!-- ======================================================================
+             B. BARRA DE BÚSQUEDA RÁPIDA (Search Section)
+             Permite escribir una palabra o elegir una categoría para filtrar actividades.
+             ====================================================================== -->
         <section class="search-section-wrap">
             <div class="search-agenda-section">
+                <!-- <form>: Contenedor de formulario de búsqueda -->
                 <form class="search-form-flex" role="search" onsubmit="return false;">
+
+                    <!-- Campo de texto con icono de lupa -->
                     <div class="search-input-wrapper">
-                        <span class="search-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
+                        <span class="search-icon" aria-hidden="true">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <circle cx="10.5" cy="10.5" r="7" />
                                 <line x1="16" y1="16" x2="21.5" y2="21.5" stroke-width="2.5" />
-                            </svg></span>
+                            </svg>
+                        </span>
+                        <!-- <input type="text">: La cajita donde el usuario escribe lo que busca -->
                         <input type="text" class="search-input"
                             placeholder="Buscar talleres, exposiciones, conferencias...">
                     </div>
-                    <div><select class="search-select">
+
+                    <!-- Menú desplegable para filtrar por tema (<select>) -->
+                    <div>
+                        <select class="search-select">
                             <option>Todas las categorías</option>
                             <option>Día de Exploración</option>
                             <option>Rutas Bioculturales</option>
                             <option>Museos y Cultura</option>
                             <option>Ciencia y Conservación</option>
                             <option>Sabores y Gastronomía</option>
-                        </select></div>
-                    <div><button type="submit" class="btn btn-primary" style="width:100%"><svg width="18" height="18"
-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round">
+                        </select>
+                    </div>
+
+                    <!-- Botón para ejecutar la búsqueda -->
+                    <div>
+                        <button type="submit" class="btn btn-primary" style="width:100%">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <circle cx="10.5" cy="10.5" r="7" />
                                 <line x1="16" y1="16" x2="21.5" y2="21.5" stroke-width="2.5" />
-                            </svg><span>Buscar</span></button></div>
+                            </svg>
+                            <span>Buscar</span>
+                        </button>
+                    </div>
                 </form>
             </div>
         </section>
 
-        <!-- Four Pillars -->
+        <!-- ======================================================================
+             C. LOS CUATRO EJES DE LA INICIATIVA (Feature Grid)
+             Cuatro tarjetas con animales mascota que llevan a las páginas del sitio:
+             1. Colibrí → Agenda (agenda.html)
+             2. Jaguar → Día de Exploración (exploracion.html)
+             3. Cacomixtle → Rutas Bioculturales (rutas.html)
+             4. Armadillo → Menú y Sabores (menu.html)
+             ====================================================================== -->
         <section class="feature-grid-section">
             <div class="container">
+                <!-- Títulos centrados de la sección -->
                 <div class="section-head-center">
                     <span class="section-eyebrow">Explora la Iniciativa</span>
                     <h2 class="section-main-title">Los Cuatro Ejes de Activación Ciudadana</h2>
                     <p class="section-main-desc">Diseñado para facilitar el descubrimiento inmediato de actividades,
                         rutas y saberes bioculturales sin necesidad de conocer los nombres de los programas.</p>
                 </div>
+
+                <!-- Cuadrícula con las 4 tarjetas principales -->
                 <div class="pillar-cards-grid">
+
+                    <!-- TARJETA 1: AGENDA (Mascota: Colibrí) -->
                     <a href="agenda.html" class="pillar-card">
                         <div>
-                            <div class="pillar-icon-box"><img src="assets/img/Logo Animals__Logo_Colibri.png"
-                                    alt="Colibrí"></div><span class="badge-status proximamente"
-                                style="margin-bottom:0.75rem"><span>24 Eventos</span></span>
+                            <div class="pillar-icon-box">
+                                <img src="assets/img/Logo Animals__Logo_Colibri.png" alt="Colibrí">
+                            </div>
+                            <span class="badge-status proximamente" style="margin-bottom:0.75rem">
+                                <span>24 Eventos</span>
+                            </span>
                             <h3 class="pillar-card-title">Agenda</h3>
                             <p class="pillar-card-text">Consulta el calendario por día, exposiciones de mes completo,
                                 talleres vivos, foros y proyecciones de cine en la Sala Luis Buñuel.</p>
                         </div>
-                        <div class="pillar-card-link"><span>Abrir agenda completa</span> <svg class="card-arrow-icon"
-                                width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <div class="pillar-card-link">
+                            <span>Abrir agenda completa</span>
+                            <svg class="card-arrow-icon" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                                 <line x1="4" y1="12" x2="19" y2="12" />
                                 <polyline points="13 6 19 12 13 18" />
-                            </svg></div>
+                            </svg>
+                        </div>
                     </a>
+
+                    <!-- TARJETA 2: DÍA DE EXPLORACIÓN (Mascota: Jaguar, destacada en dorado) -->
                     <a href="exploracion.html" class="pillar-card highlight-gold">
                         <div>
                             <div class="pillar-icon-box"
-                                style="background:var(--color-gold-soft);border-color:var(--color-gold)"><img
-                                    src="assets/img/Logo Animals__Logo_Jaguar.png" alt="Jaguar"></div><span
-                                class="badge-status proximamente" style="margin-bottom:0.75rem"><span>2 de Julio
-                                    2027</span></span>
+                                style="background:var(--color-gold-soft);border-color:var(--color-gold)">
+                                <img src="assets/img/Logo Animals__Logo_Jaguar.png" alt="Jaguar">
+                            </div>
+                            <span class="badge-status proximamente" style="margin-bottom:0.75rem">
+                                <span>2 de Julio 2027</span>
+                            </span>
                             <h3 class="pillar-card-title">Día de Exploración</h3>
                             <p class="pillar-card-text">Gran Feria de Ciencias Ambientales en el Centro Histórico.
                                 Stands interactivos, artesanos tradicionales y récord Guinness colectivo.</p>
                         </div>
-                        <div class="pillar-card-link" style="color:var(--color-gold-text)"><span>Conocer sedes y
-                                horarios</span> <svg class="card-arrow-icon" width="16" height="16" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"
-                                stroke-linejoin="round">
+                        <div class="pillar-card-link" style="color:var(--color-gold-text)">
+                            <span>Conocer sedes y horarios</span>
+                            <svg class="card-arrow-icon" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                                 <line x1="4" y1="12" x2="19" y2="12" />
                                 <polyline points="13 6 19 12 13 18" />
-                            </svg></div>
+                            </svg>
+                        </div>
                     </a>
+
+                    <!-- TARJETA 3: RUTAS (Mascota: Cacomixtle) -->
                     <a href="rutas.html" class="pillar-card">
                         <div>
-                            <div class="pillar-icon-box"><img
-                                    src="assets/img/Logo Animals__Logo_cacomixtle.png" alt="Cacomixtle"></div>
-                            <span class="badge-status propuesta" style="margin-bottom:0.75rem"><span>Mapa
-                                    Interactivo</span></span>
+                            <div class="pillar-icon-box">
+                                <img src="assets/img/Logo Animals__Logo_cacomixtle.png" alt="Cacomixtle">
+                            </div>
+                            <span class="badge-status propuesta" style="margin-bottom:0.75rem">
+                                <span>Mapa Interactivo</span>
+                            </span>
                             <h3 class="pillar-card-title">Rutas</h3>
                             <p class="pillar-card-text">Recorridos guiados por patios virreinales, templos, arte en
                                 Talavera y polinizadores urbanos con indicaciones paso a paso.</p>
                         </div>
-                        <div class="pillar-card-link"><span>Ver mapa y circuitos</span> <svg class="card-arrow-icon"
-                                width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <div class="pillar-card-link">
+                            <span>Ver mapa y circuitos</span>
+                            <svg class="card-arrow-icon" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                                 <line x1="4" y1="12" x2="19" y2="12" />
                                 <polyline points="13 6 19 12 13 18" />
-                            </svg></div>
+                            </svg>
+                        </div>
                     </a>
+
+                    <!-- TARJETA 4: MENÚ (Mascota: Armadillo) -->
                     <a href="menu.html" class="pillar-card">
                         <div>
-                            <div class="pillar-icon-box"><img src="assets/img/Logo Animals__Logo_Armadilo.png"
-                                    alt="Armadillo"></div><span class="badge-status propuesta"
-                                style="margin-bottom:0.75rem"><span>Cocina Poblana</span></span>
+                            <div class="pillar-icon-box">
+                                <img src="assets/img/Logo Animals__Logo_Armadilo.png" alt="Armadillo">
+                            </div>
+                            <span class="badge-status propuesta" style="margin-bottom:0.75rem">
+                                <span>Cocina Poblana</span>
+                            </span>
                             <h3 class="pillar-card-title">Menú</h3>
                             <p class="pillar-card-text">Café de sombra de la Sierra Norte, miel de abeja melipona, moles
                                 tradicionales con quelites y criterios de conservación auditados.</p>
                         </div>
-                        <div class="pillar-card-link"><span>Descubrir experiencias</span> <svg class="card-arrow-icon"
-                                width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <div class="pillar-card-link">
+                            <span>Descubrir experiencias</span>
+                            <svg class="card-arrow-icon" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                                 <line x1="4" y1="12" x2="19" y2="12" />
                                 <polyline points="13 6 19 12 13 18" />
-                            </svg></div>
+                            </svg>
+                        </div>
                     </a>
+
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- ======================== FOOTER ======================== -->
+    <!-- ==========================================================================
+         SECCIÓN 3: EL PIE DE PÁGINA (<footer>)
+         La parte de hasta abajo de la pantalla con los datos institucionales.
+         ========================================================================== -->
     <footer class="site-footer">
         <div class="footer-container">
+
+            <!-- Columna izquierda: Logotipo blanco, descripción y organizadores -->
             <div class="footer-brand">
                 <img src="assets/img/Logo_White_Transparent.png" alt="ICCB 2027 Puebla" class="footer-logo">
                 <h3 style="color:#fff;font-size:1.25rem;font-weight:800">Puebla, Capital de la Biodiversidad</h3>
                 <p style="color:#BAC2E0;font-size:var(--font-sm)">Iniciativa institucional de vinculación ciudadana en
                     el marco del 33º Congreso Internacional de Biología de la Conservación (ICCB 2027), coordinada por
                     la BUAP y la Society for Conservation Biology.</p>
-                <div class="footer-sponsors-strip"><span>Convocan y Coordinan:</span><strong
-                        style="color:#fff">BUAP</strong><span style="opacity:0.5">·</span><strong
-                        style="color:#fff">SCB</strong><span style="opacity:0.5">·</span><a
-                        href="https://conbio.org/mini-sites/iccb-2027/" target="_blank" rel="noopener noreferrer"
+                <div class="footer-sponsors-strip">
+                    <span>Convocan y Coordinan:</span>
+                    <strong style="color:#fff">BUAP</strong><span style="opacity:0.5">·</span>
+                    <strong style="color:#fff">SCB</strong><span style="opacity:0.5">·</span>
+                    <a href="https://conbio.org/mini-sites/iccb-2027/" target="_blank" rel="noopener noreferrer"
                         style="color:var(--color-gold);font-weight:700;text-decoration:underline">Sitio Oficial ICCB
-                        2027 ↗</a></div>
+                        2027 ↗</a>
+                </div>
             </div>
+
+            <!-- Columna central: Accesos directos a las páginas del sitio -->
             <div class="footer-links-col">
                 <h4>Accesos directos</h4>
                 <ul class="footer-nav">
@@ -271,6 +432,8 @@
                     <li><a href="participa.html">Participa</a></li>
                 </ul>
             </div>
+
+            <!-- Columna derecha: Enlaces de ayuda y registro -->
             <div class="footer-links-col">
                 <h4>Información</h4>
                 <ul class="footer-nav">
@@ -279,6 +442,8 @@
                 </ul>
             </div>
         </div>
+
+        <!-- Barra final inferior con aviso de prototipo y copyright -->
         <div class="footer-bottom">
             <div>
                 <p><strong>Aviso de Trabajo:</strong> Prototipo digital de trabajo. No confirma actividades,
@@ -290,6 +455,10 @@
         </div>
     </footer>
 
+    <!-- ==========================================================================
+         SECCIÓN 4: LOS SCRIPTS (JAVASCRIPT)
+         main.js contiene la lógica del menú desplegable para celulares
+         ========================================================================== -->
     <script src="assets/js/main.js"></script>
 </body>
 

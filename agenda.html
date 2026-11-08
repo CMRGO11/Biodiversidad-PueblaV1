@@ -1,32 +1,79 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
+<!-- ==============================================================================
+     ¡BIENVENIDO A AGENDA.HTML! (CALENDARIO DE ACTIVIDADES)
+     ==============================================================================
+     Esta página funciona como el programa oficial de mano o itinerario del congreso.
+     Permite que cualquier persona sepa qué conferencia, taller o exposición hay
+     en cada día y a qué hora.
+     
+     Estructura general:
+     1. <head>: Instrucciones y estilos invisibles para el navegador.
+     2. <header>: Barra de navegación superior fija idéntica en todo el sitio.
+     3. <main>: El cronograma de eventos:
+        - Hero Banner: Resumen con el total de actividades (24 eventos).
+        - Grupos por día (.agenda-day-group): Viernes 27, Sábado 28, Miércoles 2...
+        - Fila de evento (.agenda-item): Hora, título, sede, estado y botón de detalles.
+     4. <footer>: Pie de página institucional y enlaces rápidos.
+     ============================================================================== -->
+
+<!-- lang="es": Informa al navegador que el contenido está redactado en español -->
 <html lang="es">
 
 <head>
+    <!-- ==========================================================================
+         LA CABEZA (<head>): Instrucciones técnicas invisibles para el navegador
+         ========================================================================== -->
+
+    <!-- charset="UTF-8": Permite acentos, caracteres especiales y emojis sin errores -->
     <meta charset="UTF-8">
+
+    <!-- viewport: Hace la página adaptable ("responsive") a celulares y tablets -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- <title>: El texto que aparece en la pestaña superior de tu navegador -->
     <title>Agenda | Puebla, Capital de la Biodiversidad · ICCB 2027</title>
+
+    <!-- description: Resumen breve para buscadores como Google -->
     <meta name="description"
         content="Guía pública de actividades, rutas bioculturales y experiencias de biodiversidad en Puebla durante el 33º Congreso Internacional de Biología de la Conservación (ICCB 2027).">
+
+    <!-- Google Fonts: Conexión anticipada y descarga de la tipografía "Plus Jakarta Sans" -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
+
+    <!-- Favicon: El logo chiquito en la pestaña del navegador -->
     <link rel="icon" type="image/png" href="assets/img/Logo Main__Logo Complete.png">
+
+    <!-- Estilos CSS: Conecta el archivo styles.css con colores, tipografías y sombras -->
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
 <body>
+    <!-- ==========================================================================
+         EL CUERPO (<body>): Todo lo que ve el usuario en la pantalla
+         ========================================================================== -->
+
+    <!-- skip-link: Enlace accesible para saltar directo al contenido principal -->
     <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
 
-    <!-- ======================== HEADER ======================== -->
+    <!-- ==========================================================================
+         SECCIÓN 1: ENCABEZADO SUPERIOR (<header>)
+         Barra blanca fija arriba con logotipos institucionales y menú.
+         ========================================================================== -->
     <header class="site-header">
         <div class="header-container">
+            
+            <!-- Logotipos: Enlace que te regresa a la portada principal (index.html) -->
             <a href="index.html" class="brand-wrapper" aria-label="ICCB 2027 Puebla · BUAP">
                 <img src="assets/img/Logo Main__Logo Complete.png" alt="ICCB 2027"
                     class="brand-logo-img brand-logo-iccb">
                 <span class="brand-divider" aria-hidden="true"></span>
                 <img src="assets/img/Logo_BUAP.webp" alt="BUAP" class="brand-logo-img brand-logo-buap">
             </a>
+
+            <!-- Controles para teléfonos móviles: Idioma y botón de 3 rayitas (hamburguesa) -->
             <div class="header-mobile-right">
                 <div class="lang-switcher-vertical mobile-header-lang" aria-label="Selector de idioma">
                     <a href="#" class="lang-pill active" lang="es">ES</a>
@@ -37,51 +84,79 @@
                     <span></span><span></span><span></span>
                 </button>
             </div>
+
+            <!-- Menú de navegación con enlaces a todas las secciones del sitio -->
             <nav class="main-nav" id="main-nav" aria-label="Navegación principal">
                 <ul class="nav-list">
-                    <li><a href="agenda.html" class="nav-link active"><svg class="nav-icon" width="18" height="18"
-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
-                                stroke-linecap="round" stroke-linejoin="round">
+                    <!-- class="active": Resalta "Agenda" porque es la página donde estamos parados -->
+                    <li>
+                        <a href="agenda.html" class="nav-link active">
+                            <!-- <svg>: Icono vectorial de calendario -->
+                            <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M4 6a3 3 0 0 1 3-3h10a3 3 0 0 1 3 3v13a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V6z" />
                                 <path d="M4 10h16" />
                                 <path d="M8 2v3M16 2v3" stroke-width="2.2" />
-                            </svg><span>Agenda</span></a></li>
-                    <li><a href="exploracion.html" class="nav-link highlight"><svg class="nav-icon-gold" width="18"
-                                height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
-                                stroke-linecap="round" stroke-linejoin="round">
+                            </svg>
+                            <span>Agenda</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="exploracion.html" class="nav-link highlight">
+                            <!-- Icono vectorial de flor / sol dorado -->
+                            <svg class="nav-icon-gold" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
                                 <circle cx="12" cy="12" r="2.5" fill="currentColor" />
                                 <circle cx="12" cy="4" r="1" fill="currentColor" />
                                 <circle cx="20" cy="12" r="1" fill="currentColor" />
                                 <circle cx="12" cy="20" r="1" fill="currentColor" />
                                 <circle cx="4" cy="12" r="1" fill="currentColor" />
-                            </svg><span>Día de Exploración</span></a></li>
-                    <li><a href="rutas.html" class="nav-link"><svg class="nav-icon" width="18" height="18"
-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
-                                stroke-linecap="round" stroke-linejoin="round">
+                            </svg>
+                            <span>Día de Exploración</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="rutas.html" class="nav-link">
+                            <!-- Icono vectorial de mapa doblado -->
+                            <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                                 <polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21" />
                                 <line x1="9" y1="3" x2="9" y2="18" />
                                 <line x1="15" y1="6" x2="15" y2="21" />
-                            </svg><span>Rutas</span></a></li>
-                    <li><a href="menu.html" class="nav-link"><svg class="nav-icon" width="18" height="18"
-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
-                                stroke-linecap="round" stroke-linejoin="round">
+                            </svg>
+                            <span>Rutas</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="menu.html" class="nav-link">
+                            <!-- Icono vectorial de plato y taza -->
+                            <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M17 8h1a4 4 0 0 1 0 8h-1" />
                                 <path d="M3 8h14v7a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8z" />
-                            </svg><span>Menú</span></a></li>
-                    <li><a href="participa.html" class="nav-link"><svg class="nav-icon" width="18" height="18"
-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <path
-                                    d="M11 13.5l-2.5-2.5a3.5 3.5 0 0 0-5 5l4 4a4 4 0 0 0 5.6 0l5.4-5.4a3.5 3.5 0 0 0-5-5L11 12" />
-                            </svg><span>Participa</span></a></li>
-                    <li><a href="info.html" class="nav-link"><svg class="nav-icon" width="18" height="18"
-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
-                                stroke-linecap="round" stroke-linejoin="round">
+                            </svg>
+                            <span>Menú</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="participa.html" class="nav-link">
+                            <!-- Icono vectorial de manos / colaboración -->
+                            <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M11 13.5l-2.5-2.5a3.5 3.5 0 0 0-5 5l4 4a4 4 0 0 0 5.6 0l5.4-5.4a3.5 3.5 0 0 0-5-5L11 12" />
+                            </svg>
+                            <span>Participa</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="info.html" class="nav-link">
+                            <!-- Icono vectorial de información (i) -->
+                            <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                                 <circle cx="12" cy="12" r="9.5" />
                                 <line x1="12" y1="11" x2="12" y2="17" stroke-width="2.2" />
                                 <circle cx="12" cy="7.5" r="1.5" fill="currentColor" stroke="none" />
-                            </svg><span>Información</span></a></li>
+                            </svg>
+                            <span>Información</span>
+                        </a>
+                    </li>
                 </ul>
+
+                <!-- Selector de idioma en pantallas de computadora -->
                 <div class="nav-user-actions">
                     <div class="lang-switcher-vertical desktop-header-lang" aria-label="Selector de idioma">
                         <a href="#" class="lang-pill active" lang="es" title="Español">ES</a>
@@ -92,130 +167,187 @@
         </div>
     </header>
 
+    <!-- ==========================================================================
+         SECCIÓN 2: CONTENIDO PRINCIPAL (<main>)
+         ========================================================================== -->
     <main class="site-main" id="main-content">
         <section id="agenda-page">
+
+            <!-- ==================================================================
+                 A. EL HERO BANNER
+                 Título en grande y resumen de las fechas oficiales del congreso.
+                 ================================================================== -->
             <div class="page-hero-banner">
                 <div class="hero-bg-texture"></div>
                 <h2>Agenda del Congreso</h2>
                 <p>24 actividades programadas entre el 27 de junio y el 2 de julio de 2027. Conferencias, talleres,
                     exposiciones y proyecciones de cine.</p>
             </div>
+
+            <!-- ==================================================================
+                 B. EL CRONOGRAMA POR DÍAS
+                 .container centra las actividades y evita que se peguen a las orillas.
+                 ================================================================== -->
             <div class="page-section">
                 <div class="container">
+
+                    <!-- ==========================================================
+                         DÍA 1: VIERNES 27 DE JUNIO (.agenda-day-group)
+                         Agrupa todas las actividades del primer día.
+                         ========================================================== -->
                     <div class="agenda-day-group">
-                        <div class="agenda-day-label"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        
+                        <!-- Letrero del día con icono de calendario -->
+                        <div class="agenda-day-label">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M4 6a3 3 0 0 1 3-3h10a3 3 0 0 1 3 3v13a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V6z" />
                                 <path d="M4 10h16" />
-                            </svg> Viernes 27 de Junio</div>
+                            </svg> 
+                            Viernes 27 de Junio
+                        </div>
+
+                        <!-- ACTIVIDAD 1: Inauguración -->
+                        <!-- .agenda-item organiza el renglón en: 1) Hora, 2) Texto, 3) Botón -->
                         <div class="agenda-item">
+                            <!-- Columna 1: La hora del evento en negritas -->
                             <div class="agenda-time">09:00</div>
+                            <!-- Columna 2: Título, sede y pastilla de estado -->
                             <div class="agenda-info">
                                 <h4>Ceremonia de Inauguración</h4>
-                                <p>Auditorio Central BUAP · <span class="badge-status confirmada"
-                                        style="font-size:0.65rem">Confirmada</span></p>
+                                <!-- .badge-status confirmada: Pastillita verde de evento seguro -->
+                                <p>Auditorio Central BUAP · <span class="badge-status confirmada" style="font-size:0.65rem">Confirmada</span></p>
                             </div>
+                            <!-- Columna 3: Botón para ver más información -->
                             <div><a href="#" class="btn btn-outline btn-sm">Detalles</a></div>
                         </div>
+
+                        <!-- ACTIVIDAD 2: Conferencia Magistral -->
                         <div class="agenda-item">
                             <div class="agenda-time">11:00</div>
                             <div class="agenda-info">
                                 <h4>Conferencia Magistral: Conservación Urbana en Latinoamérica</h4>
-                                <p>Sala Luis Buñuel · <span class="badge-status proximamente"
-                                        style="font-size:0.65rem">Próximamente</span></p>
+                                <!-- .badge-status proximamente: Pastilla azul / dorada -->
+                                <p>Sala Luis Buñuel · <span class="badge-status proximamente" style="font-size:0.65rem">Próximamente</span></p>
                             </div>
                             <div><a href="#" class="btn btn-outline btn-sm">Detalles</a></div>
                         </div>
+
+                        <!-- ACTIVIDAD 3: Taller de Fotografía -->
                         <div class="agenda-item">
                             <div class="agenda-time">14:00</div>
                             <div class="agenda-info">
                                 <h4>Taller: Fotografía de Biodiversidad Urbana</h4>
-                                <p>Laboratorio de Imagen · <span class="badge-status propuesta"
-                                        style="font-size:0.65rem">Propuesta</span></p>
+                                <!-- .badge-status propuesta: Pastilla naranja / crema -->
+                                <p>Laboratorio de Imagen · <span class="badge-status propuesta" style="font-size:0.65rem">Propuesta</span></p>
                             </div>
                             <div><a href="#" class="btn btn-outline btn-sm">Detalles</a></div>
                         </div>
                     </div>
+
+                    <!-- ==========================================================
+                         DÍA 2: SÁBADO 28 DE JUNIO (.agenda-day-group)
+                         ========================================================== -->
                     <div class="agenda-day-group">
-                        <div class="agenda-day-label"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <div class="agenda-day-label">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M4 6a3 3 0 0 1 3-3h10a3 3 0 0 1 3 3v13a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V6z" />
                                 <path d="M4 10h16" />
-                            </svg> Sábado 28 de Junio</div>
+                            </svg> 
+                            Sábado 28 de Junio
+                        </div>
+
+                        <!-- Actividad 1: Simposio -->
                         <div class="agenda-item">
                             <div class="agenda-time">09:00</div>
                             <div class="agenda-info">
                                 <h4>Simposio: Polinizadores Urbanos de Puebla</h4>
-                                <p>Jardín Botánico BUAP · <span class="badge-status proximamente"
-                                        style="font-size:0.65rem">Próximamente</span></p>
+                                <p>Jardín Botánico BUAP · <span class="badge-status proximamente" style="font-size:0.65rem">Próximamente</span></p>
                             </div>
                             <div><a href="#" class="btn btn-outline btn-sm">Detalles</a></div>
                         </div>
+
+                        <!-- Actividad 2: Exposición en Museo -->
                         <div class="agenda-item">
                             <div class="agenda-time">12:00</div>
                             <div class="agenda-info">
                                 <h4>Exposición: Talavera y Ecosistemas — Un Diálogo Visual</h4>
-                                <p>Museo Amparo · <span class="badge-status propuesta"
-                                        style="font-size:0.65rem">Propuesta</span></p>
+                                <p>Museo Amparo · <span class="badge-status propuesta" style="font-size:0.65rem">Propuesta</span></p>
                             </div>
                             <div><a href="#" class="btn btn-outline btn-sm">Detalles</a></div>
                         </div>
+
+                        <!-- Actividad 3: Foro de Economía -->
                         <div class="agenda-item">
                             <div class="agenda-time">16:00</div>
                             <div class="agenda-info">
                                 <h4>Foro: Economía Circular y Mercados Locales</h4>
-                                <p>Centro de Convenciones · <span class="badge-status propuesta"
-                                        style="font-size:0.65rem">Propuesta</span></p>
+                                <p>Centro de Convenciones · <span class="badge-status propuesta" style="font-size:0.65rem">Propuesta</span></p>
                             </div>
                             <div><a href="#" class="btn btn-outline btn-sm">Detalles</a></div>
                         </div>
                     </div>
+
+                    <!-- ==========================================================
+                         DÍA 3: MIÉRCOLES 2 DE JULIO (Día de Exploración)
+                         ========================================================== -->
                     <div class="agenda-day-group">
-                        <div class="agenda-day-label"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <div class="agenda-day-label">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M4 6a3 3 0 0 1 3-3h10a3 3 0 0 1 3 3v13a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V6z" />
                                 <path d="M4 10h16" />
-                            </svg> Miércoles 2 de Julio — Día de Exploración</div>
+                            </svg> 
+                            Miércoles 2 de Julio — Día de Exploración
+                        </div>
+
+                        <!-- Actividad 1: Gran Feria en el Zócalo -->
                         <div class="agenda-item">
                             <div class="agenda-time">08:00</div>
                             <div class="agenda-info">
                                 <h4>Gran Feria de Ciencias Ambientales</h4>
-                                <p>Zócalo de Puebla · <span class="badge-status proximamente"
-                                        style="font-size:0.65rem">Próximamente</span></p>
+                                <p>Zócalo de Puebla · <span class="badge-status proximamente" style="font-size:0.65rem">Próximamente</span></p>
                             </div>
                             <div><a href="#" class="btn btn-outline btn-sm">Detalles</a></div>
                         </div>
+
+                        <!-- Actividad 2: Talleres de Artesanía -->
                         <div class="agenda-item">
                             <div class="agenda-time">10:00</div>
                             <div class="agenda-info">
                                 <h4>Talleres: Cartonería y Alfarería Tradicional</h4>
-                                <p>Barrio del Artista · <span class="badge-status propuesta"
-                                        style="font-size:0.65rem">Propuesta</span></p>
+                                <p>Barrio del Artista · <span class="badge-status propuesta" style="font-size:0.65rem">Propuesta</span></p>
                             </div>
                             <div><a href="#" class="btn btn-outline btn-sm">Detalles</a></div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- ======================== FOOTER ======================== -->
+    <!-- ==========================================================================
+         SECCIÓN 3: PIE DE PÁGINA (<footer>)
+         ========================================================================== -->
     <footer class="site-footer">
         <div class="footer-container">
+            
+            <!-- Columna 1: Logotipo blanco institucional y presentación del congreso -->
             <div class="footer-brand">
                 <img src="assets/img/Logo_White_Transparent.png" alt="ICCB 2027 Puebla" class="footer-logo">
                 <h3 style="color:#fff;font-size:1.25rem;font-weight:800">Puebla, Capital de la Biodiversidad</h3>
                 <p style="color:#BAC2E0;font-size:var(--font-sm)">Iniciativa institucional de vinculación ciudadana en
                     el marco del 33º Congreso Internacional de Biología de la Conservación (ICCB 2027), coordinada por
                     la BUAP y la Society for Conservation Biology.</p>
-                <div class="footer-sponsors-strip"><span>Convocan y Coordinan:</span><strong
-                        style="color:#fff">BUAP</strong><span style="opacity:0.5">·</span><strong
-                        style="color:#fff">SCB</strong><span style="opacity:0.5">·</span><a
-                        href="https://conbio.org/mini-sites/iccb-2027/" target="_blank" rel="noopener noreferrer"
-                        style="color:var(--color-gold);font-weight:700;text-decoration:underline">Sitio Oficial ICCB
-                        2027 ↗</a></div>
+                <div class="footer-sponsors-strip">
+                    <span>Convocan y Coordinan:</span>
+                    <strong style="color:#fff">BUAP</strong><span style="opacity:0.5">·</span>
+                    <strong style="color:#fff">SCB</strong><span style="opacity:0.5">·</span>
+                    <a href="https://conbio.org/mini-sites/iccb-2027/" target="_blank" rel="noopener noreferrer"
+                        style="color:var(--color-gold);font-weight:700;text-decoration:underline">Sitio Oficial ICCB 2027 ↗</a>
+                </div>
             </div>
+
+            <!-- Columna 2: Enlaces directos a las páginas del congreso -->
             <div class="footer-links-col">
                 <h4>Accesos directos</h4>
                 <ul class="footer-nav">
@@ -226,6 +358,8 @@
                     <li><a href="participa.html">Participa</a></li>
                 </ul>
             </div>
+
+            <!-- Columna 3: Información práctica y acceso -->
             <div class="footer-links-col">
                 <h4>Información</h4>
                 <ul class="footer-nav">
@@ -234,6 +368,8 @@
                 </ul>
             </div>
         </div>
+
+        <!-- Franja final de derechos reservados -->
         <div class="footer-bottom">
             <div>
                 <p><strong>Aviso de Trabajo:</strong> Prototipo digital de trabajo. No confirma actividades,
@@ -245,6 +381,7 @@
         </div>
     </footer>
 
+    <!-- Script de navegación para celular -->
     <script src="assets/js/main.js"></script>
 </body>
 

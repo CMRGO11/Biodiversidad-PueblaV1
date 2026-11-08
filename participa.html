@@ -1,32 +1,81 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
+<!-- ==============================================================================
+     ¡BIENVENIDO A PARTICIPA.HTML! (REGISTRO, ACCESO Y PROPUESTAS)
+     ==============================================================================
+     Esta es la página más dinámica e interactiva de todo el sitio web.
+     Permite que estudiantes, familias, organizaciones y científicos se registren,
+     inicien sesión o propongan actividades para el congreso ICCB 2027.
+     
+     Estructura general:
+     1. <head>: Metadatos, fuentes de Google y estilos CSS.
+     2. <header>: Barra de navegación superior fija con logotipos y menú.
+     3. <main>: 
+        - Hero Banner: Título azul de bienvenida a la participación.
+        - Audiencias (.audience-grid): 4 perfiles (Familias, Universitarios,
+          Organizaciones y Turistas) con ilustraciones de mascotas animales.
+        - Formulario con Pestañas (.form-card): Cambia con JavaScript (switchTab)
+          entre: 1) Iniciar sesión, 2) Registro nuevo, y 3) Contacto/Propuesta.
+     4. <footer>: Pie de página institucional y avisos de privacidad.
+     ============================================================================== -->
+
+<!-- lang="es": Le avisa a los navegadores que el texto de la página está en español -->
 <html lang="es">
 
 <head>
+    <!-- ==========================================================================
+         LA CABEZA (<head>): Configuración técnica invisible
+         ========================================================================== -->
+
+    <!-- charset="UTF-8": Permite acentos, eñes y emojis sin caracteres extraños -->
     <meta charset="UTF-8">
+
+    <!-- viewport: Hace que la página sea adaptable a cualquier tamaño de celular o tablet -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Participa y Registro | Puebla, Capital de la Biodiversidad · ICCB 2027</title>
+
+    <!-- <title>: Nombre que aparece en la pestaña de arriba del navegador -->
+    <title>Participa | Puebla, Capital de la Biodiversidad · ICCB 2027</title>
+
+    <!-- description: Resumen de la página para buscadores como Google -->
     <meta name="description"
         content="Guía pública de actividades, rutas bioculturales y experiencias de biodiversidad en Puebla durante el 33º Congreso Internacional de Biología de la Conservación (ICCB 2027).">
+
+    <!-- Google Fonts: Conexión rápida y descarga de la tipografía "Plus Jakarta Sans" -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
+
+    <!-- Favicon: El logo diminuto de la pestaña del navegador -->
     <link rel="icon" type="image/png" href="assets/img/Logo Main__Logo Complete.png">
+
+    <!-- Archivo CSS: styles.css contiene todos los colores, medidas y sombras -->
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
 <body>
+    <!-- ==========================================================================
+         EL CUERPO (<body>): Todo lo visible en la pantalla
+         ========================================================================== -->
+
+    <!-- skip-link: Enlace accesible para lectores de pantalla -->
     <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
 
-    <!-- ======================== HEADER ======================== -->
+    <!-- ==========================================================================
+         SECCIÓN 1: ENCABEZADO SUPERIOR (<header>)
+         La barra blanca fija arriba con logotipos y menú de navegación.
+         ========================================================================== -->
     <header class="site-header">
         <div class="header-container">
+            
+            <!-- Logotipos: Enlace <a> que regresa a la portada principal (index.html) -->
             <a href="index.html" class="brand-wrapper" aria-label="ICCB 2027 Puebla · BUAP">
                 <img src="assets/img/Logo Main__Logo Complete.png" alt="ICCB 2027"
                     class="brand-logo-img brand-logo-iccb">
                 <span class="brand-divider" aria-hidden="true"></span>
                 <img src="assets/img/Logo_BUAP.webp" alt="BUAP" class="brand-logo-img brand-logo-buap">
             </a>
+
+            <!-- Controles para celulares: Selector de idioma y botón hamburguesa -->
             <div class="header-mobile-right">
                 <div class="lang-switcher-vertical mobile-header-lang" aria-label="Selector de idioma">
                     <a href="#" class="lang-pill active" lang="es">ES</a>
@@ -37,51 +86,73 @@
                     <span></span><span></span><span></span>
                 </button>
             </div>
+
+            <!-- Menú con enlaces a las otras páginas del sitio -->
             <nav class="main-nav" id="main-nav" aria-label="Navegación principal">
                 <ul class="nav-list">
-                    <li><a href="agenda.html" class="nav-link"><svg class="nav-icon" width="18" height="18"
-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
-                                stroke-linecap="round" stroke-linejoin="round">
+                    <li>
+                        <a href="agenda.html" class="nav-link">
+                            <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M4 6a3 3 0 0 1 3-3h10a3 3 0 0 1 3 3v13a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V6z" />
                                 <path d="M4 10h16" />
                                 <path d="M8 2v3M16 2v3" stroke-width="2.2" />
-                            </svg><span>Agenda</span></a></li>
-                    <li><a href="exploracion.html" class="nav-link highlight"><svg class="nav-icon-gold" width="18"
-                                height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
-                                stroke-linecap="round" stroke-linejoin="round">
+                            </svg>
+                            <span>Agenda</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="exploracion.html" class="nav-link highlight">
+                            <svg class="nav-icon-gold" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
                                 <circle cx="12" cy="12" r="2.5" fill="currentColor" />
                                 <circle cx="12" cy="4" r="1" fill="currentColor" />
                                 <circle cx="20" cy="12" r="1" fill="currentColor" />
                                 <circle cx="12" cy="20" r="1" fill="currentColor" />
                                 <circle cx="4" cy="12" r="1" fill="currentColor" />
-                            </svg><span>Día de Exploración</span></a></li>
-                    <li><a href="rutas.html" class="nav-link"><svg class="nav-icon" width="18" height="18"
-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
-                                stroke-linecap="round" stroke-linejoin="round">
+                            </svg>
+                            <span>Día de Exploración</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="rutas.html" class="nav-link">
+                            <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                                 <polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21" />
                                 <line x1="9" y1="3" x2="9" y2="18" />
                                 <line x1="15" y1="6" x2="15" y2="21" />
-                            </svg><span>Rutas</span></a></li>
-                    <li><a href="menu.html" class="nav-link"><svg class="nav-icon" width="18" height="18"
-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
-                                stroke-linecap="round" stroke-linejoin="round">
+                            </svg>
+                            <span>Rutas</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="menu.html" class="nav-link">
+                            <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M17 8h1a4 4 0 0 1 0 8h-1" />
                                 <path d="M3 8h14v7a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8z" />
-                            </svg><span>Menú</span></a></li>
-                    <li><a href="participa.html" class="nav-link active"><svg class="nav-icon" width="18" height="18"
-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <path
-                                    d="M11 13.5l-2.5-2.5a3.5 3.5 0 0 0-5 5l4 4a4 4 0 0 0 5.6 0l5.4-5.4a3.5 3.5 0 0 0-5-5L11 12" />
-                            </svg><span>Participa</span></a></li>
-                    <li><a href="info.html" class="nav-link"><svg class="nav-icon" width="18" height="18"
-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
-                                stroke-linecap="round" stroke-linejoin="round">
+                            </svg>
+                            <span>Menú</span>
+                        </a>
+                    </li>
+                    <!-- class="active": Resalta "Participa" porque es la página donde estamos parados -->
+                    <li>
+                        <a href="participa.html" class="nav-link active">
+                            <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M11 13.5l-2.5-2.5a3.5 3.5 0 0 0-5 5l4 4a4 4 0 0 0 5.6 0l5.4-5.4a3.5 3.5 0 0 0-5-5L11 12" />
+                            </svg>
+                            <span>Participa</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="info.html" class="nav-link">
+                            <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                                 <circle cx="12" cy="12" r="9.5" />
                                 <line x1="12" y1="11" x2="12" y2="17" stroke-width="2.2" />
                                 <circle cx="12" cy="7.5" r="1.5" fill="currentColor" stroke="none" />
-                            </svg><span>Información</span></a></li>
+                            </svg>
+                            <span>Información</span>
+                        </a>
+                    </li>
                 </ul>
+
+                <!-- Selector de idioma para computadoras -->
                 <div class="nav-user-actions">
                     <div class="lang-switcher-vertical desktop-header-lang" aria-label="Selector de idioma">
                         <a href="#" class="lang-pill active" lang="es" title="Español">ES</a>
@@ -92,164 +163,250 @@
         </div>
     </header>
 
+    <!-- ==========================================================================
+         SECCIÓN 2: CONTENIDO PRINCIPAL (<main>)
+         ========================================================================== -->
     <main class="site-main" id="main-content">
         <section id="participa-page">
+            
+            <!-- ==================================================================
+                 A. EL HERO BANNER
+                 Título en grande que invita a la vinculación y participación ciudadana.
+                 ================================================================== -->
             <div class="page-hero-banner">
                 <div class="hero-bg-texture"></div>
                 <h2>Participa</h2>
-                <p>Propon una actividad, súmate como organización aliada, regístrate como asistente o inicia sesión.</p>
+                <p>Propón una actividad, súmate como organización aliada, regístrate como asistente o inicia sesión.</p>
             </div>
 
-            <!-- Audiencias -->
+            <!-- ==================================================================
+                 B. PERFILES DE PARTICIPACIÓN (.audience-grid)
+                 Presenta 4 tarjetas explicativas dirigidas a distintos públicos.
+                 ================================================================== -->
             <div class="participate-section">
                 <div class="container">
-                    <div class="section-head-center"><span class="section-eyebrow">Encuentra tu Espacio</span>
+                    
+                    <!-- Encabezado centrado -->
+                    <div class="section-head-center">
+                        <span class="section-eyebrow">Encuentra tu Espacio</span>
                         <h2 class="section-main-title">¿Cómo Sumarte a la Iniciativa?</h2>
                     </div>
+
+                    <!-- Cuadrícula de 4 tarjetas de audiencia -->
                     <div class="audience-grid">
+                        
+                        <!-- PERFIL 1: FAMILIAS Y RESIDENTES (Mascota: Teporingo) -->
                         <div class="audience-card">
-                            <div class="audience-avatar"><img
-                                    src="assets/img/Logo Animals__Logo_Teporingo.png" alt="Teporingo"></div>
+                            <div class="audience-avatar">
+                                <img src="assets/img/Logo Animals__Logo_Teporingo.png" alt="Teporingo">
+                            </div>
                             <h3>Residentes y Familias</h3>
                             <p>Participa en talleres de cartonería y alfarería, recorridos guiados por el centro
-                                histórico y la feria de ciencias.</p><a href="agenda.html"
-                                class="btn btn-outline btn-sm" style="margin-top:auto;width:100%">Ver actividades libres
-                                →</a>
+                                histórico y la feria de ciencias.</p>
+                            <a href="agenda.html" class="btn btn-outline btn-sm" style="margin-top:auto;width:100%">
+                                Ver actividades libres →
+                            </a>
                         </div>
+
+                        <!-- PERFIL 2: ESTUDIANTES UNIVERSITARIOS (Mascota: Colibrí) -->
                         <div class="audience-card">
-                            <div class="audience-avatar"><img src="assets/img/Logo Animals__Logo_Colibri.png"
-                                    alt="Colibrí"></div>
+                            <div class="audience-avatar">
+                                <img src="assets/img/Logo Animals__Logo_Colibri.png" alt="Colibrí">
+                            </div>
                             <h3>Estudiantes Universitarios</h3>
                             <p>Participa en simposios interuniversitarios, presenta tu investigación y colabora en
-                                voluntariado científico.</p><a href="#participa-form" class="btn btn-outline btn-sm"
-                                style="margin-top:auto;width:100%">Registrarse →</a>
+                                voluntariado científico.</p>
+                            <!-- El enlace baja la pantalla con ancla suave hacia el formulario #participa-form -->
+                            <a href="#participa-form" class="btn btn-outline btn-sm" style="margin-top:auto;width:100%">
+                                Registrarse →
+                            </a>
                         </div>
+
+                        <!-- PERFIL 3: ORGANIZACIONES Y NEGOCIOS (Mascota: Jaguar) -->
                         <div class="audience-card">
-                            <div class="audience-avatar"><img src="assets/img/Logo Animals__Logo_Jaguar.png"
-                                    alt="Jaguar"></div>
+                            <div class="audience-avatar">
+                                <img src="assets/img/Logo Animals__Logo_Jaguar.png" alt="Jaguar">
+                            </div>
                             <h3>Organizaciones y Negocios</h3>
                             <p>Propón una actividad para el calendario metropolitano, foros de empresas verdes o súmate
-                                al mercadito local.</p><a href="#participa-form" class="btn btn-outline btn-sm"
-                                style="margin-top:auto;width:100%">Proponer actividad →</a>
+                                al mercadito local.</p>
+                            <a href="#participa-form" class="btn btn-outline btn-sm" style="margin-top:auto;width:100%">
+                                Proponer actividad →
+                            </a>
                         </div>
+
+                        <!-- PERFIL 4: VISITANTES INTERNACIONALES (Mascota: Cacomixtle) -->
                         <div class="audience-card">
-                            <div class="audience-avatar"><img
-                                    src="assets/img/Logo Animals__Logo_cacomixtle.png" alt="Cacomixtle"></div>
+                            <div class="audience-avatar">
+                                <img src="assets/img/Logo Animals__Logo_cacomixtle.png" alt="Cacomixtle">
+                            </div>
                             <h3>Visitantes Internacionales</h3>
                             <p>Descubre recomendaciones de movilidad, accesibilidad, recorridos de patrimonio y
-                                gastronomía sustentable.</p><a href="info.html" class="btn btn-outline btn-sm"
-                                style="margin-top:auto;width:100%">Guía práctica →</a>
+                                gastronomía sustentable.</p>
+                            <a href="info.html" class="btn btn-outline btn-sm" style="margin-top:auto;width:100%">
+                                Guía práctica →
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Login / Registro / Contacto -->
+            <!-- ==================================================================
+                 C. EL FORMULARIO INTERACTIVO CON PESTAÑAS (TABS)
+                 Usa la función switchTab('login'), switchTab('registro'), switchTab('contacto')
+                 para mostrar únicamente el formulario seleccionado y ocultar los otros dos.
+                 ================================================================== -->
             <div class="page-section" id="participa-form" style="background:var(--color-cream-light)">
                 <div class="container">
+                    
+                    <!-- Tarjeta contenedora del formulario (.form-card) -->
                     <div class="form-card">
+                        
+                        <!-- Barra superior de botones de pestaña -->
                         <div class="form-tabs">
+                            <!-- onclick activa la función en JavaScript que prende esta pestaña -->
                             <button class="form-tab active" onclick="switchTab('login')">Iniciar sesión</button>
                             <button class="form-tab" onclick="switchTab('registro')">Crear cuenta</button>
                             <button class="form-tab" onclick="switchTab('contacto')">Contacto / Propuesta</button>
                         </div>
 
-                        <!-- Tab: Login -->
+                        <!-- ==============================================================
+                             PESTAÑA 1: INICIAR SESIÓN (tab-login)
+                             Tiene class="active" por defecto para verse al cargar la página.
+                             ============================================================== -->
                         <div class="tab-content active" id="tab-login">
-                            <div class="form-group"><label>Correo electrónico</label><input type="email"
-                                    placeholder="tu@correo.com"></div>
-                            <div class="form-group"><label>Contraseña</label><input type="password"
-                                    placeholder="••••••••"></div>
+                            <!-- Campo para el correo electrónico -->
+                            <div class="form-group">
+                                <label>Correo electrónico</label>
+                                <!-- type="email": Valida automáticamente que lleve @ y dominio -->
+                                <input type="email" placeholder="tu@correo.com">
+                            </div>
+                            <!-- Campo para la contraseña -->
+                            <div class="form-group">
+                                <label>Contraseña</label>
+                                <!-- type="password": Oculta los caracteres con bolitas negras (••••) -->
+                                <input type="password" placeholder="••••••••">
+                            </div>
+                            <!-- Botón para enviar datos -->
                             <button class="btn btn-primary" style="width:100%;margin-top:0.5rem">Entrar</button>
-                            <p
-                                style="text-align:center;margin-top:1rem;font-size:var(--font-sm);color:var(--color-text-muted)">
-                                ¿No tienes cuenta? <a href="#" onclick="switchTab('registro');return false;">Regístrate
-                                    aquí</a></p>
+                            <p style="text-align:center;margin-top:1rem;font-size:var(--font-sm);color:var(--color-text-muted)">
+                                ¿No tienes cuenta? <a href="#" onclick="switchTab('registro');return false;">Regístrate aquí</a>
+                            </p>
                         </div>
 
-                        <!-- Tab: Registro -->
+                        <!-- ==============================================================
+                             PESTAÑA 2: CREAR CUENTA NUEVA (tab-registro)
+                             Oculta inicialmente; se activa al tocar "Crear cuenta".
+                             ============================================================== -->
                         <div class="tab-content" id="tab-registro">
-                            <div class="form-group"><label>Nombre completo</label><input type="text"
-                                    placeholder="Tu nombre"></div>
-                            <div class="form-group"><label>Correo electrónico</label><input type="email"
-                                    placeholder="tu@correo.com"></div>
-                            <div class="form-group"><label>Contraseña</label><input type="password"
-                                    placeholder="Mínimo 8 caracteres"></div>
-                            <div class="form-group"><label>Confirmar contraseña</label><input type="password"
-                                    placeholder="Repite tu contraseña"></div>
-                            <div class="form-group"><label>Tipo de participante</label><select>
+                            <div class="form-group">
+                                <label>Nombre completo</label>
+                                <input type="text" placeholder="Tu nombre">
+                            </div>
+                            <div class="form-group">
+                                <label>Correo electrónico</label>
+                                <input type="email" placeholder="tu@correo.com">
+                            </div>
+                            <div class="form-group">
+                                <label>Contraseña</label>
+                                <input type="password" placeholder="Mínimo 8 caracteres">
+                            </div>
+                            <div class="form-group">
+                                <label>Confirmar contraseña</label>
+                                <input type="password" placeholder="Repite tu contraseña">
+                            </div>
+                            
+                            <!-- Menú desplegable para elegir qué tipo de usuario eres -->
+                            <div class="form-group">
+                                <label>Tipo de participante</label>
+                                <select>
                                     <option>Residente local de Puebla</option>
                                     <option>Estudiante universitario</option>
                                     <option>Organización civil o empresa</option>
                                     <option>Visitante nacional o internacional</option>
-                                </select></div>
+                                </select>
+                            </div>
+                            
+                            <!-- Casilla de verificación para aceptar términos (Checkbox) -->
                             <div style="margin-bottom:1rem;font-size:var(--font-xs);color:var(--color-text-muted)">
-                                <label><input type="checkbox" style="width:auto;margin-right:0.5rem">Acepto el Aviso de
-                                    Privacidad y el tratamiento mínimo de mis datos.</label></div>
+                                <label>
+                                    <input type="checkbox" style="width:auto;margin-right:0.5rem">
+                                    Acepto el Aviso de Privacidad y el tratamiento mínimo de mis datos.
+                                </label>
+                            </div>
+                            
                             <button class="btn btn-accent" style="width:100%">Registrarme</button>
-                            <p
-                                style="text-align:center;margin-top:1rem;font-size:var(--font-sm);color:var(--color-text-muted)">
-                                ¿Ya tienes cuenta? <a href="#" onclick="switchTab('login');return false;">Inicia
-                                    sesión</a></p>
+                            <p style="text-align:center;margin-top:1rem;font-size:var(--font-sm);color:var(--color-text-muted)">
+                                ¿Ya tienes cuenta? <a href="#" onclick="switchTab('login');return false;">Inicia sesión</a>
+                            </p>
                         </div>
 
-                        <!-- Tab: Contacto -->
+                        <!-- ==============================================================
+                             PESTAÑA 3: CONTACTO / PROPUESTA (tab-contacto)
+                             Permite enviar propuestas de talleres o alianzas ciudadanas.
+                             ============================================================== -->
                         <div class="tab-content" id="tab-contacto">
-                            <div class="form-group"><label>Nombre completo</label><input type="text"
-                                    placeholder="Tu nombre"></div>
-                            <div class="form-group"><label>Correo electrónico</label><input type="email"
-                                    placeholder="tu@correo.com"></div>
-                            <div class="form-group"><label>Tipo de participación</label><select>
-                                    <option>Quiero proponer una actividad</option>
-                                    <option>Represento a una organización</option>
-                                    <option>Deseo participar como voluntario</option>
-                                </select></div>
-                            <div class="form-group"><label>Detalle de la propuesta</label><textarea rows="4"
-                                    placeholder="Describe tu propuesta o mensaje..."></textarea></div>
-                            <button class="btn btn-primary" style="width:100%">Enviar mensaje</button>
+                            <div class="form-group">
+                                <label>Nombre completo</label>
+                                <input type="text" placeholder="Tu nombre">
+                            </div>
+                            <div class="form-group">
+                                <label>Correo electrónico</label>
+                                <input type="email" placeholder="tu@correo.com">
+                            </div>
+                            <div class="form-group">
+                                <label>Organización o institución</label>
+                                <input type="text" placeholder="Universidad, ONG, Colectivo...">
+                            </div>
+                            <div class="form-group">
+                                <label>Tipo de propuesta</label>
+                                <select>
+                                    <option>Actividad para el Día de Exploración</option>
+                                    <option>Ruta o experiencia biocultural</option>
+                                    <option>Inclusión de platillo/menú sustentable</option>
+                                    <option>Voluntariado estudiantil</option>
+                                    <option>Otro asunto o consulta</option>
+                                </select>
+                            </div>
+                            
+                            <!-- <textarea>: Caja de texto multilínea para redactar un mensaje extenso -->
+                            <div class="form-group">
+                                <label>Descripción de tu propuesta o mensaje</label>
+                                <textarea rows="4" placeholder="Describe brevemente tu propuesta, actividad sugerida o duda..."></textarea>
+                            </div>
+                            
+                            <button class="btn btn-primary" style="width:100%">Enviar Propuesta</button>
                         </div>
-                    </div>
-                </div>
-            </div>
 
-            <!-- Disclaimer -->
-            <div style="padding:0 1.25rem 2rem">
-                <div class="container">
-                    <div class="disclaimer-banner">
-                        <span style="display:flex;align-items:center;color:var(--color-gold-hover)"><svg width="26"
-                                height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                                <path d="M9 12l2 2 4-4" stroke-width="2" />
-                            </svg></span>
-                        <div><strong>Nota Editorial y Criterio de Conservación:</strong> Los eventos marcados como
-                            propuesta o próximamente forman parte del calendario de trabajo y están sujetos a
-                            validación. <span
-                                style="display:block;margin-top:0.25rem;font-size:0.8rem;opacity:0.9">Compromiso ético:
-                                Todas las propuestas gastronómicas y de especies respetan la no extracción de especies
-                                silvestres protegidas.</span></div>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- ======================== FOOTER ======================== -->
+    <!-- ==========================================================================
+         SECCIÓN 3: PIE DE PÁGINA (<footer>)
+         ========================================================================== -->
     <footer class="site-footer">
         <div class="footer-container">
+            
+            <!-- Columna 1: Presentación institucional y enlaces oficiales -->
             <div class="footer-brand">
                 <img src="assets/img/Logo_White_Transparent.png" alt="ICCB 2027 Puebla" class="footer-logo">
                 <h3 style="color:#fff;font-size:1.25rem;font-weight:800">Puebla, Capital de la Biodiversidad</h3>
                 <p style="color:#BAC2E0;font-size:var(--font-sm)">Iniciativa institucional de vinculación ciudadana en
                     el marco del 33º Congreso Internacional de Biología de la Conservación (ICCB 2027), coordinada por
                     la BUAP y la Society for Conservation Biology.</p>
-                <div class="footer-sponsors-strip"><span>Convocan y Coordinan:</span><strong
-                        style="color:#fff">BUAP</strong><span style="opacity:0.5">·</span><strong
-                        style="color:#fff">SCB</strong><span style="opacity:0.5">·</span><a
-                        href="https://conbio.org/mini-sites/iccb-2027/" target="_blank" rel="noopener noreferrer"
-                        style="color:var(--color-gold);font-weight:700;text-decoration:underline">Sitio Oficial ICCB
-                        2027 ↗</a></div>
+                <div class="footer-sponsors-strip">
+                    <span>Convocan y Coordinan:</span>
+                    <strong style="color:#fff">BUAP</strong><span style="opacity:0.5">·</span>
+                    <strong style="color:#fff">SCB</strong><span style="opacity:0.5">·</span>
+                    <a href="https://conbio.org/mini-sites/iccb-2027/" target="_blank" rel="noopener noreferrer"
+                        style="color:var(--color-gold);font-weight:700;text-decoration:underline">Sitio Oficial ICCB 2027 ↗</a>
+                </div>
             </div>
+
+            <!-- Columna 2: Accesos directos a las páginas del congreso -->
             <div class="footer-links-col">
                 <h4>Accesos directos</h4>
                 <ul class="footer-nav">
@@ -260,6 +417,8 @@
                     <li><a href="participa.html">Participa</a></li>
                 </ul>
             </div>
+
+            <!-- Columna 3: Información práctica y acceso -->
             <div class="footer-links-col">
                 <h4>Información</h4>
                 <ul class="footer-nav">
@@ -268,6 +427,8 @@
                 </ul>
             </div>
         </div>
+
+        <!-- Franja final de derechos reservados -->
         <div class="footer-bottom">
             <div>
                 <p><strong>Aviso de Trabajo:</strong> Prototipo digital de trabajo. No confirma actividades,
@@ -279,6 +440,7 @@
         </div>
     </footer>
 
+    <!-- Script con la función switchTab() para cambiar las pestañas del formulario -->
     <script src="assets/js/main.js"></script>
 </body>
 
