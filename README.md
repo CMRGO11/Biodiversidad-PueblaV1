@@ -1,82 +1,37 @@
-﻿# Puebla, Capital de la Biodiversidad | ICCB 2027 · BUAP
+# Puebla, Capital de la Biodiversidad
 
-Prototipo web multi-página desarrollado para la guía pública de actividades, rutas bioculturales y experiencias de conservación en Puebla durante el **33º Congreso Internacional de Biología de la Conservación (ICCB 2027)** en colaboración con la **BUAP**.
+**Prototipo web para el ICCB 2027 · Puebla, México**
 
----
+El proyecto presenta una guía pública de actividades científicas y culturales en el contexto del 33.º Congreso Internacional de Biología de la Conservación (ICCB 2027) y su vinculación con la Benemérita Universidad Autónoma de Puebla (BUAP). Reúne propuestas de divulgación, rutas bioculturales y experiencias gastronómicas para residentes y visitantes.
 
-## 🚀 ¿Cómo visualizar y ejecutar el prototipo?
+## Contenido del sitio
 
-### Opción 1: En línea (GitHub Pages)
-Interactúa con el prototipo directamente desde tu navegador en computadora o celular:
-**[Ver prototipo en vivo](https://cmrgo11.github.io/Biodiversidad-PueblaV1/)**
+| Sección | Contenido |
+| --- | --- |
+| [Inicio](index.html) | Presentación de la iniciativa y acceso a los cuatro ejes del sitio. |
+| [Agenda](agenda.html) | Muestra del programa de conferencias, talleres, exposiciones y proyecciones. |
+| [Día de Exploración](exploracion.html) | Feria de ciencias, talleres de artesanía y recorrido biocultural. |
+| [Rutas bioculturales](rutas.html) | Circuitos propuestos para el Centro Histórico y la Sierra Norte. |
+| [Menú](menu.html) | Experiencias gastronómicas vinculadas con la biodiversidad y los saberes locales. |
+| [Participa](participa.html) | Opciones de participación y vistas de acceso, registro y contacto. |
+| [Información práctica](info.html) | Hospedaje, transporte, accesibilidad, idiomas y contacto. |
 
-*(Para activar este enlace, en GitHub ve a **Settings** > **Pages** > selecciona rama main y carpeta / (root)).*
+## Alcance del prototipo
 
-### Opción 2: Localmente en tu computadora
-1. Clona el repositorio:
-   ``bash
-   git clone https://github.com/CMRGO11/Biodiversidad-PueblaV1.git
-   cd Biodiversidad-PueblaV1
-   ``
-2. Abre cualquiera de las páginas (index.html, 
-utas.html, etc.) con doble clic en tu navegador favorito.
-3. O si usas Visual Studio Code, abre la carpeta y haz clic en **Go Live** con la extensión **Live Server**.
+La versión actual permite navegar entre las siete páginas, desplegar el menú móvil y alternar entre las pestañas de participación. El buscador, el mapa interactivo, el selector de idioma y los flujos de autenticación, registro y contacto están representados en la interfaz y pendientes de implementación.
 
----
+El programa, las sedes y las experiencias se presentan como contenido de trabajo sujeto a validación.
 
-## Estructura Multi-Página del Proyecto
+## Arquitectura
 
-El sitio ahora funciona con **subpáginas independientes interconectadas**, compartiendo el mismo sistema de diseño y componentes globales:
+El sitio está construido con HTML, CSS y JavaScript. Cada sección es una página HTML independiente y comparte los estilos y comportamientos del sitio.
 
-``text
-Biodiversidad-PueblaV1/
-│
-├── index.html              # Página principal (Hero, buscador, ejes temáticos)
-├── rutas.html              # Rutas Bioculturales y circuitos guiados
-├── agenda.html             # Calendario de actividades, foros y proyecciones
-├── exploracion.html        # Gran Día de Exploración y Feria de Ciencias
-├── menu.html               # Sabores bioculturales, café de sombra y gastronomía
-├── participa.html          # Formulario de participación, voluntariado y login
-├── info.html               # Información práctica, accesibilidad y sedes
-│
-├── assets/
-│   ├── css/
-│   │   └── styles.css      # Sistema de diseño, tokens, paleta Talavera y componentes
-│   ├── js/
-│   │   └── main.js         # Interactividad global (menú móvil, selector de tabs)
-│   └── img/                # Logotipos institucionales (BUAP, ICCB), especies y banners
-│
-├── README.md               # Documentación y guía para colaboradores
-└── .gitignore              # Archivos excluidos de Git
-``
+| Recurso | Función |
+| --- | --- |
+| [`index.html`](index.html) | Punto de entrada al prototipo. |
+| [`assets/css/styles.css`](assets/css/styles.css) | Identidad visual inspirada en la talavera, estilos de componentes y diseño adaptable. |
+| [`assets/js/main.js`](assets/js/main.js) | Control del menú móvil y de las pestañas de participación. |
+| [`assets/img/`](assets/img/) | Logotipos, ilustraciones y recursos gráficos. |
 
----
-
-## 🛠️ ¿Cómo colaborar y editar cada página?
-
-Cada integrante del equipo puede trabajar en una subpágina específica sin causar conflictos en Git:
-
-* **Para editar una sección en particular:** Abre el archivo HTML correspondiente (
-utas.html, genda.html, etc.).
-* **Para ajustar el diseño general o colores:** Edita ssets/css/styles.css.
-* **Para añadir interactividad:** Edita ssets/js/main.js.
-* **Para agregar recursos gráficos:** Colócalos en ssets/img/.
-
-### Flujo de trabajo con Git:
-1. Obtén los últimos cambios del equipo:
-   ``bash
-   git pull origin main
-   ``
-2. Trabaja en tu archivo o página asignada.
-3. Prueba tus cambios abriendo la página en el navegador.
-4. Sube tus cambios:
-   ``bash
-   git add .
-   git commit -m "feat(rutas): agregar mapa interactivo y nuevos circuitos"
-   git push origin main
-   ``
-
----
-
-## Equipo y Colaboradores
-Proyecto colaborativo para el diseño y validación de la experiencia digital ICCB 2027 Puebla.
+## Equipo 
+Proyecto colaborativo entre Diego Camargo, Ana Vargas, Diego Bedolla para el diseño y validación de la página digital ICCB 2027 Puebla.
