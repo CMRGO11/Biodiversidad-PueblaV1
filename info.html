@@ -1,12 +1,14 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
+
 <html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Información Práctica | Puebla, Capital de la Biodiversidad · ICCB 2027</title>
+    <title>Información para Visitantes, Preguntas Frecuentes y Guía de Actualización | ICCB 2027</title>
     <meta name="description"
-        content="Guía pública de actividades, rutas bioculturales y experiencias de biodiversidad en Puebla durante el 33º Congreso Internacional de Biología de la Conservación (ICCB 2027).">
+        content="Información práctica, transporte, movilidad, accesibilidad, preguntas frecuentes, contactos y guía de actualización para Puebla, Capital de la Biodiversidad.">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
@@ -18,7 +20,9 @@
 <body>
     <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
 
-    <!-- ======================== HEADER ======================== -->
+    <!-- ==========================================================================
+         SECCIÓN 1: ENCABEZADO SUPERIOR (<header>)
+         ========================================================================== -->
     <header class="site-header">
         <div class="header-container">
             <a href="index.html" class="brand-wrapper" aria-label="ICCB 2027 Puebla · BUAP">
@@ -27,6 +31,7 @@
                 <span class="brand-divider" aria-hidden="true"></span>
                 <img src="assets/img/Logo_BUAP.webp" alt="BUAP" class="brand-logo-img brand-logo-buap">
             </a>
+
             <div class="header-mobile-right">
                 <div class="lang-switcher-vertical mobile-header-lang" aria-label="Selector de idioma">
                     <a href="#" class="lang-pill active" lang="es">ES</a>
@@ -37,51 +42,88 @@
                     <span></span><span></span><span></span>
                 </button>
             </div>
+
             <nav class="main-nav" id="main-nav" aria-label="Navegación principal">
                 <ul class="nav-list">
-                    <li><a href="agenda.html" class="nav-link"><svg class="nav-icon" width="18" height="18"
-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
-                                stroke-linecap="round" stroke-linejoin="round">
+                    <li>
+                        <a href="ccl.html" class="nav-link">
+                            <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M9 18h6" />
+                                <path d="M10 22h4" />
+                                <path d="M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z" />
+                            </svg>
+                            <span data-i18n="nav-ccl">Laboratorio</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="agenda.html" class="nav-link">
+                            <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M4 6a3 3 0 0 1 3-3h10a3 3 0 0 1 3 3v13a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V6z" />
                                 <path d="M4 10h16" />
                                 <path d="M8 2v3M16 2v3" stroke-width="2.2" />
-                            </svg><span>Agenda</span></a></li>
-                    <li><a href="exploracion.html" class="nav-link highlight"><svg class="nav-icon-gold" width="18"
-                                height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
-                                stroke-linecap="round" stroke-linejoin="round">
+                            </svg>
+                            <span data-i18n="nav-agenda">Agenda</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="exploracion.html" class="nav-link highlight">
+                            <svg class="nav-icon-gold" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
                                 <circle cx="12" cy="12" r="2.5" fill="currentColor" />
                                 <circle cx="12" cy="4" r="1" fill="currentColor" />
                                 <circle cx="20" cy="12" r="1" fill="currentColor" />
                                 <circle cx="12" cy="20" r="1" fill="currentColor" />
                                 <circle cx="4" cy="12" r="1" fill="currentColor" />
-                            </svg><span>Día de Exploración</span></a></li>
-                    <li><a href="rutas.html" class="nav-link"><svg class="nav-icon" width="18" height="18"
-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
-                                stroke-linecap="round" stroke-linejoin="round">
+                            </svg>
+                            <span data-i18n="nav-exploracion">Día de la Exploración</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="rutas.html" class="nav-link">
+                            <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                                 <polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21" />
                                 <line x1="9" y1="3" x2="9" y2="18" />
                                 <line x1="15" y1="6" x2="15" y2="21" />
-                            </svg><span>Rutas</span></a></li>
-                    <li><a href="menu.html" class="nav-link"><svg class="nav-icon" width="18" height="18"
-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
-                                stroke-linecap="round" stroke-linejoin="round">
+                            </svg>
+                            <span data-i18n="nav-rutas">Rutas</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="menu.html" class="nav-link">
+                            <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M17 8h1a4 4 0 0 1 0 8h-1" />
                                 <path d="M3 8h14v7a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8z" />
-                            </svg><span>Menú</span></a></li>
-                    <li><a href="participa.html" class="nav-link"><svg class="nav-icon" width="18" height="18"
-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
-                                stroke-linecap="round" stroke-linejoin="round">
+                            </svg>
+                            <span>Sabores</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="participa.html" class="nav-link">
+                            <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                                 <path
                                     d="M11 13.5l-2.5-2.5a3.5 3.5 0 0 0-5 5l4 4a4 4 0 0 0 5.6 0l5.4-5.4a3.5 3.5 0 0 0-5-5L11 12" />
-                            </svg><span>Participa</span></a></li>
-                    <li><a href="info.html" class="nav-link active"><svg class="nav-icon" width="18" height="18"
-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
-                                stroke-linecap="round" stroke-linejoin="round">
+                            </svg>
+                            <span>Participa</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="info.html" class="nav-link active">
+                            <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                                 <circle cx="12" cy="12" r="9.5" />
                                 <line x1="12" y1="11" x2="12" y2="17" stroke-width="2.2" />
                                 <circle cx="12" cy="7.5" r="1.5" fill="currentColor" stroke="none" />
-                            </svg><span>Información</span></a></li>
+                            </svg>
+                            <span>Información</span>
+                        </a>
+                    </li>
                 </ul>
+
                 <div class="nav-user-actions">
                     <div class="lang-switcher-vertical desktop-header-lang" aria-label="Selector de idioma">
                         <a href="#" class="lang-pill active" lang="es" title="Español">ES</a>
@@ -92,95 +134,332 @@
         </div>
     </header>
 
+    <!-- ==========================================================================
+         SECCIÓN 2: CONTENIDO PRINCIPAL (<main>)
+         ========================================================================== -->
     <main class="site-main" id="main-content">
         <section id="info-page">
+
+            <!-- ==================================================================
+                 EL HERO BANNER
+                 ================================================================== -->
             <div class="page-hero-banner">
                 <div class="hero-bg-texture"></div>
-                <h2>Información Práctica</h2>
-                <p>Todo lo que necesitas saber sobre movilidad, accesibilidad, idiomas y enlaces del congreso.</p>
+                <h2 data-en="Visitor Information, Accessibility &amp; FAQ">Información para Visitantes</h2>
+                <p
+                    data-en="Practical guide for national and international visitors: transportation, mobility, accessibility, languages, FAQs, and contacts.">
+                    Guía práctica para visitantes nacionales e internacionales: transporte, movilidad, accesibilidad,
+                    idiomas, preguntas frecuentes, contactos y guía de actualización del sitio.
+                </p>
             </div>
+
+            <!-- ==================================================================
+                 INFORMACIÓN PRÁCTICA, TRANSPORTE, ACCESIBILIDAD Y CONTACTO
+                 ================================================================== -->
             <div class="page-section">
                 <div class="container">
+                    <div class="section-head-center">
+                        <span class="section-eyebrow" data-en="1. Practical Guide for Your Stay in Puebla">1. Guía
+                            Práctica de Estancia en Puebla</span>
+                        <h2 class="section-main-title" data-en="Mobility, Accessibility, Language &amp; Contact">
+                            Movilidad, Accesibilidad, Idioma y Contacto</h2>
+                    </div>
+
                     <div class="info-grid">
+
+                        <!-- TARJETA 1: TRANSPORTE Y MOVILIDAD -->
                         <div class="info-card">
-                            <h3>🏨 Hospedaje</h3>
-                            <p>Hoteles recomendados en el Centro Histórico, desde opciones boutique hasta cadenas
-                                accesibles. Tarifas especiales para asistentes del ICCB.</p>
+                            <h3>
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+                                    stroke="var(--color-talavera-blue)" stroke-width="1.8" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M5 17a2 2 0 1 0 4 0 2 2 0 0 0-4 0zM15 17a2 2 0 1 0 4 0 2 2 0 0 0-4 0z" />
+                                    <path d="M5 17H3V6a2 2 0 0 1 2-2h9v13m-5 0h6m4 0h2v-5l-3-5h-3" />
+                                    <path d="M14 9h4l2 3" />
+                                </svg>
+                                <span data-en="Transportation &amp; Mobility">Transporte y Movilidad</span>
+                            </h3>
+                            <p
+                                data-en="&lt;strong&gt;Urban Network (RUTA):&lt;/strong&gt; Lines 1, 2, and 3 connect the Historic Center, BUAP Campus, and CAPU.&lt;br&gt;&lt;strong&gt;Walkability:&lt;/strong&gt; The Historic Center and Cholula area have pedestrian corridors.&lt;br&gt;&lt;strong&gt;Airport:&lt;/strong&gt; Hermanos Serdán International (PBC) and AICM (Mexico City) with direct buses.">
+                                • <strong>Red Urbana (RUTA):</strong> Líneas 1, 2 y 3 conectan el Centro Histórico,
+                                Ciudad Universitaria BUAP y CAPU.<br>
+                                • <strong>Caminabilidad:</strong> El Centro Histórico y la zona de Cholula cuentan con
+                                corredores peatonales.<br>
+                                • <strong>Aeropuerto:</strong> Conexión desde el Aeropuerto Internacional Hermanos
+                                Serdán (PBC) y AICM (CDMX) vía autobuses directos.
+                            </p>
                         </div>
+
+                        <!-- TARJETA 2: RECOMENDACIONES PARA VISITANTES -->
                         <div class="info-card">
-                            <h3>🚌 Transporte</h3>
-                            <p>Rutas de autobuses urbanos, bici-share (sistema Pueblabici), taxis seguros y traslados
-                                desde el aeropuerto Hermanos Serdán.</p>
+                            <h3>
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+                                    stroke="var(--color-talavera-blue)" stroke-width="1.8" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path
+                                        d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M2 12h2m16 0h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
+                                    <circle cx="12" cy="12" r="4" />
+                                    <path d="M15.5 14.5c-.83 1.5-2.5 2.5-3.5 2.5s-2.67-1-3.5-2.5"
+                                        stroke-dasharray="2 2" />
+                                </svg>
+                                <span data-en="Weather &amp; Recommendations (June – July)">Clima y Recomendaciones
+                                    (Junio – Julio)</span>
+                            </h3>
+                            <p
+                                data-en="&lt;strong&gt;Mild climate with afternoon rain:&lt;/strong&gt; Sunny mornings (22–25 °C) ideal for outdoor routes with cool rainy afternoons.&lt;br&gt;&lt;strong&gt;Altitude:&lt;/strong&gt; Puebla is 2,135 m a.s.l.; stay hydrated.&lt;br&gt;&lt;strong&gt;Sustainability:&lt;/strong&gt; Bring your reusable bottle and tote bag.">
+                                • <strong>Clima templado con lluvias vespertinas:</strong> Mañanas soleadas (22–25 °C)
+                                ideales para rutas al aire libre y tardes frescas con lluvia ligera.<br>
+                                • <strong>Altitud:</strong> Puebla se ubica a 2,135 m s.n.m.; mantente hidratado.<br>
+                                • <strong>Sustentabilidad:</strong> Lleva tu botella reutilizable y bolsa de tela.
+                            </p>
                         </div>
+
+                        <!-- TARJETA 3: ACCESIBILIDAD Y CONSULTA LIBRE -->
                         <div class="info-card">
-                            <h3>♿ Accesibilidad</h3>
-                            <p>Sedes con rampas, elevadores y señalización AA. Intérpretes de LSM disponibles en eventos
-                                principales. Espacios preferentes.</p>
+                            <h3>
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+                                    stroke="var(--color-talavera-blue)" stroke-width="1.8" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <circle cx="12" cy="4.5" r="2" fill="var(--color-talavera-blue)" stroke="none" />
+                                    <path d="M12 7v4" />
+                                    <path d="M8 11h8" />
+                                    <path d="M9 15l-3 6" />
+                                    <path d="M15 15l3 6" />
+                                    <path d="M12 11v4" />
+                                </svg>
+                                <span data-en="Accessibility &amp; Open Consultation">Accesibilidad y Consulta
+                                    Pública</span>
+                            </h3>
+                            <p
+                                data-en="&lt;strong&gt;No account required:&lt;/strong&gt; No public section requires login.&lt;br&gt;&lt;strong&gt;Accessible design:&lt;/strong&gt; High contrast, legible fonts, mobile-friendly, alt-text for images.&lt;br&gt;&lt;strong&gt;Venues:&lt;/strong&gt; Ramps, elevators, and LSM interpreters at main events.">
+                                • <strong>Sin cuenta de usuario:</strong> Ninguna sección pública exige registro o
+                                contraseña para su consulta.<br>
+                                • <strong>Diseño accesible:</strong> Alto contraste, tipografía legible, uso desde
+                                celular sin instalar aplicaciones y textos alternativos.<br>
+                                • <strong>Sedes:</strong> Rampas, elevadores e intérpretes de LSM en actos centrales.
+                            </p>
                         </div>
+
+                        <!-- TARJETA 4: BILINGÜISMO E IDIOMAS -->
                         <div class="info-card">
-                            <h3>🌐 Idiomas</h3>
-                            <p>Actividades en español e inglés. Traducción simultánea disponible en las conferencias
-                                magistrales. Señalización bilingüe en sedes principales.</p>
+                            <h3>
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+                                    stroke="var(--color-talavera-blue)" stroke-width="1.8" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="9.5" />
+                                    <ellipse cx="12" cy="12" rx="4" ry="9.5" />
+                                    <path d="M3 12h18" />
+                                    <path d="M4.5 7h15M4.5 17h15" />
+                                </svg>
+                                <span data-en="Language (Spanish / English)">Idioma (Español / Inglés)</span>
+                            </h3>
+                            <p
+                                data-en="The interface and essential information work bilingually (ES / EN button in the top bar). In the directory you can filter activities by language: Spanish, English, or bilingual.">
+                                La interfaz y la información esencial del micrositio operan de forma bilingüe (botón
+                                <strong>ES / EN</strong> en la barra superior). En el directorio común puedes filtrar
+                                qué actividades se imparten en español, inglés o modalidad bilingüe.
+                            </p>
                         </div>
+
+                        <!-- TARJETA 5: ENLACES OFICIALES -->
                         <div class="info-card">
-                            <h3>🔗 Enlaces Oficiales</h3>
-                            <p><a href="https://conbio.org/mini-sites/iccb-2027/" target="_blank"
-                                    rel="noopener noreferrer">Sitio Oficial ICCB 2027 ↗</a><br><a href="#"
-                                    target="_blank">BUAP — Benemérita Universidad Autónoma de Puebla ↗</a><br><a
-                                    href="#" target="_blank">Society for Conservation Biology ↗</a></p>
+                            <h3>
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+                                    stroke="var(--color-talavera-blue)" stroke-width="1.8" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
+                                    <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
+                                </svg>
+                                <span data-en="Official Congress Links">Enlaces Oficiales del Congreso</span>
+                            </h3>
+                            <p>
+                                • <a href="https://conbio.org/mini-sites/iccb-2027/" target="_blank"
+                                    rel="noopener noreferrer" style="font-weight:700;">Sitio Oficial ICCB 2027 (SCB)
+                                    ↗</a><br>
+                                • <a href="https://www.buap.mx" target="_blank" rel="noopener noreferrer"
+                                    style="font-weight:700;">Benemérita Universidad Autónoma de Puebla (BUAP) ↗</a><br>
+                                • <a href="https://conbio.org" target="_blank" rel="noopener noreferrer"
+                                    style="font-weight:700;">Society for Conservation Biology (SCB) ↗</a>
+                            </p>
                         </div>
+
+                        <!-- TARJETA 6: CONTACTO GENERAL Y CONTACTOS ESPECÍFICOS -->
                         <div class="info-card">
-                            <h3>📧 Contacto</h3>
-                            <p>Correo general: <a
-                                    href="mailto:info@iccb2027puebla.mx">info@iccb2027puebla.mx</a><br>Propuestas y
-                                alianzas: <a href="participa.html">Formulario de participación</a><br>Redes:
-                                @ICCB2027Puebla</p>
+                            <h3>
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+                                    stroke="var(--color-talavera-blue)" stroke-width="1.8" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path
+                                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                    <polyline points="22,6 12,13 2,6" />
+                                </svg>
+                                <span data-en="General &amp; Specific Contact">Contacto General y Específico</span>
+                            </h3>
+                            <p>
+                                • <strong>General:</strong> <a
+                                    href="mailto:info@iccb2027puebla.mx">info@iccb2027puebla.mx</a><br>
+                                • <strong>Laboratorio de Conservación Creativa:</strong> <a
+                                    href="mailto:ccl@iccb2027puebla.mx">ccl@iccb2027puebla.mx</a><br>
+                                • <strong>Día de la Exploración y Espejos:</strong> <a
+                                    href="mailto:exploracion@iccb2027puebla.mx">exploracion@iccb2027puebla.mx</a><br>
+                                • <strong>Sabores de la Biodiversidad:</strong> <a
+                                    href="mailto:sabores@iccb2027puebla.mx">sabores@iccb2027puebla.mx</a>
+                            </p>
                         </div>
+
                     </div>
                 </div>
             </div>
-        </section>
 
+            <!-- ==================================================================
+                 PREGUNTAS FRECUENTES
+                 ================================================================== -->
+            <div class="page-section" id="preguntas-frecuentes">
+                <div class="container">
+                    <div class="section-head-center">
+                        <span class="section-eyebrow" data-en=" Frequently Asked Questions"> Preguntas
+                            Frecuentes</span>
+                        <h2 class="section-main-title" data-en="Solve Your Questions Quickly">Resuelve tus Dudas
+                            Rápidamente</h2>
+                    </div>
+
+                    <div style="max-width:840px; margin:0 auto;">
+                        <details class="faq-item">
+                            <summary data-en="When does Puebla, Capital of Biodiversity take place and who can attend?">
+                                ¿Cuándo se lleva a cabo Puebla, Capital de la Biodiversidad y quién puede asistir?
+                            </summary>
+                            <div class="faq-body"
+                                data-en="The program runs from &lt;strong&gt;June 7 to July 2, 2027&lt;/strong&gt; and closes with &lt;strong&gt;Exploration Day on July 2, 2027&lt;/strong&gt;. It is open to residents of Puebla, families, children, students, organizations, and national and international ICCB 2027 attendees.">
+                                El programa se desarrolla del <strong>7 de junio al 2 de julio de 2027</strong> y cierra
+                                con el <strong>Día de la Exploración el 2 de julio de 2027</strong>. Está abierto a
+                                habitantes de Puebla, familias, niñas, niños, estudiantes, organizaciones y asistentes
+                                nacionales e internacionales al congreso ICCB 2027.
+                            </div>
+                        </details>
+                        <details class="faq-item">
+                            <summary
+                                data-en="What do the labels 'Confirmed', 'Coming Soon', and 'Under Evaluation' mean?">
+                                ¿Qué significan las etiquetas "Confirmado", "Próximamente" y "Propuesta en evaluación"?
+                            </summary>
+                            <div class="faq-body"
+                                data-en="Following the principle of &lt;strong&gt;responsible information&lt;/strong&gt;:&lt;br&gt;• &lt;strong&gt;Confirmed:&lt;/strong&gt; Activity with validated venue, dates, and permits.&lt;br&gt;• &lt;strong&gt;Coming Soon:&lt;/strong&gt; Approved activity with final details pending.&lt;br&gt;• &lt;strong&gt;Under Evaluation:&lt;/strong&gt; Activity received via form, under technical review.">
+                                Siguiendo el principio de <strong>información responsable</strong>:
+                                <br>• <strong>Confirmado:</strong> Actividad o establecimiento con sede, fechas y
+                                permisos validados por el comité.
+                                <br>• <strong>Próximamente:</strong> Actividad aprobada cuyos horarios o detalles
+                                finales están por cerrarse.
+                                <br>• <strong>Propuesta en evaluación:</strong> Actividad recibida mediante formulario
+                                que se encuentra en revisión técnica.
+                            </div>
+                        </details>
+                        <details class="faq-item">
+                            <summary
+                                data-en="Do I need to install a mobile app or create an account to use the map and agenda?">
+                                ¿Necesito instalar una aplicación móvil o crear una cuenta para usar el mapa y ver la
+                                agenda?</summary>
+                            <div class="faq-body"
+                                data-en="No. The microsite works directly from any mobile, tablet, or desktop browser without installing apps or requiring user accounts.">
+                                No. El micrositio está diseñado para funcionar directamente desde cualquier navegador de
+                                celular, tableta o computadora sin instalar aplicaciones ni exigir cuentas de usuario.
+                            </div>
+                        </details>
+                        <details class="faq-item">
+                            <summary data-en="How can I register an activity from my university, NGO, café, or school?">
+                                ¿Cómo puedo registrar una actividad de mi universidad, ONG, cafetería o escuela?
+                            </summary>
+                            <div class="faq-body"
+                                data-en="Go to the &lt;a href='participa.html#seccion-formularios' style='font-weight:700;'&gt;Participate · The 5 Official Forms&lt;/a&gt; section and choose the tab for your profile.">
+                                Ingresa a la sección <a href="participa.html#seccion-formularios"
+                                    style="font-weight:700;">Participa · Los 5 Formularios Oficiales</a>
+                                y elige la pestaña correspondiente a tu perfil.
+                            </div>
+                        </details>
+                        <details class="faq-item">
+                            <summary data-en="What is the Exploration Day and where can I register?">¿Qué es el Día de
+                                la Exploración y dónde me registro?</summary>
+                            <div class="faq-body"
+                                data-en="It is the closing event on &lt;strong&gt;July 2, 2027&lt;/strong&gt; with stands, routes, workshops, and interactive exhibitions. Pre-register through the &lt;a href='exploracion.html' style='font-weight:700;'&gt;Exploration Day&lt;/a&gt; section.">
+                                Es el evento de cierre el <strong>2 de julio de 2027</strong> con stands, rutas,
+                                talleres y exposiciones interactivas. Puedes preregistrarte desde la sección
+                                <a href="exploracion.html" style="font-weight:700;">Día de la Exploración</a>.
+                            </div>
+                        </details>
+                        <details class="faq-item">
+                            <summary data-en="How can I reach Puebla from Mexico City or the airport?">¿Cómo puedo
+                                llegar a Puebla desde la Ciudad de México o el aeropuerto?</summary>
+                            <div class="faq-body"
+                                data-en="&lt;strong&gt;From the AICM (Mexico City):&lt;/strong&gt; Direct buses from TAPO terminal (approximately 2 hours). &lt;strong&gt;From Hermanos Serdán Airport (PBC):&lt;/strong&gt; Shuttle service and taxis to the city center. Both options connect to the urban RUTA network.">
+                                <strong>Desde el AICM (Ciudad de México):</strong> Autobuses directos desde la terminal
+                                TAPO (aproximadamente 2 horas). <strong>Desde el Aeropuerto Hermanos Serdán
+                                    (PBC):</strong>
+                                Servicio de transporte colectivo y taxis hacia el centro de la ciudad. Ambas opciones
+                                conectan con la red urbana RUTA.
+                            </div>
+                        </details>
+                        <details class="faq-item">
+                            <summary data-en="Is there accessibility at the venues?">¿Hay accesibilidad en las sedes?
+                            </summary>
+                            <div class="faq-body"
+                                data-en="Yes. Main venues include ramps, elevators, and Mexican Sign Language (LSM) interpreters at central events. The microsite is designed with high contrast, legible typography, and alt text for images.">
+                                Sí. Las sedes principales cuentan con rampas, elevadores e intérpretes de Lengua de
+                                Señas Mexicana (LSM) en actos centrales.
+                            </div>
+                        </details>
+                    </div>
+                </div>
+            </div>
+
+        </section>
     </main>
 
-    <!-- ======================== FOOTER ======================== -->
+    <!-- ==========================================================================
+         SECCIÓN 3: PIE DE PÁGINA (<footer>)
+         ========================================================================== -->
     <footer class="site-footer">
         <div class="footer-container">
             <div class="footer-brand">
                 <img src="assets/img/Logo_White_Transparent.png" alt="ICCB 2027 Puebla" class="footer-logo">
                 <h3 style="color:#fff;font-size:1.25rem;font-weight:800">Puebla, Capital de la Biodiversidad</h3>
-                <p style="color:#BAC2E0;font-size:var(--font-sm)">Iniciativa institucional de vinculación ciudadana en
-                    el marco del 33º Congreso Internacional de Biología de la Conservación (ICCB 2027), coordinada por
-                    la BUAP y la Society for Conservation Biology.</p>
-                <div class="footer-sponsors-strip"><span>Convocan y Coordinan:</span><strong
-                        style="color:#fff">BUAP</strong><span style="opacity:0.5">·</span><strong
-                        style="color:#fff">SCB</strong><span style="opacity:0.5">·</span><a
-                        href="https://conbio.org/mini-sites/iccb-2027/" target="_blank" rel="noopener noreferrer"
+                <p style="color:#BAC2E0;font-size:var(--font-sm)">Iniciativa institucional de vinculación ciudadana
+                    (7 de junio al 2 de julio de 2027) en el marco del 33º Congreso Internacional de Biología de la
+                    Conservación (ICCB 2027), coordinada por la BUAP y la Society for Conservation Biology.</p>
+                <div class="footer-sponsors-strip">
+                    <span>Convocan y Coordinan:</span>
+                    <strong style="color:#fff">BUAP</strong><span style="opacity:0.5">·</span>
+                    <strong style="color:#fff">SCB</strong><span style="opacity:0.5">·</span>
+                    <a href="https://conbio.org/mini-sites/iccb-2027/" target="_blank" rel="noopener noreferrer"
                         style="color:var(--color-gold);font-weight:700;text-decoration:underline">Sitio Oficial ICCB
-                        2027 ↗</a></div>
+                        2027 ↗</a>
+                </div>
             </div>
+
             <div class="footer-links-col">
-                <h4>Accesos directos</h4>
+                <h4>Arquitectura del Micrositio</h4>
                 <ul class="footer-nav">
-                    <li><a href="agenda.html">Agenda</a></li>
-                    <li><a href="exploracion.html">Día de Exploración</a></li>
-                    <li><a href="rutas.html">Rutas</a></li>
-                    <li><a href="menu.html">Menú</a></li>
-                    <li><a href="participa.html">Participa</a></li>
+                    <li><a href="index.html">Portada</a></li>
+                    <li><a href="ccl.html">Laboratorio de Conservación Creativa</a></li>
+                    <li><a href="agenda.html">Puebla, Capital de la Biodiversidad (Agenda)</a></li>
+                    <li><a href="exploracion.html">Día de la Exploración (2 Jul)</a></li>
+                    <li><a href="rutas.html">Rutas y Mapa</a></li>
+                    <li><a href="menu.html">Sabores de la Biodiversidad</a></li>
                 </ul>
             </div>
+
             <div class="footer-links-col">
-                <h4>Información</h4>
+                <h4>Participación y Visitantes</h4>
                 <ul class="footer-nav">
-                    <li><a href="info.html">Información práctica</a></li>
-                    <li><a href="participa.html#participa-form">Registro / Login</a></li>
+                    <li><a href="participa.html">Formularios y Participación</a></li>
+                    <li><a href="info.html">Información para Visitantes y Preguntas Frecuentes</a></li>
+                    <li><a href="info.html#guia-actualizacion">Guía de Administración del Comité</a></li>
                 </ul>
             </div>
         </div>
+
         <div class="footer-bottom">
             <div>
-                <p><strong>Aviso de Trabajo:</strong> Prototipo digital de trabajo. No confirma actividades,
-                    establecimientos, menús, rutas ni permisos de forma vinculante hasta su validación final.</p>
+                <p><strong>Información responsable:</strong> Cada registro distingue claramente entre actividades
+                    confirmadas, próximas y propuestas en evaluación. Consulta pública sin requerir cuenta de usuario.
+                </p>
             </div>
             <div>
                 <p>© 2027 Puebla, Capital de la Biodiversidad · ICCB 2027 · BUAP</p>
@@ -188,6 +467,8 @@
         </div>
     </footer>
 
+    <!-- Scripts: data.js y main.js -->
+    <script src="assets/js/data.js"></script>
     <script src="assets/js/main.js"></script>
 </body>
 

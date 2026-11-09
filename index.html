@@ -1,36 +1,43 @@
-<!DOCTYPE html> <!--  necesario de todo html es por default-->
-<html lang="es"> <!--  avisa cual es el idioma de la página-->
+<!DOCTYPE html>
+<html lang="es">
 
 <head>
-    <meta charset="UTF-8"> <!--  permite usar caracteres para texto como el acento-->
+    <!-- ==========================================================================
+         LA CABEZA (<head>): Instrucciones técnicas invisibles para el navegador
+         ========================================================================== -->
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--  permite que adpote el tamaño completo de la pantalla-->
-    <title>Puebla, Capital de la Biodiversidad | ICCB 2027 · BUAP</title> <!-- el titulo de la pagina en el navegador-->
+    <title>Puebla, Capital de la Biodiversidad | ICCB 2027 · BUAP</title>
     <meta name="description"
-        content="Guía pública de actividades, rutas bioculturales y experiencias de biodiversidad en Puebla durante el 33º Congreso Internacional de Biología de la Conservación (ICCB 2027).">
-    <!-- descripcion de la pagina en la web (nada dentro del sitio)-->
+        content="Puerta de entrada pública a Puebla, Capital de la Biodiversidad (7 de junio al 2 de julio de 2027), iniciativa vinculada con el ICCB 2027: ciencia, conservación, cultura, gastronomía, rutas y participación ciudadana.">
 
-    <!-- sirven para descargar tipografias-->
+    <!-- Tipografía Plus Jakarta Sans desde Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
 
-    <!-- es el favicon (el logo chiquitito que sale en las pestañas)-->
+    <!-- Favicon e iconos -->
     <link rel="icon" type="image/png" href="assets/img/Logo Main__Logo Complete.png">
 
-    <!-- carga o llama el archivo css que son los estilos de la pagina-->
+    <!-- Hoja de estilos CSS general -->
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
 <body>
 
+    <!-- Enlace accesible para lectores de pantalla -->
     <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
 
-    <!-- ======================== HEADER---- Barra de navegacion ======================== -->
+    <!-- ==========================================================================
+         SECCIÓN 1: EL ENCABEZADO (<header>)
+         Barra de navegación superior fija con menú completo de la arquitectura
+         y selector bilingüe Español (ES) / Inglés (EN).
+         ========================================================================== -->
     <header class="site-header">
         <div class="header-container">
-            <!-- la imagen del logo, y un un boton para darle al logo y route al home-->
+
+            <!-- Logotipos institucionales que regresan a la portada -->
             <a href="index.html" class="brand-wrapper" aria-label="ICCB 2027 Puebla · BUAP">
                 <img src="assets/img/Logo Main__Logo Complete.png" alt="ICCB 2027"
                     class="brand-logo-img brand-logo-iccb">
@@ -38,7 +45,7 @@
                 <img src="assets/img/Logo_BUAP.webp" alt="BUAP" class="brand-logo-img brand-logo-buap">
             </a>
 
-            <!--- sirve para crear un listview en el telfono-->
+            <!-- Controles móviles: Selector ES/EN y botón hamburguesa -->
             <div class="header-mobile-right">
                 <div class="lang-switcher-vertical mobile-header-lang" aria-label="Selector de idioma">
                     <a href="#" class="lang-pill active" lang="es">ES</a>
@@ -50,60 +57,89 @@
                 </button>
             </div>
 
-            <!-- Barra de navegacion y seccion con las rutas-->
+            <!-- Menú de navegación con las secciones de la arquitectura -->
             <nav class="main-nav" id="main-nav" aria-label="Navegación principal">
                 <ul class="nav-list">
-                    <!-- ruta de agenda -->
-                    <li><a href="agenda.html" class="nav-link"><svg class="nav-icon" width="18" height="18"
-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
-                                stroke-linecap="round" stroke-linejoin="round">
+                    <li>
+                        <a href="ccl.html" class="nav-link">
+                            <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M9 18h6" />
+                                <path d="M10 22h4" />
+                                <path d="M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z" />
+                            </svg>
+                            <span>Laboratorio</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="agenda.html" class="nav-link">
+                            <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M4 6a3 3 0 0 1 3-3h10a3 3 0 0 1 3 3v13a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V6z" />
                                 <path d="M4 10h16" />
                                 <path d="M8 2v3M16 2v3" stroke-width="2.2" />
-                            </svg><span>Agenda</span></a></li>
-                    <!-- ruta del dia de exploracion-->
-                    <li><a href="exploracion.html" class="nav-link highlight"><svg class="nav-icon-gold" width="18"
-                                height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
-                                stroke-linecap="round" stroke-linejoin="round">
+                            </svg>
+                            <span>Agenda</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="exploracion.html" class="nav-link highlight">
+                            <svg class="nav-icon-gold" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
                                 <circle cx="12" cy="12" r="2.5" fill="currentColor" />
                                 <circle cx="12" cy="4" r="1" fill="currentColor" />
                                 <circle cx="20" cy="12" r="1" fill="currentColor" />
                                 <circle cx="12" cy="20" r="1" fill="currentColor" />
                                 <circle cx="4" cy="12" r="1" fill="currentColor" />
-                            </svg><span>Día de Exploración</span></a></li>
-                    <!-- ruta de mapa -->
-                    <li><a href="rutas.html" class="nav-link"><svg class="nav-icon" width="18" height="18"
-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
-                                stroke-linecap="round" stroke-linejoin="round">
+                            </svg>
+                            <span>Día de la Exploración</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="rutas.html" class="nav-link">
+                            <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                                 <polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21" />
                                 <line x1="9" y1="3" x2="9" y2="18" />
                                 <line x1="15" y1="6" x2="15" y2="21" />
-                            </svg><span>Rutas</span></a></li>
-                    <!-- ruta de menu -->
-                    <li><a href="menu.html" class="nav-link"><svg class="nav-icon" width="18" height="18"
-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
-                                stroke-linecap="round" stroke-linejoin="round">
+                            </svg>
+                            <span>Rutas</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="menu.html" class="nav-link">
+                            <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M17 8h1a4 4 0 0 1 0 8h-1" />
                                 <path d="M3 8h14v7a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8z" />
-                            </svg><span>Menú</span></a></li>
-                    <!-- ruta de participa -->
-                    <li><a href="participa.html" class="nav-link"><svg class="nav-icon" width="18" height="18"
-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
-                                stroke-linecap="round" stroke-linejoin="round">
+                            </svg>
+                            <span>Sabores</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="participa.html" class="nav-link">
+                            <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                                 <path
                                     d="M11 13.5l-2.5-2.5a3.5 3.5 0 0 0-5 5l4 4a4 4 0 0 0 5.6 0l5.4-5.4a3.5 3.5 0 0 0-5-5L11 12" />
-                            </svg><span>Participa</span></a></li>
-                    <!-- ruta de información -->
-                    <li><a href="info.html" class="nav-link"><svg class="nav-icon" width="18" height="18"
-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
-                                stroke-linecap="round" stroke-linejoin="round">
+                            </svg>
+                            <span>Participa</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="info.html" class="nav-link">
+                            <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                                 <circle cx="12" cy="12" r="9.5" />
                                 <line x1="12" y1="11" x2="12" y2="17" stroke-width="2.2" />
                                 <circle cx="12" cy="7.5" r="1.5" fill="currentColor" stroke="none" />
-                            </svg><span>Información</span></a></li>
+                            </svg>
+                            <span>Información</span>
+                        </a>
+                    </li>
                 </ul>
 
-                <!--El selector de idioma-->
+                <!-- Selector de idioma en computadoras -->
                 <div class="nav-user-actions">
                     <div class="lang-switcher-vertical desktop-header-lang" aria-label="Selector de idioma">
                         <a href="#" class="lang-pill active" lang="es" title="Español">ES</a>
@@ -114,189 +150,376 @@
         </div>
     </header>
 
-    <!-- pagina del home-->
+    <!-- ==========================================================================
+         SECCIÓN 2: CONTENIDO PRINCIPAL DE LA PORTADA (<main>)
+         ========================================================================== -->
     <main class="site-main" id="main-content">
 
-        <!-- Seccion del encabezado-->
+
         <section class="hero-section" id="home">
             <div class="hero-bg-media" aria-hidden="true">
                 <div class="hero-bg-texture"></div>
                 <div class="hero-bg-radial"></div>
             </div>
+
             <div class="hero-inner">
-                <!-- divide en dos columnas el main-->
+                <!-- Columna izquierda: Periodo oficial (7 de junio al 2 de julio de 2027), título y accesos prioritarios -->
                 <div class="hero-left">
-                    <!-- textos y botones-->
-                    <div class="hero-date-label">Puebla, México &nbsp;·&nbsp; 27 Jun – 2 Jul 2027</div>
-                    <!-- label de la fecha-->
-                    <h1 class="hero-title">Capital de la<br>Biodiversidad</h1> <!-- titulo-->
-                    <p class="hero-subtitle">Puebla se convierte en escenario mundial del ICCB 2027. Una semana de
-                        ciencia, cultura y biodiversidad abierta a toda la ciudad.</p> <!-- subtitulo-->
-                    <div class="hero-cta-row">
-                        <a href="agenda.html" class="hero-btn-primary">Ver Agenda</a> <!-- boton de la agenda-->
-                        <a href="exploracion.html" class="hero-btn-secondary">Día de Exploración &rarr;</a>
-                        <!-- boton del dia de exploracion-->
+                    <div class="hero-date-label" data-en="Puebla, Mexico &nbsp;·&nbsp; June 7 – July 2, 2027">
+                        Puebla, México &nbsp;·&nbsp; 7 Jun – 2 Jul 2027
                     </div>
-                    <!-- logos de la seccion-->
+
+                    <h1 class="hero-title" data-en="Puebla <br> Capital of Biodiversity">
+                        Puebla, <br> Capital de la Biodiversidad
+                    </h1>
+
+                    <p class="hero-subtitle"
+                        data-en="In 2027, Puebla will serve as a gathering place for people from across the continent who are committed
+                        to biodiversity conservation. But this story goes beyond a conference: it is an invitation to discover Puebla’s
+                        natural and cultural riches, to recognize what unites us, and to find new ways to care for the life we share.">
+                        Este 2027, Puebla será punto de encuentro para personas de todo el continente comprometidas con
+                        la conservación
+                        de la biodiversidad. Pero esta historia va más allá de un congreso: es una invitación a
+                        descubrir la riqueza
+                        natural y cultural de Puebla, reconocer lo que nos une y encontrar nuevas formas de cuidar la
+                        vida que compartimos.
+                    </p>
+
+                    <!-- Fila de botones prioritarios ("Menos clics": Agenda, Día de la Exploración y Mapa) -->
+                    <div class="hero-cta-row">
+                        <a href="agenda.html" class="hero-btn-secondary" data-en="Agenda">Agenda </a>
+                        <a href="rutas.html" class="hero-btn-secondary" data-en="Map">Mapa</a>
+                        <a href="exploracion.html" class="hero-btn-primary" data-en="Exploration Day · July 2 &rarr;">
+                            Día de la Exploración · 2 Jul &rarr;
+                        </a>
+                    </div>
+
                     <div class="hero-logos-strip">
                         <img src="assets/img/Logos__Logo Full Color White Background.png" alt="ICCB 2027 Logo"
                             class="hero-strip-logo">
                     </div>
                 </div>
-                <!--columna derecha (foto del puebla) -->
+
+                <!-- Columna derecha: Fotografía de Puebla y sello de Talavera -->
                 <div class="hero-right">
                     <div class="hero-photo-frame">
-                        <img src="assets/img/website/Main Banner 1.png" alt="Vista de Puebla, México"
+                        <img src="assets/img/website/Main Banner 1.png" alt="Vista panorámica de Puebla, México"
                             class="hero-photo">
-                        <!-- etiqueta en la foto-->
                         <div class="hero-photo-label">
                             <span class="hero-photo-city">Puebla de Zaragoza</span>
-                            <span class="hero-photo-sub">México</span>
+                            <span class="hero-photo-sub">Sede ICCB 2027 · México</span>
                         </div>
                     </div>
-                    <!-- foto del logo de Talavera que va abajo-->
                     <div class="hero-pattern-badge">
-                        <img src="assets/img/Logo Main__Logo Complete.png" alt="ICCB 2027 Talavera">
+                        <img src="assets/img/Logo Main__Logo Complete.png" alt="Emblema Talavera ICCB 2027">
                     </div>
                 </div>
             </div>
         </section>
 
 
-        <!-- cuatro tarjetas, los ejes de activacion ciudadana -->
-        <section class="feature-grid-section">
+
+        <!-- ======================================================================
+              SECCION 2: LA VIDA QUE COMPARTIMOS
+             ====================================================================== -->
+        <section class="page-section" id="presentacion-iniciativa" style="padding:3.25rem 1.25rem 2rem;">
             <div class="container">
-                <!-- titulos de la seccion-->
-                <div class="section-head-center">
-                    <span class="section-eyebrow">Explora la Iniciativa</span>
-                    <h2 class="section-main-title">Los Cuatro Ejes de Activación Ciudadana</h2>
-                    <p class="section-main-desc">Diseñado para facilitar el descubrimiento inmediato de actividades,
-                        rutas y saberes bioculturales sin necesidad de conocer los nombres de los programas.</p>
+                <div class="section-head-center" style="margin-bottom:1.75rem;">
+                    <span class="section-eyebrow" data-en="01 · The Life We Share">01 · La Vida que Compartimos</span>
+                    <h2 class="section-main-title" data-en="Why Does Biodiversity Matter?">
+                        ¿Por Qué Importa la Biodiversidad?
+                    </h2>
+                    <p class="section-main-desc" style="max-width:640px; margin:0 auto;"
+                        data-en="It is in the water, food, species, and traditions we share. Conserving it is a scientific, cultural, and collective task.">
+                        Está en el agua, los alimentos, las especies y las tradiciones que compartimos. Conservarla no
+                        es
+                        solo tarea de especialistas: <strong>comienza contigo y con nuestra comunidad.</strong>
+                    </p>
+
+                    <!-- Tira visual de 4 palabras clave -->
+                    <div style="display:flex; gap:0.6rem; justify-content:center; flex-wrap:wrap; margin-top:1.15rem;">
+                        <span class="badge-status confirmada"
+                            style="padding:0.4rem 0.95rem; font-size:var(--font-xs); display:inline-flex; align-items:center; gap:0.4rem;">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M10 2v7.31M14 9.3V2M8.5 2h7M14 9.3a6.5 6.5 0 1 1-4 0" />
+                            </svg>
+                            Ciencia
+                        </span>
+                        <span class="badge-status confirmada"
+                            style="padding:0.4rem 0.95rem; font-size:var(--font-xs); display:inline-flex; align-items:center; gap:0.4rem;">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10" />
+                                <path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01" />
+                            </svg>
+                            Cultura
+                        </span>
+                        <span class="badge-status confirmada"
+                            style="padding:0.4rem 0.95rem; font-size:var(--font-xs); display:inline-flex; align-items:center; gap:0.4rem;">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                                <circle cx="9" cy="7" r="4" />
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
+                            </svg>
+                            Comunidad
+                        </span>
+                        <span class="badge-status confirmada"
+                            style="padding:0.4rem 0.95rem; font-size:var(--font-xs); display:inline-flex; align-items:center; gap:0.4rem;">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M11 20A7 7 0 0 1 4 13c0-4 3.5-7 7-9 3.5 2 7 5 7 9a7 7 0 0 1-7 7Z" />
+                                <path d="M11 20v-9" />
+                            </svg>
+                            Conservación
+                        </span>
+                    </div>
                 </div>
-                <!-- contenedor de las 4 tarjetas-->
+
+                <!-- 3 tarjetas visuales y breves -->
+                <div class="info-grid" style="grid-template-columns:repeat(auto-fit, minmax(270px, 1fr)); gap:1.25rem;">
+                    <div class="info-card"
+                        style="display:flex; flex-direction:column; align-items:center; text-align:center; padding:1.6rem 1.4rem;">
+                        <div
+                            style="width:52px; height:52px; margin:0 auto 0.85rem; border-radius:50%; background:var(--color-gold-soft); display:flex; align-items:center; justify-content:center;">
+                            <img src="assets/img/Logo Animals__Logo_Jaguar.png" alt="Encuentro continental"
+                                style="height:34px; width:auto;">
+                        </div>
+                        <h3 style="justify-content:center; text-align:center; width:100%; margin-bottom:0.4rem;">
+                            Encuentro Continental</h3>
+                        <p style="font-size:var(--font-sm); line-height:1.55; margin:0; text-align:center;">
+                            Por primera vez, <strong>Norteamérica y América Latina y el Caribe</strong> organizan juntos
+                            el congreso mundial <strong>ICCB 2027</strong> en Puebla.
+                        </p>
+                    </div>
+
+                    <div class="info-card"
+                        style="display:flex; flex-direction:column; align-items:center; text-align:center; padding:1.6rem 1.4rem;">
+                        <div
+                            style="width:52px; height:52px; margin:0 auto 0.85rem; border-radius:50%; background:var(--color-cream-light); display:flex; align-items:center; justify-content:center;">
+                            <img src="assets/img/Logo Animals__Logo_Colibri.png" alt="Riqueza biocultural"
+                                style="height:34px; width:auto;">
+                        </div>
+                        <h3 style="justify-content:center; text-align:center; width:100%; margin-bottom:0.4rem;">Riqueza
+                            Natural y Cultural</h3>
+                        <p style="font-size:var(--font-sm); line-height:1.55; margin:0; text-align:center;">
+                            Ecosistemas, gastronomía, saberes locales y universidades (<strong>BUAP, UDLAP, IBERO y
+                                UPAEP</strong>)
+                            unidos en un mismo territorio.
+                        </p>
+                    </div>
+
+                    <div class="info-card"
+                        style="display:flex; flex-direction:column; align-items:center; text-align:center; padding:1.6rem 1.4rem;">
+                        <div
+                            style="width:52px; height:52px; margin:0 auto 0.85rem; border-radius:50%; background:var(--color-gold-soft); display:flex; align-items:center; justify-content:center;">
+                            <img src="assets/img/Logo Animals__Logo_Teporingo.png" alt="La ciudad como espacio vivo"
+                                style="height:34px; width:auto;">
+                        </div>
+                        <h3 style="justify-content:center; text-align:center; width:100%; margin-bottom:0.4rem;">La
+                            Ciudad como Espacio Vivo</h3>
+                        <p style="font-size:var(--font-sm); line-height:1.55; margin:0; text-align:center;">
+                            La ciencia sale del congreso a las calles con rutas, arte, cocina y talleres abiertos para
+                            todas las edades.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======================================================================
+             SECCION 3: LOS CUATRO EJES PRINCIPALES
+             1. Puebla, Capital de la Biodiversidad (agenda.html)
+             2. Día de la Exploración (exploracion.html)
+             3. Rutas (rutas.html)
+             4. Laboratorio (ccl.html y enlace directo de registro)
+             ====================================================================== -->
+        <section class="feature-grid-section" style="padding-top:3rem;">
+            <div class="container">
+                <div class="section-head-center">
+                    <span class="section-eyebrow" data-en="02 · Biodiversity is Lived, Created, and Shared">
+                        02 · La Biodiversidad se Vive, se Crea y se Comparte
+                    </span>
+                    <h2 class="section-main-title" data-en="Conservation Takes Many Forms">
+                        La Conservación Toma Muchas Formas
+                    </h2>
+                    <p class="section-main-desc" data-en="Learn how we are bringing biodiversity closer to Puebla.">
+                        Conoce cómo estamos acercando la biodiversidad a Puebla. Ciencia · Cultura · Comunidad ·
+                        Conservación.
+                    </p>
+                </div>
+
+                <!-- Cuadrícula con únicamente las 4 tarjetas solicitadas -->
                 <div class="pillar-cards-grid">
-                    <!-- tarjeta 1-->
+
+                    <!-- TARJETA 1: PUEBLA, CAPITAL DE LA BIODIVERSIDAD (Vinculada a agenda.html) -->
                     <a href="agenda.html" class="pillar-card">
                         <div>
-                            <div class="pillar-icon-box"><img src="assets/img/Logo Animals__Logo_Colibri.png"
-                                    alt="Colibrí"></div><span class="badge-status proximamente"
-                                style="margin-bottom:0.75rem"><span>24 Eventos</span></span>
-                            <h3 class="pillar-card-title">Agenda</h3>
-                            <p class="pillar-card-text">Consulta el calendario por día, exposiciones de mes completo,
-                                talleres vivos, foros y proyecciones de cine en la Sala Luis Buñuel.</p>
+                            <div class="pillar-icon-box">
+                                <img src="assets/img/Logo Animals__Logo_Colibri.png" alt="Colibrí">
+                            </div>
+
+                            <h3 class="pillar-card-title" data-en="Puebla, Capital of Biodiversity">
+                                Puebla, Capital de la Biodiversidad
+                            </h3>
+                            <p class="pillar-card-text"
+                                data-en="Experiences, routes, gastronomy, and culture to discover Puebla's natural and cultural wealth and bring conservation into daily life.">
+                                Experiencias, recorridos, gastronomía y cultura para descubrir la riqueza natural y
+                                cultural de Puebla y acercar la conservación a la vida cotidiana.
+                            </p>
                         </div>
-                        <div class="pillar-card-link"><span>Abrir agenda completa</span> <svg class="card-arrow-icon"
-                                width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <div class="pillar-card-link">
+                            <span data-en="Explore initiative & agenda">Conoce la iniciativa (Agenda)</span>
+                            <svg class="card-arrow-icon" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                                 <line x1="4" y1="12" x2="19" y2="12" />
                                 <polyline points="13 6 19 12 13 18" />
-                            </svg></div>
+                            </svg>
+                        </div>
                     </a>
-                    <!-- tarjeta 2-->
+
+                    <!-- TARJETA 2: DÍA DE LA EXPLORACIÓN (Vinculada a exploracion.html) -->
                     <a href="exploracion.html" class="pillar-card highlight-gold">
                         <div>
                             <div class="pillar-icon-box"
-                                style="background:var(--color-gold-soft);border-color:var(--color-gold)"><img
-                                    src="assets/img/Logo Animals__Logo_Jaguar.png" alt="Jaguar"></div><span
-                                class="badge-status proximamente" style="margin-bottom:0.75rem"><span>2 de Julio
-                                    2027</span></span>
-                            <h3 class="pillar-card-title">Día de Exploración</h3>
-                            <p class="pillar-card-text">Gran Feria de Ciencias Ambientales en el Centro Histórico.
-                                Stands interactivos, artesanos tradicionales y récord Guinness colectivo.</p>
+                                style="background:var(--color-gold-soft);border-color:var(--color-gold)">
+                                <img src="assets/img/Logo Animals__Logo_Jaguar.png" alt="Jaguar">
+                            </div>
+
+                            <h3 class="pillar-card-title" data-en="Exploration Day">Día de la Exploración</h3>
+                            <p class="pillar-card-text"
+                                data-en="A space to awaken curiosity, get closer to science, and explore biodiversity in a participatory way.">
+                                Un espacio para despertar la curiosidad, acercarse a la ciencia y explorar la
+                                biodiversidad de manera participativa.
+                            </p>
                         </div>
-                        <div class="pillar-card-link" style="color:var(--color-gold-text)"><span>Conocer sedes y
-                                horarios</span> <svg class="card-arrow-icon" width="16" height="16" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"
-                                stroke-linejoin="round">
+                        <div class="pillar-card-link" style="color:var(--color-gold-text)">
+                            <span data-en="Explore initiative">Conoce la iniciativa</span>
+                            <svg class="card-arrow-icon" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                                 <line x1="4" y1="12" x2="19" y2="12" />
                                 <polyline points="13 6 19 12 13 18" />
-                            </svg></div>
+                            </svg>
+                        </div>
                     </a>
-                    <!-- tarjeta 3-->
+
+                    <!-- TARJETA 3: RUTAS (Vinculada a rutas.html) -->
                     <a href="rutas.html" class="pillar-card">
                         <div>
-                            <div class="pillar-icon-box"><img src="assets/img/Logo Animals__Logo_cacomixtle.png"
-                                    alt="Cacomixtle"></div>
-                            <span class="badge-status propuesta" style="margin-bottom:0.75rem"><span>Mapa
-                                    Interactivo</span></span>
-                            <h3 class="pillar-card-title">Rutas</h3>
-                            <p class="pillar-card-text">Recorridos guiados por patios virreinales, templos, arte en
-                                Talavera y polinizadores urbanos con indicaciones paso a paso.</p>
+                            <div class="pillar-icon-box">
+                                <img src="assets/img/Logo Animals__Logo_cacomixtle.png" alt="Cacomixtle">
+                            </div>
+
+                            <h3 class="pillar-card-title" data-en="Routes">Rutas</h3>
+                            <p class="pillar-card-text"
+                                data-en="Routes across city spaces and the territory inviting residents and visitors to discover Puebla's biocultural wealth.">
+                                Recorridos por espacios de la ciudad y el territorio que invitan a habitantes y
+                                visitantes a conocer la riqueza biocultural, natural y cultural de Puebla.
+                            </p>
                         </div>
-                        <div class="pillar-card-link"><span>Ver mapa y circuitos</span> <svg class="card-arrow-icon"
-                                width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <div class="pillar-card-link">
+                            <span data-en="View map & routes">Ver mapa y recorridos</span>
+                            <svg class="card-arrow-icon" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                                 <line x1="4" y1="12" x2="19" y2="12" />
                                 <polyline points="13 6 19 12 13 18" />
-                            </svg></div>
+                            </svg>
+                        </div>
                     </a>
-                    <!-- tarjeta 4-->
-                    <a href="menu.html" class="pillar-card">
+
+                    <!-- TARJETA 4: LABORATORIO (Vinculada a ccl.html + Link directo de registro) -->
+                    <div class="pillar-card" style="cursor:default;">
                         <div>
-                            <div class="pillar-icon-box"><img src="assets/img/Logo Animals__Logo_Armadilo.png"
-                                    alt="Armadillo"></div><span class="badge-status propuesta"
-                                style="margin-bottom:0.75rem"><span>Cocina Poblana</span></span>
-                            <h3 class="pillar-card-title">Menú</h3>
-                            <p class="pillar-card-text">Café de sombra de la Sierra Norte, miel de abeja melipona, moles
-                                tradicionales con quelites y criterios de conservación auditados.</p>
+                            <div class="pillar-icon-box">
+                                <img src="assets/img/Logo Animals__Logo_Teporingo.png" alt="Teporingo">
+                            </div>
+
+                            <h3 class="pillar-card-title">
+                                <a href="ccl.html" style="color:inherit;text-decoration:none;" data-en="Laboratory">
+                                    Laboratorio
+                                </a>
+                            </h3>
+                            <p class="pillar-card-text"
+                                data-en="Creativity, knowledge, and collaboration to connect conservation with design, gastronomy, crafts, and documentaries (120 hours · 12 teams · 4 axes).">
+                                Creatividad, conocimiento y colaboración para conectar la conservación con el diseño, la
+                                gastronomía, las artes y los documentales (120 horas · 12 equipos · 4 ejes · Ene–may
+                                2027).
+                            </p>
                         </div>
-                        <div class="pillar-card-link"><span>Descubrir experiencias</span> <svg class="card-arrow-icon"
-                                width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                                <line x1="4" y1="12" x2="19" y2="12" />
-                                <polyline points="13 6 19 12 13 18" />
-                            </svg></div>
-                    </a>
+                        <div
+                            style="display:flex; flex-direction:column; gap:0.55rem; margin-top:auto; padding-top:0.5rem;">
+                            <a href="ccl.html" class="pillar-card-link" style="text-decoration:none;">
+                                <span data-en="Explore Laboratory">Conoce la iniciativa</span>
+                                <svg class="card-arrow-icon" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2.2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <line x1="4" y1="12" x2="19" y2="12" />
+                                    <polyline points="13 6 19 12 13 18" />
+                                </svg>
+                            </a>
+                            <!-- Enlace directo de registro dentro de la tarjeta de Laboratorio -->
+                            <a href="ccl.html#registro-laboratorio" class="btn btn-primary btn-sm"
+                                style="width:100%; text-align:center;" data-en="Student Registration &rarr;">
+                                Registro al Laboratorio &rarr;
+                            </a>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
-    </main> <!-- final del main-->
+    </main>
 
-    <!-- ======================== FOOTER --- pie de pagina ======================== -->
+    <!-- ==========================================================================
+         SECCIÓN 3: EL PIE DE PÁGINA (<footer>)
+         ========================================================================== -->
     <footer class="site-footer">
         <div class="footer-container">
-            <!-- columna izquierda del pie de pagina-->
             <div class="footer-brand">
                 <img src="assets/img/Logo_White_Transparent.png" alt="ICCB 2027 Puebla" class="footer-logo">
                 <h3 style="color:#fff;font-size:1.25rem;font-weight:800">Puebla, Capital de la Biodiversidad</h3>
-                <p style="color:#BAC2E0;font-size:var(--font-sm)">Iniciativa institucional de vinculación ciudadana en
-                    el marco del 33º Congreso Internacional de Biología de la Conservación (ICCB 2027), coordinada por
-                    la BUAP y la Society for Conservation Biology.</p>
-                <div class="footer-sponsors-strip"><span>Convocan y Coordinan:</span><strong
-                        style="color:#fff">BUAP</strong><span style="opacity:0.5">·</span><strong
-                        style="color:#fff">SCB</strong><span style="opacity:0.5">·</span><a
-                        href="https://conbio.org/mini-sites/iccb-2027/" target="_blank" rel="noopener noreferrer"
+                <p style="color:#BAC2E0;font-size:var(--font-sm)">Un solo continente. Distintas realidades. Una
+                    responsabilidad compartida. Punto de encuentro de Norteamérica y América Latina y el Caribe junto al
+                    Congreso Internacional de Biología de la Conservación (ICCB 2027 · Society for Conservation
+                    Biology).</p>
+                <div class="footer-sponsors-strip">
+                    <span>Convocan y Coordinan:</span>
+                    <strong style="color:#fff">BUAP</strong><span style="opacity:0.5">·</span>
+                    <strong style="color:#fff">SCB</strong><span style="opacity:0.5">·</span>
+                    <a href="https://conbio.org/mini-sites/iccb-2027/" target="_blank" rel="noopener noreferrer"
                         style="color:var(--color-gold);font-weight:700;text-decoration:underline">Sitio Oficial ICCB
-                        2027 ↗</a></div>
+                        2027 ↗</a>
+                </div>
             </div>
 
-            <!-- columna central del pie de pagina-->
             <div class="footer-links-col">
-                <h4>Accesos directos</h4>
+                <h4>Arquitectura del Micrositio</h4>
                 <ul class="footer-nav">
-                    <li><a href="agenda.html">Agenda</a></li>
-                    <li><a href="exploracion.html">Día de Exploración</a></li>
-                    <li><a href="rutas.html">Rutas</a></li>
-                    <li><a href="menu.html">Menú</a></li>
-                    <li><a href="participa.html">Participa</a></li>
+                    <li><a href="index.html">Portada</a></li>
+                    <li><a href="ccl.html">Laboratorio de Conservación Creativa</a></li>
+                    <li><a href="agenda.html">Puebla, Capital de la Biodiversidad (Agenda)</a></li>
+                    <li><a href="exploracion.html">Día de la Exploración (2 Jul)</a></li>
+                    <li><a href="rutas.html">Rutas y Mapa</a></li>
+                    <li><a href="menu.html">Sabores de la Biodiversidad</a></li>
                 </ul>
             </div>
 
-            <!-- columna derecha del pie de pagina-->
             <div class="footer-links-col">
-                <h4>Información</h4>
+                <h4>Participación y Visitantes</h4>
                 <ul class="footer-nav">
-                    <li><a href="info.html">Información práctica</a></li>
-                    <li><a href="participa.html#participa-form">Registro / Login</a></li>
+                    <li><a href="participa.html">Formularios y Participación</a></li>
+                    <li><a href="info.html">Información para Visitantes y Preguntas Frecuentes</a></li>
+                    <li><a href="info.html#guia-actualizacion">Guía de Administración del Comité</a></li>
                 </ul>
             </div>
         </div>
 
-        <!-- fondo del pie de pagina-->
         <div class="footer-bottom">
             <div>
-                <p><strong>Aviso de Trabajo:</strong> Prototipo digital de trabajo. No confirma actividades,
-                    establecimientos, menús, rutas ni permisos de forma vinculante hasta su validación final.</p>
+                <p><strong>Información responsable:</strong> Cada registro distingue claramente entre actividades
+                    confirmadas, próximas y propuestas en evaluación. Consulta pública sin requerir cuenta de usuario.
+                </p>
             </div>
             <div>
                 <p>© 2027 Puebla, Capital de la Biodiversidad · ICCB 2027 · BUAP</p>
@@ -304,7 +527,9 @@
         </div>
     </footer>
 
-    <script src="assets/js/main.js"></script> <!-- formato para menu desplegable en celulares -->
+    <!-- Scripts: data.js (fuente única de información) y main.js -->
+    <script src="assets/js/data.js"></script>
+    <script src="assets/js/main.js"></script>
 </body>
 
-</html> <!-- final del hmtl-->
+</html>
