@@ -1,4 +1,4 @@
-﻿# 🌿 Puebla, Capital de la Biodiversidad | ICCB 2027 · BUAP
+﻿# Puebla, Capital de la Biodiversidad | ICCB 2027 · BUAP
 
 Prototipo web multi-página desarrollado para la guía pública de actividades, rutas bioculturales y experiencias de conservación en Puebla durante el **33º Congreso Internacional de Biología de la Conservación (ICCB 2027)** en colaboración con la **BUAP**.
 
@@ -8,7 +8,7 @@ Prototipo web multi-página desarrollado para la guía pública de actividades, 
 
 ### Opción 1: En línea (GitHub Pages)
 Interactúa con el prototipo directamente desde tu navegador en computadora o celular:
-👉 **[Ver prototipo en vivo](https://cmrgo11.github.io/Biodiversidad-PueblaV1/)**
+**[Ver prototipo en vivo](https://cmrgo11.github.io/Biodiversidad-PueblaV1/)**
 
 *(Para activar este enlace, en GitHub ve a **Settings** > **Pages** > selecciona rama main y carpeta / (root)).*
 
@@ -18,12 +18,13 @@ Interactúa con el prototipo directamente desde tu navegador en computadora o ce
    git clone https://github.com/CMRGO11/Biodiversidad-PueblaV1.git
    cd Biodiversidad-PueblaV1
    ``
-2. Abre cualquiera de las páginas (index.html, utas.html, etc.) con doble clic en tu navegador favorito.
+2. Abre cualquiera de las páginas (index.html, 
+utas.html, etc.) con doble clic en tu navegador favorito.
 3. O si usas Visual Studio Code, abre la carpeta y haz clic en **Go Live** con la extensión **Live Server**.
 
 ---
 
-## 📁 Estructura Multi-Página del Proyecto
+## Estructura Multi-Página del Proyecto
 
 El sitio ahora funciona con **subpáginas independientes interconectadas**, compartiendo el mismo sistema de diseño y componentes globales:
 
@@ -55,7 +56,8 @@ Biodiversidad-PueblaV1/
 
 Cada integrante del equipo puede trabajar en una subpágina específica sin causar conflictos en Git:
 
-* **Para editar una sección en particular:** Abre el archivo HTML correspondiente (utas.html, genda.html, etc.).
+* **Para editar una sección en particular:** Abre el archivo HTML correspondiente (
+utas.html, genda.html, etc.).
 * **Para ajustar el diseño general o colores:** Edita ssets/css/styles.css.
 * **Para añadir interactividad:** Edita ssets/js/main.js.
 * **Para agregar recursos gráficos:** Colócalos en ssets/img/.
@@ -76,5 +78,5 @@ Cada integrante del equipo puede trabajar en una subpágina específica sin caus
 
 ---
 
-## 👥 Equipo y Colaboradores
+## Equipo y Colaboradores
 Proyecto colaborativo para el diseño y validación de la experiencia digital ICCB 2027 Puebla.
