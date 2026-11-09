@@ -1,1830 +1,2782 @@
-        /* ==========================================================================
-   DESIGN SYSTEM — PROTOTIPO COMPLETO MULTI-PÁGINA
-   ========================================================================== */
-        :root {
-            --color-cream: #F4F0E8;
-            --color-cream-light: #FAF8F5;
-            --color-cream-card: #EFEBE4;
-            --color-cream-border: #E2DDD3;
-            --color-navy: #151748;
-            --color-navy-deep: #0D0E31;
-            --color-navy-card: #141646;
-            --color-navy-light: #232668;
-            --color-talavera-blue: #2B4C8C;
-            --color-talavera-hover: #1F3868;
-            --color-soft-blue: #8FAAD0;
-            --color-soft-blue-light: #EBF1F9;
-            --color-gold: #E8BB49;
-            --color-gold-hover: #D6A734;
-            --color-gold-soft: #FDF7E7;
-            --color-gold-text: #5C4300;
-            --color-lavender: #7B86B8;
-            --color-lavender-soft: #ECEEF6;
-            --color-text-main: #1A1D36;
-            --color-text-muted: #585C7B;
-            --color-text-light: #FFFFFF;
-            --color-surface: #FFFFFF;
-            --color-border: #DCDDE8;
-            --status-confirmed-bg: #E8F5E9;
-            --status-confirmed-text: #1B5E20;
-            --status-confirmed-border: #81C784;
-            --status-upcoming-bg: #FFF8E1;
-            --status-upcoming-text: #B78103;
-            --status-upcoming-border: #FFD54F;
-            --status-proposal-bg: #EEF2FA;
-            --status-proposal-text: #2C3E75;
-            --status-proposal-border: #B2C3E8;
-            --font-sans: 'Plus Jakarta Sans', 'Avenir Next', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            --font-scale: 1;
-            --font-xs: calc(0.75rem * var(--font-scale));
-            --font-sm: calc(0.875rem * var(--font-scale));
-            --font-base: calc(1rem * var(--font-scale));
-            --font-md: calc(1.125rem * var(--font-scale));
-            --font-lg: calc(1.25rem * var(--font-scale));
-            --font-xl: calc(1.5rem * var(--font-scale));
-            --radius-sm: 6px;
-            --radius-md: 12px;
-            --radius-lg: 20px;
-            --radius-pill: 9999px;
-            --shadow-sm: 0 2px 6px rgba(21, 23, 72, 0.06);
-            --shadow-md: 0 6px 18px rgba(21, 23, 72, 0.08);
-            --shadow-lg: 0 12px 32px rgba(21, 23, 72, 0.12);
-            --shadow-hover: 0 16px 36px rgba(21, 23, 72, 0.16);
-            --transition-fast: 0.18s ease;
-            --transition-normal: 0.28s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        *,
-        *::before,
-        *::after {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0
-        }
-
-        html {
-            font-size: 100%;
-            scroll-behavior: smooth
-        }
-
-        body {
-            font-family: var(--font-sans);
-            font-size: var(--font-base);
-            line-height: 1.6;
-            color: var(--color-text-main);
-            background: var(--color-cream);
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh
-        }
-
-        a {
-            color: var(--color-talavera-blue);
-            text-decoration: underline;
-            text-decoration-thickness: 1px;
-            text-underline-offset: 3px;
-            transition: color var(--transition-fast)
-        }
-
-        a:hover {
-            color: var(--color-navy)
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block
-        }
-
-        :focus-visible {
-            outline: 3px solid var(--color-gold);
-            outline-offset: 3px;
-            border-radius: var(--radius-sm)
-        }
-
-        .container {
-            max-width: 1240px;
-            margin: 0 auto;
-            padding: 0 1.25rem
-        }
-
-        /* ===== Icons ===== */
-        .talavera-icon,
-        .nav-icon,
-        .nav-icon-gold {
-            display: inline-block;
-            vertical-align: middle;
-            flex-shrink: 0
-        }
-
-        .nav-icon {
-            color: var(--color-talavera-blue);
-            transition: transform var(--transition-fast), color var(--transition-fast)
-        }
-
-        .nav-link:hover .nav-icon,
-        .nav-link.active .nav-icon {
-            color: var(--color-navy);
-            transform: translateY(-1px)
-        }
-
-        .nav-icon-gold {
-            color: var(--color-navy-deep)
-        }
-
-        .card-arrow-icon {
-            transition: transform var(--transition-fast)
-        }
-
-        .pillar-card:hover .card-arrow-icon,
-        .audience-card:hover .card-arrow-icon {
-            transform: translateX(4px)
-        }
-
-        .skip-link {
-            position: absolute;
-            top: -999px;
-            left: 1rem;
-            background: var(--color-gold);
-            color: var(--color-navy-deep);
-            padding: 0.75rem 1.25rem;
-            font-weight: 700;
-            z-index: 9999;
-            border-radius: var(--radius-sm);
-            text-decoration: none;
-            box-shadow: var(--shadow-lg)
-        }
-
-        .skip-link:focus {
-            top: 1rem
-        }
-
-        /* ===== Language Switcher ===== */
-        .lang-switcher-vertical {
-            display: inline-flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            background: #F8FAFC;
-            border: 1px solid #E2E8F0;
-            border-radius: var(--radius-sm);
-            padding: 2px;
-            gap: 1px;
-            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
-            flex-shrink: 0
-        }
-
-        .lang-switcher-vertical .lang-pill {
-            display: block;
-            padding: 2px 5px;
-            border-radius: 3px;
-            color: var(--color-navy);
-            text-decoration: none;
-            font-weight: 800;
-            font-size: 0.62rem;
-            letter-spacing: 0.03em;
-            line-height: 1.1;
-            text-align: center;
-            transition: all var(--transition-fast)
-        }
-
-        .lang-switcher-vertical .lang-pill:hover {
-            color: var(--color-talavera-blue);
-            background: rgba(26, 54, 93, 0.08)
-        }
-
-        .lang-switcher-vertical .lang-pill.active {
-            background-color: var(--color-talavera-blue);
-            color: #fff
-        }
-
-        .header-mobile-right {
-            display: flex;
-            align-items: center;
-            gap: 0.65rem
-        }
-
-        @media(min-width:992px) {
-            .header-mobile-right {
-                display: none !important
-            }
-        }
-
-        @media(max-width:991px) {
-            .desktop-header-lang {
-                display: none !important
-            }
-        }
-
-        /* ===== Header ===== */
-        .site-header {
-            background: #fff;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 20px rgba(21, 23, 72, 0.06);
-            border-bottom: 1px solid var(--color-cream-border)
-        }
-
-        .header-container {
-            max-width: 1440px;
-            margin: 0 auto;
-            padding: 0.5rem 1.5rem 0.5rem 1.25rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 1.25rem;
-            min-height: 82px
-        }
-
-        .brand-wrapper {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.85rem;
-            text-decoration: none;
-            flex-shrink: 0;
-            transition: opacity var(--transition-fast)
-        }
-
-        .brand-wrapper:hover {
-            opacity: 0.92
-        }
-
-        .brand-logo-img {
-            width: auto;
-            object-fit: contain;
-            display: block
-        }
-
-        .brand-logo-iccb {
-            height: 72px;
-            max-width: 160px;
-            filter: drop-shadow(0 2px 4px rgba(26, 54, 93, 0.08))
-        }
-
-        .brand-logo-buap {
-            height: 60px;
-            max-width: 60px
-        }
-
-        .brand-divider {
-            width: 1.5px;
-            height: 42px;
-            background: var(--color-navy);
-            opacity: 0.22;
-            flex-shrink: 0
-        }
-
-        .nav-toggle-btn {
-            display: inline-flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            gap: 5px;
-            width: 44px;
-            height: 44px;
-            background: var(--color-cream-light);
-            border: 1px solid var(--color-border);
-            border-radius: var(--radius-sm);
-            cursor: pointer
-        }
-
-        .nav-toggle-btn span {
-            display: block;
-            width: 22px;
-            height: 2.5px;
-            background: var(--color-navy);
-            border-radius: 2px;
-            transition: all var(--transition-fast)
-        }
-
-        .main-nav {
-            display: none;
-            width: 100%
-        }
-
-        .main-nav.is-open {
-            display: block;
-            padding-top: 1rem;
-            border-top: 1px solid var(--color-cream-border)
-        }
-
-        .nav-list {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 0.35rem;
-            margin: 0;
-            padding: 0
-        }
-
-        .nav-link {
-            display: flex;
-            align-items: center;
-            gap: 0.45rem;
-            padding: 0.5rem 0.75rem;
-            color: var(--color-navy);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: var(--font-sm);
-            border-radius: var(--radius-sm);
-            white-space: nowrap;
-            transition: all var(--transition-fast)
-        }
-
-        .nav-link:hover,
-        .nav-link.active {
-            background: var(--color-soft-blue-light);
-            color: var(--color-talavera-blue)
-        }
-
-        .nav-link.highlight {
-            background: linear-gradient(135deg, var(--color-gold), var(--color-gold-hover));
-            color: var(--color-navy-deep);
-            font-weight: 700;
-            box-shadow: 0 2px 8px rgba(242, 184, 36, 0.3)
-        }
-
-        .nav-link.highlight:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 4px 12px rgba(242, 184, 36, 0.4)
-        }
-
-        .nav-user-actions {
-            margin-top: 0.75rem;
-            padding-top: 0.75rem;
-            border-top: 1px solid var(--color-border);
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem
-        }
-
-        @media(min-width:992px) {
-            .nav-toggle-btn {
-                display: none
-            }
-
-            .main-nav,
-            .main-nav.is-open {
-                display: flex;
-                align-items: center;
-                justify-content: flex-end;
-                width: auto;
-                padding-top: 0;
-                border-top: none;
-                gap: 0.75rem;
-                flex-shrink: 0
-            }
-
-            .nav-list {
-                flex-direction: row;
-                align-items: center;
-                gap: 0.15rem
-            }
-
-            .nav-user-actions {
-                margin-top: 0;
-                padding-top: 0;
-                border-top: none;
-                flex-direction: row;
-                align-items: center;
-                margin-left: 0.35rem
-            }
-        }
-
-        @media(min-width:992px) and (max-width:1240px) {
-            .header-container {
-                padding: 0.35rem 1rem 0.5rem 0.75rem;
-                gap: 0.5rem
-            }
-
-            .brand-logo-iccb {
-                height: 58px
-            }
-
-            .brand-logo-buap {
-                height: 50px;
-                max-width: 50px
-            }
-
-            .brand-divider {
-                height: 32px;
-                margin: 0 0.15rem
-            }
-
-            .nav-link {
-                padding: 0.4rem 0.5rem;
-                font-size: 0.82rem;
-                gap: 0.3rem
-            }
-
-            .btn-sm {
-                padding: 0.35rem 0.65rem;
-                font-size: 0.78rem
-            }
-        }
-
-        @media(max-width:991px) {
-            .header-container {
-                padding: 0.5rem 1rem;
-                min-height: 68px
-            }
-
-            .brand-logo-iccb {
-                height: 52px
-            }
-
-            .brand-logo-buap {
-                height: 44px;
-                max-width: 44px
-            }
-
-            .brand-divider {
-                height: 28px;
-                margin: 0 0.25rem
-            }
-        }
-
-        /* ===== Hero ===== */
-        .hero-section {
-            min-height: calc(100vh - 82px);
-            display: flex;
-            align-items: center;
-            position: relative;
-            background: var(--color-cream-light);
-            border-bottom: 1px solid var(--color-cream-border);
-            overflow: hidden
-        }
-
-        .hero-bg-media {
-            position: absolute;
-            inset: 0;
-            overflow: hidden;
-            pointer-events: none;
-            z-index: 0
-        }
-
-        .hero-bg-texture {
-            position: absolute;
-            inset: 0;
-            background-image: url('../img/Logo Main__Logo TExture Light.png');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            opacity: 0.10;
-            mix-blend-mode: multiply;
-            z-index: 1
-        }
-
-        .hero-bg-radial {
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(circle at 65% 50%, rgba(232, 187, 73, 0.08) 0%, rgba(250, 248, 245, 0) 65%), radial-gradient(circle at 15% 30%, rgba(26, 54, 93, 0.05) 0%, rgba(250, 248, 245, 0) 50%);
-            pointer-events: none;
-            z-index: 3
-        }
-
-        .hero-inner {
-            position: relative;
-            z-index: 2;
-            width: 100%;
-            max-width: 1380px;
-            margin: 0 auto;
-            padding: 3.5rem 2rem;
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 3rem;
-            align-items: center
-        }
-
-        @media(min-width:900px) {
-            .hero-inner {
-                grid-template-columns: 1.05fr 0.95fr;
-                gap: 4rem;
-                padding: 4rem 2.5rem
-            }
-        }
-
-        .hero-left {
-            display: flex;
-            flex-direction: column
-        }
-
-        .hero-date-label {
-            font-size: var(--font-sm);
-            font-weight: 700;
-            color: var(--color-talavera-blue);
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            margin-bottom: 1.25rem
-        }
-
-        .hero-title {
-            font-size: clamp(2.75rem, 6vw, 4.5rem);
-            font-weight: 800;
-            line-height: 1.05;
-            letter-spacing: -0.03em;
-            color: var(--color-navy);
-            margin-bottom: 1.25rem
-        }
-
-        .hero-subtitle {
-            font-size: clamp(1rem, 2vw, 1.15rem);
-            color: var(--color-text-muted);
-            line-height: 1.65;
-            margin-bottom: 2.25rem;
-            max-width: 440px
-        }
-
-        .hero-cta-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.85rem;
-            align-items: center;
-            margin-bottom: 2.5rem
-        }
-
-        .hero-btn-primary {
-            display: inline-flex;
-            align-items: center;
-            padding: 0.85rem 2rem;
-            background: var(--color-navy);
-            color: #fff;
-            font-family: inherit;
-            font-weight: 700;
-            font-size: var(--font-base);
-            border-radius: var(--radius-md);
-            text-decoration: none;
-            transition: all var(--transition-fast);
-            border: 2px solid transparent
-        }
-
-        .hero-btn-primary:hover {
-            background: var(--color-talavera-blue);
-            color: #fff;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(21, 23, 72, 0.18)
-        }
-
-        .hero-btn-secondary {
-            display: inline-flex;
-            align-items: center;
-            padding: 0.85rem 1.5rem;
-            background: transparent;
-            color: var(--color-navy);
-            font-family: inherit;
-            font-weight: 700;
-            font-size: var(--font-base);
-            border-radius: var(--radius-md);
-            border: 2px solid var(--color-navy);
-            text-decoration: none;
-            transition: all var(--transition-fast)
-        }
-
-        .hero-btn-secondary:hover {
-            background: var(--color-gold);
-            border-color: var(--color-gold);
-            color: var(--color-navy-deep);
-            transform: translateY(-2px)
-        }
-
-        .hero-logos-strip {
-            display: flex;
-            align-items: center;
-            gap: 1.25rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid var(--color-cream-border)
-        }
-
-        .hero-strip-logo {
-            height: 36px;
-            width: auto;
-            object-fit: contain;
-            opacity: 0.85
-        }
-
-        .hero-right {
-            display: flex;
-            flex-direction: column;
-            gap: 1.25rem
-        }
-
-        .hero-photo-frame {
-            position: relative;
-            border-radius: var(--radius-lg);
-            overflow: hidden;
-            box-shadow: 0 20px 50px rgba(21, 23, 72, 0.12);
-            border: 3px solid var(--color-cream-border)
-        }
-
-        .hero-photo {
-            width: 100%;
-            display: block;
-            object-fit: cover;
-            aspect-ratio: 16/10
-        }
-
-        .hero-photo-label {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(transparent, rgba(22, 20, 86, 0.85));
-            padding: 1.5rem 1.25rem 1rem;
-            display: flex;
-            flex-direction: column;
-            gap: 0.1rem
-        }
-
-        .hero-photo-city {
-            font-size: var(--font-md);
-            font-weight: 800;
-            color: #fff;
-            letter-spacing: -0.01em
-        }
-
-        .hero-photo-sub {
-            font-size: var(--font-xs);
-            color: rgba(255, 255, 255, 0.7);
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.06em
-        }
-
-        .hero-pattern-badge {
-            background: var(--color-cream);
-            border: 2px solid var(--color-cream-border);
-            border-radius: var(--radius-lg);
-            padding: 0.75rem 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: var(--shadow-sm)
-        }
-
-        .hero-pattern-badge img {
-            height: 72px;
-            width: auto;
-            object-fit: contain
-        }
-
-        /* ===== Search ===== */
-        .search-section-wrap {
-            background: var(--color-cream);
-            padding: 1.5rem 1.5rem 0
-        }
-
-        .search-agenda-section {
-            background: #fff;
-            position: relative;
-            z-index: 10;
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-lg);
-            padding: 1.5rem;
-            max-width: 1160px;
-            margin: 0 auto 2rem;
-            border: 1px solid var(--color-cream-border)
-        }
-
-        .search-form-flex {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1rem;
-            align-items: center
-        }
-
-        @media(min-width:768px) {
-            .search-form-flex {
-                grid-template-columns: 2fr 1.25fr auto
-            }
-        }
-
-        .search-input-wrapper {
-            position: relative
-        }
-
-        .search-input {
-            width: 100%;
-            padding: 0.85rem 1rem 0.85rem 2.75rem;
-            border: 1.5px solid var(--color-border);
-            border-radius: var(--radius-md);
-            font-family: inherit;
-            font-size: var(--font-base);
-            color: var(--color-text-main);
-            background: var(--color-cream-light);
-            transition: all var(--transition-fast)
-        }
-
-        .search-input:focus {
-            border-color: var(--color-talavera-blue);
-            background: #fff;
-            box-shadow: 0 0 0 4px var(--color-soft-blue-light);
-            outline: none
-        }
-
-        .search-icon {
-            position: absolute;
-            left: 1rem;
-            top: 50%;
-            transform: translateY(-50%);
-            color: var(--color-text-muted)
-        }
-
-        .search-select {
-            padding: 0.85rem 1rem;
-            border: 1.5px solid var(--color-border);
-            border-radius: var(--radius-md);
-            font-family: inherit;
-            font-size: var(--font-base);
-            color: var(--color-text-main);
-            background: var(--color-cream-light);
-            cursor: pointer;
-            width: 100%
-        }
-
-        /* ===== Section Headers ===== */
-        .feature-grid-section {
-            padding: 4rem 1.25rem 2rem
-        }
-
-        .section-head-center {
-            text-align: center;
-            max-width: 780px;
-            margin: 0 auto 3rem
-        }
-
-        .section-eyebrow {
-            color: var(--color-talavera-blue);
-            font-size: var(--font-sm);
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            margin-bottom: 0.5rem;
-            display: block
-        }
-
-        .section-main-title {
-            font-size: clamp(1.85rem, 3.5vw, 2.5rem);
-            font-weight: 800;
-            color: var(--color-navy);
-            line-height: 1.2;
-            margin-bottom: 0.75rem
-        }
-
-        .section-main-desc {
-            font-size: var(--font-base);
-            color: var(--color-text-muted);
-            line-height: 1.6
-        }
-
-        /* ===== Pillar Cards ===== */
-        .pillar-cards-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.5rem
-        }
-
-        @media(min-width:640px) {
-            .pillar-cards-grid {
-                grid-template-columns: repeat(2, 1fr)
-            }
-        }
-
-        @media(min-width:1024px) {
-            .pillar-cards-grid {
-                grid-template-columns: repeat(4, 1fr)
-            }
-        }
-
-        .pillar-card {
-            background: #fff;
-            border-radius: var(--radius-lg);
-            border: 1px solid var(--color-cream-border);
-            padding: 2rem 1.5rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            box-shadow: var(--shadow-sm);
-            text-decoration: none;
-            color: inherit;
-            position: relative;
-            overflow: hidden;
-            transition: all var(--transition-normal)
-        }
-
-        .pillar-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 5px;
-            background: var(--color-talavera-blue);
-            transition: height var(--transition-fast)
-        }
-
-        .pillar-card.highlight-gold::before {
-            background: var(--color-gold);
-            height: 7px
-        }
-
-        .pillar-card:hover {
-            transform: translateY(-6px);
-            box-shadow: var(--shadow-hover);
-            border-color: var(--color-talavera-blue)
-        }
-
-        .pillar-card:hover::before {
-            height: 8px
-        }
-
-        .pillar-icon-box {
-            display: inline-flex;
-            align-items: center;
-            justify-content: flex-start;
-            height: 52px;
-            padding: 4px 10px;
-            border-radius: var(--radius-md);
-            background: #fff;
-            border: 1px solid var(--color-cream-border);
-            margin-bottom: 1.25rem;
-            box-shadow: var(--shadow-sm);
-            width: fit-content
-        }
-
-        .pillar-icon-box img {
-            height: 42px;
-            width: auto;
-            object-fit: contain
-        }
-
-        .pillar-card-title {
-            font-size: 1.25rem;
-            font-weight: 800;
-            color: var(--color-navy);
-            line-height: 1.25;
-            margin-bottom: 0.75rem
-        }
-
-        .pillar-card-text {
-            font-size: var(--font-sm);
-            color: var(--color-text-muted);
-            line-height: 1.55;
-            margin-bottom: 1.5rem
-        }
-
-        .pillar-card-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.4rem;
-            font-size: var(--font-sm);
-            font-weight: 800;
-            color: var(--color-talavera-blue);
-            margin-top: auto
-        }
-
-        .pillar-card:hover .pillar-card-link {
-            color: var(--color-navy)
-        }
-
-        /* ===== Badges ===== */
-        .badge-status {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.4rem;
-            padding: 0.3rem 0.75rem;
-            border-radius: var(--radius-pill);
-            font-size: var(--font-xs);
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 0.04em;
-            border: 1px solid transparent
-        }
-
-        .badge-status.confirmada {
-            background: var(--status-confirmed-bg);
-            color: var(--status-confirmed-text);
-            border-color: var(--status-confirmed-border)
-        }
-
-        .badge-status.proximamente {
-            background: var(--status-upcoming-bg);
-            color: var(--status-upcoming-text);
-            border-color: var(--status-upcoming-border)
-        }
-
-        .badge-status.propuesta {
-            background: var(--status-proposal-bg);
-            color: var(--status-proposal-text);
-            border-color: var(--status-proposal-border)
-        }
-
-        /* ===== Buttons ===== */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            font-family: inherit;
-            font-size: var(--font-base);
-            font-weight: 700;
-            padding: 0.75rem 1.35rem;
-            border-radius: var(--radius-md);
-            border: 1px solid transparent;
-            cursor: pointer;
-            text-decoration: none;
-            transition: all var(--transition-fast)
-        }
-
-        .btn-primary {
-            background: var(--color-navy);
-            color: #fff
-        }
-
-        .btn-primary:hover {
-            background: var(--color-navy-deep);
-            color: #fff;
-            box-shadow: var(--shadow-md)
-        }
-
-        .btn-accent {
-            background: linear-gradient(135deg, var(--color-gold), var(--color-gold-hover));
-            color: var(--color-navy-deep);
-            border-color: var(--color-gold-hover)
-        }
-
-        .btn-accent:hover {
-            background: var(--color-gold-hover);
-            box-shadow: 0 4px 15px rgba(242, 184, 36, 0.4)
-        }
-
-        .btn-outline {
-            background: transparent;
-            border: 1.5px solid var(--color-navy);
-            color: var(--color-navy)
-        }
-
-        .btn-outline:hover {
-            background: var(--color-navy);
-            color: #fff
-        }
-
-        .btn-outline-white {
-            background: transparent;
-            border: 1.5px solid rgba(255, 255, 255, 0.6);
-            color: #fff
-        }
-
-        .btn-outline-white:hover {
-            background: #fff;
-            color: var(--color-navy)
-        }
-
-        .btn-sm {
-            padding: 0.4rem 0.85rem;
-            font-size: var(--font-sm);
-            border-radius: var(--radius-sm)
-        }
-
-        /* ===== Page Section (full-page views) ===== */
-        .page-section {
-            padding: 4rem 1.25rem;
-            border-bottom: 1px solid var(--color-cream-border)
-        }
-
-        .page-section:nth-child(even) {
-            background: var(--color-cream-light)
-        }
-
-        .page-section-header {
-            max-width: 780px;
-            margin: 0 auto 3rem;
-            text-align: center
-        }
-
-        .page-hero-banner {
-            background: var(--color-navy);
-            color: #fff;
-            padding: 3.5rem 1.25rem;
-            text-align: center;
-            position: relative;
-            overflow: hidden
-        }
-
-        .page-hero-banner .hero-bg-texture {
-            position: absolute;
-            inset: 0;
-            background-image: url('../img/Logo Main__Logo Texture Dark.png');
-            background-size: cover;
-            background-position: center;
-            opacity: 0.12;
-            z-index: 0
-        }
-
-        .page-hero-banner>* {
-            position: relative;
-            z-index: 1
-        }
-
-        .page-hero-banner h2 {
-            font-size: clamp(2rem, 4vw, 3rem);
-            font-weight: 800;
-            margin-bottom: 0.75rem
-        }
-
-        .page-hero-banner p {
-            font-size: var(--font-md);
-            color: rgba(255, 255, 255, 0.8);
-            max-width: 640px;
-            margin: 0 auto;
-            line-height: 1.6
-        }
-
-        /* ===== Agenda Items ===== */
-        .agenda-day-group {
-            margin-bottom: 2.5rem
-        }
-
-        .agenda-day-label {
-            font-size: var(--font-lg);
-            font-weight: 800;
-            color: var(--color-navy);
-            padding-bottom: 0.75rem;
-            border-bottom: 2px solid var(--color-gold);
-            margin-bottom: 1.25rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem
-        }
-
-        .agenda-item {
-            background: #fff;
-            border: 1px solid var(--color-cream-border);
-            border-radius: var(--radius-md);
-            padding: 1.25rem 1.5rem;
-            margin-bottom: 0.75rem;
-            display: grid;
-            grid-template-columns: auto 1fr auto;
-            gap: 1.25rem;
-            align-items: center;
-            transition: all var(--transition-fast)
-        }
-
-        .agenda-item:hover {
-            box-shadow: var(--shadow-md);
-            border-color: var(--color-talavera-blue)
-        }
-
-        .agenda-time {
-            font-weight: 800;
-            color: var(--color-talavera-blue);
-            font-size: var(--font-sm);
-            white-space: nowrap;
-            min-width: 65px
-        }
-
-        .agenda-info h4 {
-            font-size: var(--font-base);
-            font-weight: 700;
-            color: var(--color-navy);
-            margin-bottom: 0.15rem
-        }
-
-        .agenda-info p {
-            font-size: var(--font-sm);
-            color: var(--color-text-muted)
-        }
-
-        /* ===== Route Cards ===== */
-        .route-card {
-            background: #fff;
-            border: 1px solid var(--color-cream-border);
-            border-radius: var(--radius-lg);
-            overflow: hidden;
-            box-shadow: var(--shadow-sm);
-            transition: all var(--transition-normal)
-        }
-
-        .route-card:hover {
-            box-shadow: var(--shadow-hover);
-            transform: translateY(-4px)
-        }
-
-        .route-card-img {
-            height: 200px;
-            background: linear-gradient(135deg, var(--color-talavera-blue), var(--color-navy));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #fff;
-            font-weight: 700
-        }
-
-        .route-card-body {
-            padding: 1.5rem
-        }
-
-        .route-card-body h3 {
-            font-size: var(--font-lg);
-            font-weight: 800;
-            color: var(--color-navy);
-            margin-bottom: 0.5rem
-        }
-
-        .route-card-body p {
-            font-size: var(--font-sm);
-            color: var(--color-text-muted);
-            line-height: 1.55;
-            margin-bottom: 1rem
-        }
-
-        .route-stops {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-            padding-left: 1.25rem;
-            border-left: 3px solid var(--color-gold);
-            margin-bottom: 1rem
-        }
-
-        .route-stop {
-            font-size: var(--font-sm);
-            font-weight: 600;
-            color: var(--color-navy)
-        }
-
-        /* ===== Menu / Sabores Cards ===== */
-        .flavor-card {
-            background: #fff;
-            border: 1px solid var(--color-cream-border);
-            border-radius: var(--radius-lg);
-            overflow: hidden;
-            box-shadow: var(--shadow-sm);
-            transition: all var(--transition-normal)
-        }
-
-        .flavor-card:hover {
-            box-shadow: var(--shadow-hover);
-            transform: translateY(-4px)
-        }
-
-        .flavor-card-img {
-            height: 180px;
-            background: linear-gradient(135deg, var(--color-gold-soft), var(--color-cream));
-            display: flex;
-            align-items: center;
-            justify-content: center
-        }
-
-        .flavor-card-img img {
-            height: 80px;
-            width: auto;
-            object-fit: contain
-        }
-
-        .flavor-card-body {
-            padding: 1.5rem
-        }
-
-        .flavor-card-body h3 {
-            font-size: var(--font-lg);
-            font-weight: 800;
-            color: var(--color-navy);
-            margin-bottom: 0.5rem
-        }
-
-        .flavor-card-body p {
-            font-size: var(--font-sm);
-            color: var(--color-text-muted);
-            line-height: 1.55;
-            margin-bottom: 1rem
-        }
-
-        /* ===== Forms ===== */
-        .form-group {
-            margin-bottom: 1.25rem
-        }
-
-        .form-group label {
-            display: block;
-            font-weight: 700;
-            font-size: var(--font-sm);
-            color: var(--color-navy);
-            margin-bottom: 0.4rem
-        }
-
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 0.85rem 1rem;
-            border: 1.5px solid var(--color-border);
-            border-radius: var(--radius-md);
-            font-family: inherit;
-            font-size: var(--font-base);
-            color: var(--color-text-main);
-            background: var(--color-cream-light);
-            transition: all var(--transition-fast)
-        }
-
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            border-color: var(--color-talavera-blue);
-            background: #fff;
-            box-shadow: 0 0 0 4px var(--color-soft-blue-light);
-            outline: none
-        }
-
-        .form-grid-2 {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 0
-        }
-
-        @media(min-width:768px) {
-            .form-grid-2 {
-                grid-template-columns: 1fr 1fr;
-                gap: 1.5rem
-            }
-        }
-
-        .form-card {
-            background: #fff;
-            border: 1px solid var(--color-cream-border);
-            border-radius: var(--radius-lg);
-            padding: 2.5rem;
-            box-shadow: var(--shadow-md);
-            max-width: 560px;
-            margin: 0 auto
-        }
-
-        .form-tabs {
-            display: flex;
-            gap: 0;
-            margin-bottom: 2rem;
-            border-bottom: 2px solid var(--color-cream-border)
-        }
-
-        .form-tab {
-            flex: 1;
-            padding: 0.85rem;
-            text-align: center;
-            font-weight: 700;
-            font-size: var(--font-sm);
-            color: var(--color-text-muted);
-            background: none;
-            border: none;
-            cursor: pointer;
-            transition: all var(--transition-fast);
-            border-bottom: 3px solid transparent;
-            margin-bottom: -2px
-        }
-
-        .form-tab.active {
-            color: var(--color-navy);
-            border-bottom-color: var(--color-gold)
-        }
-
-        .form-tab:hover {
-            color: var(--color-talavera-blue)
-        }
-
-        .tab-content {
-            display: none
-        }
-
-        .tab-content.active {
-            display: block
-        }
-
-        /* ===== Participate Section ===== */
-        .participate-section {
-            padding: 3rem 1.25rem 4rem
-        }
-
-        .audience-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.5rem
-        }
-
-        @media(min-width:640px) {
-            .audience-grid {
-                grid-template-columns: repeat(2, 1fr)
-            }
-        }
-
-        @media(min-width:1024px) {
-            .audience-grid {
-                grid-template-columns: repeat(4, 1fr)
-            }
-        }
-
-        .audience-card {
-            background: #fff;
-            border: 1px solid var(--color-border);
-            border-radius: var(--radius-lg);
-            padding: 1.75rem 1.25rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            box-shadow: var(--shadow-sm);
-            transition: all var(--transition-normal)
-        }
-
-        .audience-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-md);
-            border-color: var(--color-gold)
-        }
-
-        .audience-avatar {
-            width: 96px;
-            height: 56px;
-            border-radius: var(--radius-md);
-            background: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1rem;
-            border: 1px solid var(--color-border);
-            padding: 4px 8px;
-            box-shadow: var(--shadow-sm)
-        }
-
-        .audience-avatar img {
-            height: 44px;
-            width: auto;
-            object-fit: contain
-        }
-
-        .audience-card h3 {
-            font-size: 1.15rem;
-            font-weight: 800;
-            color: var(--color-navy);
-            margin-bottom: 0.5rem
-        }
-
-        .audience-card p {
-            font-size: var(--font-sm);
-            color: var(--color-text-muted);
-            line-height: 1.5;
-            margin-bottom: 1.25rem
-        }
-
-        /* ===== Disclaimer ===== */
-        .disclaimer-banner {
-            background: var(--color-gold-soft);
-            border: 1.5px solid var(--color-gold);
-            border-radius: var(--radius-md);
-            padding: 1.15rem 1.35rem;
-            margin: 2rem 0;
-            display: flex;
-            align-items: flex-start;
-            gap: 0.85rem;
-            font-size: var(--font-sm);
-            color: var(--color-gold-text)
-        }
-
-        .disclaimer-banner strong {
-            color: #382400
-        }
-
-        /* ===== Map Styles (Leaflet Interactive Map) ===== */
-        .map-header-controls {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: space-between;
-            gap: 1rem;
-            margin-bottom: 1rem;
-        }
-
-        .map-filter-group {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-
-        .map-filter-btn {
-            background: var(--color-surface);
-            border: 1.5px solid var(--color-cream-border);
-            border-radius: var(--radius-pill);
-            padding: 0.5rem 1rem;
-            font-family: var(--font-sans);
-            font-size: var(--font-sm);
-            font-weight: 600;
-            color: var(--color-navy);
-            cursor: pointer;
-            transition: all var(--transition-fast);
-            display: inline-flex;
-            align-items: center;
-            gap: 0.45rem;
-            box-shadow: var(--shadow-sm);
-        }
-
-        .map-filter-btn:hover {
-            border-color: var(--color-talavera-blue);
-            color: var(--color-talavera-blue);
-            transform: translateY(-1px);
-        }
-
-        .map-filter-btn.active {
-            background: var(--color-navy);
-            color: #ffffff;
-            border-color: var(--color-navy);
-            box-shadow: 0 4px 12px rgba(21, 23, 72, 0.2);
-        }
-
-        .map-route-summary {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: space-between;
-            background: var(--color-cream-card);
-            border: 1px solid var(--color-cream-border);
-            border-radius: var(--radius-md);
-            padding: 0.85rem 1.25rem;
-            margin-bottom: 1rem;
-            gap: 0.75rem;
-        }
-
-        .route-summary-item {
-            display: flex;
-            flex-direction: column;
-            gap: 0.15rem;
-        }
-
-        .summary-label {
-            font-size: var(--font-xs);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            color: var(--color-text-muted);
-            font-weight: 700;
-        }
-
-        .route-summary-item strong {
-            font-size: var(--font-base);
-            color: var(--color-navy);
-            font-weight: 800;
-        }
-
-        .route-summary-meta {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-
-        .summary-badge {
-            font-size: var(--font-xs);
-            font-weight: 700;
-            background: #ffffff;
-            border: 1px solid var(--color-cream-border);
-            border-radius: var(--radius-pill);
-            padding: 0.35rem 0.75rem;
-            color: var(--color-navy);
-        }
-
-        .map-wrapper-card {
-            position: relative;
-            border-radius: var(--radius-lg);
-            overflow: hidden;
-            border: 2px solid var(--color-cream-border);
-            box-shadow: var(--shadow-md);
-            margin-bottom: 2.5rem;
-            background: var(--color-cream-card);
-            z-index: 1;
-        }
-
-        .map-container {
-            height: 520px;
-            width: 100%;
-            background: #e7e5e0;
-            position: relative;
-            z-index: 1;
-        }
-
-        /* Map Legend */
-        .map-legend {
-            background: rgba(255, 255, 255, 0.96);
-            backdrop-filter: blur(6px);
-            border-top: 1px solid var(--color-cream-border);
-            padding: 0.75rem 1.25rem;
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            gap: 1.5rem;
-            font-size: var(--font-xs);
-            color: var(--color-text-main);
-        }
-
-        .legend-title {
-            font-weight: 800;
-            color: var(--color-navy);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        .legend-item {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.45rem;
-            font-weight: 600;
-        }
-
-        .legend-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            display: inline-block;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-        }
-
-        .legend-dot.dot-centro {
-            background: #2B4C8C;
-        }
-
-        .legend-dot.dot-sierra {
-            background: #2E7D32;
-        }
-
-        .legend-dot.dot-valsequillo {
-            background: #00838F;
-        }
-
-        /* Custom Leaflet Markers */
-        .custom-map-pin-container {
-            background: transparent !important;
-            border: none !important;
-        }
-
-        .custom-map-pin {
-            width: 34px;
-            height: 34px;
-            background: var(--pin-color, #2B4C8C);
-            border: 2.5px solid #ffffff;
-            border-radius: 50% 50% 50% 0;
-            transform: rotate(-45deg);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.28);
-            transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s ease;
-            cursor: pointer;
-        }
-
-        .custom-map-pin .pin-number {
-            transform: rotate(45deg);
-            color: #ffffff;
-            font-family: var(--font-sans);
-            font-weight: 800;
-            font-size: 13px;
-            line-height: 1;
-        }
-
-        .custom-map-pin:hover {
-            transform: rotate(-45deg) scale(1.15);
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.38);
-        }
-
-        /* Leaflet Popups Theming */
-        .custom-leaflet-popup .leaflet-popup-content-wrapper {
-            border-radius: var(--radius-md) !important;
-            box-shadow: 0 10px 30px rgba(21, 23, 72, 0.18) !important;
-            border: 1px solid var(--color-cream-border) !important;
-            padding: 0 !important;
-            font-family: var(--font-sans) !important;
-            overflow: hidden;
-        }
-
-        .custom-leaflet-popup .leaflet-popup-content {
-            margin: 0 !important;
-            line-height: 1.45 !important;
-        }
-
-        .map-popup-card {
-            padding: 1.15rem 1.25rem;
-        }
-
-        .map-popup-header {
-            margin-bottom: 0.5rem;
-        }
-
-        .map-popup-pill {
-            display: inline-block;
-            padding: 0.25rem 0.65rem;
-            border-radius: var(--radius-pill);
-            font-size: 0.72rem;
-            font-weight: 700;
-            letter-spacing: 0.02em;
-        }
-
-        .map-popup-title {
-            font-size: 1.05rem;
-            font-weight: 800;
-            color: var(--color-navy);
-            margin: 0 0 0.25rem 0;
-            line-height: 1.3;
-        }
-
-        .map-popup-category {
-            font-size: 0.8rem;
-            font-weight: 700;
-            color: var(--color-gold-text);
-            margin-bottom: 0.6rem;
-        }
-
-        .map-popup-desc {
-            font-size: 0.86rem;
-            color: var(--color-text-muted);
-            margin: 0 0 0.85rem 0;
-            line-height: 1.45;
-        }
-
-        .map-popup-highlight {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 0.8rem;
-            font-weight: 700;
-            color: var(--color-navy);
-            background: var(--color-cream-light);
-            border: 1px solid var(--color-cream-border);
-            padding: 0.45rem 0.75rem;
-            border-radius: var(--radius-sm);
-        }
-
-        /* Responsive Map Adjustments */
-        @media (max-width: 768px) {
-            .map-container {
-                height: 420px;
-            }
-            .map-header-controls {
-                flex-direction: column;
-                align-items: stretch;
-            }
-            .map-route-summary {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-        }
-
-        /* ===== Info Cards Grid ===== */
-        .info-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.5rem
-        }
-
-        @media(min-width:640px) {
-            .info-grid {
-                grid-template-columns: repeat(2, 1fr)
-            }
-        }
-
-        @media(min-width:1024px) {
-            .info-grid {
-                grid-template-columns: repeat(3, 1fr)
-            }
-        }
-
-        .info-card {
-            background: #fff;
-            border: 1px solid var(--color-cream-border);
-            border-radius: var(--radius-lg);
-            padding: 2rem 1.5rem;
-            box-shadow: var(--shadow-sm);
-            transition: all var(--transition-normal)
-        }
-
-        .info-card:hover {
-            box-shadow: var(--shadow-md);
-            transform: translateY(-3px)
-        }
-
-        .info-card h3 {
-            font-size: var(--font-lg);
-            font-weight: 800;
-            color: var(--color-navy);
-            margin-bottom: 0.75rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem
-        }
-
-        .info-card p {
-            font-size: var(--font-sm);
-            color: var(--color-text-muted);
-            line-height: 1.6
-        }
-
-        /* ===== Footer ===== */
-        .site-footer {
-            background: var(--color-navy-deep);
-            color: #D5DAED;
-            border-top: 4px solid var(--color-gold);
-            padding: 4rem 1.25rem 2rem;
-            font-size: var(--font-sm);
-            margin-top: auto
-        }
-
-        .footer-container {
-            max-width: 1240px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 2.5rem
-        }
-
-        @media(min-width:768px) {
-            .footer-container {
-                grid-template-columns: 2fr 1fr 1fr
-            }
-        }
-
-        .footer-brand {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem
-        }
-
-        .footer-logo {
-            height: 52px;
-            width: auto;
-            align-self: flex-start
-        }
-
-        .footer-sponsors-strip {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            gap: 1.25rem;
-            padding-top: 1rem;
-            margin-top: 1rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.12)
-        }
-
-        .footer-sponsors-strip span {
-            font-size: var(--font-xs);
-            color: var(--color-gold);
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.05em
-        }
-
-        .footer-links-col h4 {
-            color: var(--color-gold);
-            font-size: var(--font-base);
-            margin-bottom: 1.15rem;
-            font-weight: 800;
-            letter-spacing: 0.02em
-        }
-
-        .footer-nav {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem
-        }
-
-        .footer-nav a {
-            color: #BAC2E0;
-            text-decoration: none;
-            transition: color var(--transition-fast)
-        }
-
-        .footer-nav a:hover {
-            color: var(--color-gold);
-            text-decoration: underline
-        }
-
-        .footer-bottom {
-            max-width: 1240px;
-            margin: 2.5rem auto 0;
-            padding-top: 1.5rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
-            font-size: var(--font-xs);
-            color: #929ABA
-        }
-
-        @media(min-width:768px) {
-            .footer-bottom {
-                flex-direction: row;
-                justify-content: space-between;
-                align-items: center
-            }
-        }
-
-        /* ===== Divider ===== */
-        .section-divider {
-            height: 4px;
-            background: linear-gradient(90deg, var(--color-gold), var(--color-talavera-blue), var(--color-gold));
-            opacity: 0.5;
-            border: none;
-            margin: 0
-        }
+/* ==============================================================================
+   ¡BIENVENIDO AL ARCHIVO STYLES.CSS! (EL ARMARIO Y PINTURA DE TU PÁGINA)
+   ==============================================================================
+   Si HTML es el esqueleto de tu sitio, CSS es la piel, el maquillaje y la ropa.
+   En CSS siempre se sigue esta regla mágica:
+   
+   ¿A quién quiero vestir? {
+       ¿Qué prenda o pintura le pongo?: ¿De qué color o tamaño?;
+   }
+   
+   Ejemplo:
+   h1 {
+       color: red;  <-- "Al título h1 píntalo de rojo"
+   }
+   ============================================================================== */
+
+/* ==============================================================================
+   1. :root — LA CAJA DE PINTURAS Y MEDIDAS (VARIABLES)
+   Imagina que :root es una paleta de pintor donde guardamos colores y tamaños
+   con un nombre fácil. Si un día queremos cambiar el color azul de toda la web,
+   solo cambiamos una línea aquí y ¡pum!, se actualiza en todas partes.
+   ============================================================================== */
+:root {
+    /* --- COLORES CREMA Y TIERRA (FONDOS Y BORDES SUAVES) --- */
+    --color-cream: #F4F0E8;
+    /* Crema base de fondo para toda la página */
+    --color-cream-light: #FAF8F5;
+    /* Crema casi blanco para fondos de tarjetas y botones */
+    --color-cream-card: #EFEBE4;
+    /* Crema un poquito más oscuro para el interior de las tarjetas */
+    --color-cream-border: #E2DDD3;
+    /* Color para los bordes delgados de las cajas */
+
+    /* --- COLORES AZUL MARINO Y TALAVERA (INSTITUCIONALES BUAP / ICCB) --- */
+    --color-navy: #151748;
+    /* Azul marino clásico para títulos y textos importantes */
+    --color-navy-deep: #0D0E31;
+    /* Azul noche muy oscuro para fondos profundos */
+    --color-navy-card: #141646;
+    /* Azul para tarjetas oscuras */
+    --color-navy-light: #232668;
+    /* Azul marino iluminado */
+    --color-talavera-blue: #2B4C8C;
+    /* Azul Talavera tradicional para enlaces y acentos */
+    --color-talavera-hover: #1F3868;
+    /* Azul Talavera más oscuro cuando pasas el ratón por encima */
+    --color-soft-blue: #8FAAD0;
+    /* Azul pastel suave para iconos y detalles */
+    --color-soft-blue-light: #EBF1F9;
+    /* Azul cielo muy clarito para fondos de pestañas */
+
+    /* --- TONOS DORADOS Y MIEL (ACENTOS DECORATIVOS DE PRESTIGIO) --- */
+    --color-gold: #E8BB49;
+    /* Dorado brillante para botones estelares y bordes */
+    --color-gold-hover: #D6A734;
+    /* Dorado oscuro al pasar el ratón */
+    --color-gold-soft: #FDF7E7;
+    /* Dorado muy pálido para cajas de iconos */
+    --color-gold-text: #5C4300;
+    /* Dorado/café oscuro para que los textos dorados se lean bien */
+
+    /* --- TONOS LAVANDA Y TEXTOS --- */
+    --color-lavender: #7B86B8;
+    /* Lavanda suave para iconos y detalles secundarios */
+    --color-lavender-soft: #ECEEF6;
+    /* Lavanda casi blanco para fondos */
+    --color-text-main: #1A1D36;
+    /* Color negro-azulado principal para leer textos cómodamente */
+    --color-text-muted: #585C7B;
+    /* Color grisáceo para subtítulos o fechas secundarias */
+    --color-text-light: #FFFFFF;
+    /* Color blanco puro para textos sobre fondos oscuros */
+    --color-surface: #FFFFFF;
+    /* Color blanco para el papel o fondo de las tarjetas */
+    --color-border: #DCDDE8;
+    /* Gris suave para líneas divisorias */
+
+    /* --- COLORES DE ESTADO (SEMÁFORO DE ACTIVIDADES) --- */
+    --status-confirmed-bg: #E8F5E9;
+    /* Verde claro: Fondo de actividad "Confirmada" */
+    --status-confirmed-text: #1B5E20;
+    /* Verde oscuro: Letra de actividad "Confirmada" */
+    --status-confirmed-border: #81C784;
+    /* Verde medio: Borde de actividad "Confirmada" */
+
+    --status-upcoming-bg: #FFF8E1;
+    /* Amarillo claro: Fondo de "Próximamente" */
+    --status-upcoming-text: #B78103;
+    /* Mostaza oscuro: Letra de "Próximamente" */
+    --status-upcoming-border: #FFD54F;
+    /* Amarillo medio: Borde de "Próximamente" */
+
+    --status-proposal-bg: #EEF2FA;
+    /* Azul/Gris claro: Fondo de "Propuesta" */
+    --status-proposal-text: #2C3E75;
+    /* Azul pizarra: Letra de "Propuesta" */
+    --status-proposal-border: #B2C3E8;
+    /* Azul claro: Borde de "Propuesta" */
+
+    /* --- TIPOGRAFÍA (LETRAS) --- */
+    /* Lista de fuentes: si la computadora no tiene la primera, intenta con la segunda y así sucesivamente */
+    --font-sans: 'Plus Jakarta Sans', 'Avenir Next', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --font-scale: 1;
+    /* Factor para multiplicar el tamaño de las letras */
+    --font-xs: calc(0.75rem * var(--font-scale));
+    /* 12px: Letra muy chiquita (pastillas, notas) */
+    --font-sm: calc(0.875rem * var(--font-scale));
+    /* 14px: Letra pequeña (subtítulos, menús) */
+    --font-base: calc(1rem * var(--font-scale));
+    /* 16px: Letra normal de lectura en párrafos */
+    --font-md: calc(1.125rem * var(--font-scale));
+    /* 18px: Letra mediana para títulos pequeños */
+    --font-lg: calc(1.25rem * var(--font-scale));
+    /* 20px: Letra grande para encabezados */
+    --font-xl: calc(1.5rem * var(--font-scale));
+    /* 24px: Letra extragrande para títulos */
+
+    /* --- BORDES REDONDEADOS (BORDER RADIUS) --- */
+    --radius-sm: 6px;
+    /* Esquinas ligeramente suavizadas (botones pequeños) */
+    --radius-md: 12px;
+    /* Esquinas medianas (tarjetas, ventanas de diálogo) */
+    --radius-lg: 20px;
+    /* Esquinas muy curvas y modernas (contenedores grandes) */
+    --radius-pill: 9999px;
+    --radius-full: 9999px;
+    --container-max: 1240px;
+    /* Forma de pastilla o cápsula totalmente redonda a los lados */
+
+    /* --- SOMBRAS (BOX SHADOW) --- */
+    /* Dan la sensación de que las tarjetas flotan como papel encima de una mesa */
+    --shadow-sm: 0 2px 6px rgba(21, 23, 72, 0.06);
+    /* Sombra diminuta y sutil */
+    --shadow-md: 0 6px 18px rgba(21, 23, 72, 0.08);
+    /* Sombra mediana */
+    --shadow-lg: 0 12px 32px rgba(21, 23, 72, 0.12);
+    /* Sombra fuerte para elementos destacados */
+    --shadow-hover: 0 16px 36px rgba(21, 23, 72, 0.16);
+    /* Sombra al pasar el ratón (efecto de elevarse) */
+
+    /* --- VELOCIDAD DE ANIMACIONES (TRANSITIONS) --- */
+    --transition-fast: 0.18s ease;
+    /* Cambios rápidos (ej. color al pasar el cursor) */
+    --transition-normal: 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+    /* Movimientos suaves y elegantes */
+}
+
+/* ==============================================================================
+   2. REINICIO UNIVERSAL (RESET DE ESPACIOS)
+   El asterisco (*) significa "¡Para TODO el mundo en la página!".
+   Por defecto, los navegadores le ponen márgenes raros a todo; esto lo limpia a cero.
+   ============================================================================== */
+*,
+*::before,
+*::after {
+    /* box-sizing: border-box: Si una caja mide 100px de ancho y le pones borde de 5px,
+       sigue midiendo 100px exactos en total. ¡Evita que las cosas se descuadren! */
+    box-sizing: border-box;
+    margin: 0;
+    /* Quita el margen exterior no deseado */
+    padding: 0;
+    /* Quita el relleno interior no deseado */
+}
+
+/* La página completa (la ventana del navegador) */
+html {
+    font-size: 100%;
+    /* 100% equivale al tamaño estándar de 16 píxeles */
+    scroll-behavior: smooth;
+    /* Hace que cuando toques un enlace, baje suavemente sin saltar de golpe */
+}
+
+/* El cuerpo entero de la página */
+body {
+    font-family: var(--font-sans);
+    /* Usa nuestra tipografía bonita guardada arriba */
+    font-size: var(--font-base);
+    /* Letra de tamaño normal (16px) */
+    line-height: 1.6;
+    /* Espacio entre renglones para no cansar la vista */
+    color: var(--color-text-main);
+    /* Color oscuro de lectura */
+    background: var(--color-cream);
+    /* Fondo color crema suave de toda la página */
+    display: flex;
+    /* Activa el acomodador flexible (Flexbox) */
+    flex-direction: column;
+    /* Acomoda los elementos en fila vertical (hacia abajo) */
+    min-height: 100vh;
+    /* Ocupa al menos el 100% de la altura de la pantalla (evita que el footer suba al centro) */
+}
+
+/* Reglas generales para todos los enlaces <a> */
+a {
+    color: var(--color-talavera-blue);
+    /* Azul Talavera tradicional */
+    text-decoration: underline;
+    /* Línea subrayada */
+    text-decoration-thickness: 1px;
+    /* Grosor de la línea delgada */
+    text-underline-offset: 3px;
+    /* Separa la línea 3 píxeles abajo de las letras */
+    transition: color var(--transition-fast);
+    /* Cambia de color suavemente al pasar el ratón */
+}
+
+/* Cuando el usuario pasa el ratón por encima del enlace (hover) */
+a:hover {
+    color: var(--color-navy);
+    /* Se vuelve azul marino más oscuro */
+}
+
+/* Reglas para todas las fotos e imágenes <img> */
+img {
+    max-width: 100%;
+    /* Nunca se saldrá del tamaño de su contenedor (evita que se desborde la pantalla) */
+    height: auto;
+    /* Conserva su proporción natural para no verse aplastada o estirada */
+    display: block;
+    /* Elimina el espacio fantasma que HTML pone debajo de las imágenes en línea */
+}
+
+/* Accesibilidad con teclado: Cuando te mueves con la tecla TAB */
+:focus-visible {
+    outline: 3px solid var(--color-gold);
+    /* Marco dorado visible para saber dónde está el cursor */
+    outline-offset: 3px;
+    /* Despega el marco 3px de la orilla */
+    border-radius: var(--radius-sm);
+    /* Redondea las esquinas del marco dorado */
+}
+
+/* La caja contenedora central (.container) */
+.container {
+    max-width: 1240px;
+    /* Ancho máximo: en pantallas gigantes no deja que el texto se estire infinito */
+    margin: 0 auto;
+    /* "auto" a los lados centra la caja automáticamente en medio de la pantalla */
+    padding: 0 1.25rem;
+    /* Espacio de colchón a izquierda y derecha para no chocar con el borde del celular */
+}
+
+/* ======================================================================
+           3. ICONOS VECTORIALES (SVG)
+           Alinea los iconitos al lado de los textos para que no bailen chuecos.
+           ====================================================================== */
+.talavera-icon,
+.nav-icon,
+.nav-icon-gold {
+    display: inline-block;
+    /* Se comporta como letra y como caja al mismo tiempo */
+    vertical-align: middle;
+    /* Centra el icono a la altura media del renglón de texto */
+    flex-shrink: 0;
+    /* Si no hay espacio, NUNCA permitas que el icono se aplaste */
+}
+
+/* Icono normal del menú (azul) */
+.nav-icon {
+    color: var(--color-talavera-blue);
+    transition: transform var(--transition-fast), color var(--transition-fast);
+}
+
+/* Cuando pasas el ratón o la página está activa, el icono sube 1px y cambia a azul marino */
+.nav-link:hover .nav-icon,
+.nav-link.active .nav-icon {
+    color: var(--color-navy);
+    transform: translateY(-1px);
+    /* Da un efecto sutil de brinquito hacia arriba */
+}
+
+/* Icono especial dorado para el Día de Exploración */
+.nav-icon-gold {
+    color: var(--color-navy-deep);
+}
+
+/* Flechita (→) que aparece al final de las tarjetas */
+.card-arrow-icon {
+    transition: transform var(--transition-fast);
+}
+
+/* Al pasar el ratón sobre la tarjeta, la flecha se desliza 4px a la derecha */
+.pillar-card:hover .card-arrow-icon,
+.audience-card:hover .card-arrow-icon {
+    transform: translateX(4px);
+}
+
+/* Botón de accesibilidad: escondido 999 píxeles arriba de la pantalla.
+           Solo aparece si una persona ciega navega usando el teclado. */
+.skip-link {
+    position: absolute;
+    /* Se posiciona libremente sin empujar otros elementos */
+    top: -999px;
+    /* Lo saca de la vista de la pantalla */
+    left: 1rem;
+    background: var(--color-gold);
+    /* Fondo dorado muy visible */
+    color: var(--color-navy-deep);
+    padding: 0.75rem 1.25rem;
+    /* Relleno cómodo de presionar */
+    font-weight: 700;
+    z-index: 9999;
+    /* Se coloca encima de cualquier cosa en la web */
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+    box-shadow: var(--shadow-lg);
+}
+
+/* Cuando el usuario presiona TAB y cae en el skip-link, baja a la vista */
+.skip-link:focus {
+    top: 1rem;
+}
+
+/* ======================================================================
+           4. SELECTOR DE IDIOMA (ES / EN)
+           Cajita vertical con las pastillitas para cambiar de Español a Inglés.
+           ====================================================================== */
+.lang-switcher-vertical {
+    display: inline-flex;
+    flex-direction: column;
+    /* Pone ES arriba y EN abajo */
+    align-items: center;
+    /* Centra horizontalmente */
+    justify-content: center;
+    /* Centra verticalmente */
+    background: #F8FAFC;
+    /* Fondo grisáceo muy tenue */
+    border: 1px solid #E2E8F0;
+    /* Borde fino */
+    border-radius: var(--radius-sm);
+    padding: 2px;
+    gap: 1px;
+    /* 1px de separación entre ES y EN */
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+    flex-shrink: 0;
+}
+
+/* Cada pastillita individual (ES o EN) */
+.lang-switcher-vertical .lang-pill {
+    display: block;
+    padding: 2px 5px;
+    /* Relleno compacto */
+    border-radius: 3px;
+    color: var(--color-navy);
+    text-decoration: none;
+    /* Sin subrayado */
+    font-weight: 800;
+    /* Letra gruesa y legible */
+    font-size: 0.62rem;
+    /* Tamaño miniatura de 10px */
+    letter-spacing: 0.03em;
+    line-height: 1.1;
+    text-align: center;
+    transition: all var(--transition-fast);
+}
+
+/* Al pasar el ratón por el idioma */
+.lang-switcher-vertical .lang-pill:hover {
+    color: var(--color-talavera-blue);
+    background: rgba(26, 54, 93, 0.08);
+}
+
+/* El idioma seleccionado actualmente (activo) */
+.lang-switcher-vertical .lang-pill.active {
+    background-color: var(--color-talavera-blue);
+    /* Fondo azul Talavera */
+    color: #fff;
+    /* Letras blancas */
+}
+
+/* Contenedor del selector de idioma + botón hamburguesa en celulares */
+.header-mobile-right {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    /* Separación entre idioma y botón de rayitas */
+}
+
+/* En pantallas grandes (computadoras mayores a 992px): esconder este bloque móvil */
+@media(min-width:992px) {
+    .header-mobile-right {
+        display: none !important;
+    }
+}
+
+/* En pantallas chicas (celulares menores a 991px): esconder el selector de escritorio */
+@media(max-width:991px) {
+    .desktop-header-lang {
+        display: none !important;
+    }
+}
+
+/* ======================================================================
+           5. LA BARRA SUPERIOR FIJA (.site-header)
+           Se queda pegada arriba mientras haces scroll (position: sticky).
+           ====================================================================== */
+.site-header {
+    background: #fff;
+    /* Fondo blanco limpio */
+    position: sticky;
+    /* Se pega al techo cuando bajas la página */
+    top: 0;
+    /* La distancia al techo es cero */
+    z-index: 1000;
+    /* Muy alto para flotar sobre fotos y mapas */
+    box-shadow: 0 4px 20px rgba(21, 23, 72, 0.06);
+    /* Sombra elegante */
+    border-bottom: 1px solid var(--color-cream-border);
+    /* Borde sutil inferior */
+}
+
+/* Caja interior que limita el ancho del header */
+.header-container {
+    max-width: 1440px;
+    /* Ancho máximo en monitores gigantes */
+    margin: 0 auto;
+    /* Centrado horizontal */
+    padding: 0.5rem 1.5rem 0.5rem 1.25rem;
+    display: flex;
+    /* Flexbox: Logos a la izquierda, menú a la derecha */
+    align-items: center;
+    /* Centrados verticalmente */
+    justify-content: space-between;
+    /* Empuja los logos a un extremo y el menú al otro */
+    gap: 1.25rem;
+    min-height: 82px;
+    /* Altura fija suficiente para los logos */
+}
+
+/* Envoltorio de los dos logotipos (ICCB + BUAP) */
+.brand-wrapper {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.85rem;
+    /* Separación entre los dos logos */
+    text-decoration: none;
+    flex-shrink: 0;
+    /* No permite que los logos se encojan */
+    transition: opacity var(--transition-fast);
+}
+
+.brand-wrapper:hover {
+    opacity: 0.92;
+    /* Se aclara ligeramente al pasar el cursor */
+}
+
+/* Propiedades de las fotos de los logos */
+.brand-logo-img {
+    width: auto;
+    object-fit: contain;
+    /* No deforma la imagen */
+    display: block;
+}
+
+/* Logo de ICCB 2027 */
+.brand-logo-iccb {
+    height: 72px;
+    max-width: 160px;
+    filter: drop-shadow(0 2px 4px rgba(26, 54, 93, 0.08));
+    /* Sombrita al logo */
+}
+
+/* Logo de la BUAP */
+.brand-logo-buap {
+    height: 60px;
+    max-width: 60px;
+}
+
+/* Palito o línea vertical que divide ambos logos */
+.brand-divider {
+    width: 1.5px;
+    /* Grosor del palito */
+    height: 42px;
+    /* Altura del palito */
+    background: var(--color-navy);
+    /* Color azul marino */
+    opacity: 0.22;
+    /* Casi transparente para ser discreto */
+    flex-shrink: 0;
+}
+
+/* Botón de 3 rayitas para celulares (Menú hamburguesa) */
+.nav-toggle-btn {
+    display: inline-flex;
+    flex-direction: column;
+    /* Pone las 3 rayitas una sobre otra */
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    /* Espacio entre cada una de las 3 rayitas */
+    width: 44px;
+    /* Tamaño táctil ideal para el dedo (44x44px) */
+    height: 44px;
+    background: var(--color-cream-light);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    /* Cambia el cursor a manita de clic */
+}
+
+/* Cada una de las 3 rayitas del botón hamburguesa */
+.nav-toggle-btn span {
+    display: block;
+    width: 22px;
+    /* Ancho de la rayita */
+    height: 2.5px;
+    /* Grosor de la rayita */
+    background: var(--color-navy);
+    /* Color azul */
+    border-radius: 2px;
+    transition: all var(--transition-fast);
+}
+
+/* ======================================================================
+           6. MENÚ DE NAVEGACIÓN (.main-nav)
+           En celulares viene escondido (display: none).
+           Al hacer clic en el botón, JavaScript le añade "is-open" (display: block).
+           ====================================================================== */
+.main-nav {
+    display: none;
+    /* Escondido por defecto en celulares */
+    width: 100%;
+}
+
+/* Cuando el menú se abre en celular */
+.main-nav.is-open {
+    display: block;
+    /* Se hace visible */
+    padding-top: 1rem;
+    border-top: 1px solid var(--color-cream-border);
+}
+
+/* Lista de enlaces (<ul>) */
+.nav-list {
+    list-style: none;
+    /* Quita los puntos negros o viñetas de la lista */
+    display: flex;
+    flex-direction: column;
+    /* En celular van en columna hacia abajo */
+    gap: 0.35rem;
+    /* Separación entre cada enlace */
+    margin: 0;
+    padding: 0;
+}
+
+/* Cada botón de enlace (.nav-link) */
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    /* Separación entre el icono y el texto */
+    padding: 0.5rem 0.75rem;
+    /* Relleno cómodo alrededor */
+    color: var(--color-navy);
+    text-decoration: none;
+    /* Sin subrayado */
+    font-weight: 600;
+    /* Letra semigruesa */
+    font-size: var(--font-sm);
+    /* Tamaño de letra pequeño (14px) */
+    border-radius: var(--radius-sm);
+    /* Esquinas suaves */
+    white-space: nowrap;
+    /* No rompe el texto en dos renglones */
+    transition: all var(--transition-fast);
+}
+
+/* Al pasar el ratón o cuando estás en esa página (active) */
+.nav-link:hover,
+.nav-link.active {
+    background: var(--color-soft-blue-light);
+    /* Fondo azul pastel muy suave */
+    color: var(--color-talavera-blue);
+    /* Letra azul Talavera */
+}
+
+/* Enlace especial destacado en color oro ("Día de Exploración") */
+.nav-link.highlight {
+    background: linear-gradient(135deg, var(--color-gold), var(--color-gold-hover));
+    color: var(--color-navy-deep);
+    font-weight: 700;
+    box-shadow: 0 2px 8px rgba(242, 184, 36, 0.3);
+    /* Resplandor dorado */
+}
+
+.nav-link.highlight:hover {
+    transform: translateY(-1px);
+    /* Se eleva un poquito */
+    box-shadow: 0 4px 12px rgba(242, 184, 36, 0.4);
+}
+
+/* Acciones de usuario en el menú */
+.nav-user-actions {
+    margin-top: 0.75rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--color-border);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+/* ======================================================================
+           7. MEDIA QUERY: MODO COMPUTADORA (Pantallas de 992px en adelante)
+           Aquí cambiamos el comportamiento para que el menú no sea vertical
+           ni tenga botón de hamburguesa, sino una barra horizontal elegante.
+           ====================================================================== */
+@media(min-width:992px) {
+
+    /* Esconde el botón de tres rayitas porque ya no se necesita */
+    .nav-toggle-btn {
+        display: none;
+    }
+
+    /* Muestra el menú siempre visible, alineado horizontalmente a la derecha */
+    .main-nav,
+    .main-nav.is-open {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        width: auto;
+        padding-top: 0;
+        border-top: none;
+        gap: 0.75rem;
+        flex-shrink: 0;
+    }
+
+    /* Los botones se forman en fila horizontal (row) en vez de columna */
+    .nav-list {
+        flex-direction: row;
+        align-items: center;
+        gap: 0.15rem;
+    }
+
+    .nav-user-actions {
+        margin-top: 0;
+        padding-top: 0;
+        border-top: none;
+        flex-direction: row;
+        align-items: center;
+        margin-left: 0.35rem;
+    }
+}
+
+@media(min-width:992px) and (max-width:1240px) {
+    .header-container {
+        padding: 0.35rem 1rem 0.5rem 0.75rem;
+        gap: 0.5rem
+    }
+
+    .brand-logo-iccb {
+        height: 58px
+    }
+
+    .brand-logo-buap {
+        height: 50px;
+        max-width: 50px
+    }
+
+    .brand-divider {
+        height: 32px;
+        margin: 0 0.15rem
+    }
+
+    .nav-link {
+        padding: 0.4rem 0.5rem;
+        font-size: 0.82rem;
+        gap: 0.3rem
+    }
+
+    .btn-sm {
+        padding: 0.35rem 0.65rem;
+        font-size: 0.78rem
+    }
+}
+
+@media(max-width:991px) {
+    .header-container {
+        padding: 0.5rem 1rem;
+        min-height: 68px
+    }
+
+    .brand-logo-iccb {
+        height: 52px
+    }
+
+    .brand-logo-buap {
+        height: 44px;
+        max-width: 44px
+    }
+
+    .brand-divider {
+        height: 28px;
+        margin: 0 0.25rem
+    }
+}
+
+/* ======================================================================
+           8. LA PORTADA PRINCIPAL (.hero-section)
+           La bienvenida de pantalla completa con foto y títulos.
+           ====================================================================== */
+.hero-section {
+    min-height: calc(100vh - 82px);
+    /* Altura: toda la pantalla menos los 82px del header */
+    display: flex;
+    /* Flexbox para centrar verticalmente */
+    align-items: center;
+    /* Centrado vertical */
+    position: relative;
+    /* Permite acomodar capas de texturas adentro */
+    background: var(--color-cream-light);
+    /* Fondo crema suave */
+    border-bottom: 1px solid var(--color-cream-border);
+    /* Línea divisoria abajo */
+    overflow: hidden;
+    /* Corta cualquier adorno que se salga de los bordes */
+}
+
+/* Capa contenedora de texturas y degradados de fondo */
+.hero-bg-media {
+    position: absolute;
+    /* Ocupa todo el fondo sin estorbar a los textos */
+    inset: 0;
+    /* Atajo para: top:0, left:0, right:0, bottom:0 */
+    overflow: hidden;
+    pointer-events: none;
+    /* Los clics traspasan esta capa como si fuera aire */
+    z-index: 0;
+    /* Está al fondo de todo */
+}
+
+/* Textura geométrica con el patrón de Talavera */
+.hero-bg-texture {
+    position: absolute;
+    inset: 0;
+    background-image: url('../img/Logo Main__Logo TExture Light.png');
+    background-size: cover;
+    /* Llena todo el espacio sin deformarse */
+    background-position: center;
+    /* Centra la textura */
+    background-repeat: no-repeat;
+    opacity: 0.10;
+    /* Muy transparente (10%) para ser elegante */
+    mix-blend-mode: multiply;
+    /* Se funde con el color crema de fondo */
+    z-index: 1;
+}
+
+/* Resplandores de luz dorada y azul en las esquinas */
+.hero-bg-radial {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 65% 50%, rgba(232, 187, 73, 0.08) 0%, rgba(250, 248, 245, 0) 65%),
+        radial-gradient(circle at 15% 30%, rgba(26, 54, 93, 0.05) 0%, rgba(250, 248, 245, 0) 50%);
+    pointer-events: none;
+    z-index: 3;
+}
+
+/* Caja interior del Hero que divide en 2 columnas */
+.hero-inner {
+    position: relative;
+    z-index: 2;
+    /* Se pone por encima de las texturas de fondo */
+    width: 100%;
+    max-width: 1380px;
+    /* Ancho máximo cómodo para la vista */
+    margin: 0 auto;
+    /* Centrado horizontal */
+    padding: 3.5rem 2rem;
+    display: grid;
+    /* Cuadrícula CSS Grid */
+    grid-template-columns: 1fr;
+    /* En celular: 1 sola columna hacia abajo */
+    gap: 3rem;
+    /* 3rem de espacio entre textos y foto */
+    align-items: center;
+    /* Alineados al centro verticalmente */
+}
+
+/* En computadoras (900px o más): dividir en 2 columnas una al lado de la otra */
+@media(min-width:900px) {
+    .hero-inner {
+        grid-template-columns: 1.05fr 0.95fr;
+        /* Columna izquierda un poco más ancha que la derecha */
+        gap: 4rem;
+        padding: 4rem 2.5rem;
+    }
+}
+
+/* Columna izquierda del Hero: textos y botones */
+.hero-left {
+    display: flex;
+    flex-direction: column;
+    /* Elementos apilados verticalmente */
+}
+
+/* Pastillita con las fechas del evento ("Puebla, México · 27 Jun...") */
+.hero-date-label {
+    font-size: var(--font-sm);
+    /* Tamaño de letra pequeño (14px) */
+    font-weight: 700;
+    /* Letra negrita */
+    color: var(--color-talavera-blue);
+    text-transform: uppercase;
+    /* Convierte automáticamente todo a MAYÚSCULAS */
+    letter-spacing: 0.08em;
+    /* Separa ligeramente las letras entre sí */
+    margin-bottom: 1.25rem;
+    /* Espacio de separación hacia el título */
+}
+
+/* El gran título h1 ("Capital de la Biodiversidad") */
+.hero-title {
+    /* clamp(mínimo, ideal, máximo): Hace que el título crezca según la pantalla 
+               (mínimo 44px en celulares y hasta 72px en pantallas enormes) */
+    font-size: clamp(2.75rem, 6vw, 4.5rem);
+    font-weight: 800;
+    /* Letra extra negrita */
+    line-height: 1.05;
+    /* Renglones muy juntitos para dar fuerza e impacto */
+    letter-spacing: -0.03em;
+    /* Letras un poquito más juntas entre sí */
+    color: var(--color-navy);
+    /* Color azul marino institucional */
+    margin-bottom: 1.25rem;
+    /* Espacio abajo antes del subtítulo */
+}
+
+/* Párrafo explicativo del Hero */
+.hero-subtitle {
+    font-size: clamp(1rem, 2vw, 1.15rem);
+    color: var(--color-text-muted);
+    /* Gris suave para no competir con el título */
+    line-height: 1.65;
+    /* Lectura muy cómoda */
+    margin-bottom: 2.25rem;
+    /* Separación hacia la fila de botones */
+    max-width: 440px;
+    /* No deja que el párrafo sea demasiado largo en horizontal */
+}
+
+/* Fila de botones de llamado a la acción (.hero-cta-row) */
+.hero-cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    /* Si la pantalla es angosta, los botones bajan al siguiente renglón */
+    gap: 0.85rem;
+    /* Separación entre cada botón */
+    align-items: center;
+    margin-bottom: 2.5rem;
+}
+
+/* Botón azul principal del Hero */
+.hero-btn-primary {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.85rem 2rem;
+    /* Relleno cómodo para hacer clic */
+    background: var(--color-navy);
+    /* Fondo azul marino */
+    color: #fff;
+    /* Letras blancas */
+    font-family: inherit;
+    font-weight: 700;
+    font-size: var(--font-base);
+    border-radius: var(--radius-md);
+    /* Esquinas redondeadas */
+    text-decoration: none;
+    /* Sin línea subrayada */
+    transition: all var(--transition-fast);
+    border: 2px solid transparent;
+}
+
+/* Al pasar el ratón por el botón azul principal */
+.hero-btn-primary:hover {
+    background: var(--color-talavera-blue);
+    color: #fff;
+    transform: translateY(-2px);
+    /* Brinca 2px hacia arriba */
+    box-shadow: 0 8px 20px rgba(21, 23, 72, 0.18);
+    /* Sombra elegante */
+}
+
+/* Botón secundario con borde */
+.hero-btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.85rem 1.5rem;
+    background: transparent;
+    /* Fondo transparente */
+    color: var(--color-navy);
+    font-family: inherit;
+    font-weight: 700;
+    font-size: var(--font-base);
+    border-radius: var(--radius-md);
+    border: 2px solid var(--color-navy);
+    /* Borde azul marino */
+    text-decoration: none;
+    transition: all var(--transition-fast);
+}
+
+/* Al pasar el ratón por el botón secundario: se vuelve dorado */
+.hero-btn-secondary:hover {
+    background: var(--color-gold);
+    border-color: var(--color-gold);
+    color: var(--color-navy-deep);
+    transform: translateY(-2px);
+}
+
+/* Tira con logos patrocinadores en el Hero */
+.hero-logos-strip {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--color-cream-border);
+}
+
+.hero-strip-logo {
+    height: 36px;
+    width: auto;
+    object-fit: contain;
+    opacity: 0.85;
+}
+
+/* Columna derecha del Hero: El marco de fotos */
+.hero-right {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+/* Marco de la fotografía con bordes redondeados y sombra */
+.hero-photo-frame {
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    /* Redondea las esquinas de la foto adentro */
+    box-shadow: 0 20px 50px rgba(21, 23, 72, 0.12);
+    /* Sombra amplia */
+    border: 3px solid var(--color-cream-border);
+}
+
+/* La fotografía panorámica de Puebla */
+.hero-photo {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+    aspect-ratio: 16/10;
+    /* Proporción de foto panorámica */
+}
+
+/* Etiqueta oscura semi-transparente sobre la foto */
+.hero-photo-label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(22, 20, 86, 0.85));
+    /* Degradado negro/azul */
+    padding: 1.5rem 1.25rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+}
+
+.hero-photo-city {
+    font-size: var(--font-md);
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: -0.01em;
+}
+
+.hero-photo-sub {
+    font-size: var(--font-xs);
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+/* Insignia decorativa con el patrón de Talavera */
+.hero-pattern-badge {
+    background: var(--color-cream);
+    border: 2px solid var(--color-cream-border);
+    border-radius: var(--radius-lg);
+    padding: 0.75rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-sm);
+}
+
+.hero-pattern-badge img {
+    height: 72px;
+    width: auto;
+    object-fit: contain;
+}
+
+/* ======================================================================
+           9. BARRA DE BÚSQUEDA RÁPIDA (.search-section-wrap)
+           ====================================================================== */
+.search-section-wrap {
+    background: var(--color-cream);
+    padding: 1.5rem 1.5rem 0;
+}
+
+/* La caja blanca flotante de la búsqueda */
+.search-agenda-section {
+    background: #fff;
+    position: relative;
+    z-index: 10;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    /* Sombra fuerte que hace que parezca flotar */
+    padding: 1.5rem;
+    max-width: 1160px;
+    margin: 0 auto 2rem;
+    border: 1px solid var(--color-cream-border);
+}
+
+/* Formulario en cuadrícula */
+.search-form-flex {
+    display: grid;
+    grid-template-columns: 1fr;
+    /* En celular: una sola columna */
+    gap: 1rem;
+    align-items: center;
+}
+
+/* En computadoras (768px en adelante): 3 columnas (campo, selector, botón) */
+@media(min-width:768px) {
+    .search-form-flex {
+        grid-template-columns: 2fr 1.25fr auto;
+    }
+}
+
+/* Envoltorio de la caja de texto para poner el icono de lupa adentro */
+.search-input-wrapper {
+    position: relative;
+}
+
+/* El campo de texto para escribir */
+.search-input {
+    width: 100%;
+    padding: 0.85rem 1rem 0.85rem 2.75rem;
+    /* El 2.75rem a la izquierda da espacio para la lupa */
+    border: 1.5px solid var(--color-border);
+    border-radius: var(--radius-md);
+    font-family: inherit;
+    font-size: var(--font-base);
+    color: var(--color-text-main);
+    background: var(--color-cream-light);
+    transition: all var(--transition-fast);
+}
+
+/* Al hacer clic en el campo de texto (focus) */
+.search-input:focus {
+    border-color: var(--color-talavera-blue);
+    background: #fff;
+    box-shadow: 0 0 0 4px var(--color-soft-blue-light);
+    /* Anillo azul suave alrededor */
+    outline: none;
+    /* Quita el borde negro por defecto del navegador */
+}
+
+/* Icono de la lupa colocado exactamente adentro del campo */
+.search-icon {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    /* Centrado vertical perfecto */
+    color: var(--color-text-muted);
+}
+
+/* Menú desplegable (<select>) */
+.search-select {
+    padding: 0.85rem 1rem;
+    border: 1.5px solid var(--color-border);
+    border-radius: var(--radius-md);
+    font-family: inherit;
+    font-size: var(--font-base);
+    color: var(--color-text-main);
+    background: var(--color-cream-light);
+    cursor: pointer;
+    width: 100%;
+}
+
+/* ======================================================================
+           10. ENCABEZADOS DE SECCIÓN (.section-head-center)
+           Centran los títulos y descripciones de cada bloque de la web.
+           ====================================================================== */
+.feature-grid-section {
+    padding: 4rem 1.25rem 2rem;
+    /* 4rem de espacio arriba, 1.25rem a los lados */
+}
+
+/* Bloque centrado con ancho máximo para que no se extienda de más */
+.section-head-center {
+    text-align: center;
+    /* Centra todos los textos */
+    max-width: 780px;
+    /* No deja que el texto mida más de 780px */
+    margin: 0 auto 3rem;
+    /* Centrado horizontal y 3rem de espacio abajo */
+}
+
+/* La "cejita" en mayúsculas doradas sobre el título */
+.section-eyebrow {
+    color: var(--color-talavera-blue);
+    font-size: var(--font-sm);
+    /* Letra pequeña (14px) */
+    font-weight: 800;
+    /* Letra muy gruesa */
+    text-transform: uppercase;
+    /* TODO EN MAYÚSCULAS */
+    letter-spacing: 0.08em;
+    /* Letras espaciadas */
+    margin-bottom: 0.5rem;
+    /* Espacio hacia el título */
+    display: block;
+    /* Salto de renglón automático */
+}
+
+/* El título principal de cada sección */
+.section-main-title {
+    font-size: clamp(1.85rem, 3.5vw, 2.5rem);
+    /* Crece con la pantalla */
+    font-weight: 800;
+    /* Negrita fuerte */
+    color: var(--color-navy);
+    /* Azul marino */
+    line-height: 1.2;
+    /* Renglones compactos */
+    margin-bottom: 0.75rem;
+}
+
+/* Párrafo explicativo debajo del título */
+.section-main-desc {
+    font-size: var(--font-base);
+    /* Letra normal de lectura (16px) */
+    color: var(--color-text-muted);
+    /* Gris suave */
+    line-height: 1.6;
+    /* Espacio cómodo entre renglones */
+}
+
+/* ======================================================================
+           11. TARJETAS DE PILARES (.pillar-card)
+           Las 4 tarjetas principales con mascotas en la página de inicio.
+           ====================================================================== */
+/* Cuadrícula para acomodar las tarjetas */
+.pillar-cards-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    /* En celular: 1 sola tarjeta por renglón */
+    gap: 1.5rem;
+    /* Espacio de separación entre tarjetas */
+}
+
+/* En tablets (640px o más): 2 tarjetas por renglón */
+@media(min-width:640px) {
+    .pillar-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* En computadoras (1024px o más): 4 tarjetas formadas horizontalmente */
+@media(min-width:1024px) {
+    .pillar-cards-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* La tarjeta individual de cada pilar */
+.pillar-card {
+    background: #fff;
+    /* Fondo blanco limpio */
+    border-radius: var(--radius-lg);
+    /* Esquinas muy redondeadas */
+    border: 1px solid var(--color-cream-border);
+    /* Borde sutil */
+    padding: 2rem 1.5rem;
+    /* Relleno interior cómodo */
+    display: flex;
+    flex-direction: column;
+    /* Contenido hacia abajo */
+    justify-content: space-between;
+    /* El texto va arriba y la flecha se queda abajo */
+    box-shadow: var(--shadow-sm);
+    /* Sombra tenue */
+    text-decoration: none;
+    /* Quita el subrayado de enlace */
+    color: inherit;
+    /* Usa el color normal de texto */
+    position: relative;
+    overflow: hidden;
+    /* No deja que nada se salga de las esquinas */
+    transition: all var(--transition-normal);
+    /* Animación suave al pasar el ratón */
+}
+
+/* Línea de color azul en el borde superior de la tarjeta (adorno) */
+.pillar-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    /* 5px de grosor */
+    background: var(--color-talavera-blue);
+    transition: height var(--transition-fast);
+}
+
+/* Línea dorada especial para la tarjeta del Día de Exploración */
+.pillar-card.highlight-gold::before {
+    background: var(--color-gold);
+    height: 7px;
+}
+
+/* Cuando pasas el ratón sobre la tarjeta */
+.pillar-card:hover {
+    transform: translateY(-6px);
+    /* Se eleva 6px (efecto de flotar) */
+    box-shadow: var(--shadow-hover);
+    /* Suelta una sombra más profunda */
+    border-color: var(--color-talavera-blue);
+    /* El borde se pinta de azul */
+}
+
+/* La rayita de arriba engorda al pasar el ratón */
+.pillar-card:hover::before {
+    height: 8px;
+}
+
+/* La cajita que enmarca la ilustración del animal */
+.pillar-icon-box {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 52px;
+    padding: 4px 10px;
+    border-radius: var(--radius-md);
+    background: #fff;
+    border: 1px solid var(--color-cream-border);
+    margin-bottom: 1.25rem;
+    box-shadow: var(--shadow-sm);
+    width: fit-content;
+    /* Se ajusta al tamaño justo del dibujo */
+}
+
+.pillar-icon-box img {
+    height: 42px;
+    /* Altura fija de 42px para todos los animales */
+    width: auto;
+    object-fit: contain;
+}
+
+/* Título de la tarjeta del pilar */
+.pillar-card-title {
+    font-size: 1.25rem;
+    /* 20px de tamaño */
+    font-weight: 800;
+    /* Negrita fuerte */
+    color: var(--color-navy);
+    line-height: 1.25;
+    margin-bottom: 0.75rem;
+}
+
+/* Párrafo explicativo del pilar */
+.pillar-card-text {
+    font-size: var(--font-sm);
+    /* Letra pequeña (14px) */
+    color: var(--color-text-muted);
+    line-height: 1.55;
+    margin-bottom: 1.5rem;
+}
+
+/* Enlace de acción al fondo de la tarjeta ("Abrir agenda completa →") */
+.pillar-card-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    /* Separación entre texto y flecha */
+    font-size: var(--font-sm);
+    font-weight: 800;
+    color: var(--color-talavera-blue);
+    margin-top: auto;
+    /* Empuja este elemento hasta el mero fondo de la tarjeta */
+}
+
+.pillar-card:hover .pillar-card-link {
+    color: var(--color-navy);
+    /* Se oscurece al pasar el cursor */
+}
+
+/* ======================================================================
+           12. PASTILLAS DE ESTADO (.badge-status)
+           Semáforo de colores para saber el estado de cada evento.
+           ====================================================================== */
+.badge-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.3rem 0.75rem;
+    /* Pastillita compacta */
+    border-radius: var(--radius-pill);
+    /* Totalmente redonda en los extremos */
+    font-size: var(--font-xs);
+    /* Letra miniatura de 12px */
+    font-weight: 800;
+    text-transform: uppercase;
+    /* TODO EN MAYÚSCULAS */
+    letter-spacing: 0.04em;
+    border: 1px solid transparent;
+}
+
+/* Estado verde: Confirmada */
+.badge-status.confirmada {
+    background: var(--status-confirmed-bg);
+    color: var(--status-confirmed-text);
+    border-color: var(--status-confirmed-border);
+}
+
+/* Estado amarillo/dorado: Próximamente */
+.badge-status.proximamente {
+    background: var(--status-upcoming-bg);
+    color: var(--status-upcoming-text);
+    border-color: var(--status-upcoming-border);
+}
+
+/* Estado azul suave: Propuesta en revisión */
+.badge-status.propuesta {
+    background: var(--status-proposal-bg);
+    color: var(--status-proposal-text);
+    border-color: var(--status-proposal-border);
+}
+
+/* ======================================================================
+           13. BOTONES GENERALES (.btn)
+           ====================================================================== */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    /* Separación entre icono y texto */
+    font-family: inherit;
+    /* Usa la misma fuente de la página */
+    font-size: var(--font-base);
+    /* 16px */
+    font-weight: 700;
+    padding: 0.75rem 1.35rem;
+    /* Relleno cómodo para el dedo o cursor */
+    border-radius: var(--radius-md);
+    /* Esquinas redondeadas */
+    border: 1px solid transparent;
+    cursor: pointer;
+    /* Manita de clic */
+    text-decoration: none;
+    /* Sin subrayado */
+    transition: all var(--transition-fast);
+}
+
+/* Botón azul oscuro principal */
+.btn-primary {
+    background: var(--color-navy);
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background: var(--color-navy-deep);
+    color: #fff;
+    box-shadow: var(--shadow-md);
+}
+
+/* Botón dorado festivo con degradado */
+.btn-accent {
+    background: linear-gradient(135deg, var(--color-gold), var(--color-gold-hover));
+    color: var(--color-navy-deep);
+    border-color: var(--color-gold-hover);
+}
+
+.btn-accent:hover {
+    background: var(--color-gold-hover);
+    box-shadow: 0 4px 15px rgba(242, 184, 36, 0.4);
+    /* Resplandor dorado */
+}
+
+/* Botón con contorno transparente (outline) */
+.btn-outline {
+    background: transparent;
+    border: 1.5px solid var(--color-navy);
+    color: var(--color-navy);
+}
+
+.btn-outline:hover {
+    background: var(--color-navy);
+    color: #fff;
+}
+
+/* Botón con contorno blanco para fondos oscuros */
+.btn-outline-white {
+    background: transparent;
+    border: 1.5px solid rgba(255, 255, 255, 0.6);
+    color: #fff;
+}
+
+.btn-outline-white:hover {
+    background: #fff;
+    color: var(--color-navy);
+}
+
+/* Botón pequeño para tarjetas y tablas */
+.btn-sm {
+    padding: 0.4rem 0.85rem;
+    font-size: var(--font-sm);
+    border-radius: var(--radius-sm);
+}
+
+/* ==========================================================================
+           SECCIONES DE PÁGINA (VISTAS COMPLETAS - .page-section):
+           Imagina que cada página es un libro y cada sección es un capítulo.
+           Aquí definimos el espacio y los colores de cada capítulo.
+           ========================================================================== */
+.page-section {
+    /* padding: 4rem arriba y abajo (mucho aire para respirar), y 1.25rem a los lados */
+    padding: 4rem 1.25rem;
+    /* Una línea muy finita abajo para separar suavemente un tema de otro */
+    border-bottom: 1px solid var(--color-cream-border);
+}
+
+/* :nth-child(even) significa: "¡A las secciones pares (la 2, la 4, la 6...) píntales un fondo crema!"
+           Así la página alterna: blanco, cremita, blanco, cremita (como un tablero de ajedrez suave),
+           haciendo la lectura mucho más descansada y entretenida */
+.page-section:nth-child(even) {
+    background: var(--color-cream-light);
+}
+
+/* Encabezado del capítulo o sección */
+.page-section-header {
+    /* max-width: que el texto no se estire más de 780 píxeles, para que no canse la vista al leer */
+    max-width: 780px;
+    /* margin: 0 auto lo centra como un cuadro en la pared; y 3rem de espacio abajo */
+    margin: 0 auto 3rem;
+    /* text-align: centrado */
+    text-align: center;
+}
+
+/* ==========================================================================
+           EL BANNER HERO DE LAS PÁGINAS INTERNAS (.page-hero-banner):
+           Es el letrero azul grande y brillante en la parte superior de páginas como
+           Agenda, Exploración, Rutas, etc.
+           ========================================================================== */
+.page-hero-banner {
+    /* Fondo azul marino elegante */
+    background: var(--color-navy);
+    /* Letras blancas brillantes para que contrasten perfectamente */
+    color: #fff;
+    /* Relleno interno: 3.5rem arriba y abajo, 1.25rem a los lados */
+    padding: 3.5rem 1.25rem;
+    /* Texto centrado */
+    text-align: center;
+    /* relative: sirve de referencia para que la textura de fondo no se salga */
+    position: relative;
+    /* overflow: hidden: corta cualquier dibujo o sombra que quiera desbordarse de la caja */
+    overflow: hidden;
+}
+
+/* Textura decorativa con motivos poblanos semitransparentes en el fondo */
+.page-hero-banner .hero-bg-texture {
+    /* absolute: se despega y flota sobre el fondo */
+    position: absolute;
+    /* inset: 0: se estira tocando las cuatro esquinas (arriba, abajo, izq, der) */
+    inset: 0;
+    /* La imagen de talavera/textura */
+    background-image: url('../img/Logo Main__Logo Texture Dark.png');
+    /* cover: llena todo el espacio sin deformarse */
+    background-size: cover;
+    /* center: centrada */
+    background-position: center;
+    /* opacity: 0.12: muy transparente y sutil, como una marca de agua mágica */
+    opacity: 0.12;
+    /* z-index: 0: se queda en la capa más profunda, detrás de las letras */
+    z-index: 0;
+}
+
+/* El selector .page-hero-banner > * selecciona a TODOS los hijos directos (título, párrafo, etc.) */
+.page-hero-banner>* {
+    /* relative y z-index: 1: los pone en una capa superior para flotar por encima de la textura */
+    position: relative;
+    z-index: 1;
+}
+
+/* El título grandote del banner */
+.page-hero-banner h2 {
+    /* clamp(2rem, 4vw, 3rem): tamaño inteligente y elástico según la pantalla */
+    font-size: clamp(2rem, 4vw, 3rem);
+    /* font-weight: 800: letra muy gruesa e imponente */
+    font-weight: 800;
+    /* margin-bottom: separación hacia abajo */
+    margin-bottom: 0.75rem;
+}
+
+/* El párrafo descriptivo que acompaña al título */
+.page-hero-banner p {
+    /* font-size: tamaño mediano legible */
+    font-size: var(--font-md);
+    /* Blanco con 80% de opacidad para no competir con el título */
+    color: rgba(255, 255, 255, 0.8);
+    /* Ancho máximo para que no se hagan renglones infinitos */
+    max-width: 640px;
+    /* margin: 0 auto: lo centra horizontalmente */
+    margin: 0 auto;
+    /* line-height: altura entre renglones para que se lea cómodamente */
+    line-height: 1.6;
+}
+
+/* ==========================================================================
+           ELEMENTOS DE LA AGENDA / CALENDARIO (.agenda-item):
+           Aquí organizamos las actividades del festival por días y horarios.
+           ========================================================================== */
+/* Grupo de actividades de un día en particular */
+.agenda-day-group {
+    /* Espacio de 2.5rem antes de que comience el siguiente día */
+    margin-bottom: 2.5rem;
+}
+
+/* El título de cada día (por ejemplo: "Viernes 14 de Noviembre") */
+.agenda-day-label {
+    /* Letra grande y destacada */
+    font-size: var(--font-lg);
+    /* 800: bien gordita/negrita */
+    font-weight: 800;
+    /* Color azul marino */
+    color: var(--color-navy);
+    /* Espacio de colchón antes de la línea dorada */
+    padding-bottom: 0.75rem;
+    /* Línea dorada de 2px abajo como una regla elegante */
+    border-bottom: 2px solid var(--color-gold);
+    /* Separación con las tarjetas de eventos */
+    margin-bottom: 1.25rem;
+    /* Flexbox para alinear el texto y posibles iconitos en la misma línea */
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Cada tarjetita de evento individual en el horario */
+.agenda-item {
+    /* Fondo blanco limpio */
+    background: #fff;
+    /* Borde cremita muy suave */
+    border: 1px solid var(--color-cream-border);
+    /* Esquinas redondeadas */
+    border-radius: var(--radius-md);
+    /* Relleno interno: 1.25rem arriba/abajo, 1.5rem a los lados */
+    padding: 1.25rem 1.5rem;
+    /* Separación con el siguiente evento */
+    margin-bottom: 0.75rem;
+    /* display: grid: creamos una cuadrícula de 3 columnas:
+               1. auto: el espacio justo para la hora (ej: "10:00 AM")
+               2. 1fr: todo el espacio sobrante para el título y descripción
+               3. auto: el espacio justo para el botón o etiqueta de cupo */
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    /* Distancia entre las 3 columnas */
+    gap: 1.25rem;
+    /* Centrado vertical de los 3 elementos */
+    align-items: center;
+    /* Animación suave al pasar el cursor */
+    transition: all var(--transition-fast);
+}
+
+/* Efecto al pasar el ratón sobre un evento de la agenda */
+.agenda-item:hover {
+    /* Sombra que levanta la tarjeta */
+    box-shadow: var(--shadow-md);
+    /* El borde se enciende en azul talavera */
+    border-color: var(--color-talavera-blue);
+}
+
+/* La cajita que muestra la hora */
+.agenda-time {
+    /* Negrita extra */
+    font-weight: 800;
+    /* Color azul talavera representativo */
+    color: var(--color-talavera-blue);
+    /* Tamaño pequeño pero visible */
+    font-size: var(--font-sm);
+    /* white-space: nowrap: ¡prohibido dividirse en dos líneas! (ej: "10:00" y abajo "AM") */
+    white-space: nowrap;
+    /* Ancho mínimo para que todas las horas queden bien alineadas en columna */
+    min-width: 65px;
+}
+
+/* Título del evento */
+.agenda-info h4 {
+    font-size: var(--font-base);
+    font-weight: 700;
+    color: var(--color-navy);
+    margin-bottom: 0.15rem;
+}
+
+/* Lugar o detalles del evento */
+.agenda-info p {
+    font-size: var(--font-sm);
+    color: var(--color-text-muted);
+}
+
+/* ==========================================================================
+           TARJETAS DE RUTAS BIOCULTURALES (.route-card):
+           Fichas interactivas para cada sendero, recorrido gastronómico o ruta botánica.
+           ========================================================================== */
+.route-card {
+    background: #fff;
+    border: 1px solid var(--color-cream-border);
+    border-radius: var(--radius-lg);
+    /* overflow: hidden: para que la foto o cabecera curva no se desborde de las esquinas */
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-normal);
+}
+
+/* Efecto de elevación al pasar el ratón */
+.route-card:hover {
+    box-shadow: var(--shadow-hover);
+    /* transform: translateY(-4px): sube 4 píxeles como si flotara */
+    transform: translateY(-4px);
+}
+
+/* Cabecera visual de la tarjeta de ruta */
+.route-card-img {
+    /* Altura fija de 200px */
+    height: 200px;
+    /* Degradado elegante de azul talavera a azul marino oscuro */
+    background: linear-gradient(135deg, var(--color-talavera-blue), var(--color-navy));
+    /* Flexbox centrado para cualquier texto o icono que contenga */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: 700;
+}
+
+/* Cuerpo con los datos de la ruta */
+.route-card-body {
+    padding: 1.5rem;
+}
+
+/* Título de la ruta */
+.route-card-body h3 {
+    font-size: var(--font-lg);
+    font-weight: 800;
+    color: var(--color-navy);
+    margin-bottom: 0.5rem;
+}
+
+/* Descripción de la ruta */
+.route-card-body p {
+    font-size: var(--font-sm);
+    color: var(--color-text-muted);
+    line-height: 1.55;
+    margin-bottom: 1rem;
+}
+
+/* Lista de paradas o estaciones del recorrido */
+.route-stops {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    /* Margen izquierdo para dar lugar a la línea dorada */
+    padding-left: 1.25rem;
+    /* Línea dorada vertical que parece un hilo conductor de viaje */
+    border-left: 3px solid var(--color-gold);
+    margin-bottom: 1rem;
+}
+
+/* Cada parada individual */
+.route-stop {
+    font-size: var(--font-sm);
+    font-weight: 600;
+    color: var(--color-navy);
+}
+
+/* ==========================================================================
+           TARJETAS DE SABORES Y GASTRONOMÍA (.flavor-card):
+           Fichas apetitosas para platillos, ingredientes y recetas tradicionales.
+           ========================================================================== */
+.flavor-card {
+    background: #fff;
+    border: 1px solid var(--color-cream-border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-normal);
+}
+
+.flavor-card:hover {
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-4px);
+}
+
+/* Cabecera con fondo dorado suave para las delicias culinarias */
+.flavor-card-img {
+    height: 180px;
+    background: linear-gradient(135deg, var(--color-gold-soft), var(--color-cream));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* La foto o ilustración del platillo */
+.flavor-card-img img {
+    height: 80px;
+    width: auto;
+    /* object-fit: contain: la imagen nunca se aplasta ni deforma, se ajusta perfecta */
+    object-fit: contain;
+}
+
+/* Texto y detalles del platillo */
+.flavor-card-body {
+    padding: 1.5rem;
+}
+
+.flavor-card-body h3 {
+    font-size: var(--font-lg);
+    font-weight: 800;
+    color: var(--color-navy);
+    margin-bottom: 0.5rem;
+}
+
+.flavor-card-body p {
+    font-size: var(--font-sm);
+    color: var(--color-text-muted);
+    line-height: 1.55;
+    margin-bottom: 1rem;
+}
+
+/* ==========================================================================
+           FORMULARIOS Y CAMPOS DE ENTRADA (.form-group, .form-card):
+           Aquí le damos estilo a las cajas donde las personas escriben su nombre,
+           correo, eligen opciones o envían mensajes para participar.
+           ========================================================================== */
+/* Contenedor de cada pregunta o campo (etiqueta + cajita) */
+.form-group {
+    margin-bottom: 1.25rem;
+}
+
+/* La etiqueta ("Nombre", "Correo", "Mensaje") */
+.form-group label {
+    /* display: block: hace que la etiqueta ocupe su propio renglón arriba del campo */
+    display: block;
+    font-weight: 700;
+    font-size: var(--font-sm);
+    color: var(--color-navy);
+    margin-bottom: 0.4rem;
+}
+
+/* Las cajitas de texto, menús desplegables y áreas de mensaje grande */
+.form-group input,
+.form-group select,
+.form-group textarea {
+    /* width: 100%: ocupan todo el ancho disponible */
+    width: 100%;
+    /* Relleno cómodo para escribir con facilidad */
+    padding: 0.85rem 1rem;
+    /* Borde gris clarito de 1.5px */
+    border: 1.5px solid var(--color-border);
+    /* Esquinas redondeadas */
+    border-radius: var(--radius-md);
+    /* Hereda la tipografía de la página */
+    font-family: inherit;
+    font-size: var(--font-base);
+    color: var(--color-text-main);
+    /* Fondo cremita muy sutil */
+    background: var(--color-cream-light);
+    /* Animación rápida al hacer clic */
+    transition: all var(--transition-fast);
+}
+
+/* Cuando el usuario hace clic adentro de la cajita para escribir (:focus) */
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    /* El borde se vuelve azul talavera */
+    border-color: var(--color-talavera-blue);
+    /* El fondo se vuelve blanco puro */
+    background: #fff;
+    /* Un resplandor o aura azulada alrededor de 4px que dice "¡estás escribiendo aquí!" */
+    box-shadow: 0 0 0 4px var(--color-soft-blue-light);
+    /* Quitamos el marco negro feo por defecto del navegador */
+    outline: none;
+}
+
+/* Rejilla para poner dos campos juntos en un renglón (ej: Nombre y Apellido) */
+.form-grid-2 {
+    display: grid;
+    /* En pantallas pequeñas (celulares): 1 sola columna hacia abajo */
+    grid-template-columns: 1fr;
+    gap: 0;
+}
+
+/* En pantallas más grandes (tablets o computadoras): se ponen 2 columnas lado a lado */
+@media (min-width: 768px) {
+    .form-grid-2 {
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+    }
+}
+
+/* La tarjeta blanca donde vive el formulario */
+.form-card {
+    background: #fff;
+    border: 1px solid var(--color-cream-border);
+    border-radius: var(--radius-lg);
+    /* padding: 2.5rem: mucho espacio y elegancia */
+    padding: 2.5rem;
+    box-shadow: var(--shadow-md);
+    /* max-width: 560px: no se hace gigante, se mantiene cómoda y centrada */
+    max-width: 560px;
+    margin: 0 auto;
+}
+
+/* Pestañitas para alternar entre distintos tipos de formulario (ej: Estudiante / Expositor) */
+.form-tabs {
+    display: flex;
+    gap: 0;
+    margin-bottom: 2rem;
+    /* Línea gris abajo que sirve de base para las pestañas */
+    border-bottom: 2px solid var(--color-cream-border);
+}
+
+/* Cada botón de pestaña */
+.form-tab {
+    /* flex: 1: todas las pestañas se reparten el ancho en partes iguales */
+    flex: 1;
+    padding: 0.85rem;
+    text-align: center;
+    font-weight: 700;
+    font-size: var(--font-sm);
+    color: var(--color-text-muted);
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    /* Línea transparente abajo para que no salte al activarse */
+    border-bottom: 3px solid transparent;
+    /* margin-bottom: -2px: se apoya exactamente encima de la línea base */
+    margin-bottom: -2px;
+}
+
+/* La pestaña que está activa/seleccionada en ese momento */
+.form-tab.active {
+    color: var(--color-navy);
+    /* Línea dorada brillante que marca cuál pestaña tienes abierta */
+    border-bottom-color: var(--color-gold);
+}
+
+/* Efecto al pasar el cursor sobre una pestaña */
+.form-tab:hover {
+    color: var(--color-talavera-blue);
+}
+
+/* Contenido de una pestaña: por defecto está oculto (display: none) */
+.tab-content {
+    display: none;
+}
+
+/* Cuando una pestaña tiene la clase .active, ¡se hace visible! */
+.tab-content.active {
+    display: block;
+}
+
+/* ==========================================================================
+           SECCIÓN "¿CÓMO PARTICIPAR?" Y TARJETAS DE PÚBLICO (.participate-section):
+           Tarjetas para familias, investigadores, escuelas, voluntarios y artesanos.
+           ========================================================================== */
+.participate-section {
+    padding: 3rem 1.25rem 4rem;
+}
+
+/* Rejilla de tarjetas de público */
+.audience-grid {
+    display: grid;
+    /* En celular: 1 columna */
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+/* En tablets medianas: 2 columnas */
+@media (min-width: 640px) {
+    .audience-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* En computadoras grandes: 4 columnas una al lado de la otra */
+@media (min-width: 1024px) {
+    .audience-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Cada tarjeta de tipo de público */
+.audience-card {
+    background: #fff;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 1.75rem 1.25rem;
+    /* Flexbox en columna para centrar icono, título, texto y botón */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-normal);
+}
+
+.audience-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--color-gold);
+}
+
+/* Cajita cuadrada donde va el icono/avatar del público */
+.audience-avatar {
+    width: 96px;
+    height: 56px;
+    border-radius: var(--radius-md);
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    border: 1px solid var(--color-border);
+    padding: 4px 8px;
+    box-shadow: var(--shadow-sm);
+}
+
+.audience-avatar img {
+    height: 44px;
+    width: auto;
+    object-fit: contain;
+}
+
+.audience-card h3 {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: var(--color-navy);
+    margin-bottom: 0.5rem;
+}
+
+.audience-card p {
+    font-size: var(--font-sm);
+    color: var(--color-text-muted);
+    line-height: 1.5;
+    margin-bottom: 1.25rem;
+}
+
+/* ==========================================================================
+           AVISO O DESCARGO DE RESPONSABILIDAD (.disclaimer-banner):
+           Un cuadro de advertencia o información relevante con fondo amarillo/dorado.
+           ========================================================================== */
+.disclaimer-banner {
+    /* Fondo amarillo oro muy clarito y suave */
+    background: var(--color-gold-soft);
+    /* Borde dorado de 1.5px */
+    border: 1.5px solid var(--color-gold);
+    border-radius: var(--radius-md);
+    padding: 1.15rem 1.35rem;
+    margin: 2rem 0;
+    /* Flexbox para alinear el iconito de alerta con el texto explicativo */
+    display: flex;
+    align-items: flex-start;
+    gap: 0.85rem;
+    font-size: var(--font-sm);
+    color: var(--color-gold-text);
+}
+
+.disclaimer-banner strong {
+    color: #382400;
+}
+
+/* ==========================================================================
+           EL ESPACIO DEL MAPA (CSS):
+           Aquí le decimos al navegador el tamaño y forma que tendrá el mapa.
+           ========================================================================== */
+.map-container {
+    /* 1. Altura fija: Sin esto, el mapa mediría 0 píxeles y no se vería nada */
+    height: 480px;
+    /* 2. Ancho completo: Para que ocupe todo el espacio que tenga a los lados */
+    width: 100%;
+    /* 3. Color de fondo mientras se descargan las fotos del mapa */
+    background: var(--color-cream-card);
+    /* 4. Un borde suave alrededor */
+    border: 2px solid var(--color-cream-border);
+    /* 5. Esquinas redondeadas para que no se vea cuadrado y filoso */
+    border-radius: var(--radius-lg);
+    /* 6. Espacio de separación abajo para no chocar con las tarjetas */
+    margin-bottom: 2rem;
+    /* 7. Capa de altura (z-index): Para que cuando bajes la página,
+                  el menú superior quede por encima del mapa y no se tape */
+    position: relative;
+    z-index: 1;
+    /* 8. Sombra suave para dar sensación de profundidad */
+    box-shadow: var(--shadow-sm);
+}
+
+/* Globito blanco con información que sale al tocar un punto (Popup) */
+.leaflet-popup-content-wrapper {
+    border-radius: var(--radius-md) !important;
+    box-shadow: 0 10px 25px rgba(21, 23, 72, 0.15) !important;
+    border: 1px solid var(--color-cream-border);
+    font-family: inherit !important;
+}
+
+/* Cuadro de opciones de la esquina superior derecha (Selector de rutas) */
+.leaflet-control-layers {
+    border-radius: var(--radius-md) !important;
+    border: 1px solid var(--color-cream-border) !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08) !important;
+    font-family: inherit !important;
+    font-size: var(--font-sm) !important;
+    padding: 8px 12px !important;
+}
+
+/* ==========================================================================
+           REJILLA Y TARJETAS INFORMATIVAS (.info-grid, .info-card):
+           Cajitas blancas para dar datos de interés, recomendaciones y preguntas frecuentes.
+           ========================================================================== */
+.info-grid {
+    /* display: grid: divide el espacio en celdas organizadas */
+    display: grid;
+    /* En pantallas de teléfono móvil: 1 sola columna hacia abajo */
+    grid-template-columns: 1fr;
+    /* Espacio de 1.5rem entre tarjetas */
+    gap: 1.5rem;
+}
+
+/* En pantallas medianas (tablets a partir de 640px de ancho): 2 columnas */
+@media (min-width: 640px) {
+    .info-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* En pantallas grandes de computadora (1024px o más): 3 columnas lado a lado */
+@media (min-width: 1024px) {
+    .info-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Cada tarjeta de información individual */
+.info-card {
+    background: #fff;
+    border: 1px solid var(--color-cream-border);
+    border-radius: var(--radius-lg);
+    padding: 2rem 1.5rem;
+    box-shadow: var(--shadow-sm);
+    /* Transición suave para cuando pasemos el ratón */
+    transition: all var(--transition-normal);
+}
+
+/* Al pasar el ratón: se levanta 3px y su sombra se hace más profunda */
+.info-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-3px);
+}
+
+/* Título de la tarjeta informativa */
+.info-card h3 {
+    font-size: var(--font-lg);
+    font-weight: 800;
+    color: var(--color-navy);
+    margin-bottom: 0.75rem;
+    /* Flexbox para alinear iconitos al lado del título */
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Párrafo explicativo de la tarjeta */
+.info-card p {
+    font-size: var(--font-sm);
+    color: var(--color-text-muted);
+    line-height: 1.6;
+}
+
+/* ==========================================================================
+           PIE DE PÁGINA (.site-footer):
+           El remate final al fondo de todo el sitio web. Azul noche con detalles dorados.
+           ========================================================================== */
+.site-footer {
+    /* Fondo azul noche ultra profundo */
+    background: var(--color-navy-deep);
+    /* Color de texto lavanda claro muy suave y legible */
+    color: #D5DAED;
+    /* Una cenefa dorada gruesa de 4px arriba que le da brillo y lujo */
+    border-top: 4px solid var(--color-gold);
+    /* padding: 4rem arriba, 1.25rem a los lados, 2rem abajo */
+    padding: 4rem 1.25rem 2rem;
+    font-size: var(--font-sm);
+    /* margin-top: auto: si una página tiene poco contenido, empuja el footer al fondo de la pantalla */
+    margin-top: auto;
+}
+
+/* Contenedor central del pie de página */
+.footer-container {
+    max-width: 1240px;
+    margin: 0 auto;
+    /* display: grid: para organizar las columnas de enlaces e instituciones */
+    display: grid;
+    /* En teléfonos: una columna sobre otra */
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+}
+
+/* En computadoras (768px o más): se divide en 3 columnas:
+           - 2fr: La primera columna (logotipo y descripción) es el doble de ancha
+           - 1fr: Columna de enlaces rápidos
+           - 1fr: Columna de contacto y redes */
+@media (min-width: 768px) {
+    .footer-container {
+        grid-template-columns: 2fr 1fr 1fr;
+    }
+}
+
+/* Columna principal de la marca en el footer */
+.footer-brand {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Logotipo del festival en el footer */
+.footer-logo {
+    height: 52px;
+    width: auto;
+    /* align-self: flex-start: se alinea al inicio de su columna sin estirarse */
+    align-self: flex-start;
+}
+
+/* Franja de instituciones participantes y patrocinadores */
+.footer-sponsors-strip {
+    display: flex;
+    /* flex-wrap: wrap: si hay muchos logos, bajan a la siguiente línea ordenadamente */
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.25rem;
+    padding-top: 1rem;
+    margin-top: 1rem;
+    /* Línea divisoria muy tenue y translúcida */
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* Etiqueta dorada pequeña de los patrocinadores */
+.footer-sponsors-strip span {
+    font-size: var(--font-xs);
+    color: var(--color-gold);
+    font-weight: 700;
+    /* text-transform: uppercase: todo en mayúsculas ("ORGANIZADORES") */
+    text-transform: uppercase;
+    /* letter-spacing: un poquito de espacio entre cada letra */
+    letter-spacing: 0.05em;
+}
+
+/* Títulos de las columnas de navegación del pie de página */
+.footer-links-col h4 {
+    color: var(--color-gold);
+    font-size: var(--font-base);
+    margin-bottom: 1.15rem;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+}
+
+/* Lista de enlaces del footer */
+.footer-nav {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+/* Cada enlace del footer */
+.footer-nav a {
+    color: #BAC2E0;
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+/* Al pasar el ratón por un enlace del footer */
+.footer-nav a:hover {
+    /* Se vuelve dorado brillante */
+    color: var(--color-gold);
+    /* Aparece un subrayado */
+    text-decoration: underline;
+}
+
+/* La barra final de derechos de autor (copyright) al fondo del footer */
+.footer-bottom {
+    max-width: 1240px;
+    margin: 2.5rem auto 0;
+    padding-top: 1.5rem;
+    /* Línea muy tenue que separa las columnas del copyright */
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    font-size: var(--font-xs);
+    color: #929ABA;
+}
+
+/* En computadoras: el copyright va a la izquierda y los términos a la derecha */
+@media (min-width: 768px) {
+    .footer-bottom {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+/* ==========================================================================
+           LÍNEA DIVISORIA DECORATIVA (.section-divider):
+           Una línea fina pero colorida con un degradado que une oro y talavera.
+           ========================================================================== */
+.section-divider {
+    /* 4 píxeles de grosor */
+    height: 4px;
+    /* Degradado de izquierda a derecha: Dorado -> Azul Talavera -> Dorado */
+    background: linear-gradient(90deg, var(--color-gold), var(--color-talavera-blue), var(--color-gold));
+    /* Opacidad al 50% para que sea suave y no deslumbre */
+    opacity: 0.5;
+    /* Quitamos el borde por defecto de la etiqueta <hr> */
+    border: none;
+    margin: 0;
+}
+
+/* ==========================================================================
+           NUEVOS COMPONENTES DE LA ARQUITECTURA ICCB 2027 (SECCIONES 2, 3, 4 Y 7):
+           Aquí agregamos los estilos para:
+           1. El Directorio Común de Actividades con múltiples filtros.
+           2. Las Fichas Completas de Actividad y de Equipos de Creative Conservation Labs.
+           3. Los Botones de Categoría del Mapa Interactivo (Gastronomía, Cultura, etc.).
+           4. Los Acordeones de Preguntas Frecuentes (FAQ).
+           ========================================================================== */
+
+/* Panel contenedor de todos los filtros del directorio (Sección 3.2 del PDF) */
+.directory-filter-box {
+    background: #fff;
+    border: 1.5px solid var(--color-cream-border);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow-md);
+}
+
+/* Cuadrícula responsiva para los selectores de filtro (Tipo, Público, Fecha, Idioma, Costo, Ubicación) */
+.filter-controls-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+@media (min-width: 640px) {
+    .filter-controls-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .filter-controls-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Etiqueta pequeña encima de cada filtro */
+.filter-field label {
+    display: block;
+    font-size: var(--font-xs);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--color-navy);
+    margin-bottom: 0.35rem;
+}
+
+/* Selector o input dentro del panel de filtros */
+.filter-field select,
+.filter-field input {
+    width: 100%;
+    padding: 0.65rem 0.85rem;
+    border: 1.5px solid var(--color-border);
+    border-radius: var(--radius-md);
+    font-family: inherit;
+    font-size: var(--font-sm);
+    color: var(--color-text-main);
+    background: var(--color-cream-light);
+}
+
+/* Tarjeta de Ficha Completa de Actividad (Sección 3.2: incluye todos los metadatos) */
+.activity-full-card {
+    background: #fff;
+    border: 1px solid var(--color-cream-border);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    margin-bottom: 1.25rem;
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-normal);
+}
+
+.activity-full-card:hover {
+    box-shadow: var(--shadow-md);
+    border-color: var(--color-talavera-blue);
+}
+
+/* Encabezado de la ficha de actividad (ID, Categoría, Estado) */
+.activity-card-top {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+}
+
+/* Cuadrícula de datos prácticos dentro de la ficha (Fecha, Ubicación, Organizador, Público, Idioma, Costo, Accesibilidad) */
+.activity-meta-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.6rem 1.25rem;
+    background: var(--color-cream-light);
+    border-radius: var(--radius-md);
+    padding: 1rem 1.25rem;
+    margin: 1rem 0;
+    font-size: var(--font-sm);
+}
+
+@media (min-width: 768px) {
+    .activity-meta-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.activity-meta-item strong {
+    color: var(--color-navy);
+    font-weight: 700;
+}
+
+/* Barra de botones al pie de cada ficha (Registro, Mapa, Cómo llegar) */
+.activity-actions-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--color-cream-border);
+}
+
+/* Pastillas de filtro por categoría para el Mapa y Recorridos (Sección 3.4) */
+.map-category-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.25rem;
+    justify-content: center;
+}
+
+.map-cat-btn {
+    padding: 0.55rem 1rem;
+    border-radius: var(--radius-pill);
+    border: 1.5px solid var(--color-cream-border);
+    background: #fff;
+    color: var(--color-navy);
+    font-family: inherit;
+    font-size: var(--font-xs);
+    font-weight: 700;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.map-cat-btn:hover,
+.map-cat-btn.active {
+    background: var(--color-navy);
+    color: #fff;
+    border-color: var(--color-navy);
+    box-shadow: var(--shadow-sm);
+}
+
+/* Tarjetas de equipo para Creative Conservation Labs (Sección 3.1) */
+.ccl-team-card {
+    background: #fff;
+    border: 1px solid var(--color-cream-border);
+    border-radius: var(--radius-lg);
+    padding: 1.75rem;
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    transition: all var(--transition-normal);
+}
+
+.ccl-team-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--color-gold);
+}
+
+/* Acordeón de Preguntas Frecuentes (FAQ - Sección 3.3 y 7) */
+.faq-item {
+    background: #fff;
+    border: 1px solid var(--color-cream-border);
+    border-radius: var(--radius-md);
+    margin-bottom: 0.85rem;
+    overflow: hidden;
+}
+
+.faq-item summary {
+    padding: 1.1rem 1.35rem;
+    font-weight: 700;
+    color: var(--color-navy);
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq-item summary::after {
+    content: "+";
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--color-gold-hover);
+}
+
+.faq-item[open] summary::after {
+    content: "−";
+}
+
+.faq-body {
+    padding: 0 1.35rem 1.25rem;
+    font-size: var(--font-sm);
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    border-top: 1px solid var(--color-cream-light);
+}
+
+/* Barra de navegación interna por las 7 secciones del Laboratorio */
+.lab-toc {
+    background: rgba(255, 255, 255, 0.97);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--color-cream-border);
+    box-shadow: 0 4px 15px rgba(21, 23, 72, 0.06);
+    position: sticky;
+    top: 82px;
+    z-index: 900;
+    padding: 0.75rem 1rem;
+    width: 100%;
+}
+
+.lab-toc-inner {
+    max-width: 1040px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.lab-toc a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.35rem;
+    padding: 0.45rem 0.95rem;
+    border-radius: var(--radius-pill);
+    background: var(--color-cream-light);
+    border: 1.5px solid var(--color-cream-border);
+    color: var(--color-navy);
+    font-size: var(--font-xs);
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: all var(--transition-fast);
+}
+
+.lab-toc a:hover {
+    background: var(--color-navy);
+    color: #fff;
+    border-color: var(--color-navy);
+    transform: translateY(-1px);
+    box-shadow: 0 3px 8px rgba(21, 23, 72, 0.15);
+}
+
+@media (max-width: 991px) {
+    .lab-toc {
+        top: 68px;
+        padding: 0.5rem 0.75rem;
+    }
+    .lab-toc-inner {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        justify-content: flex-start;
+        padding-bottom: 4px;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+    }
+    .lab-toc-inner::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+/* Etiqueta numerada de sección (01, 02, 03...07) */
+.lab-step-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    background: var(--color-gold-soft);
+    border: 1px solid var(--color-gold);
+    color: var(--color-navy-deep);
+    padding: 0.35rem 0.9rem;
+    border-radius: var(--radius-full);
+    font-size: var(--font-xs);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.85rem;
+}
+
+.lab-step-label span:first-child {
+    background: var(--color-navy);
+    color: var(--color-gold);
+    padding: 0.15rem 0.5rem;
+    border-radius: var(--radius-full);
+    font-size: 0.72rem;
+}
+
+/* Recuadro de nota / aviso destacado (.lab-callout) */
+.lab-callout {
+    background: var(--color-gold-soft);
+    border-left: 4px solid var(--color-gold-hover);
+    border-radius: var(--radius-md);
+    padding: 1.15rem 1.35rem;
+    color: var(--color-navy-deep);
+    font-size: var(--font-sm);
+    line-height: 1.65;
+    margin: 1.25rem 0;
+}
+
+/* Tablas de estructura y desglose de las 120 horas (.lab-table) */
+.lab-table-wrap {
+    overflow-x: auto;
+    background: #fff;
+    border: 1px solid var(--color-cream-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+}
+
+.lab-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: var(--font-sm);
+}
+
+.lab-table thead th {
+    background: var(--color-navy);
+    color: #fff;
+    font-weight: 800;
+    padding: 0.95rem 1.25rem;
+    font-size: var(--font-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.lab-table tbody th,
+.lab-table tbody td {
+    padding: 0.95rem 1.25rem;
+    border-bottom: 1px solid var(--color-cream-border);
+    vertical-align: top;
+    line-height: 1.55;
+}
+
+.lab-table tbody th {
+    color: var(--color-navy);
+    font-weight: 800;
+    width: 28%;
+    background: var(--color-cream-light);
+}
+
+.lab-table tbody tr:last-child th,
+.lab-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.lab-table tfoot th,
+.lab-table tfoot td {
+    background: var(--color-gold-soft);
+    color: var(--color-navy-deep);
+    font-weight: 800;
+    padding: 0.95rem 1.25rem;
+    border-top: 2px solid var(--color-gold);
+}
+
+/* Contador visual de 120 horas */
+.lab-hours-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    background: var(--color-navy);
+    color: #fff;
+    padding: 1.15rem 1.5rem;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    margin-top: 1rem;
+}
+
+.lab-hours-badge strong {
+    font-size: 2.4rem;
+    font-weight: 900;
+    color: var(--color-gold);
+    line-height: 1;
+}
+
+.lab-hours-badge span {
+    font-size: var(--font-sm);
+    line-height: 1.35;
+    color: var(--color-cream);
+}
+
+/* Línea del tiempo vertical paso a paso ( Ruta de trabajo) */
+.lab-timeline {
+    position: relative;
+    margin: 1.5rem 0;
+    padding-left: 2rem;
+    border-left: 3px solid var(--color-gold);
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.lab-timeline-item {
+    position: relative;
+    background: #fff;
+    border: 1px solid var(--color-cream-border);
+    border-radius: var(--radius-md);
+    padding: 1.15rem 1.35rem;
+    box-shadow: var(--shadow-xs);
+    transition: all var(--transition-fast);
+}
+
+.lab-timeline-item:hover {
+    border-color: var(--color-gold);
+    box-shadow: var(--shadow-sm);
+    transform: translateX(3px);
+}
+
+/* Punto dorado sobre la línea vertical */
+.lab-timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -2.48rem;
+    top: 1.35rem;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--color-gold);
+    border: 3px solid var(--color-navy);
+}
+
+.lab-timeline-date {
+    display: inline-block;
+    font-size: var(--font-xs);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-gold-text);
+    background: var(--color-gold-soft);
+    padding: 0.2rem 0.65rem;
+    border-radius: var(--radius-full);
+    margin-bottom: 0.4rem;
+}
+
+.lab-timeline-item h3 {
+    color: var(--color-navy);
+    font-size: var(--font-md);
+    font-weight: 800;
+    margin-bottom: 0.25rem;
+}
+
+.lab-timeline-item p {
+    color: var(--color-text-muted);
+    font-size: var(--font-sm);
+    line-height: 1.55;
+    margin: 0;
+}
+
+/* Cuadrícula de Fechas importantes (Sección 04) */
+.lab-dates-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.lab-date-card {
+    background: var(--color-navy);
+    color: #fff;
+    border-radius: var(--radius-md);
+    padding: 1.15rem 1.25rem;
+    border-top: 4px solid var(--color-gold);
+}
+
+.lab-date-card strong {
+    display: block;
+    color: var(--color-gold);
+    font-size: var(--font-sm);
+    font-weight: 800;
+    margin-bottom: 0.35rem;
+}
+
+.lab-date-card span {
+    font-size: var(--font-xs);
+    color: #E2E7F5;
+    line-height: 1.5;
+}
+
+.lab-date-card a {
+    color: var(--color-gold);
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+/* Tarjetas de Entregables e Idea Ampliada (Sección 07) */
+.lab-deliverable-card {
+    background: #fff;
+    border: 1px solid var(--color-cream-border);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-sm);
+    margin-bottom: 1.25rem;
+}
+
+.lab-deliverable-card h3 {
+    color: var(--color-navy);
+    font-size: var(--font-lg);
+    font-weight: 800;
+    margin-bottom: 0.75rem;
+}
+
+.lab-deliverable-card ul {
+    padding-left: 1.25rem;
+    color: var(--color-text-muted);
+    font-size: var(--font-sm);
+    line-height: 1.65;
+    margin-bottom: 1rem;
+}
+
+.lab-deliverable-idea {
+    background: var(--color-cream-light);
+    border: 1px dashed var(--color-gold-hover);
+    border-radius: var(--radius-md);
+    padding: 1rem 1.25rem;
+    font-size: var(--font-sm);
+    color: var(--color-navy-deep);
+}
+
+.lab-deliverable-idea strong {
+    display: block;
+    color: var(--color-navy);
+    margin-bottom: 0.4rem;
+}
