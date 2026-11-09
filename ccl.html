@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratorio de Conservación Creativa | Puebla, Capital de la Biodiversidad · ICCB 2027</title>
+    <meta name="description"
+        content="Laboratorio interdisciplinario universitario que conecta ciencia, arte, diseño y comunicación con retos reales de conservación en Puebla rumbo al ICCB 2027.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="icon" type="image/png" href="assets/img/Logo Main__Logo Complete.png">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+    <!-- ==========================================================================
+         SECCIÓN 1: ENCABEZADO SUPERIOR (<header>)
+         ========================================================================== -->
+    <header class="site-header">
+        <div class="header-container">
+            <a href="index.html" class="brand-wrapper" aria-label="ICCB 2027 Puebla · BUAP">
+                <img src="assets/img/Logo Main__Logo Complete.png" alt="ICCB 2027"
+                    class="brand-logo-img brand-logo-iccb">
+                <span class="brand-divider" aria-hidden="true"></span>
+                <img src="assets/img/Logo_BUAP.webp" alt="BUAP" class="brand-logo-img brand-logo-buap">
+            </a>
+
+            <div class="header-mobile-right">
+                <div class="lang-switcher-vertical mobile-header-lang" aria-label="Selector de idioma">
+                    <a href="#" class="lang-pill active" lang="es">ES</a>
+                    <a href="#" class="lang-pill" lang="en">EN</a>
+                </div>
+                <button type="button" class="nav-toggle-btn" id="nav-toggle-btn" aria-expanded="false"
+                    aria-controls="main-nav" aria-label="Abrir menú">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+
+            <nav class="main-nav" id="main-nav" aria-label="Navegación principal">
+                <ul class="nav-list">
+                    <li>
+                        <a href="ccl.html" class="nav-link active">
+                            <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M9 18h6" />
+                                <path d="M10 22h4" />
+                                <path d="M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z" />
+                            </svg>
+                            <span>Laboratorio</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="agenda.html" class="nav-link">
+                            <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 6a3 3 0 0 1 3-3h10a3 3 0 0 1 3 3v13a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V6z" />
+                                <path d="M4 10h16" />
+                                <path d="M8 2v3M16 2v3" stroke-width="2.2" />
+                            </svg>
+                            <span>Agenda</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="exploracion.html" class="nav-link highlight">
+                            <svg class="nav-icon-gold" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="2.5" fill="currentColor" />
+                                <circle cx="12" cy="4" r="1" fill="currentColor" />
+                                <circle cx="20" cy="12" r="1" fill="currentColor" />
+                                <circle cx="12" cy="20" r="1" fill="currentColor" />
+                                <circle cx="4" cy="12" r="1" fill="currentColor" />
+                            </svg>
+                            <span>Día de la Exploración</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="rutas.html" class="nav-link">
+                            <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21" />
+                                <line x1="9" y1="3" x2="9" y2="18" />
+                                <line x1="15" y1="6" x2="15" y2="21" />
+                            </svg>
+                            <span>Rutas</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="menu.html" class="nav-link">
+                            <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M17 8h1a4 4 0 0 1 0 8h-1" />
+                                <path d="M3 8h14v7a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8z" />
+                            </svg>
+                            <span>Sabores</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="participa.html" class="nav-link">
+                            <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M11 13.5l-2.5-2.5a3.5 3.5 0 0 0-5 5l4 4a4 4 0 0 0 5.6 0l5.4-5.4a3.5 3.5 0 0 0-5-5L11 12" />
+                            </svg>
+                            <span>Participa</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="info.html" class="nav-link">
+                            <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="9.5" />
+                                <line x1="12" y1="11" x2="12" y2="17" stroke-width="2.2" />
+                                <circle cx="12" cy="7.5" r="1.5" fill="currentColor" stroke="none" />
+                            </svg>
+                            <span>Información</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="nav-user-actions">
+                    <div class="lang-switcher-vertical desktop-header-lang" aria-label="Selector de idioma">
+                        <a href="#" class="lang-pill active" lang="es" title="Español">ES</a>
+                        <a href="#" class="lang-pill" lang="en" title="English">EN</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ==========================================================================
+         SECCIÓN 2: CONTENIDO PRINCIPAL DEL LABORATORIO (<main>)
+         ========================================================================== -->
+    <main class="site-main" id="main-content">
+
+        <!-- ======================================================================
+             BANNER PRINCIPAL DEL LABORATORIO
+             Flujo e información adaptados de: https://iccb.viep.com.mx/respaldo/index.php?page=conservation-labs
+             ====================================================================== -->
+        <div class="page-hero-banner">
+            <div class="hero-bg-texture"></div>
+            <p
+                style="color:var(--color-gold); font-size:var(--font-xs); font-weight:800; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:0.5rem;">
+                Ciencia + Creatividad · Puebla, Capital de la Biodiversidad · ICCB Puebla 2027
+            </p>
+            <h2 data-en="Creative Conservation Laboratory">Laboratorio de Conservación Creativa</h2>
+            <p
+                data-en="An interdisciplinary program to create products that connect biodiversity, conservation, and culture.">
+                Un programa interdisciplinario para crear productos que conectan biodiversidad, conservación y
+                cultura.<br>
+                <span style="font-size:var(--font-sm); opacity:0.92;">
+                    Certificado en Innovación Interdisciplinaria para la Conservación, con acompañamiento de profesores
+                    expertos y coordinación institucional.
+                </span>
+            </p>
+
+            <!-- Datos principales del programa (120 horas · 12 equipos · 4 ejes · Ene–may 2027) -->
+            <div style="margin-top:1.15rem; display:flex; gap:0.65rem; justify-content:center; flex-wrap:wrap;"
+                aria-label="Datos principales del programa">
+                <span class="badge-status confirmada"><strong>120</strong>&nbsp;horas</span>
+                <span class="badge-status confirmada"><strong>12</strong>&nbsp;equipos</span>
+                <span class="badge-status confirmada"><strong>4</strong>&nbsp;ejes</span>
+                <span class="badge-status confirmada">Ene–may&nbsp;<strong>2027</strong></span>
+            </div>
+
+            <!-- Botón de inscripción oficial de estudiantes -->
+            <div style="margin-top:1.4rem; display:flex; justify-content:center;">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSeNaShmbtlkITkSmOodgJaD7nTkFuyAS4eptApfbJehxj9HMg/viewform"
+                    target="_blank" rel="noopener noreferrer" class="btn btn-accent btn-sm"
+                    data-en="Register Student ↗">
+                    Inscribir Estudiante ↗
+                </a>
+            </div>
+
+            <!-- Nota institucional de la guía -->
+            <p style="max-width:740px; margin:1.1rem auto 0; font-size:var(--font-xs); color:#CBD3EE; line-height:1.5;">
+                Guía introductoria para contactos universitarios y profesores asesores. Documento para revisión y
+                comentarios de las coordinaciones de <strong>UDLAP, IBERO Puebla, UPAEP y BUAP</strong>.
+            </p>
+        </div>
+
+        <!-- ======================================================================
+             ÍNDICE RÁPIDO EN ESTA PÁGINA 
+             Permite saltar con un clic a: Propósito, Estructura, 120 horas, Calendario, Ejes, Roles y Entregables.
+             ====================================================================== -->
+        <nav class="lab-toc" aria-label="En esta página">
+            <div class="lab-toc-inner">
+                <a href="#proposito">01 · Propósito</a>
+                <a href="#estructura">02 · Estructura</a>
+                <a href="#horas">03 · 120 horas</a>
+                <a href="#calendario">04 · Calendario</a>
+                <a href="#ejes">05 · Ejes</a>
+                <a href="#roles">06 · Roles</a>
+                <a href="#entregables">07 · Entregables</a>
+            </div>
+        </nav>
+
+        <!-- ======================================================================
+             SECCIÓN 01 · EL PROGRAMA (#proposito) — "Innovar para conservar"
+             ====================================================================== -->
+        <section class="page-section" id="proposito">
+            <div class="container">
+                <div class="section-head-center">
+                    <div class="lab-step-label"><span>01</span><span>El programa</span></div>
+                    <h2 class="section-main-title" data-en="Innovate to Conserve">Innovar para Conservar</h2>
+                    <p class="section-main-desc">
+                        El Laboratorio de Conservación Creativa forma parte de las actividades vinculadas con
+                        <strong>Puebla, Capital de la Biodiversidad</strong> y el <strong>ICCB Puebla 2027</strong>.
+                    </p>
+                </div>
+
+                <div class="form-card" style="max-width:920px; margin:0 auto;">
+                    <p style="color:var(--color-text-main); line-height:1.7; margin-bottom:1rem;">
+                        Reúne estudiantes de distintas carreras y universidades en equipos interdisciplinarios que
+                        trabajan sobre encargos relacionados con la conservación, la biodiversidad, la comunicación, la
+                        gastronomía y las prácticas bioculturales.
+                    </p>
+                    <p style="color:var(--color-text-muted); line-height:1.7; margin-bottom:1rem;">
+                        El programa tiene un enfoque aplicado: los equipos desarrollan productos acordes con el tema
+                        asignado y con la orientación de un profesor asesor con experiencia en el área. Los productos
+                        resultantes podrán formar parte de una muestra o de actividades públicas vinculadas con la
+                        iniciativa.
+                    </p>
+
+                    <!-- Recuadro destacado: ¿Para qué sirve esta guía? -->
+                    <aside class="lab-callout">
+                        <strong>¿Para qué sirve esta guía?</strong><br>
+                        Presentar la estructura general del programa a los contactos universitarios y ofrecer a los
+                        profesores una referencia común. Los productos específicos se definirán con el profesor asesor
+                        según el proyecto asignado; esta guía no añade obligaciones distintas a las acordadas para cada
+                        eje.
+                    </aside>
+
+                    <div class="info-grid" style="margin-top:1.5rem;">
+                        <div class="info-card">
+                            <h3>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                    stroke="var(--color-talavera-blue)" stroke-width="1.8" stroke-linecap="round"
+                                    stroke-linejoin="round" style="vertical-align:-3px; margin-right:5px;">
+                                    <circle cx="12" cy="12" r="10" />
+                                    <circle cx="12" cy="12" r="6" />
+                                    <circle cx="12" cy="12" r="2" />
+                                </svg>
+                                Objetivo general
+                            </h3>
+                            <p>
+                                Impulsar la innovación interdisciplinaria para la conservación de la biodiversidad
+                                mediante la colaboración entre estudiantes, profesores y proyectos o actores
+                                relacionados con la cultura, la comunicación y el territorio.
+                            </p>
+                        </div>
+
+                        <div class="info-card">
+                            <h3>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                    stroke="var(--color-talavera-blue)" stroke-width="1.8" stroke-linecap="round"
+                                    stroke-linejoin="round" style="vertical-align:-3px; margin-right:5px;">
+                                    <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+                                    <path d="M6 12v5c3 3 9 3 12 0v-5" />
+                                </svg>
+                                Universidades consideradas
+                            </h3>
+                            <ul
+                                style="padding-left:1.2rem; color:var(--color-text-muted); font-size:var(--font-sm); line-height:1.7; margin-bottom:0.75rem;">
+                                <li>Universidad de las Américas Puebla (<strong>UDLAP</strong>).</li>
+                                <li>Universidad Iberoamericana Puebla (<strong>IBERO Puebla</strong>).</li>
+                                <li>Universidad Popular Autónoma del Estado de Puebla (<strong>UPAEP</strong>).</li>
+                                <li>Benemérita Universidad Autónoma de Puebla (<strong>BUAP</strong>).</li>
+                            </ul>
+                            <p style="font-size:var(--font-xs); color:var(--color-text-muted);">
+                                La guía está dirigida a los contactos institucionales de estas cuatro universidades y a
+                                los profesores asesores que participen en los laboratorios.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======================================================================
+             SECCIÓN 02 · CÓMO SE ORGANIZA (#estructura) — "Una estructura para colaborar"
+             ====================================================================== -->
+        <section class="page-section" id="estructura" style="background:var(--color-cream-light);">
+            <div class="container">
+                <div class="section-head-center">
+                    <div class="lab-step-label"><span>02</span><span>Cómo se organiza</span></div>
+                    <h2 class="section-main-title" data-en="A Structure for Collaboration">Una Estructura para Colaborar
+                    </h2>
+                </div>
+
+                <div style="max-width:920px; margin:0 auto;">
+                    <div class="lab-table-wrap">
+                        <table class="lab-table">
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Periodo de trabajo estudiantil</th>
+                                    <td>Enero–mayo de 2027; entrega de productos a principios de mayo.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Carga del programa</th>
+                                    <td>120 horas por estudiante.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Equipos</th>
+                                    <td>12 equipos en total: 3 por cada uno de los 4 ejes.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Participantes</th>
+                                    <td>72 estudiantes y 12 profesores tutores.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Acompañamiento</th>
+                                    <td>Cada equipo cuenta con un profesor asesor con experiencia en el tema.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Ritmo de trabajo</th>
+                                    <td>Una reunión semanal de equipo, procurando que al menos una al mes sea presencial
+                                        cuando sea posible.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Preparativos</th>
+                                    <td>Dos meses previos al inicio para concretar encargos, profesores, contactos y
+                                        coordinación institucional.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Muestra pública</th>
+                                    <td>Los productos se entregan a principios de mayo para preparar el montaje hacia
+                                        finales de mayo. El montaje o muestra pública no se contabiliza como parte del
+                                        programa.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="lab-callout" style="margin-top:1.25rem;">
+                        La coordinación general gestiona la articulación institucional y los asuntos logísticos que
+                        correspondan. No se asigna por defecto a los profesores asesores la responsabilidad de conseguir
+                        permisos, espacios o recursos.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======================================================================
+             SECCIÓN 03 · DISTRIBUCIÓN DE HORAS (#horas) — "120 horas de trabajo aplicado"
+             ====================================================================== -->
+        <section class="page-section" id="horas">
+            <div class="container">
+                <div class="section-head-center">
+                    <div class="lab-step-label"><span>03</span><span>Distribución de horas</span></div>
+                    <h2 class="section-main-title" data-en="120 Hours of Applied Work">120 Horas de Trabajo Aplicado
+                    </h2>
+                    <p class="section-main-desc">
+                        La distribución se presenta por componentes separados, de modo que las pláticas magistrales no
+                        se sumen dentro de las reuniones semanales. Las actividades deben registrarse por su duración
+                        real, sin duplicar el tiempo de una misma actividad.
+                    </p>
+                    <div class="lab-hours-badge">
+                        <strong>120</strong>
+                        <span>horas por estudiante<br>en cinco componentes</span>
+                    </div>
+                </div>
+
+                <div style="max-width:920px; margin:2rem auto 0;">
+                    <div class="lab-table-wrap">
+                        <table class="lab-table">
+                            <thead>
+                                <tr>
+                                    <th>Componente</th>
+                                    <th>Horas</th>
+                                    <th>Referencia de registro</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Sesiones semanales de equipo para asesoría y revisión</strong></td>
+                                    <td><strong>16 h</strong></td>
+                                    <td>16 reuniones de 1 hora entre equipo y profesores; en estas se hará la revisión o
+                                        asesoría.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Pláticas magistrales</strong></td>
+                                    <td><strong>8 h</strong></td>
+                                    <td>4 pláticas de 2 horas, independientes de las reuniones semanales.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Encuentros con colaboradores o trabajo de campo</strong></td>
+                                    <td><strong>30 h</strong></td>
+                                    <td>Tiempo real de las actividades correspondientes al proyecto.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Trabajo autónomo documentado</strong></td>
+                                    <td><strong>50 h</strong></td>
+                                    <td>Trabajo individual o de equipo realizado fuera de las actividades anteriores y
+                                        registrado.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Producción final, validación y presentación</strong></td>
+                                    <td><strong>16 h</strong></td>
+                                    <td>Trabajo de cierre y entrega académica del producto.</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th scope="row">Total</th>
+                                    <td colspan="2">120 horas</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+
+                    <!-- Pláticas magistrales previstas (a confirmar) -->
+                    <div class="info-card" style="margin-top:1.5rem;">
+                        <h3 style="display:inline-flex; align-items:center; gap:0.4rem;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                stroke="var(--color-talavera-blue)" stroke-width="1.8" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z" />
+                                <path d="M19 10v2a7 7 0 0 1-14 0v-2" />
+                                <line x1="12" y1="19" x2="12" y2="23" />
+                                <line x1="8" y1="23" x2="16" y2="23" />
+                            </svg>
+                            Pláticas magistrales previstas <span
+                                style="font-weight:500; font-size:var(--font-xs); color:var(--color-text-muted);">(a
+                                confirmar)</span>
+                        </h3>
+                        <ol
+                            style="padding-left:1.35rem; color:var(--color-text-muted); font-size:var(--font-sm); line-height:1.8; margin-top:0.5rem;">
+                            <li><strong>Biodiversidad y conservación.</strong></li>
+                            <li><strong>Trabajo con comunidades.</strong></li>
+                            <li><strong>Mercadotecnia y comunicación.</strong></li>
+                            <li><strong>Cómo establecer una empresa.</strong></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======================================================================
+             SECCIÓN 04 · RUTA DE TRABAJO — "Del encargo a la muestra"
+             Incluye la línea del tiempo paso a paso y el bloque de Fechas importantes.
+             ====================================================================== -->
+        <section class="page-section" id="calendario" style="background:var(--color-cream-light);">
+            <div class="container">
+                <div class="section-head-center">
+                    <div class="lab-step-label"><span>04</span><span>Ruta de trabajo</span></div>
+                    <h2 class="section-main-title" data-en="From Assignment to Public Exhibition">Del Encargo a la
+                        Muestra</h2>
+                    <p class="section-main-desc">
+                        Un proceso de preparación, desarrollo, validación y presentación de los productos acordados por
+                        cada equipo.
+                    </p>
+                </div>
+
+                <div style="max-width:860px; margin:0 auto;">
+                    <!-- LÍNEA DEL TIEMPO VERTICAL PASO A PASO -->
+                    <div class="lab-timeline" aria-label="Línea del tiempo del Laboratorio de Conservación Creativa">
+                        <article class="lab-timeline-item">
+                            <span class="lab-timeline-date">Dos meses previos</span>
+                            <h3>Preparación y coordinación</h3>
+                            <p>Concretar proyectos específicos, asesores, enlaces institucionales y necesidades de cada
+                                equipo.</p>
+                        </article>
+
+                        <article class="lab-timeline-item">
+                            <span class="lab-timeline-date">Enero 2027</span>
+                            <h3>Inicio</h3>
+                            <p>Inicio de las reuniones semanales; presentación del encargo; delimitación del trabajo y
+                                planificación del equipo.</p>
+                        </article>
+
+                        <article class="lab-timeline-item">
+                            <span class="lab-timeline-date">Febrero 2027</span>
+                            <h3>Desarrollo</h3>
+                            <p>Desarrollo del proyecto y encuentros previstos con colaboradores, según el eje.</p>
+                        </article>
+
+                        <article class="lab-timeline-item">
+                            <span class="lab-timeline-date">Marzo 2027</span>
+                            <h3>Avance y producción</h3>
+                            <p>Avance y producción de los productos acordados con el profesor asesor.</p>
+                        </article>
+
+                        <article class="lab-timeline-item">
+                            <span class="lab-timeline-date">Abril 2027</span>
+                            <h3>Revisión y validación</h3>
+                            <p>Revisión, ajustes y validación de los productos según el tema y el proyecto.</p>
+                        </article>
+
+                        <article class="lab-timeline-item">
+                            <span class="lab-timeline-date">Principios de mayo 2027</span>
+                            <h3>Entrega</h3>
+                            <p>Entrega de los productos acordados para preparar su montaje o presentación.</p>
+                        </article>
+
+                        <article class="lab-timeline-item">
+                            <span class="lab-timeline-date">Finales de mayo 2027</span>
+                            <h3>Muestra pública</h3>
+                            <p>Montaje de la muestra o presentación pública de los productos.</p>
+                        </article>
+                    </div>
+
+                    <!-- BLOQUE DE FECHAS IMPORTANTES DE CONVOCATORIA -->
+                    <div style="margin-top:2.25rem;">
+                        <h3
+                            style="color:var(--color-navy); font-size:var(--font-lg); font-weight:800; text-align:center; margin-bottom:1rem; display:flex; align-items:center; justify-content:center; gap:0.4rem;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                                <line x1="16" y1="2" x2="16" y2="6" />
+                                <line x1="8" y1="2" x2="8" y2="6" />
+                                <line x1="3" y1="10" x2="21" y2="10" />
+                            </svg>
+                            Fechas importantes
+                        </h3>
+                        <div class="lab-dates-grid">
+                            <div class="lab-date-card">
+                                <strong>28 de octubre al 17 de noviembre</strong>
+                                <span>Publicación de convocatoria y recepción de solicitudes.</span>
+                            </div>
+                            <div class="lab-date-card">
+                                <strong>18–23 de noviembre</strong>
+                                <span>Selección de participantes.</span>
+                            </div>
+                            <div class="lab-date-card">
+                                <strong>25 de noviembre</strong>
+                                <span>
+                                    Sorteo para la conformación de los equipos:
+                                    <a href="https://meet.google.com/meet/rdt-uymw-sfi" target="_blank"
+                                        rel="noopener noreferrer">
+                                        Google Meet ↗
+                                    </a>.
+                                </span>
+                            </div>
+                            <div class="lab-date-card">
+                                <strong>26 y 27 de noviembre</strong>
+                                <span>Sesión informativa con equipo administrativo.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======================================================================
+             SECCIÓN 05 · CUATRO EJES TEMÁTICOS (#ejes) — "Cuatro maneras de crear para conservar"
+             ====================================================================== -->
+        <section class="page-section" id="ejes">
+            <div class="container">
+                <div class="section-head-center">
+                    <div class="lab-step-label"><span>05</span><span>Cuatro ejes temáticos</span></div>
+                    <h2 class="section-main-title" data-en="Four Ways to Create for Conservation">
+                        Cuatro Maneras de Crear para Conservar
+                    </h2>
+                    <p class="section-main-desc">
+                        Se conformarán tres equipos por eje. Los productos se precisarán con el profesor asesor y según
+                        cada proyecto.
+                    </p>
+                </div>
+
+                <div class="info-grid" style="grid-template-columns:repeat(auto-fit, minmax(290px, 1fr));">
+                    <!-- EJE 1 -->
+                    <article class="info-card">
+                        <span class="badge-status confirmada" style="margin-bottom:0.6rem;">Eje 1 · 3 equipos</span>
+                        <h3 style="display:inline-flex; align-items:center; gap:0.4rem;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                stroke="var(--color-talavera-blue)" stroke-width="1.8" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10" />
+                                <path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01" />
+                            </svg>
+                            Diseño para la conservación
+                        </h3>
+                        <p style="margin-bottom:0.75rem;">
+                            Cada equipo trabajará a partir de un proyecto específico de conservación que deberá
+                            identificarse y concretarse durante la preparación del programa:
+                        </p>
+                        <ul
+                            style="padding-left:1.25rem; color:var(--color-text-muted); font-size:var(--font-sm); line-height:1.65; margin-bottom:0.75rem;">
+                            <li>Conservación de tortugas en Ecuador.</li>
+                            <li>Un proyecto específico relacionado con África.</li>
+                            <li>Un proyecto específico relacionado con Asia.</li>
+                        </ul>
+                        <p>
+                            El alcance no consiste en desarrollar propuestas para continentes completos. Cada equipo
+                            trabajará sobre el proyecto concreto que se consiga y acuerde. El profesor asesor ayudará a
+                            precisar el encargo y definir productos de diseño y comunicación adecuados. Esta guía no
+                            fija una lista adicional de piezas ni cantidades.
+                        </p>
+                    </article>
+
+                    <!-- EJE 2 -->
+                    <article class="info-card">
+                        <span class="badge-status confirmada" style="margin-bottom:0.6rem;">Eje 2 · 3 equipos</span>
+                        <h3 style="display:inline-flex; align-items:center; gap:0.4rem;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                stroke="var(--color-talavera-blue)" stroke-width="1.8" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M18 8h1a4 4 0 0 1 0 8h-1" />
+                                <path d="M3 8h14v7a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8z" />
+                            </svg>
+                            Gastronomía <em>“Sabores que conectan”</em>
+                        </h3>
+                        <p style="margin-bottom:0.75rem;">
+                            Rescate y comunicación cultural de recetas y saberes gastronómicos relacionados con la
+                            biodiversidad, mostrando las historias, prácticas y significados culturales de las
+                            preparaciones.
+                        </p>
+                        <ul
+                            style="padding-left:1.25rem; color:var(--color-text-muted); font-size:var(--font-sm); line-height:1.65; margin-bottom:0.75rem;">
+                            <li>Equipo 1: plantas.</li>
+                            <li>Equipo 2: insectos.</li>
+                            <li>Equipo 3: postres y bebidas.</li>
+                        </ul>
+                        <p>
+                            Los productos se definirán con el profesor asesor y en diálogo con colaboradores. No se
+                            establece como obligación general realizar estudios de procedencia de ingredientes u otros
+                            análisis que no formen parte del encargo acordado.
+                        </p>
+                    </article>
+
+                    <!-- EJE 3 -->
+                    <article class="info-card">
+                        <span class="badge-status confirmada" style="margin-bottom:0.6rem;">Eje 3 · 3 equipos</span>
+                        <h3 style="display:inline-flex; align-items:center; gap:0.4rem;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                stroke="var(--color-talavera-blue)" stroke-width="1.8" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path
+                                    d="M18 11l-3 3m-2-2l-3 3m10-7l-6 6a2 2 0 0 1-2.83 0l-3.17-3.17a2 2 0 0 1 0-2.83l6-6a2 2 0 0 1 2.83 0l3.17 3.17a2 2 0 0 1 0 2.83z" />
+                            </svg>
+                            Artesanías y biocultura <em>“Manos que conectan”</em>
+                        </h3>
+                        <p style="margin-bottom:0.5rem;">Temas de trabajo:</p>
+                        <ul
+                            style="padding-left:1.25rem; color:var(--color-text-muted); font-size:var(--font-sm); line-height:1.65; margin-bottom:0.75rem;">
+                            <li>Cerería.</li>
+                            <li>Árboles de la vida de la Mixteca.</li>
+                            <li>Textiles de la Sierra Norte.</li>
+                        </ul>
+                        <p style="margin-bottom:0.65rem;">
+                            El trabajo se enfoca en documentar prácticas artesanales, sus procesos y los conocimientos
+                            asociados, incluidos materiales, ingredientes o elementos naturales y sus relaciones con la
+                            biodiversidad cuando corresponda. La documentación respetará el contexto cultural y la
+                            participación de artesanas y artesanos.
+                        </p>
+                        <p>
+                            Los productos se acordarán con el profesor asesor y los colaboradores. Se contemplan
+                            intercambios de saberes, documentación de procesos y materiales de divulgación o exposición,
+                            sin imponer una lista idéntica para todos.
+                        </p>
+                    </article>
+
+                    <!-- EJE 4 -->
+                    <article class="info-card">
+                        <span class="badge-status confirmada" style="margin-bottom:0.6rem;">Eje 4 · 3 equipos</span>
+                        <h3 style="display:inline-flex; align-items:center; gap:0.4rem;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                stroke="var(--color-talavera-blue)" stroke-width="1.8" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <polygon points="23 7 16 12 23 17 23 7" />
+                                <rect x="1" y="5" width="15" height="14" rx="2" ry="2" />
+                            </svg>
+                            Documentales <em>“Historias que conectan”</em>
+                        </h3>
+                        <p style="margin-bottom:0.5rem;">Se desarrollarán tres proyectos:</p>
+                        <ul
+                            style="padding-left:1.25rem; color:var(--color-text-muted); font-size:var(--font-sm); line-height:1.65; margin-bottom:0.75rem;">
+                            <li>Biodiversidad y experiencias de personas que migran a la ciudad.</li>
+                            <li>Percepciones de la biodiversidad entre quienes viven en la ciudad.</li>
+                            <li>Los Huehues en Huejotzingo y conservación de animales.</li>
+                        </ul>
+                        <p style="margin-bottom:0.65rem;">
+                            El material se creará con dispositivos móviles (teléfono o tableta). Un profesor experto
+                            conversará con los equipos sobre el tema y orientará el tratamiento, enfoque y narrativa. El
+                            alcance de cada producción se concretará con ese profesor.
+                        </p>
+                        <p>
+                            Como referencia, los cortometrajes serán de 5–9 minutos e incluirán investigación, guion,
+                            producción, edición y validación. La duración y los productos complementarios se confirmarán
+                            con el profesor asesor.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======================================================================
+             SECCIÓN 06 · COLABORACIÓN Y ACOMPAÑAMIENTO:  "Un equipo, responsabilidades compartidas"
+             ====================================================================== -->
+        <section class="page-section" id="roles" style="background:var(--color-cream-light);">
+            <div class="container">
+                <div class="section-head-center">
+                    <div class="lab-step-label"><span>06</span><span>Colaboración y acompañamiento</span></div>
+                    <h2 class="section-main-title" data-en="One Team, Shared Responsibilities">
+                        Un Equipo, Responsabilidades Compartidas
+                    </h2>
+                    <p class="section-main-desc">
+                        El acompañamiento y la coordinación se organizan para que cada equipo pueda avanzar con un
+                        encargo claro.
+                    </p>
+                </div>
+
+                <div class="info-grid">
+                    <!-- ROL 01: PROFESOR ASESOR -->
+                    <article class="info-card">
+                        <span class="badge-status confirmada" style="margin-bottom:0.5rem;">01</span>
+                        <h3 style="display:inline-flex; align-items:center; gap:0.4rem;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                stroke="var(--color-talavera-blue)" stroke-width="1.8" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+                                <path d="M6 12v5c3 3 9 3 12 0v-5" />
+                            </svg>
+                            Profesor asesor
+                        </h3>
+                        <ul
+                            style="padding-left:1.2rem; color:var(--color-text-muted); font-size:var(--font-sm); line-height:1.7;">
+                            <li>Acompañar al equipo desde su experiencia en el tema.</li>
+                            <li>Conversar con estudiantes para delimitar el enfoque y resolver dudas específicas del
+                                proyecto.</li>
+                            <li>Orientar el desarrollo del producto y revisar los avances acordados.</li>
+                            <li>Definir con el equipo y la coordinación, cuando corresponda, el alcance y las
+                                características del producto esperado.</li>
+                            <li>Revisar el resultado final en función del proyecto y de los criterios pertinentes a su
+                                eje.</li>
+                        </ul>
+                    </article>
+
+                    <!-- ROL 02: COORDINACIÓN GENERAL -->
+                    <article class="info-card">
+                        <span class="badge-status confirmada" style="margin-bottom:0.5rem;">02</span>
+                        <h3 style="display:inline-flex; align-items:center; gap:0.4rem;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                stroke="var(--color-talavera-blue)" stroke-width="1.8" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M3 21h18M5 21V7l7-4 7 4v14M9 9v12M15 9v12" />
+                            </svg>
+                            Coordinación general
+                        </h3>
+                        <ul
+                            style="padding-left:1.2rem; color:var(--color-text-muted); font-size:var(--font-sm); line-height:1.7;">
+                            <li>Coordinar la comunicación entre las cuatro universidades, los profesores y los equipos.
+                            </li>
+                            <li>Concretar los proyectos específicos de diseño y apoyar la vinculación institucional.
+                            </li>
+                            <li>Coordinar los asuntos institucionales y logísticos que correspondan, incluidos los
+                                contactos, espacios, permisos o recursos que se requieran.</li>
+                            <li>Confirmar calendario general, registro de horas, fechas de entrega y organización de la
+                                muestra.</li>
+                        </ul>
+                    </article>
+
+                    <!-- ROL 03: ESTUDIANTES -->
+                    <article class="info-card">
+                        <span class="badge-status confirmada" style="margin-bottom:0.5rem;">03</span>
+                        <h3 style="display:inline-flex; align-items:center; gap:0.4rem;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                stroke="var(--color-talavera-blue)" stroke-width="1.8" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                                <circle cx="9" cy="7" r="4" />
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
+                            </svg>
+                            Estudiantes
+                        </h3>
+                        <ul
+                            style="padding-left:1.2rem; color:var(--color-text-muted); font-size:var(--font-sm); line-height:1.7;">
+                            <li>Participar en las reuniones y actividades que integren el plan de trabajo de su equipo.
+                            </li>
+                            <li>Desarrollar las tareas acordadas con el profesor asesor y documentar el trabajo
+                                realizado.</li>
+                            <li>Colaborar de forma respetuosa con las personas y organizaciones vinculadas al proyecto.
+                            </li>
+                            <li>Entregar el producto acordado en la fecha indicada y con los materiales de respaldo
+                                definidos para ese proyecto.</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======================================================================
+             SECCIÓN 07 · PRODUCTOS Y ALCANCES:  "El producto se define con cada proyecto"
+             ====================================================================== -->
+        <section class="page-section" id="entregables">
+            <div class="container">
+                <div class="section-head-center">
+                    <div class="lab-step-label"><span>07</span><span>Productos y alcances</span></div>
+                    <h2 class="section-main-title" data-en="The Product is Defined With Each Project">
+                        El Producto se Define con Cada Proyecto
+                    </h2>
+                    <p class="section-main-desc">
+                        No se establece una lista única de entregables para los doce equipos. El producto esperado
+                        dependerá del proyecto específico, del eje temático y de los acuerdos con el profesor asesor.
+                        La guía presenta el enfoque de cada eje para que coordinaciones y profesores valoren la
+                        pertinencia de los proyectos y definan productos alcanzables.
+                    </p>
+                </div>
+
+                <div style="max-width:920px; margin:0 auto;">
+                    <div class="lab-callout">
+                        <strong>Propuestas preliminares para el eje de gastronomía “Sabores que conectan”</strong><br>
+                        Son ideas para valorar y acordar con el profesor asesor; no sustituyen la definición del
+                        producto específico del equipo.
+                    </div>
+
+                    <!-- EQUIPO 1 · PLANTAS -->
+                    <article class="lab-deliverable-card">
+                        <h3 style="display:inline-flex; align-items:center; gap:0.4rem;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                stroke="var(--color-talavera-blue)" stroke-width="1.8" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M11 20A7 7 0 0 1 4 13c0-4 3.5-7 7-9 3.5 2 7 5 7 9a7 7 0 0 1-7 7Z" />
+                                <path d="M11 20v-9" />
+                            </svg>
+                            Equipo 1 · Plantas
+                        </h3>
+                        <ul>
+                            <li>Recetario o catálogo de plantas comestibles y sus usos gastronómicos.</li>
+                            <li>Fichas informativas de ingredientes y preparaciones.</li>
+                            <li>Material audiovisual con testimonios de colaboradores.</li>
+                            <li>Muestra gastronómica de preparaciones seleccionadas.</li>
+                        </ul>
+                        <div class="lab-deliverable-idea">
+                            <strong>Idea ampliada: Atlas gastronómico de plantas</strong>
+                            <ul style="margin-bottom:0;">
+                                <li>Fichas de plantas comestibles, nombre común y científico, uso gastronómico y
+                                    temporada.</li>
+                                <li>Región o contexto cultural, historia o testimonio.</li>
+                                <li>Entregable propuesto: atlas ilustrado o digital consultable mediante QR.</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <!-- EQUIPO 2 · INSECTOS -->
+                    <article class="lab-deliverable-card">
+                        <h3 style="display:inline-flex; align-items:center; gap:0.4rem;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                stroke="var(--color-talavera-blue)" stroke-width="1.8" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="5" />
+                                <path d="M12 7V3m-4 5L5 5m11 3l3-3M7 12H3m18 0h-4M8 17l-3 3m11-3l3 3m-7-1v4" />
+                            </svg>
+                            Equipo 2 · Insectos
+                        </h3>
+                        <ul>
+                            <li>Documentación de recetas y saberes relacionados con el consumo tradicional de insectos.
+                            </li>
+                            <li>Fichas gastronómicas y culturales.</li>
+                            <li>Material audiovisual de entrevistas y procesos.</li>
+                            <li>Muestra o degustación de preparaciones.</li>
+                        </ul>
+                        <div class="lab-deliverable-idea">
+                            <strong>Idea ampliada: recetario de entomofagia tradicional</strong>
+                            <ul style="margin-bottom:0;">
+                                <li>Seleccionar 3–5 insectos y documentar su preparación tradicional, historia y
+                                    contexto cultural, ingredientes, técnicas y fotografías.</li>
+                                <li>Entregable propuesto: recetario digital o impreso con material audiovisual mediante
+                                    QR.</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <!-- EQUIPO 3 · POSTRES Y BEBIDAS -->
+                    <article class="lab-deliverable-card">
+                        <h3 style="display:inline-flex; align-items:center; gap:0.4rem;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                stroke="var(--color-talavera-blue)" stroke-width="1.8" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M18 8h1a4 4 0 0 1 0 8h-1" />
+                                <path d="M3 8h14v7a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8z" />
+                            </svg>
+                            Equipo 3 · Postres y bebidas
+                        </h3>
+                        <ul>
+                            <li>Colección de postres o bebidas vinculados con ingredientes y biodiversidad.</li>
+                            <li>Fichas de ingredientes, recetas y contexto cultural.</li>
+                            <li>Catálogo o recetario digital.</li>
+                            <li>Muestra gastronómica para presentación pública.</li>
+                        </ul>
+                        <div class="lab-deliverable-idea">
+                            <strong>Idea ampliada: “Dulces de la biodiversidad poblana”</strong>
+                            <p style="margin-bottom:0.5rem;">
+                                Colección de 3–5 postres inspirados en ingredientes locales o tradicionales vinculados
+                                con la biodiversidad, por ejemplo una planta o fruto de temporada, una semilla, una flor
+                                comestible o un ingrediente tradicional poco utilizado actualmente.
+                            </p>
+                            <p style="margin-bottom:0;">
+                                <strong>Entregable propuesto:</strong> colección de postres, fichas de cada uno,
+                                historia del ingrediente y presentación pública.
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- RECUADRO FINAL DE DEFINICIÓN DE CADA PROYECTO -->
+                    <div class="lab-callout">
+                        <strong>Al definir cada proyecto, conviene dejar por escrito únicamente lo necesario para que el
+                            equipo sepa qué debe entregar:</strong>
+                        <ul style="padding-left:1.25rem; margin-top:0.5rem; margin-bottom:0;">
+                            <li>Descripción del proyecto específico y su propósito.</li>
+                            <li>Producto o productos acordados con el profesor asesor.</li>
+                            <li>Fecha y formato de entrega.</li>
+                            <li>Personas que revisarán o validarán el resultado.</li>
+                            <li>Requisitos de documentación o autorización pertinentes para ese proyecto.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======================================================================
+             CIERRE Y REGISTRO DE ESTUDIANTES (#registro-laboratorio)
+             Mantiene el ID #registro-laboratorio para que el botón de la tarjeta
+             "Laboratorio" en index.html lleve directamente aquí.
+             ====================================================================== -->
+        <section class="page-section" id="registro-laboratorio"
+            style="background:var(--color-navy); color:#fff; text-align:center;">
+            <div class="container" style="max-width:780px;">
+                <p
+                    style="color:var(--color-gold); font-size:var(--font-xs); font-weight:800; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:0.5rem;">
+                    Laboratorio de Conservación Creativa · ICCB Puebla 2027
+                </p>
+                <h2 style="color:#fff; font-size:var(--font-2xl); font-weight:900; margin-bottom:1rem;">
+                    Creatividad, conocimiento y colaboración <em
+                        style="color:var(--color-gold); font-style:normal;">para conservar.</em>
+                </h2>
+                <p style="color:#CBD3EE; font-size:var(--font-sm); line-height:1.65; margin-bottom:1.5rem;">
+                    Convocatoria abierta del <strong>28 de octubre al 17 de noviembre</strong> · Sorteo de equipos el
+                    <strong>25 de noviembre</strong> · Desarrollo del programa de <strong>enero a mayo de 2027</strong>
+                    (UDLAP, IBERO Puebla, UPAEP y BUAP).
+                </p>
+                <div style="display:flex; gap:0.85rem; justify-content:center; flex-wrap:wrap;">
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeNaShmbtlkITkSmOodgJaD7nTkFuyAS4eptApfbJehxj9HMg/viewform"
+                        target="_blank" rel="noopener noreferrer" class="btn btn-accent btn-sm">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            style="vertical-align:-2px; margin-right:4px;">
+                            <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
+                            <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" />
+                        </svg>
+                        Inscribir Estudiante (Google Forms) ↗
+                    </a>
+                    <a href="https://meet.google.com/meet/rdt-uymw-sfi" target="_blank" rel="noopener noreferrer"
+                        class="btn btn-outline-white btn-sm">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            style="vertical-align:-2px; margin-right:4px;">
+                            <polygon points="23 7 16 12 23 17 23 7" />
+                            <rect x="1" y="5" width="15" height="14" rx="2" ry="2" />
+                        </svg>
+                        Sorteo de equipos (25 nov · Google Meet) ↗
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ==========================================================================
+         SECCIÓN 3: PIE DE PÁGINA (<footer>)
+         ========================================================================== -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <img src="assets/img/Logo_White_Transparent.png" alt="ICCB 2027 Puebla" class="footer-logo">
+                <h3 style="color:#fff;font-size:1.25rem;font-weight:800">Puebla, Capital de la Biodiversidad</h3>
+                <p style="color:#BAC2E0;font-size:var(--font-sm)">Iniciativa institucional de vinculación ciudadana
+                    (7 de junio al 2 de julio de 2027) en el marco del 33º Congreso Internacional de Biología de la
+                    Conservación (ICCB 2027), coordinada por la BUAP y la Society for Conservation Biology.</p>
+                <div class="footer-sponsors-strip">
+                    <span>Convocan y Coordinan:</span>
+                    <strong style="color:#fff">BUAP</strong><span style="opacity:0.5">·</span>
+                    <strong style="color:#fff">SCB</strong><span style="opacity:0.5">·</span>
+                    <a href="https://conbio.org/mini-sites/iccb-2027/" target="_blank" rel="noopener noreferrer"
+                        style="color:var(--color-gold);font-weight:700;text-decoration:underline">Sitio Oficial ICCB
+                        2027 ↗</a>
+                </div>
+            </div>
+
+            <div class="footer-links-col">
+                <h4>Arquitectura del Micrositio</h4>
+                <ul class="footer-nav">
+                    <li><a href="index.html">Portada</a></li>
+                    <li><a href="ccl.html">Laboratorio de Conservación Creativa</a></li>
+                    <li><a href="agenda.html">Puebla, Capital de la Biodiversidad (Agenda)</a></li>
+                    <li><a href="exploracion.html">Día de la Exploración (2 Jul)</a></li>
+                    <li><a href="rutas.html">Rutas y Mapa</a></li>
+                    <li><a href="menu.html">Sabores de la Biodiversidad</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links-col">
+                <h4>Participación y Visitantes</h4>
+                <ul class="footer-nav">
+                    <li><a href="participa.html">Formularios y Participación</a></li>
+                    <li><a href="info.html">Información para Visitantes y Preguntas Frecuentes</a></li>
+                    <li><a href="info.html#guia-actualizacion">Guía de Administración del Comité</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div>
+                <p><strong>Información responsable:</strong> Cada registro distingue claramente entre actividades
+                    confirmadas, próximas y propuestas en evaluación. Consulta pública sin requerir cuenta de usuario.
+                </p>
+            </div>
+            <div>
+                <p>© 2027 Puebla, Capital de la Biodiversidad · ICCB 2027 · BUAP</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts: data.js (fuente única de datos) y main.js (lógica de pestañas y renderizado) -->
+    <script src="assets/js/data.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
