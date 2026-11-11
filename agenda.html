@@ -29,7 +29,8 @@
     <header class="site-header">
         <div class="header-container">
             <a href="index.html" class="brand-wrapper" aria-label="ICCB 2027 Puebla · BUAP">
-                <img src="assets/img/ICCB_Logo_Main.png" alt="ICCB 2027" class="brand-logo-img brand-logo-iccb">
+                <img src="assets/img/Logo Main__Logo Complete.png" alt="ICCB 2027"
+                    class="brand-logo-img brand-logo-iccb">
                 <span class="brand-divider" aria-hidden="true"></span>
                 <img src="assets/img/Logo_BUAP.webp" alt="BUAP" class="brand-logo-img brand-logo-buap">
             </a>
@@ -49,42 +50,37 @@
                 <ul class="nav-list">
                     <li>
                         <a href="ccl.html" class="nav-link">
-                            <span>Laboratorio</span>
+<span>Laboratorio</span>
                         </a>
                     </li>
                     <li>
                         <a href="agenda.html" class="nav-link active">
-                            <span>Agenda</span>
+<span>Agenda</span>
                         </a>
                     </li>
                     <li>
                         <a href="exploracion.html" class="nav-link">
-                            <span>Día de la Exploración</span>
+<span>Día de la Exploración</span>
                         </a>
                     </li>
                     <li>
                         <a href="rutas.html" class="nav-link">
-                            <span>Rutas</span>
+<span>Rutas</span>
                         </a>
                     </li>
                     <li>
                         <a href="menu.html" class="nav-link">
-                            <span>Sabores</span>
+<span>Sabores</span>
                         </a>
                     </li>
                     <li>
                         <a href="participa.html" class="nav-link">
-                            <span>Participa</span>
+<span>Participa</span>
                         </a>
                     </li>
                     <li>
-                        <a href="info.html" class="nav-link nav-info-link" aria-label="Información"
-                            title="Información"><svg aria-hidden="true" focusable="false" width="22" height="22"
-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
-                                stroke-linecap="round">
-                                <circle cx="12" cy="12" r="9" />
-                                <path d="M12 11v5m0-8h.01" />
-                            </svg>
+                        <a href="info.html" class="nav-link">
+<span>Información</span>
                         </a>
                     </li>
                 </ul>
@@ -194,137 +190,137 @@
                 <div class="container">
 
                     <div class="section-head-center">
-                        <h2 class="section-main-title"> AGENDA DE LAS ACTIVIDADES</h2>
+                        <span class="section-eyebrow">Una Sola Fuente de Información</span>
+                        <h2 class="section-main-title">Directorio Común y Calendario de Actividades</h2>
                         <p class="section-main-desc">
-                            Usa los filtros para encontrar qué hacer en Puebla.
+                            Usa los filtros para localizar rápidamente qué hacer en Puebla. Cada ficha incluye fecha,
+                            horario, ubicación, organizador, público, idioma, costo, accesibilidad, contacto y enlace al
+                            mapa.
                         </p>
                     </div>
 
                     <!-- CAJA DE FILTROS DEL DIRECTORIO -->
-                    <details class="agenda-filters">
-                        <summary class="agenda-date-summary agenda-filter-toggle">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" aria-hidden="true">
-                                <circle cx="11" cy="11" r="7" />
-                                <path d="m16 16 4 4" />
-                            </svg>
-                            <span>Filtrar Contenido</span>
-                        </summary>
-                        <div class="directory-filter-box" role="region"
-                            aria-label="Filtros del directorio de actividades">
-                            <!-- Búsqueda por palabra clave -->
+                    <div class="directory-filter-box" role="region" aria-label="Filtros del directorio de actividades">
+                        <!-- Búsqueda por palabra clave -->
+                        <div class="filter-field">
+                            <label for="filtro-texto" style="display:inline-flex; align-items:center; gap:0.4rem;">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="11" cy="11" r="8" />
+                                    <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                                </svg>
+                                Buscar por nombre, tema, sede u organizador
+                            </label>
+                            <input type="text" id="filtro-texto"
+                                placeholder="Ej. Polinizadores, Talavera, Cholula, Café, BUAP, Servidores públicos...">
+                        </div>
+
+                        <!-- Cuadrícula con los selectores -->
+                        <div class="filter-controls-grid">
+                            <!-- 1. Filtro por Tipo / Categoría -->
                             <div class="filter-field">
-                                <label for="filtro-texto" style="display:inline-flex; align-items:center; gap:0.4rem;">
-                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <circle cx="11" cy="11" r="8" />
-                                        <line x1="21" y1="21" x2="16.65" y2="16.65" />
-                                    </svg>
-                                    Buscar por nombre, tema, sede u organizador
-                                </label>
-                                <input type="text" id="filtro-texto"
-                                    placeholder="Ej. Polinizadores, Talavera, Cholula, Café, BUAP, Servidores públicos...">
+                                <label for="filtro-tipo">Categoría / Tipo de actividad</label>
+                                <select id="filtro-tipo">
+                                    <option value="todos">Todas las categorías</option>
+                                    <option value="universidad_ong">Universidad / ONG</option>
+                                    <option value="gastronomia">Gastronomía (Sabores)</option>
+                                    <option value="cursos_talleres">Cursos y talleres</option>
+                                    <option value="exposiciones_cultura">Exposiciones y cultura</option>
+                                    <option value="rutas_recorridos">Rutas y recorridos</option>
+                                    <option value="gubernamental">Actividades gubernamentales</option>
+                                    <option value="exploracion">Día de la Exploración (2 Jul)</option>
+                                </select>
                             </div>
-                            <!-- Cuadrícula con los selectores -->
-                            <div class="filter-controls-grid">
-                                <!-- 1. Filtro por Tipo / Categoría -->
-                                <div class="filter-field">
-                                    <label for="filtro-tipo">Categoría / Tipo de actividad</label>
-                                    <select id="filtro-tipo">
-                                        <option value="todos">Todas las categorías</option>
-                                        <option value="universidad_ong">Universidad / ONG</option>
-                                        <option value="gastronomia">Gastronomía (Sabores)</option>
-                                        <option value="cursos_talleres">Cursos y talleres</option>
-                                        <option value="exposiciones_cultura">Exposiciones y cultura</option>
-                                        <option value="rutas_recorridos">Rutas y recorridos</option>
-                                        <option value="gubernamental">Actividades gubernamentales</option>
-                                        <option value="exploracion">Día de la Exploración (2 Jul)</option>
-                                    </select>
-                                </div>
-                                <!-- 2. Filtro por Público -->
-                                <div class="filter-field">
-                                    <label for="filtro-publico">Público dirigido</label>
-                                    <select id="filtro-publico">
-                                        <option value="todos">Todos los públicos</option>
-                                        <option value="familias">Familias, niñas, niños y jóvenes</option>
-                                        <option value="individual">Participación individual</option>
-                                        <option value="estudiantes">Estudiantes universitarios</option>
-                                        <option value="visitantes_congreso">Visitantes del congreso ICCB</option>
-                                    </select>
-                                </div>
-                                <!-- 3. Filtro por Fecha -->
-                                <div class="filter-field">
-                                    <label for="filtro-fecha">Fecha programada</label>
-                                    <select id="filtro-fecha">
-                                        <option value="todas">Todas las fechas (7 Jun – 2 Jul)</option>
-                                        <option value="2027-06-07">7 de junio 2027 (Apertura)</option>
-                                        <option value="2027-06-11">11 de junio 2027</option>
-                                        <option value="2027-06-14">14 de junio 2027</option>
-                                        <option value="2027-06-19">19 de junio 2027</option>
-                                        <option value="2027-06-25">25 de junio 2027</option>
-                                        <option value="2027-06-28">28 de junio 2027</option>
-                                        <option value="2027-06-29">29 de junio 2027</option>
-                                        <option value="2027-06-30">30 de junio 2027</option>
-                                        <option value="2027-07-01">1 de julio 2027</option>
-                                        <option value="2027-07-02">2 de julio 2027 (Día de la Exploración)</option>
-                                    </select>
-                                </div>
-                                <!-- 4. Filtro por Ubicación / Zona -->
-                                <div class="filter-field">
-                                    <label for="filtro-zona">Ubicación / Zona</label>
-                                    <select id="filtro-zona">
-                                        <option value="todas">Todas las ubicaciones</option>
-                                        <option value="Centro Histórico">Centro Histórico de Puebla</option>
-                                        <option value="Ciudad Universitaria BUAP">Ciudad Universitaria BUAP</option>
-                                        <option value="Zona Angelópolis / CCU">Zona Angelópolis / CCU BUAP</option>
-                                        <option value="Cholula">San Andrés y San Pedro Cholula</option>
-                                    </select>
-                                </div>
-                                <!-- 5. Filtro por Idioma -->
-                                <div class="filter-field">
-                                    <label for="filtro-idioma">Idioma</label>
-                                    <select id="filtro-idioma">
-                                        <option value="todos">Todos los idiomas</option>
-                                        <option value="Español">Español</option>
-                                        <option value="Bilingüe">Bilingüe (Español / Inglés)</option>
-                                    </select>
-                                </div>
-                                <!-- 6. Filtro por Costo y Estado -->
-                                <div class="filter-field">
-                                    <label for="filtro-costo">Costo de acceso</label>
-                                    <select id="filtro-costo">
-                                        <option value="todos">Todos (Gratuitos y con cuota)</option>
-                                        <option value="Gratuito">Gratuito (Entrada libre)</option>
-                                        <option value="Con cuota">Con cuota / recuperación</option>
-                                    </select>
-                                </div>
+
+                            <!-- 2. Filtro por Público -->
+                            <div class="filter-field">
+                                <label for="filtro-publico">Público dirigido</label>
+                                <select id="filtro-publico">
+                                    <option value="todos">Todos los públicos</option>
+                                    <option value="familias">Familias, niñas, niños y jóvenes</option>
+                                    <option value="individual">Participación individual</option>
+                                    <option value="estudiantes">Estudiantes universitarios</option>
+                                    <option value="visitantes_congreso">Visitantes del congreso ICCB</option>
+                                </select>
                             </div>
-                            <!-- Barra inferior del filtro: Estado de confirmación y botón de limpiar -->
-                            <div
-                                style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:1rem; margin-top:1.25rem; padding-top:1rem; border-top:1px solid var(--color-cream-border);">
-                                <div style="display:flex; align-items:center; gap:0.75rem; flex-wrap:wrap;">
-                                    <label for="filtro-estado"
-                                        style="font-size:var(--font-xs); font-weight:700; color:var(--color-navy);">
-                                        Estado de verificación:
-                                    </label>
-                                    <select id="filtro-estado"
-                                        style="padding:0.4rem 0.75rem; border-radius:0; border:1px solid var(--color-border); font-size:var(--font-xs); background:#fff;">
-                                        <option value="todos">Todos los estados</option>
-                                        <option value="confirmada">Solo Confirmadas</option>
-                                        <option value="proximamente">Próximamente</option>
-                                        <option value="propuesta">Propuestas en evaluación</option>
-                                    </select>
-                                    <span id="contador-actividades"
-                                        style="font-size:var(--font-xs); color:var(--color-text-muted); font-weight:600;">
-                                        Cargando actividades...
-                                    </span>
-                                </div>
-                                <button type="button" id="btn-limpiar-filtros" class="btn btn-outline btn-sm">
-                                    Restablecer filtros
-                                </button>
+
+                            <!-- 3. Filtro por Fecha -->
+                            <div class="filter-field">
+                                <label for="filtro-fecha">Fecha programada</label>
+                                <select id="filtro-fecha">
+                                    <option value="todas">Todas las fechas (7 Jun – 2 Jul)</option>
+                                    <option value="2027-06-07">7 de junio 2027 (Apertura)</option>
+                                    <option value="2027-06-11">11 de junio 2027</option>
+                                    <option value="2027-06-14">14 de junio 2027</option>
+                                    <option value="2027-06-19">19 de junio 2027</option>
+                                    <option value="2027-06-25">25 de junio 2027</option>
+                                    <option value="2027-06-28">28 de junio 2027</option>
+                                    <option value="2027-06-29">29 de junio 2027</option>
+                                    <option value="2027-06-30">30 de junio 2027</option>
+                                    <option value="2027-07-01">1 de julio 2027</option>
+                                    <option value="2027-07-02">2 de julio 2027 (Día de la Exploración)</option>
+                                </select>
+                            </div>
+
+                            <!-- 4. Filtro por Ubicación / Zona -->
+                            <div class="filter-field">
+                                <label for="filtro-zona">Ubicación / Zona</label>
+                                <select id="filtro-zona">
+                                    <option value="todas">Todas las ubicaciones</option>
+                                    <option value="Centro Histórico">Centro Histórico de Puebla</option>
+                                    <option value="Ciudad Universitaria BUAP">Ciudad Universitaria BUAP</option>
+                                    <option value="Zona Angelópolis / CCU">Zona Angelópolis / CCU BUAP</option>
+                                    <option value="Cholula">San Andrés y San Pedro Cholula</option>
+                                </select>
+                            </div>
+
+                            <!-- 5. Filtro por Idioma -->
+                            <div class="filter-field">
+                                <label for="filtro-idioma">Idioma</label>
+                                <select id="filtro-idioma">
+                                    <option value="todos">Todos los idiomas</option>
+                                    <option value="Español">Español</option>
+                                    <option value="Bilingüe">Bilingüe (Español / Inglés)</option>
+                                </select>
+                            </div>
+
+                            <!-- 6. Filtro por Costo y Estado -->
+                            <div class="filter-field">
+                                <label for="filtro-costo">Costo de acceso</label>
+                                <select id="filtro-costo">
+                                    <option value="todos">Todos (Gratuitos y con cuota)</option>
+                                    <option value="Gratuito">Gratuito (Entrada libre)</option>
+                                    <option value="Con cuota">Con cuota / recuperación</option>
+                                </select>
                             </div>
                         </div>
-                    </details>
+
+                        <!-- Barra inferior del filtro: Estado de confirmación y botón de limpiar -->
+                        <div
+                            style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:1rem; margin-top:1.25rem; padding-top:1rem; border-top:1px solid var(--color-cream-border);">
+                            <div style="display:flex; align-items:center; gap:0.75rem; flex-wrap:wrap;">
+                                <label for="filtro-estado"
+                                    style="font-size:var(--font-xs); font-weight:700; color:var(--color-navy);">
+                                    Estado de verificación:
+                                </label>
+                                <select id="filtro-estado"
+                                    style="padding:0.4rem 0.75rem; border-radius:0; border:1px solid var(--color-border); font-size:var(--font-xs); background:#fff;">
+                                    <option value="todos">Todos los estados</option>
+                                    <option value="confirmada">Solo Confirmadas</option>
+                                    <option value="proximamente">Próximamente</option>
+                                    <option value="propuesta">Propuestas en evaluación</option>
+                                </select>
+                                <span id="contador-actividades"
+                                    style="font-size:var(--font-xs); color:var(--color-text-muted); font-weight:600;">
+                                    Cargando actividades...
+                                </span>
+                            </div>
+
+                            <button type="button" id="btn-limpiar-filtros" class="btn btn-outline btn-sm">
+                                Restablecer filtros
+                            </button>
+                        </div>
+                    </div>
 
                     <!-- Aviso de información responsable -->
                     <div class="disclaimer-banner" style="margin-top:0; margin-bottom:1.75rem;">
@@ -385,7 +381,7 @@
                 <ul class="footer-nav">
                     <li><a href="participa.html">Formularios y Participación</a></li>
                     <li><a href="info.html">Información para Visitantes y Preguntas Frecuentes</a></li>
-                    <li><a href="info.html#preguntas-frecuentes">Preguntas frecuentes</a></li>
+                    <li><a href="info.html#guia-actualizacion">Guía de Administración del Comité</a></li>
                 </ul>
             </div>
         </div>
@@ -404,10 +400,7 @@
 
     <!-- Scripts: data.js (fuente única) y main.js (renderizado y filtros) -->
     <script src="assets/js/data.js"></script>
-    <script src="assets/js/i18n-en.js"></script>
-    <script src="assets/js/i18n.js"></script>
-
-<script src="assets/js/main.js"></script>
+    <script src="assets/js/main.js"></script>
 </body>
 
 </html>

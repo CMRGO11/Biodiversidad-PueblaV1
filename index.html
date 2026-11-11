@@ -1,386 +1,322 @@
 <!DOCTYPE html>
 
 <html lang="es">
-
 <head>
-    <!-- ==========================================================================
+<!-- ==========================================================================
          LA CABEZA (<head>): Instrucciones técnicas invisibles para el navegador
          ========================================================================== -->
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Puebla, Capital de la Biodiversidad | ICCB 2027 · BUAP</title>
-    <meta
-        content="Puebla, Capital de la Biodiversidad. La biodiversidad nos une. Puebla la celebra. Conoce, explora y participa en la conservación."
-        name="description" />
-    <!-- Tipografía Plus Jakarta Sans desde Google Fonts -->
-    <link href="https://fonts.googleapis.com" rel="preconnect" />
-    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap"
-        rel="stylesheet" />
-    <!-- Favicon e iconos -->
-    <link href="assets/img/Logo Main__Logo Complete.png" rel="icon" type="image/png" />
-    <!-- Hoja de estilos CSS general -->
-    <link href="assets/css/styles.css" rel="stylesheet" />
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Puebla, Capital de la Biodiversidad | ICCB 2027 · BUAP</title>
+<meta content="Puebla, Capital de la Biodiversidad. La biodiversidad nos une. Puebla la celebra. Conoce, explora y participa en la conservación." name="description"/>
+<!-- Tipografía Plus Jakarta Sans desde Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Favicon e iconos -->
+<link href="assets/img/Logo Main__Logo Complete.png" rel="icon" type="image/png"/>
+<!-- Hoja de estilos CSS general -->
+<link href="assets/css/styles.css" rel="stylesheet"/>
 </head>
-
 <body>
-    <!-- Enlace accesible para lectores de pantalla -->
-    <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
-    <!-- ==========================================================================
+<!-- Enlace accesible para lectores de pantalla -->
+<a class="skip-link" href="#main-content">Saltar al contenido principal</a>
+<!-- ==========================================================================
          SECCIÓN 1: EL ENCABEZADO (<header>)
          Barra de navegación superior fija con menú completo de la arquitectura
          y selector bilingüe Español (ES) / Inglés (EN).
          ========================================================================== -->
-    <header class="site-header">
-        <div class="header-container">
-            <!-- Logotipos institucionales que regresan a la portada -->
-            <a aria-label="ICCB 2027 Puebla · BUAP" class="brand-wrapper" href="index.html">
-                <img alt="ICCB 2027" class="brand-logo-img brand-logo-iccb" src="assets/img/ICCB_Logo_Main.png" />
-                <span aria-hidden="true" class="brand-divider"></span>
-                <img alt="BUAP" class="brand-logo-img brand-logo-buap" src="assets/img/Logo_BUAP.webp" />
-            </a>
-            <!-- Controles móviles: Selector ES/EN y botón hamburguesa -->
-            <div class="header-mobile-right">
-                <div aria-label="Selector de idioma" class="lang-switcher-vertical mobile-header-lang">
-                    <a class="lang-pill active" href="#" lang="es">ES</a>
-                    <a class="lang-pill" href="#" lang="en">EN</a>
-                </div>
-                <button aria-controls="main-nav" aria-expanded="false" aria-label="Abrir menú" class="nav-toggle-btn"
-                    id="nav-toggle-btn" type="button">
-                    <span></span><span></span><span></span>
-                </button>
-            </div>
-            <!-- Menú de navegación con las secciones de la arquitectura -->
-            <nav aria-label="Navegación principal" class="main-nav" id="main-nav">
-                <ul class="nav-list">
-                    <li>
-                        <a class="nav-link" href="ccl.html">
-                            <span>Laboratorio</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="nav-link" href="agenda.html">
-                            <span>Agenda</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="nav-link" href="exploracion.html">
-                            <span>Día de la Exploración</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="nav-link" href="rutas.html">
-                            <span>Rutas</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="nav-link" href="menu.html">
-                            <span>Sabores</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="nav-link" href="participa.html">
-                            <span>Participa</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="nav-link nav-info-link" href="info.html" aria-label="Información"
-                            title="Información"><svg aria-hidden="true" focusable="false" width="22" height="22"
-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
-                                stroke-linecap="round">
-                                <circle cx="12" cy="12" r="9" />
-                                <path d="M12 11v5m0-8h.01" />
-                            </svg>
-                        </a>
-                    </li>
-                </ul>
-                <!-- Selector de idioma en computadoras -->
-                <div class="nav-user-actions">
-                    <div aria-label="Selector de idioma" class="lang-switcher-vertical desktop-header-lang">
-                        <a class="lang-pill active" href="#" lang="es" title="Español">ES</a>
-                        <a class="lang-pill" href="#" lang="en" title="English">EN</a>
-                    </div>
-                </div>
-            </nav>
-        </div>
-    </header>
-    <!-- ==========================================================================
+<header class="site-header">
+<div class="header-container">
+<!-- Logotipos institucionales que regresan a la portada -->
+<a aria-label="ICCB 2027 Puebla · BUAP" class="brand-wrapper" href="index.html">
+<img alt="ICCB 2027" class="brand-logo-img brand-logo-iccb" src="assets/img/Logo Main__Logo Complete.png"/>
+<span aria-hidden="true" class="brand-divider"></span>
+<img alt="BUAP" class="brand-logo-img brand-logo-buap" src="assets/img/Logo_BUAP.webp"/>
+</a>
+<!-- Controles móviles: Selector ES/EN y botón hamburguesa -->
+<div class="header-mobile-right">
+<div aria-label="Selector de idioma" class="lang-switcher-vertical mobile-header-lang">
+<a class="lang-pill active" href="#" lang="es">ES</a>
+<a class="lang-pill" href="#" lang="en">EN</a>
+</div>
+<button aria-controls="main-nav" aria-expanded="false" aria-label="Abrir menú" class="nav-toggle-btn" id="nav-toggle-btn" type="button">
+<span></span><span></span><span></span>
+</button>
+</div>
+<!-- Menú de navegación con las secciones de la arquitectura -->
+<nav aria-label="Navegación principal" class="main-nav" id="main-nav">
+<ul class="nav-list">
+<li>
+<a class="nav-link" href="ccl.html">
+<span>Laboratorio</span>
+</a>
+</li>
+<li>
+<a class="nav-link" href="agenda.html">
+<span>Agenda</span>
+</a>
+</li>
+<li>
+<a class="nav-link" href="exploracion.html">
+<span>Día de la Exploración</span>
+</a>
+</li>
+<li>
+<a class="nav-link" href="rutas.html">
+<span>Rutas</span>
+</a>
+</li>
+<li>
+<a class="nav-link" href="menu.html">
+<span>Sabores</span>
+</a>
+</li>
+<li>
+<a class="nav-link" href="participa.html">
+<span>Participa</span>
+</a>
+</li>
+<li>
+<a class="nav-link" href="info.html">
+<span>Información</span>
+</a>
+</li>
+</ul>
+<!-- Selector de idioma en computadoras -->
+<div class="nav-user-actions">
+<div aria-label="Selector de idioma" class="lang-switcher-vertical desktop-header-lang">
+<a class="lang-pill active" href="#" lang="es" title="Español">ES</a>
+<a class="lang-pill" href="#" lang="en" title="English">EN</a>
+</div>
+</div>
+</nav>
+</div>
+</header>
+<!-- ==========================================================================
          SECCIÓN 2: CONTENIDO PRINCIPAL DE LA PORTADA (<main>)
          ========================================================================== -->
-    <main class="site-main" id="main-content">
-        <section class="hero-section" id="home">
-            <div class="cover-artwork" role="img" aria-label="ICCB 2027 rodeado de figuras de fauna poblana">
-                <div class="cover-figures" aria-hidden="true">
-                    <div class="cover-figure cover-figure--teporingo">
-                        <img src="assets/img/Portada_figuras/Teporingo.png" alt="" />
-                    </div>
-                    <div class="cover-figure cover-figure--armadillo">
-                        <img src="assets/img/Portada_figuras/Armadilo.png" alt="" />
-                    </div>
-                    <div class="cover-figure cover-figure--cacomixtle">
-                        <img src="assets/img/Portada_figuras/cacomixtle.png" alt="" />
-                    </div>
-                    <div class="cover-figure cover-figure--jaguar">
-                        <img src="assets/img/Portada_figuras/Jaguar.png" alt="" />
-                    </div>
-                    <div class="cover-figure cover-figure--colibri">
-                        <img src="assets/img/Portada_figuras/Colibri.png" alt="" />
-                    </div>
-                </div>
-            </div>
-            <div class="hero-inner">
-                <!-- Columna izquierda: Periodo oficial (7 de junio al 2 de julio de 2027), título y accesos prioritarios -->
-                <div class="hero-left">
-                    <div class="hero-date-label">Puebla, México &nbsp;·&nbsp; 7 Jun – 2 Jul 2027</div>
-                    <h1 class="hero-title">Puebla, <br />Capital de la <em>biodiversidad</em></h1>
-                    <p class="hero-subtitle">La biodiversidad nos une y Puebla la celebra. En 2027, personas de todo el
-                        continente se reunirán para impulsar su conservación. Es una invitación a descubrir la riqueza
-                        natural y cultural de Puebla y a cuidar la vida que compartimos.</p>
-                    <!-- Fila de botones prioritarios ("Menos clics": Agenda, Día de la Exploración y Mapa) -->
-                    <div class="hero-cta-row hero-quick-links" aria-label="Accesos rápidos">
-                        <a class="hero-btn-secondary hero-quick-link" href="agenda.html">Agenda</a>
-                        <a class="hero-btn-secondary hero-quick-link" href="rutas.html#map">Mapa</a>
-                        <a class="hero-btn-primary hero-quick-link hero-quick-link-featured" href="exploracion.html">Día
-                            de la Exploración · 2 Jul <span aria-hidden="true">→</span></a>
-                    </div>
+<main class="site-main" id="main-content">
+<section class="hero-section" id="home">
+<div aria-hidden="true" class="hero-bg-media">
+<div class="hero-bg-texture"></div>
+<div class="hero-bg-radial"></div>
+</div>
+<div class="hero-inner">
+<!-- Columna izquierda: Periodo oficial (7 de junio al 2 de julio de 2027), título y accesos prioritarios -->
+<div class="hero-left">
+<div class="hero-date-label">Puebla, México &nbsp;·&nbsp; 7 Jun – 2 Jul 2027</div>
+<h1 class="hero-title">Puebla, <br/>Capital de la <em>biodiversidad</em></h1>
+<p class="hero-subtitle">La biodiversidad nos une. Puebla la celebra. Un solo continente. Distintas realidades. Una responsabilidad compartida. En 2027, Puebla será punto de encuentro para personas de todo el continente comprometidas con la conservación de la biodiversidad. Pero esta historia va más allá de un congreso: es una invitación a descubrir la riqueza natural y cultural de Puebla, reconocer lo que nos une y encontrar nuevas formas de cuidar la vida que compartimos.</p>
+<!-- Fila de botones prioritarios ("Menos clics": Agenda, Día de la Exploración y Mapa) -->
+<div class="hero-cta-row hero-quick-links" aria-label="Accesos rápidos">
+<a class="hero-btn-secondary hero-quick-link" href="agenda.html">Agenda</a>
+<a class="hero-btn-secondary hero-quick-link" href="rutas.html#map">Mapa</a>
+<a class="hero-btn-primary hero-quick-link hero-quick-link-featured" href="exploracion.html">Día de la Exploración · 2 Jul <span aria-hidden="true">→</span></a>
+</div>
 
-                </div>
+</div>
+<!-- Columna derecha: Fotografía de Puebla y sello de Talavera -->
+<div class="hero-right">
+<div class="hero-photo-frame">
+<img alt="Vista panorámica de Puebla, México" class="hero-photo" src="assets/img/website/Main Banner 1.png"/>
+<div class="hero-photo-label">
+<span class="hero-photo-city">Puebla, México</span>
+<span class="hero-photo-sub">ICCB 2027 · Puebla, México</span>
+</div>
+</div>
+</div>
 
-            </div>
-        </section>
-        <!-- ======================================================================
+</div>
+</section>
+<!-- ======================================================================
               SECCION 2: LA VIDA QUE COMPARTIMOS
              ====================================================================== -->
-        <section class="page-section" id="presentacion-iniciativa" style="padding:3.25rem 1.25rem 2rem;">
-            <div class="container">
-                <div class="section-head-center" style="margin-bottom:1.75rem;">
-                    <span class="section-eyebrow">01 · La vida que compartimos</span>
-                    <h2 class="section-main-title">¿Por qué importa la biodiversidad?</h2>
-                    <p class="section-main-desc" style="max-width:640px; margin:0 auto;"><strong>La biodiversidad hace
-                            posible la vida tal como la conocemos.</strong> Está en los ecosistemas que nos proporcionan
-                        agua y alimentos, en las especies con las que compartimos el territorio y en los conocimientos,
-                        tradiciones y culturas que se han construido en relación con la naturaleza.</p>
-                    <!-- Tira visual de 4 palabras clave -->
-                    <div class="topic-keywords-panel" aria-label="Ejes de la biodiversidad">
-                        <div class="topic-keyword-item">Ciencia</div>
-                        <div class="topic-keyword-item">Cultura</div>
-                        <div class="topic-keyword-item">Comunidad</div>
-                        <div class="topic-keyword-item">Conservación</div>
-                    </div>
-                    <!-- 3 tarjetas visuales y breves -->
-                    <div class="info-grid biodiversity-info-grid">
-                        <div class="info-card biodiversity-info-card"
-                            style="display:flex; flex-direction:column; align-items:center; text-align:center; padding:1.6rem 1.4rem;">
-                            <div class="info-card-media">
-                                <img alt="Encuentro continental" src="assets/img/Logo Animals__Logo_Jaguar.png"
-                                    class="info-card-media-img" />
-                            </div>
-                            <h3 style="justify-content:center; text-align:center; width:100%; margin-bottom:0.4rem;">La
-                                vida que compartimos</h3>
-                            <p style="font-size:var(--font-sm); line-height:1.55; margin:0; text-align:center;">La
-                                pérdida de especies y el deterioro de los ecosistemas representan uno de los grandes
-                                desafíos de nuestro tiempo. La biología de la conservación reúne conocimiento y
-                                herramientas para entender y atender esta realidad.</p>
-                        </div>
-                        <div class="info-card biodiversity-info-card"
-                            style="display:flex; flex-direction:column; align-items:center; text-align:center; padding:1.6rem 1.4rem;">
-                            <div class="info-card-media">
-                                <img alt="Riqueza biocultural" src="assets/img/Logo Animals__Logo_Colibri.png"
-                                    class="info-card-media-img" />
-                            </div>
-                            <h3 style="justify-content:center; text-align:center; width:100%; margin-bottom:0.4rem;">
-                                Ciencia y comunidad</h3>
-                            <p style="font-size:var(--font-sm); line-height:1.55; margin:0; text-align:center;">
-                                Conservar la biodiversidad requiere mucho más que conocimiento científico. Necesitamos
-                                colaboración entre disciplinas, instituciones, gobiernos, comunidades y sociedad;
-                                necesitamos escuchar distintas formas de entender y relacionarnos con la naturaleza.</p>
-                        </div>
-                        <div class="info-card biodiversity-info-card"
-                            style="display:flex; flex-direction:column; align-items:center; text-align:center; padding:1.6rem 1.4rem;">
-                            <div class="info-card-media">
-                                <img alt="La ciudad como espacio vivo" src="assets/img/Logo Animals__Logo_Teporingo.png"
-                                    class="info-card-media-img" />
-                            </div>
-                            <h3 style="justify-content:center; text-align:center; width:100%; margin-bottom:0.4rem;">
-                                Nuestro patrimonio compartido</h3>
-                            <p style="font-size:var(--font-sm); line-height:1.55; margin:0; text-align:center;">La
-                                conservación también es una tarea cultural, educativa y colectiva. Y por eso queremos
-                                que Puebla sea un espacio donde más personas puedan conocer, vivir y contribuir a ella.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-        </section>
-        <!-- ======================================================================
+<section class="page-section" id="presentacion-iniciativa" style="padding:3.25rem 1.25rem 2rem;">
+<div class="container">
+<div class="section-head-center" style="margin-bottom:1.75rem;">
+<span class="section-eyebrow">01 · La vida que compartimos</span>
+<h2 class="section-main-title">¿Por qué importa la biodiversidad?</h2>
+<p class="section-main-desc" style="max-width:640px; margin:0 auto;"><strong>La biodiversidad hace posible la vida tal como la conocemos.</strong> Está en los ecosistemas que nos proporcionan agua y alimentos, en las especies con las que compartimos el territorio y en los conocimientos, tradiciones y culturas que se han construido en relación con la naturaleza.</p>
+<!-- Tira visual de 4 palabras clave -->
+<div class="topic-keywords-panel" aria-label="Ejes de la biodiversidad">
+<div class="topic-keyword-item">Ciencia</div>
+<div class="topic-keyword-item">Cultura</div>
+<div class="topic-keyword-item">Comunidad</div>
+<div class="topic-keyword-item">Conservación</div>
+</div>
+<!-- 3 tarjetas visuales y breves -->
+<div class="info-grid biodiversity-info-grid">
+<div class="info-card biodiversity-info-card" style="display:flex; flex-direction:column; align-items:center; text-align:center; padding:1.6rem 1.4rem;">
+<div class="info-card-media">
+<img alt="Encuentro continental" src="assets/img/Logo Animals__Logo_Jaguar.png" class="info-card-media-img"/>
+</div>
+<h3 style="justify-content:center; text-align:center; width:100%; margin-bottom:0.4rem;">La vida que compartimos</h3>
+<p style="font-size:var(--font-sm); line-height:1.55; margin:0; text-align:center;">La pérdida de especies y el deterioro de los ecosistemas representan uno de los grandes desafíos de nuestro tiempo. La biología de la conservación reúne conocimiento y herramientas para entender y atender esta realidad.</p>
+</div>
+<div class="info-card biodiversity-info-card" style="display:flex; flex-direction:column; align-items:center; text-align:center; padding:1.6rem 1.4rem;">
+<div class="info-card-media">
+<img alt="Riqueza biocultural" src="assets/img/Logo Animals__Logo_Colibri.png" class="info-card-media-img"/>
+</div>
+<h3 style="justify-content:center; text-align:center; width:100%; margin-bottom:0.4rem;">Ciencia y comunidad</h3>
+<p style="font-size:var(--font-sm); line-height:1.55; margin:0; text-align:center;">Conservar la biodiversidad requiere mucho más que conocimiento científico. Necesitamos colaboración entre disciplinas, instituciones, gobiernos, comunidades y sociedad; necesitamos escuchar distintas formas de entender y relacionarnos con la naturaleza.</p>
+</div>
+<div class="info-card biodiversity-info-card" style="display:flex; flex-direction:column; align-items:center; text-align:center; padding:1.6rem 1.4rem;">
+<div class="info-card-media">
+<img alt="La ciudad como espacio vivo" src="assets/img/Logo Animals__Logo_Teporingo.png" class="info-card-media-img"/>
+</div>
+<h3 style="justify-content:center; text-align:center; width:100%; margin-bottom:0.4rem;">Nuestro patrimonio compartido</h3>
+<p style="font-size:var(--font-sm); line-height:1.55; margin:0; text-align:center;">La conservación también es una tarea cultural, educativa y colectiva. Y por eso queremos que Puebla sea un espacio donde más personas puedan conocer, vivir y contribuir a ella.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- ======================================================================
              SECCION 3: LOS CUATRO EJES PRINCIPALES
              1. Puebla, Capital de la Biodiversidad (agenda.html)
              2. Día de la Exploración (exploracion.html)
              3. Rutas (rutas.html)
              4. Laboratorio (ccl.html y enlace directo de registro)
              ====================================================================== -->
-        <section class="feature-grid-section" id="iniciativas" style="padding-top:3rem;">
-            <div class="container">
-                <div class="section-head-center">
-                    <span class="section-eyebrow">Conoce, explora, participa</span>
-                    <h2 class="section-main-title">La conservación toma muchas formas</h2>
-                    <p class="section-main-desc">Conoce cómo se vive, crea y comparte la biodiversidad en Puebla.</p>
-                </div>
-                <!-- Cuadrícula con únicamente las 4 tarjetas solicitadas -->
-                <div class="pillar-cards-grid home-initiative-grid">
-                    <!-- TARJETA 1: PUEBLA, CAPITAL DE LA BIODIVERSIDAD (Vinculada a agenda.html) -->
-                    <a class="pillar-card home-initiative-card" href="ccl.html">
-                        <div>
-                            <div class="pillar-icon-box home-initiative-media">
-                                <img alt="Colibrí" src="assets/img/Logo Animals__Logo_Colibri.png" />
-                            </div>
-                            <h3 class="pillar-card-title">Creative Conservation Labs</h3>
-                            <p class="pillar-card-text">Creatividad, conocimiento y colaboración se encuentran para
-                                conectar la conservación con el diseño, la gastronomía, las artes y los documentales.
-                            </p>
-                        </div>
-                        <div class="pillar-card-link">
-                            <span>Conoce la iniciativa</span>
-                            <svg class="card-arrow-icon" fill="none" height="16" stroke="currentColor"
-                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24"
-                                width="16">
-                                <line x1="4" x2="19" y1="12" y2="12"></line>
-                                <polyline points="13 6 19 12 13 18"></polyline>
-                            </svg>
-                        </div>
-                    </a>
-                    <!-- TARJETA 2: DÍA DE LA EXPLORACIÓN (Vinculada a exploracion.html) -->
-                    <a class="pillar-card highlight-gold home-initiative-card" href="agenda.html">
-                        <div>
-                            <div class="pillar-icon-box home-initiative-media">
-                                <img alt="Jaguar" src="assets/img/Logo Animals__Logo_Jaguar.png" />
-                            </div>
-                            <h3 class="pillar-card-title">Puebla, Capital de la Biodiversidad</h3>
-                            <p class="pillar-card-text">Experiencias, recorridos, gastronomía y cultura para descubrir
-                                la riqueza natural y cultural de Puebla.</p>
-                        </div>
-                        <div class="pillar-card-link" style="color:var(--color-gold-text)">
-                            <span>Conoce la iniciativa</span>
-                            <svg class="card-arrow-icon" fill="none" height="16" stroke="currentColor"
-                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24"
-                                width="16">
-                                <line x1="4" x2="19" y1="12" y2="12"></line>
-                                <polyline points="13 6 19 12 13 18"></polyline>
-                            </svg>
-                        </div>
-                    </a>
-                    <!-- TARJETA 3: RUTAS (Vinculada a rutas.html) -->
-                    <a class="pillar-card home-initiative-card" href="exploracion.html">
-                        <div>
-                            <div class="pillar-icon-box home-initiative-media">
-                                <img alt="Cacomixtle" src="assets/img/Logo Animals__Logo_cacomixtle.png" />
-                            </div>
-                            <h3 class="pillar-card-title">Día de la Exploración</h3>
-                            <p class="pillar-card-text">Un espacio para despertar la curiosidad, acercarse a la ciencia
-                                y explorar la biodiversidad de manera participativa.</p>
-                        </div>
-                        <div class="pillar-card-link">
-                            <span>Conoce la iniciativa</span>
-                            <svg class="card-arrow-icon" fill="none" height="16" stroke="currentColor"
-                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24"
-                                width="16">
-                                <line x1="4" x2="19" y1="12" y2="12"></line>
-                                <polyline points="13 6 19 12 13 18"></polyline>
-                            </svg>
-                        </div>
-                    </a>
-                    <!-- TARJETA 4: LABORATORIO (Vinculada a ccl.html + Link directo de registro) -->
-                    <div class="pillar-card home-initiative-card" style="cursor:default;">
-                        <div>
-                            <div class="pillar-icon-box home-initiative-media">
-                                <img alt="Teporingo" src="assets/img/Logo Animals__Logo_Teporingo.png" />
-                            </div>
-                            <h3 class="pillar-card-title">
-                                <a data-en="Laboratory" href="rutas.html"
-                                    style="color:inherit;text-decoration:none;">Conectar con Puebla</a>
-                            </h3>
-                            <p class="pillar-card-text">Queremos que Puebla sea mucho más que la sede de un evento
-                                internacional: queremos que se convierta en un espacio vivo donde la ciencia dialogue
-                                con la cultura y donde sus habitantes sean protagonistas de la conservación.</p>
-                        </div>
-                        <div
-                            style="display:flex; flex-direction:column; gap:0.55rem; margin-top:auto; padding-top:0.5rem;">
-                            <a class="pillar-card-link" href="ccl.html" style="text-decoration:none;">
-                                <span>Conoce la iniciativa</span>
-                                <svg class="card-arrow-icon" fill="none" height="16" stroke="currentColor"
-                                    stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"
-                                    viewbox="0 0 24 24" width="16">
-                                    <line x1="4" x2="19" y1="12" y2="12"></line>
-                                    <polyline points="13 6 19 12 13 18"></polyline>
-                                </svg>
-                            </a>
-                            <!-- Enlace directo de registro dentro de la tarjeta de Laboratorio -->
-                            <a class="btn btn-primary btn-sm" data-en="Student Registration →"
-                                href="ccl.html#registro-laboratorio" style="width:100%; text-align:center;">
+<section class="feature-grid-section" id="iniciativas" style="padding-top:3rem;">
+<div class="container">
+<div class="section-head-center">
+<span class="section-eyebrow">Conoce, explora, participa</span>
+<h2 class="section-main-title">La conservación toma muchas formas</h2>
+<p class="section-main-desc">Conoce cómo se vive, crea y comparte la biodiversidad en Puebla.</p>
+</div>
+<!-- Cuadrícula con únicamente las 4 tarjetas solicitadas -->
+<div class="pillar-cards-grid home-initiative-grid">
+<!-- TARJETA 1: PUEBLA, CAPITAL DE LA BIODIVERSIDAD (Vinculada a agenda.html) -->
+<a class="pillar-card home-initiative-card" href="ccl.html">
+<div>
+<div class="pillar-icon-box home-initiative-media">
+<img alt="Colibrí" src="assets/img/Logo Animals__Logo_Colibri.png"/>
+</div>
+<h3 class="pillar-card-title">Creative Conservation Labs</h3>
+<p class="pillar-card-text">Creatividad, conocimiento y colaboración se encuentran para conectar la conservación con el diseño, la gastronomía, las artes y los documentales.</p>
+</div>
+<div class="pillar-card-link">
+<span>Conoce la iniciativa</span>
+<svg class="card-arrow-icon" fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24" width="16">
+<line x1="4" x2="19" y1="12" y2="12"></line>
+<polyline points="13 6 19 12 13 18"></polyline>
+</svg>
+</div>
+</a>
+<!-- TARJETA 2: DÍA DE LA EXPLORACIÓN (Vinculada a exploracion.html) -->
+<a class="pillar-card highlight-gold home-initiative-card" href="agenda.html">
+<div>
+<div class="pillar-icon-box home-initiative-media">
+<img alt="Jaguar" src="assets/img/Logo Animals__Logo_Jaguar.png"/>
+</div>
+<h3 class="pillar-card-title">Puebla, Capital de la Biodiversidad</h3>
+<p class="pillar-card-text">Experiencias, recorridos, gastronomía y cultura para descubrir la riqueza natural y cultural de Puebla.</p>
+</div>
+<div class="pillar-card-link" style="color:var(--color-gold-text)">
+<span>Conoce la iniciativa</span>
+<svg class="card-arrow-icon" fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24" width="16">
+<line x1="4" x2="19" y1="12" y2="12"></line>
+<polyline points="13 6 19 12 13 18"></polyline>
+</svg>
+</div>
+</a>
+<!-- TARJETA 3: RUTAS (Vinculada a rutas.html) -->
+<a class="pillar-card home-initiative-card" href="exploracion.html">
+<div>
+<div class="pillar-icon-box home-initiative-media">
+<img alt="Cacomixtle" src="assets/img/Logo Animals__Logo_cacomixtle.png"/>
+</div>
+<h3 class="pillar-card-title">Día de la Exploración</h3>
+<p class="pillar-card-text">Un espacio para despertar la curiosidad, acercarse a la ciencia y explorar la biodiversidad de manera participativa.</p>
+</div>
+<div class="pillar-card-link">
+<span>Conoce la iniciativa</span>
+<svg class="card-arrow-icon" fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24" width="16">
+<line x1="4" x2="19" y1="12" y2="12"></line>
+<polyline points="13 6 19 12 13 18"></polyline>
+</svg>
+</div>
+</a>
+<!-- TARJETA 4: LABORATORIO (Vinculada a ccl.html + Link directo de registro) -->
+<div class="pillar-card home-initiative-card" style="cursor:default;">
+<div>
+<div class="pillar-icon-box home-initiative-media">
+<img alt="Teporingo" src="assets/img/Logo Animals__Logo_Teporingo.png"/>
+</div>
+<h3 class="pillar-card-title">
+<a data-en="Laboratory" href="rutas.html" style="color:inherit;text-decoration:none;">Conectar con Puebla</a>
+</h3>
+<p class="pillar-card-text">Queremos que Puebla sea mucho más que la sede de un evento internacional: queremos que se convierta en un espacio vivo donde la ciencia dialogue con la cultura y donde sus habitantes sean protagonistas de la conservación.</p>
+</div>
+<div style="display:flex; flex-direction:column; gap:0.55rem; margin-top:auto; padding-top:0.5rem;">
+<a class="pillar-card-link" href="ccl.html" style="text-decoration:none;">
+<span>Conoce la iniciativa</span>
+<svg class="card-arrow-icon" fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24" width="16">
+<line x1="4" x2="19" y1="12" y2="12"></line>
+<polyline points="13 6 19 12 13 18"></polyline>
+</svg>
+</a>
+<!-- Enlace directo de registro dentro de la tarjeta de Laboratorio -->
+<a class="btn btn-primary btn-sm" data-en="Student Registration →" href="ccl.html#registro-laboratorio" style="width:100%; text-align:center;">
                                 Registro al Laboratorio →
                             </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-    <!-- ==========================================================================
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- ==========================================================================
          SECCIÓN 3: EL PIE DE PÁGINA (<footer>)
          ========================================================================== -->
-    <footer class="site-footer">
-        <div class="footer-container">
-            <div class="footer-brand">
-                <img alt="ICCB 2027 Puebla" class="footer-logo" src="assets/img/Logo_White_Transparent.png" />
-                <h3 style="color:#fff;font-size:1.25rem;font-weight:800">Puebla, Capital de la Biodiversidad</h3>
-                <p style="color:#BAC2E0;font-size:var(--font-sm)">Un solo continente. Distintas realidades. Una
-                    responsabilidad compartida. La biodiversidad nos une. Puebla la celebra.</p>
-                <div class="footer-sponsors-strip">
-                    <span>Convocan y Coordinan:</span>
-                    <strong style="color:#fff">BUAP</strong><span style="opacity:0.5">·</span>
-                    <strong style="color:#fff">SCB</strong><span style="opacity:0.5">·</span>
-                    <a href="https://conbio.org/mini-sites/iccb-2027/" rel="noopener noreferrer"
-                        style="color:var(--color-gold);font-weight:700;text-decoration:underline" target="_blank">Sitio
-                        Oficial ICCB
+<footer class="site-footer">
+<div class="footer-container">
+<div class="footer-brand">
+<img alt="ICCB 2027 Puebla" class="footer-logo" src="assets/img/Logo_White_Transparent.png"/>
+<h3 style="color:#fff;font-size:1.25rem;font-weight:800">Puebla, Capital de la Biodiversidad</h3>
+<p style="color:#BAC2E0;font-size:var(--font-sm)">Un solo continente. Distintas realidades. Una responsabilidad compartida. La biodiversidad nos une. Puebla la celebra.</p>
+<div class="footer-sponsors-strip">
+<span>Convocan y Coordinan:</span>
+<strong style="color:#fff">BUAP</strong><span style="opacity:0.5">·</span>
+<strong style="color:#fff">SCB</strong><span style="opacity:0.5">·</span>
+<a href="https://conbio.org/mini-sites/iccb-2027/" rel="noopener noreferrer" style="color:var(--color-gold);font-weight:700;text-decoration:underline" target="_blank">Sitio Oficial ICCB
                         2027 ↗</a>
-                </div>
-            </div>
-            <div class="footer-links-col">
-                <h4>Arquitectura del Micrositio</h4>
-                <ul class="footer-nav">
-                    <li><a href="index.html">Portada</a></li>
-                    <li><a href="ccl.html">Laboratorio de Conservación Creativa</a></li>
-                    <li><a href="agenda.html">Puebla, Capital de la Biodiversidad (Agenda)</a></li>
-                    <li><a href="exploracion.html">Día de la Exploración (2 Jul)</a></li>
-                    <li><a href="rutas.html">Rutas y Mapa</a></li>
-                    <li><a href="menu.html">Sabores de la Biodiversidad</a></li>
-                </ul>
-            </div>
-            <div class="footer-links-col">
-                <h4>Participación y Visitantes</h4>
-                <ul class="footer-nav">
-                    <li><a href="participa.html">Formularios y Participación</a></li>
-                    <li><a href="info.html">Información para Visitantes y Preguntas Frecuentes</a></li>
-                    <li><a href="info.html#preguntas-frecuentes">Preguntas frecuentes</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <div>
-                <p><strong>Información responsable:</strong> Cada registro distingue claramente entre actividades
+</div>
+</div>
+<div class="footer-links-col">
+<h4>Arquitectura del Micrositio</h4>
+<ul class="footer-nav">
+<li><a href="index.html">Portada</a></li>
+<li><a href="ccl.html">Laboratorio de Conservación Creativa</a></li>
+<li><a href="agenda.html">Puebla, Capital de la Biodiversidad (Agenda)</a></li>
+<li><a href="exploracion.html">Día de la Exploración (2 Jul)</a></li>
+<li><a href="rutas.html">Rutas y Mapa</a></li>
+<li><a href="menu.html">Sabores de la Biodiversidad</a></li>
+</ul>
+</div>
+<div class="footer-links-col">
+<h4>Participación y Visitantes</h4>
+<ul class="footer-nav">
+<li><a href="participa.html">Formularios y Participación</a></li>
+<li><a href="info.html">Información para Visitantes y Preguntas Frecuentes</a></li>
+<li><a href="info.html#guia-actualizacion">Guía de Administración del Comité</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">
+<div>
+<p><strong>Información responsable:</strong> Cada registro distingue claramente entre actividades
                     confirmadas, próximas y propuestas en evaluación. Consulta pública sin requerir cuenta de usuario.
                 </p>
-            </div>
-            <div>
-                <p>© 2027 Puebla, Capital de la Biodiversidad · ICCB 2027 · BUAP</p>
-            </div>
-        </div>
-    </footer>
-    <!-- Scripts: data.js (fuente única de información) y main.js -->
-    <script src="assets/js/data.js"></script>
-    <script src="assets/js/i18n-en.js"></script>
-    <script src="assets/js/i18n.js"></script>
-
+</div>
+<div>
+<p>© 2027 Puebla, Capital de la Biodiversidad · ICCB 2027 · BUAP</p>
+</div>
+</div>
+</footer>
+<!-- Scripts: data.js (fuente única de información) y main.js -->
+<script src="assets/js/data.js"></script>
 <script src="assets/js/main.js"></script>
 </body>
-
 </html>
