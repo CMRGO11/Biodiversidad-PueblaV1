@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return `
             <div style="font-family:'Plus Jakarta Sans',sans-serif; min-width:220px; max-width:270px; padding:2px 0;">
                 <div style="display:flex; justify-content:space-between; align-items:center; gap:4px; margin-bottom:6px;">
-                    <span style="font-size:10px; font-weight:700; color:#fff; background:${color}; padding:2px 8px; border-radius:12px;">
+                    <span style="font-size:10px; font-weight:700; color:#151748; background:#F7F5F1; padding:2px 8px; border-radius:0;">
                         ${etiquetaCat}
                     </span>
                     <span style="font-size:10px; font-weight:700; color:#4A4D68;">
