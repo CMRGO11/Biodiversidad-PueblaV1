@@ -26,8 +26,7 @@
     <header class="site-header">
         <div class="header-container">
             <a href="index.html" class="brand-wrapper" aria-label="ICCB 2027 Puebla · BUAP">
-                <img src="assets/img/Logo Main__Logo Complete.png" alt="ICCB 2027"
-                    class="brand-logo-img brand-logo-iccb">
+                <img src="assets/img/ICCB_Logo_Main.png" alt="ICCB 2027" class="brand-logo-img brand-logo-iccb">
                 <span class="brand-divider" aria-hidden="true"></span>
                 <img src="assets/img/Logo_BUAP.webp" alt="BUAP" class="brand-logo-img brand-logo-buap">
             </a>
@@ -47,37 +46,42 @@
                 <ul class="nav-list">
                     <li>
                         <a href="ccl.html" class="nav-link">
-<span>Laboratorio</span>
+                            <span>Laboratorio</span>
                         </a>
                     </li>
                     <li>
                         <a href="agenda.html" class="nav-link">
-<span>Agenda</span>
+                            <span>Agenda</span>
                         </a>
                     </li>
                     <li>
                         <a href="exploracion.html" class="nav-link">
-<span>Día de la Exploración</span>
+                            <span>Día de la Exploración</span>
                         </a>
                     </li>
                     <li>
                         <a href="rutas.html" class="nav-link">
-<span>Rutas</span>
+                            <span>Rutas</span>
                         </a>
                     </li>
                     <li>
                         <a href="menu.html" class="nav-link">
-<span>Sabores</span>
+                            <span>Sabores</span>
                         </a>
                     </li>
                     <li>
                         <a href="participa.html" class="nav-link active">
-<span>Participa</span>
+                            <span>Participa</span>
                         </a>
                     </li>
                     <li>
-                        <a href="info.html" class="nav-link">
-<span>Información</span>
+                        <a href="info.html" class="nav-link nav-info-link" aria-label="Información"
+                            title="Información"><svg aria-hidden="true" focusable="false" width="22" height="22"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                                stroke-linecap="round">
+                                <circle cx="12" cy="12" r="9" />
+                                <path d="M12 11v5m0-8h.01" />
+                            </svg>
                         </a>
                     </li>
                 </ul>
@@ -276,9 +280,7 @@
                         <span class="section-eyebrow">3. Formularios y Participación (Sección 4)</span>
                         <h2 class="section-main-title">Los 5 Formularios Oficiales del Micrositio</h2>
                         <p class="section-main-desc">
-                            Selecciona la pestaña del formulario que deseas completar. Todos los registros se integran
-                            en
-                            la base común para revisión y validación del comité organizador antes de su publicación.
+                            Selecciona un formulario para probarlo. Los datos de esta demostración permanecen en tu navegador.
                         </p>
                     </div>
 
@@ -313,17 +315,16 @@
                                 Registra exposiciones, conferencias, recorridos o eventos institucionales para el
                                 directorio común y el mapa.
                             </p>
-                            <form
-                                onsubmit="alert('Propuesta de actividad registrada con estado: En evaluación por el comité.'); return false;">
+                            <form data-demo-form>
                                 <div class="form-grid-2">
                                     <div class="form-group">
-                                        <label>Institución u organización convocante</label>
-                                        <input type="text" required
+                                        <label for="campo-institucion-u-organizacion-convocante">Institución u organización convocante</label>
+                                        <input id="campo-institucion-u-organizacion-convocante" type="text" required
                                             placeholder="Universidad, ONG, dependencia o empresa">
                                     </div>
                                     <div class="form-group">
-                                        <label>Tipo de organización</label>
-                                        <select>
+                                        <label for="campo-tipo-de-organizacion">Tipo de organización</label>
+                                        <select id="campo-tipo-de-organizacion">
                                             <option>Universidad / Centro de investigación</option>
                                             <option>Organización de la sociedad civil (ONG)</option>
                                             <option>Dependencia gubernamental</option>
@@ -333,34 +334,34 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label>Nombre de la actividad</label>
-                                    <input type="text" required placeholder="Título claro para el público general">
+                                    <label for="campo-nombre-de-la-actividad">Nombre de la actividad</label>
+                                    <input id="campo-nombre-de-la-actividad" type="text" required placeholder="Título claro para el público general">
                                 </div>
                                 <div class="form-grid-2">
                                     <div class="form-group">
-                                        <label>Fecha(s) y horario propuesto</label>
-                                        <input type="text" required
+                                        <label for="campo-fecha-s-y-horario-propuesto">Fecha(s) y horario propuesto</label>
+                                        <input id="campo-fecha-s-y-horario-propuesto" type="text" required
                                             placeholder="Ej. 18 de junio 2027 · 11:00 a 13:00 h">
                                     </div>
                                     <div class="form-group">
-                                        <label>Ubicación o sede exacta</label>
-                                        <input type="text" required
+                                        <label for="campo-ubicacion-o-sede-exacta">Ubicación o sede exacta</label>
+                                        <input id="campo-ubicacion-o-sede-exacta" type="text" required
                                             placeholder="Dirección y nombre del recinto en Puebla">
                                     </div>
                                 </div>
                                 <div class="form-grid-2">
                                     <div class="form-group">
-                                        <label>Público dirigido e idioma</label>
-                                        <input type="text" required placeholder="Ej. Familias / Bilingüe (ES-EN)">
+                                        <label for="campo-publico-dirigido-e-idioma">Público dirigido e idioma</label>
+                                        <input id="campo-publico-dirigido-e-idioma" type="text" required placeholder="Ej. Familias / Bilingüe (ES-EN)">
                                     </div>
                                     <div class="form-group">
-                                        <label>Costo y condiciones de accesibilidad</label>
-                                        <input type="text" required placeholder="Ej. Gratuito · Acceso con rampa">
+                                        <label for="campo-costo-y-condiciones-de-accesibilidad">Costo y condiciones de accesibilidad</label>
+                                        <input id="campo-costo-y-condiciones-de-accesibilidad" type="text" required placeholder="Ej. Gratuito · Acceso con rampa">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label>Descripción de la actividad y datos de contacto</label>
-                                    <textarea rows="3" required
+                                    <label for="campo-descripcion-de-la-actividad-y-datos-de-contacto">Descripción de la actividad y datos de contacto</label>
+                                    <textarea id="campo-descripcion-de-la-actividad-y-datos-de-contacto" rows="3" required
                                         placeholder="Describe el objetivo, dinámica, correo de contacto y si cuentas con derechos de uso de imágenes..."></textarea>
                                 </div>
                                 <button type="submit" class="btn btn-primary" style="width:100%;">Enviar actividad para
@@ -379,39 +380,38 @@
                                 Registra tu establecimiento, experiencia gastronómica, platillo o bebida con
                                 ingredientes nativos, fechas y contacto.
                             </p>
-                            <form
-                                onsubmit="alert('Establecimiento registrado. Aparecerá como Disponible una vez confirmados el establecimiento y las fechas.'); return false;">
+                            <form data-demo-form>
                                 <div class="form-grid-2">
                                     <div class="form-group">
-                                        <label>Nombre del establecimiento (Cafetería o Restaurante)</label>
-                                        <input type="text" required placeholder="Ej. Cafetería El Patio">
+                                        <label for="campo-nombre-del-establecimiento-cafeteria-o-restaurante">Nombre del establecimiento (Cafetería o Restaurante)</label>
+                                        <input id="campo-nombre-del-establecimiento-cafeteria-o-restaurante" type="text" required placeholder="Ej. Cafetería El Patio">
                                     </div>
                                     <div class="form-group">
-                                        <label>Nombre del platillo, bebida o experiencia</label>
-                                        <input type="text" required
+                                        <label for="campo-nombre-del-platillo-bebida-o-experiencia">Nombre del platillo, bebida o experiencia</label>
+                                        <input id="campo-nombre-del-platillo-bebida-o-experiencia" type="text" required
                                             placeholder="Ej. Café de sombra / Mole con quelites">
                                     </div>
                                 </div>
                                 <div class="form-grid-2">
                                     <div class="form-group">
-                                        <label>Ubicación, horarios y rango de precios</label>
-                                        <input type="text" required
+                                        <label for="campo-ubicacion-horarios-y-rango-de-precios">Ubicación, horarios y rango de precios</label>
+                                        <input id="campo-ubicacion-horarios-y-rango-de-precios" type="text" required
                                             placeholder="Dirección, horario de atención y precio en MXN">
                                     </div>
                                     <div class="form-group">
-                                        <label>Fechas confirmadas de disponibilidad</label>
-                                        <input type="text" required
+                                        <label for="campo-fechas-confirmadas-de-disponibilidad">Fechas confirmadas de disponibilidad</label>
+                                        <input id="campo-fechas-confirmadas-de-disponibilidad" type="text" required
                                             placeholder="Ej. Del 7 de junio al 2 de julio de 2027">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label>Descripción del menú e ingredientes de la biodiversidad local</label>
-                                    <textarea rows="3" required
+                                    <label for="campo-descripcion-del-menu-e-ingredientes-de-la-biodiversidad-local">Descripción del menú e ingredientes de la biodiversidad local</label>
+                                    <textarea id="campo-descripcion-del-menu-e-ingredientes-de-la-biodiversidad-local" rows="3" required
                                         placeholder="Explica el origen sustentable de los ingredientes (sin extracción de especies silvestres protegidas)..."></textarea>
                                 </div>
                                 <div class="form-group">
-                                    <label>Nombre de contacto, teléfono y correo electrónico</label>
-                                    <input type="text" required placeholder="Responsable, teléfono y correo">
+                                    <label for="campo-nombre-de-contacto-telefono-y-correo-electronico">Nombre de contacto, teléfono y correo electrónico</label>
+                                    <input id="campo-nombre-de-contacto-telefono-y-correo-electronico" type="text" required placeholder="Responsable, teléfono y correo">
                                 </div>
                                 <button type="submit" class="btn btn-primary" style="width:100%;">Registrar
                                     establecimiento en Sabores de la Biodiversidad</button>
@@ -429,32 +429,31 @@
                                 Para instructores, académicos, colectivos o instituciones que ofrecen talleres o cursos
                                 de educación ambiental.
                             </p>
-                            <form
-                                onsubmit="alert('Curso o taller enviado para integración en el directorio común.'); return false;">
+                            <form data-demo-form>
                                 <div class="form-grid-2">
                                     <div class="form-group">
-                                        <label>Título del curso o taller</label>
-                                        <input type="text" required placeholder="Ej. Taller de Huertos y Polinizadores">
+                                        <label for="campo-titulo-del-curso-o-taller">Título del curso o taller</label>
+                                        <input id="campo-titulo-del-curso-o-taller" type="text" required placeholder="Ej. Taller de Huertos y Polinizadores">
                                     </div>
                                     <div class="form-group">
-                                        <label>Persona o institución que lo imparte</label>
-                                        <input type="text" required placeholder="Nombre del tallerista e institución">
+                                        <label for="campo-persona-o-institucion-que-lo-imparte">Persona o institución que lo imparte</label>
+                                        <input id="campo-persona-o-institucion-que-lo-imparte" type="text" required placeholder="Nombre del tallerista e institución">
                                     </div>
                                 </div>
                                 <div class="form-grid-2">
                                     <div class="form-group">
-                                        <label>Público, cupo máximo e idioma</label>
-                                        <input type="text" required placeholder="Ej. Familias / 30 personas / Español">
+                                        <label for="campo-publico-cupo-maximo-e-idioma">Público, cupo máximo e idioma</label>
+                                        <input id="campo-publico-cupo-maximo-e-idioma" type="text" required placeholder="Ej. Familias / 30 personas / Español">
                                     </div>
                                     <div class="form-group">
-                                        <label>Sede, fecha, horario y costo</label>
-                                        <input type="text" required
+                                        <label for="campo-sede-fecha-horario-y-costo">Sede, fecha, horario y costo</label>
+                                        <input id="campo-sede-fecha-horario-y-costo" type="text" required
                                             placeholder="Lugar, fecha, duración y si es gratuito">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label>Objetivos de aprendizaje, materiales y contacto</label>
-                                    <textarea rows="3" required
+                                    <label for="campo-objetivos-de-aprendizaje-materiales-y-contacto">Objetivos de aprendizaje, materiales y contacto</label>
+                                    <textarea id="campo-objetivos-de-aprendizaje-materiales-y-contacto" rows="3" required
                                         placeholder="Qué aprenderán los asistentes, materiales incluidos y correo de contacto..."></textarea>
                                 </div>
                                 <button type="submit" class="btn btn-primary" style="width:100%;">Registrar curso o
@@ -473,22 +472,21 @@
                                 Formulario independiente para familias, escuelas, estudiantes y visitantes que asistirán
                                 el 2 de julio de 2027.
                             </p>
-                            <form
-                                onsubmit="alert('¡Gracias! Tu preregistro de asistente al Día de la Exploración quedó registrado.'); return false;">
+                            <form data-demo-form>
                                 <div class="form-grid-2">
                                     <div class="form-group">
-                                        <label>Nombre completo</label>
-                                        <input type="text" required placeholder="Tu nombre o responsable de grupo">
+                                        <label for="campo-nombre-completo">Nombre completo</label>
+                                        <input id="campo-nombre-completo" type="text" required placeholder="Tu nombre o responsable de grupo">
                                     </div>
                                     <div class="form-group">
-                                        <label>Correo electrónico</label>
-                                        <input type="email" required placeholder="tu@correo.com">
+                                        <label for="campo-correo-electronico">Correo electrónico</label>
+                                        <input id="campo-correo-electronico" type="email" required placeholder="tu@correo.com">
                                     </div>
                                 </div>
                                 <div class="form-grid-2">
                                     <div class="form-group">
-                                        <label>Perfil de asistente</label>
-                                        <select>
+                                        <label for="campo-perfil-de-asistente">Perfil de asistente</label>
+                                        <select id="campo-perfil-de-asistente">
                                             <option>Familia con niñas, niños o jóvenes</option>
                                             <option>Asistente individual</option>
                                             <option>Grupo escolar / docente</option>
@@ -497,8 +495,8 @@
                                         </select>
                                     </div>
                                     <div class="form-group">
-                                        <label>Número de personas</label>
-                                        <input type="number" min="1" max="100" value="1">
+                                        <label for="campo-numero-de-personas">Número de personas</label>
+                                        <input id="campo-numero-de-personas" type="number" min="1" max="100" value="1">
                                     </div>
                                 </div>
                                 <button type="submit" class="btn btn-primary" style="width:100%;">Confirmar preregistro
@@ -517,21 +515,20 @@
                                 Formulario independiente para escuelas, campus regionales, municipios u organizaciones
                                 interesadas en organizar una sede espejo.
                             </p>
-                            <form
-                                onsubmit="alert('Solicitud de Día de la Exploración Espejo registrada. Recibirás los lineamientos y materiales.'); return false;">
+                            <form data-demo-form>
                                 <div class="form-grid-2">
                                     <div class="form-group">
-                                        <label>Organización, escuela o municipio</label>
-                                        <input type="text" required placeholder="Nombre de la institución">
+                                        <label for="campo-organizacion-escuela-o-municipio">Organización, escuela o municipio</label>
+                                        <input id="campo-organizacion-escuela-o-municipio" type="text" required placeholder="Nombre de la institución">
                                     </div>
                                     <div class="form-group">
-                                        <label>Persona responsable y correo</label>
-                                        <input type="text" required placeholder="Nombre y correo electrónico">
+                                        <label for="campo-persona-responsable-y-correo">Persona responsable y correo</label>
+                                        <input id="campo-persona-responsable-y-correo" type="text" required placeholder="Nombre y correo electrónico">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label>Localidad / sede propuesta y descripción del espejo</label>
-                                    <textarea rows="3" required
+                                    <label for="campo-localidad-sede-propuesta-y-descripcion-del-espejo">Localidad / sede propuesta y descripción del espejo</label>
+                                    <textarea id="campo-localidad-sede-propuesta-y-descripcion-del-espejo" rows="3" required
                                         placeholder="Indica municipio, sede propuesta y actividades de divulgación planeadas..."></textarea>
                                 </div>
                                 <button type="submit" class="btn btn-accent" style="width:100%;">Enviar solicitud de Día
@@ -587,7 +584,7 @@
                 <ul class="footer-nav">
                     <li><a href="participa.html">Formularios y Participación</a></li>
                     <li><a href="info.html">Información para Visitantes y Preguntas Frecuentes</a></li>
-                    <li><a href="info.html#guia-actualizacion">Guía de Administración del Comité</a></li>
+                    <li><a href="info.html#preguntas-frecuentes">Preguntas frecuentes</a></li>
                 </ul>
             </div>
         </div>
@@ -606,7 +603,10 @@
 
     <!-- Scripts: data.js y main.js -->
     <script src="assets/js/data.js"></script>
-    <script src="assets/js/main.js"></script>
+    <script src="assets/js/i18n-en.js"></script>
+    <script src="assets/js/i18n.js"></script>
+
+<script src="assets/js/main.js"></script>
 </body>
 
 </html>

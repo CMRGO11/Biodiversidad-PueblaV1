@@ -5,6 +5,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Envía el origen del sitio a los proveedores de mapas (evita bloqueos 403 por falta de Referer) -->
+    <meta name="referrer" content="strict-origin-when-cross-origin">
     <title>Mapa y Recorridos | Puebla, Capital de la Biodiversidad · ICCB 2027</title>
     <meta name="description"
         content="Mapa interactivo de puntos de interés y fichas de rutas por el Centro Histórico de Puebla, murales de Cholula, espacios de biodiversidad y gastronomía.">
@@ -32,8 +34,7 @@
     <header class="site-header">
         <div class="header-container">
             <a href="index.html" class="brand-wrapper" aria-label="ICCB 2027 Puebla · BUAP">
-                <img src="assets/img/Logo Main__Logo Complete.png" alt="ICCB 2027"
-                    class="brand-logo-img brand-logo-iccb">
+                <img src="assets/img/ICCB_Logo_Main.png" alt="ICCB 2027" class="brand-logo-img brand-logo-iccb">
                 <span class="brand-divider" aria-hidden="true"></span>
                 <img src="assets/img/Logo_BUAP.webp" alt="BUAP" class="brand-logo-img brand-logo-buap">
             </a>
@@ -53,37 +54,42 @@
                 <ul class="nav-list">
                     <li>
                         <a href="ccl.html" class="nav-link">
-<span>Laboratorio</span>
+                            <span>Laboratorio</span>
                         </a>
                     </li>
                     <li>
                         <a href="agenda.html" class="nav-link">
-<span>Agenda</span>
+                            <span>Agenda</span>
                         </a>
                     </li>
                     <li>
                         <a href="exploracion.html" class="nav-link">
-<span>Día de la Exploración</span>
+                            <span>Día de la Exploración</span>
                         </a>
                     </li>
                     <li>
                         <a href="rutas.html" class="nav-link active">
-<span>Rutas</span>
+                            <span>Rutas</span>
                         </a>
                     </li>
                     <li>
                         <a href="menu.html" class="nav-link">
-<span>Sabores</span>
+                            <span>Sabores</span>
                         </a>
                     </li>
                     <li>
                         <a href="participa.html" class="nav-link">
-<span>Participa</span>
+                            <span>Participa</span>
                         </a>
                     </li>
                     <li>
-                        <a href="info.html" class="nav-link">
-<span>Información</span>
+                        <a href="info.html" class="nav-link nav-info-link" aria-label="Información"
+                            title="Información"><svg aria-hidden="true" focusable="false" width="22" height="22"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                                stroke-linecap="round">
+                                <circle cx="12" cy="12" r="9" />
+                                <path d="M12 11v5m0-8h.01" />
+                            </svg>
                         </a>
                     </li>
                 </ul>
@@ -550,7 +556,7 @@
                 <ul class="footer-nav">
                     <li><a href="participa.html">Formularios y Participación</a></li>
                     <li><a href="info.html">Información para Visitantes y Preguntas Frecuentes</a></li>
-                    <li><a href="info.html#guia-actualizacion">Guía de Administración del Comité</a></li>
+                    <li><a href="info.html#preguntas-frecuentes">Preguntas frecuentes</a></li>
                 </ul>
             </div>
         </div>
@@ -571,7 +577,10 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
         integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     <script src="assets/js/data.js"></script>
-    <script src="assets/js/main.js"></script>
+    <script src="assets/js/i18n-en.js"></script>
+    <script src="assets/js/i18n.js"></script>
+
+<script src="assets/js/main.js"></script>
     <script src="assets/js/rutas.js"></script>
 </body>
 
