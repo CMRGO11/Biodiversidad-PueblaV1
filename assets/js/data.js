@@ -2,16 +2,13 @@
  * ==============================================================================
  * ARCHIVO CENTRAL DE DATOS (UNA SOLA FUENTE DE INFORMACIÓN): data.js
  * ==============================================================================
- * ¡Hola! Este archivo cumple uno de los principios más importantes del documento
- * "Arquitectura y requerimientos del micrositio Puebla, Capital de la Biodiversidad":
  *
- * PRINCIPIO DE "UNA SOLA FUENTE DE INFORMACIÓN" (Secciones 1, 5 y 8 del PDF):
  * "Cada actividad debe tener un identificador único y almacenarse una sola vez.
- *  La agenda, el mapa y las secciones temáticas deben recuperar la información
+ *  La agenda, el mapa y las secciones temáticas recuperan la información
  *  del mismo registro. El comité puede actualizar o retirar una actividad sin
  *  modificar varias páginas manualmente."
  *
- * ¿CÓMO ACTUALIZAR EL SITIO DESPUÉS DE LA ENTREGA?
+ * ¿CÓMO ACTUALIZAR EL SITIO ?
  * - Para AGREGAR una actividad: Copia uno de los bloques {...} dentro de ACTIVIDADES_DATA
  *   y cambia sus datos con un nuevo código único (ej. "ACT-013").
  * - Para CAMBIAR EL ESTADO: Cambia el campo "estado" entre:

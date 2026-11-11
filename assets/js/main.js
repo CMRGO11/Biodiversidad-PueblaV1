@@ -47,6 +47,13 @@ const ICONS = {
 
 document.addEventListener('DOMContentLoaded', () => {
 
+    document.querySelectorAll('form[data-demo-form]').forEach(form => {
+        form.addEventListener('submit', event => {
+            event.preventDefault();
+            alert(SiteLanguage.translate('Formulario de demostración. Los datos permanecen en tu navegador.'));
+        });
+    });
+
     // ==========================================================================
     // MENÚ DE TRES RAYITAS EN CELULARES
     // ==========================================================================
@@ -95,7 +102,11 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     function aplicarIdioma(lang) {
-        localStorage.setItem('iccb_lang', lang);
+        try {
+            localStorage.setItem('iccb_lang', lang);
+        } catch {
+            // El idioma sigue disponible durante la visita si se bloquea el almacenamiento.
+        }
         document.documentElement.lang = lang;
 
         // Actualizar estado activo de las pastillas ES / EN
@@ -131,7 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         document.querySelectorAll('.nav-list .nav-link').forEach(link => {
-            const href = link.getAttribute('href');
+            const href = link.getAttribute('href').split(/[?#]/)[0];
             const span = link.querySelector('span');
             if (span && mapaHref[href]) {
                 span.textContent = mapaHref[href];
@@ -139,6 +150,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         // Notificar a componentes dinámicos para que re-rendericen en el idioma activo
+        SiteLanguage.apply(lang);
         window.dispatchEvent(new CustomEvent('idiomaCambiado', { detail: lang }));
     }
 
@@ -147,13 +159,28 @@ document.addEventListener('DOMContentLoaded', () => {
         pill.addEventListener('click', (e) => {
             e.preventDefault();
             const nuevoIdioma = pill.getAttribute('lang') || 'es';
+            const url = new URL(window.location.href);
+            if (url.searchParams.has('lang')) {
+                url.searchParams.set('lang', nuevoIdioma);
+                try {
+                    history.replaceState(history.state, '', url);
+                } catch {
+                    // Los enlaces internos conservan el idioma en navegadores que restringen file://.
+                }
+            }
             aplicarIdioma(nuevoIdioma);
         });
     });
 
     // Cargar idioma guardado si existe
-    const idiomaGuardado = localStorage.getItem('iccb_lang') || 'es';
-    if (idiomaGuardado === 'en') {
+    let idiomaGuardado = 'es';
+    try {
+        idiomaGuardado = localStorage.getItem('iccb_lang') || 'es';
+    } catch {
+        // Mantener el español si el navegador bloquea el almacenamiento.
+    }
+    const idiomaEnlace = new URLSearchParams(window.location.search).get('lang');
+    if ((idiomaEnlace || idiomaGuardado) === 'en') {
         aplicarIdioma('en');
     }
 
@@ -169,6 +196,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const params = new URLSearchParams();
             if (q) params.set('q', q);
             if (tipo && tipo !== 'todos') params.set('tipo', tipo);
+            if (document.documentElement.lang === 'en') params.set('lang', 'en');
             window.location.href = 'agenda.html' + (params.toString() ? '?' + params.toString() : '') + '#directorio-comun';
         });
     }
@@ -188,6 +216,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const selectEstado = document.getElementById('filtro-estado');
         const contadorResultados = document.getElementById('contador-actividades');
         const btnLimpiar = document.getElementById('btn-limpiar-filtros');
+        const formatoFechaAgenda = new Intl.DateTimeFormat('es-MX', { dateStyle: 'full', timeZone: 'UTC' });
 
         // Leer parámetros si el usuario viene desde el buscador de la portada
         const urlParams = new URLSearchParams(window.location.search);
@@ -208,10 +237,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const filtradas = ACTIVIDADES_DATA.filter(act => {
                 if (!act.visible) return false;
                 if (texto && !(
-                    act.titulo.toLowerCase().includes(texto) ||
-                    act.descripcion.toLowerCase().includes(texto) ||
-                    act.organizador.toLowerCase().includes(texto) ||
-                    act.ubicacion.toLowerCase().includes(texto)
+                    SiteLanguage.matches(act.titulo, texto) ||
+                    SiteLanguage.matches(act.descripcion, texto) ||
+                    SiteLanguage.matches(act.organizador, texto) ||
+                    SiteLanguage.matches(act.ubicacion, texto)
                 )) return false;
                 if (tipo !== 'todos' && act.tipo !== tipo) return false;
                 if (publico !== 'todos' && act.publico !== publico && act.publico !== 'todos') return false;
@@ -239,14 +268,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Generar cada ficha con todos los campos nombre, descripción, fecha y horario, ubicación, organizador, público, idioma,
             // costo, accesibilidad, contacto, registro y enlace al mapa.
-            directorioContainer.innerHTML = filtradas.map(act => `
+            const renderizarFicha = act => `
                 <article class="activity-full-card" id="${act.id}">
                     <div class="activity-card-top">
                         <div style="display:flex; gap:0.5rem; align-items:center; flex-wrap:wrap;">
-                            <span style="font-size:var(--font-xs); font-weight:800; color:var(--color-talavera-blue); background:var(--color-soft-blue-light); padding:0.2rem 0.6rem; border-radius:4px;">
+                            <span style="font-size:var(--font-xs); font-weight:800; color:var(--color-talavera-blue); background:#EEF2F7; padding:0.2rem 0.6rem; border-radius:0;">
                                 ID: ${act.id}
                             </span>
-                            <span style="font-size:var(--font-xs); font-weight:700; color:var(--color-navy); background:var(--color-cream); padding:0.2rem 0.65rem; border-radius:4px;">
+                            <span style="font-size:var(--font-xs); font-weight:700; color:var(--color-navy); background:#F7F5F1; padding:0.2rem 0.65rem; border-radius:0;">
                                 ${act.tipoEtiqueta}
                             </span>
                         </div>
@@ -284,7 +313,34 @@ document.addEventListener('DOMContentLoaded', () => {
                         </div>
                     </div>
                 </article>
-            `).join('');
+            `;
+
+            const fechaAbierta = directorioContainer.querySelector('.agenda-date-panel[open]')?.dataset.fecha;
+            const gruposPorFecha = new Map();
+
+            for (const actividad of filtradas) {
+                if (!gruposPorFecha.has(actividad.fecha)) gruposPorFecha.set(actividad.fecha, []);
+                gruposPorFecha.get(actividad.fecha).push(actividad);
+            }
+
+            directorioContainer.innerHTML = [...gruposPorFecha.keys()].sort().map(fecha => {
+                const actividades = gruposPorFecha.get(fecha);
+                const etiqueta = formatoFechaAgenda.format(new Date(fecha + 'T00:00:00Z'));
+                const cantidad = actividades.length;
+                const abierta = fecha === fechaAbierta ? ' open' : '';
+
+                return `
+                    <details class="agenda-date-panel" name="agenda-fechas" data-fecha="${fecha}"${abierta}>
+                        <summary class="agenda-date-summary">
+                            <time datetime="${fecha}">${etiqueta}</time>
+                            <span class="agenda-date-count">${cantidad} ${cantidad === 1 ? 'actividad' : 'actividades'}</span>
+                        </summary>
+                        <div class="agenda-date-activities">
+                            ${actividades.map(renderizarFicha).join('')}
+                        </div>
+                    </details>
+                `;
+            }).join('');
         }
 
         [inputTexto, selectTipo, selectPublico, selectFecha, selectIdioma, selectCosto, selectZona, selectEstado].forEach(ctrl => {
@@ -326,11 +382,11 @@ document.addEventListener('DOMContentLoaded', () => {
             const filtrados = STANDS_EXPLORACION_DATA.filter(s => {
                 if (tema !== 'todos' && s.categoriaTema !== tema) return false;
                 if (q && !(
-                    s.nombre.toLowerCase().includes(q) ||
-                    s.organizacion.toLowerCase().includes(q) ||
-                    s.tema.toLowerCase().includes(q) ||
-                    s.actividades.toLowerCase().includes(q) ||
-                    s.ubicacion.toLowerCase().includes(q)
+                    SiteLanguage.matches(s.nombre, q) ||
+                    SiteLanguage.matches(s.organizacion, q) ||
+                    SiteLanguage.matches(s.tema, q) ||
+                    SiteLanguage.matches(s.actividades, q) ||
+                    SiteLanguage.matches(s.ubicacion, q)
                 )) return false;
                 return true;
             });
@@ -344,7 +400,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <article class="info-card" style="display:flex; flex-direction:column; justify-content:space-between;">
                     <div>
                         <div style="display:flex; justify-content:space-between; align-items:center; gap:0.5rem; margin-bottom:0.65rem;">
-                            <span style="font-size:var(--font-xs); font-weight:800; color:var(--color-navy); background:var(--color-gold-soft); padding:0.2rem 0.6rem; border-radius:4px;">
+                            <span style="font-size:var(--font-xs); font-weight:800; color:var(--color-navy); background:#F7F5F1; padding:0.2rem 0.6rem; border-radius:0;">
                                 ${s.id}
                             </span>
                             ${obtenerBadgeEstado(s.estado)}
@@ -354,7 +410,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             ${ICONS.building} ${s.organizacion}
                         </p>
                         <p style="margin-bottom:0.75rem;">${s.descripcion}</p>
-                        <div style="background:var(--color-cream-light); padding:0.75rem; border-radius:var(--radius-sm); font-size:var(--font-xs); color:var(--color-text-main); line-height:1.6;">
+                        <div style="background:var(--color-cream-light); padding:0.75rem; border-radius:0; font-size:var(--font-xs); color:var(--color-text-main); line-height:1.6;">
                             <strong>${ICONS.microscope}Tema:</strong> ${s.tema}<br>
                             <strong>${ICONS.mapPin}Ubicación:</strong> ${s.ubicacion}<br>
                             <strong>${ICONS.clock}Horario:</strong> ${s.horario}<br>
@@ -411,7 +467,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                 ${ICONS.utensils} ${item.establecimiento} (${item.tipo})
                             </p>
                             <p>${item.descripcion}</p>
-                            <div style="background:var(--color-cream-light); padding:0.85rem; border-radius:var(--radius-sm); font-size:var(--font-xs); color:var(--color-text-main); margin-bottom:1rem; line-height:1.6;">
+                            <div style="background:var(--color-cream-light); padding:0.85rem; border-radius:0; font-size:var(--font-xs); color:var(--color-text-main); margin-bottom:1rem; line-height:1.6;">
                                 <strong>${ICONS.mapPin}Ubicación:</strong> ${item.ubicacion}<br>
                                 <strong>${ICONS.clock}Horario:</strong> ${item.horario}<br>
                                 <strong>${ICONS.price}Rango de precios:</strong> ${item.precio}<br>
@@ -439,7 +495,7 @@ document.addEventListener('DOMContentLoaded', () => {
         cclContainer.innerHTML = CCL_EQUIPOS_DATA.map(eq => `
             <article class="ccl-team-card" id="${eq.id}">
                 <div style="display:flex; justify-content:space-between; align-items:center; gap:0.5rem;">
-                    <span style="font-size:var(--font-xs); font-weight:800; color:var(--color-talavera-blue); background:var(--color-soft-blue-light); padding:0.25rem 0.65rem; border-radius:4px;">
+                    <span style="font-size:var(--font-xs); font-weight:800; color:var(--color-talavera-blue); background:#EEF2F7; padding:0.25rem 0.65rem; border-radius:0;">
                         ${eq.id} · ${eq.eje}
                     </span>
                     ${obtenerBadgeEstado(eq.estado)}
@@ -448,7 +504,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <img src="${eq.imagen}" alt="${eq.nombreProyecto}" style="height:48px; width:auto; object-fit:contain;">
                     <h3 style="font-size:1.15rem; font-weight:800; color:var(--color-navy); margin:0;">${eq.nombreProyecto}</h3>
                 </div>
-                <div style="background:var(--color-cream-light); padding:0.9rem; border-radius:var(--radius-md); font-size:var(--font-xs); line-height:1.65;">
+                <div style="background:var(--color-cream-light); padding:0.9rem; border-radius:0; font-size:var(--font-xs); line-height:1.65;">
                     <strong>${ICONS.graduation}Universidad:</strong> ${eq.universidad}<br>
                     <strong>${ICONS.users}Estudiantes:</strong> ${eq.estudiantes}<br>
                     <strong>${ICONS.building}Profesor asesor:</strong> ${eq.profesorAsesor}<br>

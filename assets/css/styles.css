@@ -1,25 +1,3 @@
-/* ==============================================================================
-   ¡BIENVENIDO AL ARCHIVO STYLES.CSS! (EL ARMARIO Y PINTURA DE TU PÁGINA)
-   ==============================================================================
-   Si HTML es el esqueleto de tu sitio, CSS es la piel, el maquillaje y la ropa.
-   En CSS siempre se sigue esta regla mágica:
-   
-   ¿A quién quiero vestir? {
-       ¿Qué prenda o pintura le pongo?: ¿De qué color o tamaño?;
-   }
-   
-   Ejemplo:
-   h1 {
-       color: red;  <-- "Al título h1 píntalo de rojo"
-   }
-   ============================================================================== */
-
-/* ==============================================================================
-   1. :root — LA CAJA DE PINTURAS Y MEDIDAS (VARIABLES)
-   Imagina que :root es una paleta de pintor donde guardamos colores y tamaños
-   con un nombre fácil. Si un día queremos cambiar el color azul de toda la web,
-   solo cambiamos una línea aquí y ¡pum!, se actualiza en todas partes.
-   ============================================================================== */
 :root {
     /* --- COLORES CREMA Y TIERRA (FONDOS Y BORDES SUAVES) --- */
     --color-cream: #F4F0E8;
@@ -147,14 +125,13 @@
 
 /* ==============================================================================
    2. REINICIO UNIVERSAL (RESET DE ESPACIOS)
-   El asterisco (*) significa "¡Para TODO el mundo en la página!".
-   Por defecto, los navegadores le ponen márgenes raros a todo; esto lo limpia a cero.
+   El asterisco (*) significa para toda la página
    ============================================================================== */
 *,
 *::before,
 *::after {
     /* box-sizing: border-box: Si una caja mide 100px de ancho y le pones borde de 5px,
-       sigue midiendo 100px exactos en total. ¡Evita que las cosas se descuadren! */
+       sigue midiendo 100px exactos en total. */
     box-sizing: border-box;
     margin: 0;
     /* Quita el margen exterior no deseado */
@@ -395,7 +372,7 @@ img {
            Se queda pegada arriba mientras haces scroll (position: sticky).
            ====================================================================== */
 .site-header {
-    background: #fff;
+    background: #ffffffaf;
     /* Fondo blanco limpio */
     position: sticky;
     /* Se pega al techo cuando bajas la página */
@@ -732,7 +709,7 @@ img {
 .hero-bg-texture {
     position: absolute;
     inset: 0;
-    background-image: url('../img/Logo Main__Logo TExture Light.png');
+    background-image: url('../img/Logo Main__Logo Texture Dark.png');
     background-size: cover;
     /* Llena todo el espacio sin deformarse */
     background-position: center;
@@ -2301,6 +2278,87 @@ img {
     background: var(--color-cream-light);
 }
 
+.agenda-filters {
+    margin-bottom: 1.25rem;
+}
+
+.agenda-filter-toggle {
+    background: #fff;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+}
+
+.agenda-filter-toggle:hover {
+    background: var(--color-cream-light);
+}
+
+.agenda-filter-toggle span {
+    margin-inline-end: auto;
+}
+
+.agenda-filters[open] .agenda-filter-toggle::after {
+    transform: rotate(225deg);
+}
+
+.agenda-filters .directory-filter-box {
+    margin-block: .65rem 0;
+}
+
+
+.form-demo-note {
+    margin-bottom: 1rem;
+    color: var(--color-text-muted);
+}
+
+/* Agenda por fecha */
+.agenda-date-panel {
+    margin-bottom: .8rem;
+    border: 1px solid var(--color-cream-border);
+    background: #fff;
+}
+
+.agenda-date-panel[data-fecha="2027-07-02"] {
+    border: 2px solid var(--color-gold);
+}
+
+.agenda-date-summary {
+    display: flex;
+    align-items: center;
+    gap: .65rem 1rem;
+    padding: .9rem 1rem;
+    list-style: none;
+    cursor: pointer;
+    background: #e3efed;
+    color: var(--color-navy);
+    font-weight: 800;
+}
+
+.agenda-date-summary::-webkit-details-marker { display: none; }
+.agenda-date-summary:hover { background: #d8e9e6; }
+.agenda-date-summary:focus-visible { outline: 2px solid var(--color-talavera-blue); outline-offset: -2px; }
+.agenda-date-summary time { margin-inline-end: auto; }
+.agenda-date-summary time::first-letter { text-transform: uppercase; }
+
+.agenda-date-summary::after {
+    content: "";
+    flex: 0 0 .5rem;
+    height: .5rem;
+    border-right: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+    transform: rotate(45deg);
+}
+
+.agenda-date-panel[open] .agenda-date-summary::after { transform: rotate(225deg); }
+
+.agenda-date-count {
+    font-size: var(--font-xs);
+    font-weight: 600;
+}
+
+.agenda-date-activities { padding: clamp(.65rem, 2vw, 1.25rem); }
+.agenda-date-activities .activity-full-card:last-child { margin-bottom: 0; }
+
+
 /* Tarjeta de Ficha Completa de Actividad (Sección 3.2: incluye todos los metadatos) */
 .activity-full-card {
     background: #fff;
@@ -2507,6 +2565,7 @@ img {
         top: 68px;
         padding: 0.5rem 0.75rem;
     }
+
     .lab-toc-inner {
         flex-wrap: nowrap;
         overflow-x: auto;
@@ -2515,6 +2574,7 @@ img {
         scrollbar-width: none;
         -webkit-overflow-scrolling: touch;
     }
+
     .lab-toc-inner::-webkit-scrollbar {
         display: none;
     }
@@ -2779,4 +2839,949 @@ img {
     display: block;
     color: var(--color-navy);
     margin-bottom: 0.4rem;
+}
+
+/* ===== Refinamiento solicitado: menú limpio y hero unificado ===== */
+.site-header .nav-link,
+.site-header .nav-link.highlight,
+.site-header .nav-link.active,
+.site-header .nav-link:hover,
+.site-header .nav-link.highlight:hover {
+    background: transparent;
+    background-image: none;
+    box-shadow: none;
+    border-radius: 0;
+    transform: none;
+}
+
+.site-header .nav-link {
+    gap: 0;
+    font-weight: 650;
+}
+
+.site-header .nav-link:hover,
+.site-header .nav-link.active {
+    color: var(--color-talavera-blue);
+    font-weight: 800;
+}
+
+.site-header .nav-link.highlight {
+    color: var(--color-navy);
+    font-weight: 650;
+}
+
+.site-header .nav-link.highlight:hover {
+    color: var(--color-talavera-blue);
+    font-weight: 800;
+}
+
+.site-header .nav-link .nav-icon,
+.site-header .nav-link .nav-icon-gold {
+    display: none;
+}
+
+/* Dos CTA como la referencia aprobada; solo cambia su presentación. */
+.hero-section .hero-btn-primary {
+    background: var(--color-gold);
+    border-color: var(--color-gold);
+    color: var(--color-navy-deep);
+    border-radius: 999px;
+    padding: 0.78rem 1.4rem;
+    font-size: 0.91rem;
+    gap: 0.55rem;
+}
+
+.hero-section .hero-btn-primary:hover {
+    background: var(--color-gold-hover);
+    border-color: var(--color-gold-hover);
+    color: var(--color-navy-deep);
+}
+
+.hero-btn-text {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    text-decoration: underline;
+    text-underline-offset: 0.2rem;
+    color: white;
+    font-weight: 750;
+    font-size: 0.91rem;
+    padding: 0.65rem 0.2rem;
+    transition: opacity var(--transition-fast);
+}
+
+.hero-btn-text:hover {
+    color: var(--color-gold);
+}
+
+/* Emblema dentro de la foto; evita una tarjeta independiente. */
+.hero-photo-frame {
+    position: relative;
+}
+
+.hero-iccb-overlay {
+    position: absolute;
+    z-index: 2;
+    right: 1rem;
+    bottom: 4.6rem;
+    width: clamp(68px, 18%, 115px);
+    height: auto;
+    background: var(--color-gold);
+    border: 0;
+    padding: 0.35rem;
+    object-fit: contain;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12);
+}
+
+@media (max-width: 640px) {
+    .hero-iccb-overlay {
+        right: 0.65rem;
+        bottom: 4.5rem;
+        width: 74px;
+    }
+}
+
+
+/* ===== Ronda 3: limpieza visual global solicitada ===== */
+/* 1) Todo recuadro no interactivo se vuelve recto y más limpio */
+.hero-photo-frame,
+.hero-pattern-badge,
+.pillar-card,
+.route-card,
+.flavor-card,
+.form-card,
+.audience-card,
+.info-card,
+.filter-box,
+.activity-full-card,
+.activity-meta-grid,
+.ccl-team-card,
+.faq-item,
+.lab-callout,
+.lab-table-wrap,
+.lab-hours-badge,
+.lab-date-card,
+.lab-deliverable-card,
+.lab-timeline-item,
+.lang-switcher-vertical,
+.lang-switcher-vertical .lang-pill,
+.pillar-icon-box,
+.route-stop,
+.filter-field select,
+.filter-field input,
+.search-input,
+.search-input-wrapper,
+.disclaimer-banner,
+.lab-step-label,
+.lab-step-label span:first-child,
+.lab-toc a,
+.badge-status,
+.hero-photo-label,
+.activity-card-top,
+.route-card-img,
+.flavor-card-img,
+.activity-meta-grid,
+.form-group input,
+.form-group select,
+.form-group textarea,
+select,
+input,
+textarea {
+    border-radius: 0 !important;
+}
+
+/* 2) Quitar rayitas/accent lines innecesarias */
+.pillar-card::before,
+.audience-card::before,
+.info-card::before,
+.route-card::before,
+.flavor-card::before {
+    display: none !important;
+    content: none !important;
+}
+
+/* 3) Tarjetas con borde sobrio, sin colores chillones */
+.pillar-card,
+.route-card,
+.flavor-card,
+.form-card,
+.audience-card,
+.info-card,
+.activity-full-card,
+.ccl-team-card,
+.filter-box,
+.faq-item,
+.lab-table-wrap,
+.lab-deliverable-card,
+.lab-date-card,
+.lab-timeline-item {
+    border-color: var(--color-cream-border) !important;
+    box-shadow: 0 8px 24px rgba(21, 23, 72, 0.06) !important;
+}
+
+.pillar-card:hover,
+.route-card:hover,
+.flavor-card:hover,
+.audience-card:hover,
+.info-card:hover,
+.activity-full-card:hover,
+.ccl-team-card:hover,
+.lab-timeline-item:hover {
+    border-color: var(--color-border) !important;
+    box-shadow: 0 10px 28px rgba(21, 23, 72, 0.09) !important;
+    transform: translateY(-2px);
+}
+
+/* 4) Las etiquetas de estado dejan de verse verdes/amarillas tipo chip */
+.badge-status,
+.badge-status.confirmada,
+.badge-status.proximamente,
+.badge-status.propuesta {
+    background: var(--color-cream-light) !important;
+    color: var(--color-navy) !important;
+    border: 1px solid var(--color-cream-border) !important;
+    box-shadow: none !important;
+}
+
+/* 5) Navegación y controles rectos */
+.site-header .nav-link,
+.site-header .nav-link.highlight,
+.site-header .nav-link.active,
+.site-header .nav-link:hover,
+.site-header .nav-link.highlight:hover {
+    border-radius: 0 !important;
+}
+
+/* 6) Bloques secundarios más neutros */
+.activity-meta-grid,
+.route-card [style*="background:var(--color-cream-light)"],
+.info-card [style*="background:var(--color-cream-light)"],
+.flavor-card [style*="background:var(--color-cream-light)"],
+.ccl-team-card [style*="background:var(--color-cream-light)"],
+.activity-full-card [style*="background:var(--color-cream-light)"],
+.exploracion-stand-card [style*="background:var(--color-cream-light)"] {
+    background: #F7F5F1 !important;
+}
+
+.lab-callout,
+.lab-step-label,
+.lab-step-label span:first-child,
+.lab-hours-badge {
+    background: #F7F5F1 !important;
+    color: var(--color-navy) !important;
+    border: 1px solid var(--color-cream-border) !important;
+    box-shadow: none !important;
+}
+
+.lab-callout {
+    border-left: 3px solid var(--color-border) !important;
+}
+
+.lab-hours-badge strong {
+    color: var(--color-talavera-blue) !important;
+}
+
+.lab-hours-badge span {
+    color: var(--color-text-main) !important;
+}
+
+/* 7) Palabras clave de biodiversidad: ya no como chips verdes */
+.topic-keywords-row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem 1.35rem;
+    margin-top: 1.35rem;
+}
+
+.topic-keyword {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7rem;
+    color: var(--color-navy);
+    font-size: var(--font-sm);
+    font-weight: 800;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+}
+
+.topic-keyword-icon {
+    width: 2.6rem;
+    height: 2.6rem;
+    border-radius: 50% !important;
+    border: 1.5px solid var(--color-cream-border);
+    background: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-talavera-blue);
+    flex-shrink: 0;
+}
+
+.topic-keyword-icon svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* 8) Quitar redondeo a pequeños bloques informativos sueltos */
+.route-card div[style*="border-radius:var(--radius-sm)"],
+.route-card span[style*="border-radius:var(--radius-sm)"],
+.activity-full-card div[style*="border-radius"],
+.activity-full-card span[style*="border-radius"],
+.info-card div[style*="border-radius:var(--radius-sm)"],
+.info-card span[style*="border-radius"],
+.flavor-card div[style*="border-radius:var(--radius-sm)"],
+.flavor-card span[style*="border-radius"],
+.ccl-team-card div[style*="border-radius"],
+.ccl-team-card span[style*="border-radius"],
+.disclaimer-banner select[style*="border-radius"],
+#filtro-estado[style*="border-radius"] {
+    border-radius: 0 !important;
+}
+
+/* 9) Inputs y selectores más sobrios */
+.filter-field select,
+.filter-field input,
+.form-group input,
+.form-group select,
+.form-group textarea,
+.disclaimer-banner select,
+#filtro-estado {
+    border-color: var(--color-border) !important;
+    background: #fff !important;
+}
+
+
+/* ===== Ronda 4: ajustes puntuales de portada ===== */
+/* Franja horizontal de ejes sin íconos y bien distribuida */
+.topic-keywords-panel {
+    margin-top: 1.3rem;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    align-items: stretch;
+    border: 1px solid var(--color-cream-border);
+    background: #fff;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.topic-keyword-item {
+    text-align: center;
+    padding: 1rem 0.9rem;
+    font-size: var(--font-sm);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--color-navy);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 58px;
+}
+
+.topic-keyword-item+.topic-keyword-item {
+    border-left: 1px solid var(--color-cream-border);
+}
+
+@media (max-width: 700px) {
+    .topic-keywords-panel {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .topic-keyword-item:nth-child(2n+1) {
+        border-left: 0;
+    }
+
+    .topic-keyword-item:nth-child(n+3) {
+        border-top: 1px solid var(--color-cream-border);
+    }
+}
+
+/* Tarjetas informativas: círculo más grande y espacio claro para imagen */
+.biodiversity-info-grid {
+    margin-top: 1.35rem;
+}
+
+.biodiversity-info-card {
+    justify-content: flex-start;
+    min-height: 290px;
+}
+
+.biodiversity-info-card .info-card-media {
+    width: 82px;
+    height: 82px;
+    margin: 0 auto 1rem;
+    border-radius: 50% !important;
+    background: #F7F5F1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--color-cream-border);
+    flex-shrink: 0;
+}
+
+.biodiversity-info-card .info-card-media-img {
+    max-width: 56px;
+    max-height: 56px;
+    width: auto;
+    height: auto;
+    display: block;
+}
+
+/* Iniciativas: bloque rectangular de imagen más amplio y centrado */
+.home-initiative-grid {
+    align-items: stretch;
+}
+
+.home-initiative-card {
+    padding-top: 1.8rem;
+}
+
+.home-initiative-card>div:first-child {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.home-initiative-media {
+    width: 100%;
+    height: 96px;
+    min-height: 96px;
+    margin: 0 0 1.35rem;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff !important;
+    border: 1px solid var(--color-cream-border) !important;
+}
+
+.home-initiative-media img {
+    max-width: 72%;
+    max-height: 62px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
+
+.home-initiative-card .pillar-card-title {
+    margin-bottom: 0.85rem;
+}
+
+.home-initiative-card .pillar-card-link,
+.home-initiative-card .btn {
+    margin-top: auto;
+}
+
+
+/* ===== Ronda 5: tres ajustes de portada ===== */
+/* Quitar el emblema amarillo sobre la fotografía (imagen retirada del HTML). */
+.hero-iccb-overlay {
+    display: none !important;
+}
+
+/* Hacer visible en azul el acceso secundario de la portada. */
+.hero-section .hero-btn-text,
+.hero-section .hero-btn-text:visited {
+    color: #18356F;
+    font-weight: 800;
+    text-decoration-color: currentColor;
+    text-underline-offset: 0.25rem;
+}
+
+.hero-section .hero-btn-text:hover,
+.hero-section .hero-btn-text:focus-visible {
+    color: #0D214D;
+}
+
+/* Las tres tarjetas informativas comparten una única fila en escritorio. */
+.biodiversity-info-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.25rem;
+}
+
+@media (max-width: 767px) {
+    .biodiversity-info-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ===== Ronda 6: accesos rápidos y tarjetas de portada ===== */
+.hero-inner .hero-quick-links {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 1fr 1fr 2.45fr;
+    gap: 1.25rem;
+    width: 100%;
+    align-items: stretch;
+    margin: 0;
+}
+
+.hero-section .hero-quick-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .65rem;
+    min-height: 72px;
+    padding: 1rem 1.4rem;
+    font-size: clamp(1.05rem, 1.75vw, 1.45rem);
+    font-weight: 800;
+    line-height: 1.2;
+    text-align: center;
+    border-radius: 24px;
+    white-space: normal;
+    text-decoration: none;
+}
+
+.hero-section .hero-btn-secondary.hero-quick-link {
+    border: 2px solid var(--color-navy);
+    background: transparent;
+    color: var(--color-navy);
+}
+
+.hero-section .hero-btn-secondary.hero-quick-link:hover,
+.hero-section .hero-btn-secondary.hero-quick-link:focus-visible {
+    background: rgba(21, 23, 72, .07);
+    border-color: var(--color-navy);
+    color: var(--color-navy);
+}
+
+.hero-section .hero-btn-primary.hero-quick-link-featured {
+    background: var(--color-navy);
+    border: 2px solid var(--color-navy);
+    color: #fff;
+}
+
+.hero-section .hero-btn-primary.hero-quick-link-featured:hover,
+.hero-section .hero-btn-primary.hero-quick-link-featured:focus-visible {
+    background: var(--color-talavera-blue);
+    border-color: var(--color-talavera-blue);
+    color: #fff;
+}
+
+#home.hero-section {
+    border-bottom: 0;
+}
+
+#presentacion-iniciativa {
+    background: linear-gradient(to bottom, #edeae4, #fff);
+}
+
+#presentacion-iniciativa .biodiversity-info-grid {
+    width: min(1440px, calc(100vw - 64px));
+    max-width: none;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.25rem;
+}
+
+#presentacion-iniciativa .biodiversity-info-card {
+    width: 100%;
+    min-width: 0;
+    padding: 1.8rem 2rem !important;
+}
+
+#presentacion-iniciativa .biodiversity-info-card h3 {
+    text-wrap: balance;
+}
+
+@media (max-width: 899px) {
+    .hero-inner .hero-quick-links {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .hero-section .hero-quick-link-featured {
+        grid-column: 1 / -1;
+    }
+
+    #presentacion-iniciativa .biodiversity-info-grid {
+        width: calc(100vw - 40px);
+        gap: .85rem;
+    }
+
+    #presentacion-iniciativa .biodiversity-info-card {
+        padding: 1.4rem 1rem !important;
+    }
+}
+
+@media (max-width: 650px) {
+    .hero-inner .hero-quick-links {
+        gap: .75rem;
+    }
+
+    .hero-section .hero-quick-link {
+        min-height: 60px;
+        padding: .85rem .65rem;
+        border-radius: 18px;
+        font-size: 1rem;
+    }
+
+    #presentacion-iniciativa .biodiversity-info-grid {
+        grid-template-columns: 1fr;
+        width: calc(100vw - 32px);
+        gap: 1rem;
+    }
+}
+
+
+/* ===== Ronda 7: accesos rápidos compactos y alineados a la izquierda ===== */
+.hero-inner .hero-quick-links {
+    display: flex;
+    grid-column: 1 / -1;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: .8rem;
+    width: 100%;
+    margin: 0;
+}
+
+.hero-section .hero-quick-links .hero-quick-link {
+    flex: 0 0 auto;
+    width: auto;
+    min-height: 48px;
+    padding: .65rem 1.1rem;
+    font-size: .95rem;
+    border-radius: 13px;
+    line-height: 1.3;
+    white-space: nowrap;
+}
+
+.hero-section .hero-quick-links .hero-btn-secondary.hero-quick-link {
+    min-width: 105px;
+}
+
+.hero-section .hero-quick-links .hero-quick-link-featured {
+    grid-column: auto;
+}
+
+@media (max-width: 650px) {
+    .hero-inner .hero-quick-links {
+        gap: .55rem;
+    }
+
+    .hero-section .hero-quick-links .hero-quick-link {
+        min-height: 43px;
+        padding: .55rem .75rem;
+        font-size: .82rem;
+        white-space: normal;
+    }
+
+    .hero-section .hero-quick-links .hero-btn-secondary.hero-quick-link {
+        min-width: 0;
+    }
+}
+
+
+/* ===== Ronda 8: portada completa en la primera pantalla ===== */
+/* Los accesos regresan a la columna del texto, directamente bajo el párrafo. */
+@media (min-width: 900px) {
+    .hero-section {
+        min-height: calc(100svh - 88px);
+        align-items: center;
+    }
+
+    .hero-inner {
+        grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr);
+        gap: clamp(1.4rem, 3.2vw, 3rem);
+        padding: clamp(1.1rem, 3vh, 2rem) clamp(1.35rem, 3vw, 2.5rem);
+    }
+
+    .hero-left {
+        min-width: 0;
+    }
+
+    .hero-title {
+        font-size: clamp(2.55rem, 4.7vw, 4.25rem);
+        line-height: 1.04;
+        margin-bottom: .9rem;
+    }
+
+    .hero-date-label {
+        margin-bottom: .9rem;
+    }
+
+    .hero-subtitle {
+        font-size: clamp(.89rem, 1.12vw, 1.02rem);
+        line-height: 1.5;
+        max-width: 680px;
+        margin-bottom: 1.25rem;
+    }
+
+    .hero-inner .hero-quick-links {
+        grid-column: auto;
+        width: 100%;
+        gap: .65rem;
+        flex-wrap: nowrap;
+        margin: 0;
+    }
+
+    .hero-section .hero-quick-links .hero-quick-link {
+        font-size: clamp(.76rem, .97vw, .92rem);
+        min-height: 44px;
+        padding: .58rem .8rem;
+        border-radius: 12px;
+    }
+
+    .hero-section .hero-quick-links .hero-btn-secondary.hero-quick-link {
+        min-width: 78px;
+    }
+
+    .hero-section .hero-photo {
+        max-height: min(62vh, 610px);
+        object-fit: cover;
+    }
+}
+
+/* En portátil baja: proteger la visibilidad de todo el contenido. */
+@media (min-width: 900px) and (max-height: 760px) {
+    .hero-inner {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    .hero-title {
+        font-size: clamp(2.25rem, 4.1vw, 3.45rem);
+    }
+
+    .hero-date-label {
+        margin-bottom: .55rem;
+    }
+
+    .hero-subtitle {
+        font-size: .84rem;
+        line-height: 1.4;
+        margin-bottom: .9rem;
+    }
+
+    .hero-section .hero-quick-links .hero-quick-link {
+        min-height: 40px;
+        padding: .45rem .65rem;
+    }
+}
+
+@media (max-width: 899px) {
+    .hero-inner {
+        gap: 1.4rem;
+        padding: 2rem 1.25rem;
+    }
+
+    .hero-title {
+        font-size: clamp(2.35rem, 8vw, 3.7rem);
+    }
+
+    .hero-subtitle {
+        max-width: 680px;
+        line-height: 1.5;
+        margin-bottom: 1.3rem;
+    }
+
+    .hero-inner .hero-quick-links {
+        grid-column: auto;
+        justify-content: flex-start;
+    }
+}
+
+/* Navegación compartida y portada institucional */
+.site-header .nav-info-link {
+    justify-content: center;
+    width: 44px;
+    min-height: 44px;
+    padding: 0;
+}
+
+@media (min-width: 992px) {
+    .site-header .header-container {
+        position: relative;
+    }
+
+    .site-header .main-nav {
+        flex: 1 1 auto;
+        justify-content: center;
+        padding-inline-end: 3rem;
+    }
+
+    .site-header .nav-list {
+        gap: clamp(.25rem, 1.35vw - .55rem, 1.35rem);
+    }
+
+    .site-header .nav-user-actions {
+        position: absolute;
+        inset-inline-end: 1.5rem;
+    }
+}
+
+#home .hero-quick-links {
+    flex-wrap: wrap;
+}
+
+#home .hero-quick-links .hero-quick-link {
+    min-height: 52px;
+    padding: .72rem clamp(.85rem, 1.4vw, 1.25rem);
+    font-size: clamp(.9rem, 1.2vw, 1rem);
+    border-radius: 999px;
+    white-space: normal;
+}
+
+#home .hero-quick-links .hero-btn-secondary {
+    min-width: 6rem;
+}
+/* Composición de portada ICCB 2027 */
+.cover-artwork {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: #edeae4 url('../img/ICCB_Plano_Blanco.png') 116% center / 68% auto no-repeat;
+}
+
+.cover-artwork::after {
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(237, 234, 228, .95) 3%, rgba(237, 234, 228, .91) 30%, rgba(237, 234, 228, .74) 43%, transparent 58%);
+}
+
+.cover-figures {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.cover-figure {
+    position: absolute;
+    display: block;
+    width: var(--figure-width);
+    max-width: none;
+    height: auto;
+    transform: rotate(var(--angle));
+    pointer-events: none;
+}
+
+.cover-figure--teporingo {
+    --figure-width: 43%;
+    --angle: -26deg;
+    top: -19%;
+    right: -13%;
+}
+
+.cover-figure--armadillo {
+    --figure-width: 49%;
+    --angle: -36deg;
+    top: -24%;
+    left: 36%;
+}
+
+.cover-figure--cacomixtle {
+    --figure-width: 52%;
+    --angle: -45deg;
+    top: 3%;
+    left: -4%;
+}
+
+.cover-figure--jaguar {
+    --figure-width: 53%;
+    --angle: -13deg;
+    bottom: -10%;
+    left: 2%;
+}
+
+.cover-figure--colibri {
+    --figure-width: 50%;
+    --angle: -32deg;
+    right: -12%;
+    bottom: -10%;
+}
+
+#home .hero-inner {
+    pointer-events: none;
+    grid-template-columns: minmax(0, 1fr);
+}
+
+#home .hero-quick-link {
+    pointer-events: auto;
+}
+
+#home .hero-left {
+    width: min(100%, 34rem, 48vw);
+}
+
+@media (max-width: 899px) {
+    .cover-artwork {
+        background-position: center top;
+        background-size: 100% auto;
+    }
+
+    .cover-artwork::after {
+        background: linear-gradient(180deg, transparent 12%, #edeae4 56%);
+    }
+
+    #home .hero-inner {
+        padding-top: clamp(10rem, 36vw, 18rem);
+    }
+
+    #home .hero-left {
+        width: min(100%, 34rem);
+        margin-inline: auto;
+    }
+}
+
+@media (max-width: 650px) {
+    .cover-artwork {
+        background-size: 125% auto;
+    }
+
+    .cover-figure { width: calc(var(--figure-width) * 1.28); }
+    .cover-figure--armadillo { top: -8%; }
+    .cover-figure--cacomixtle { top: 13%; left: -17%; }
+    .cover-figure--teporingo { top: 5%; right: -28%; }
+    .cover-figure--jaguar { bottom: 1%; left: -6%; }
+    .cover-figure--colibri { bottom: 9%; right: -26%; }
+}
+
+/* La zona del cursor permanece fija mientras se mueve la imagen. */
+.cover-figure::after {
+    content: "";
+    position: absolute;
+    inset: 19% 13%;
+    pointer-events: auto;
+}
+
+.cover-figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+    scale: 1;
+    animation: cover-float var(--float-duration) ease-in-out var(--float-delay) infinite;
+    transition: scale 380ms ease-out;
+}
+
+.cover-figure:hover img {
+    scale: 1.07;
+}
+
+.cover-figure--teporingo { --float-duration: 5.4s; --float-delay: -.7s; --float-x: 12px; --float-y: -26px; }
+.cover-figure--armadillo { --float-duration: 6.3s; --float-delay: -2.1s; --float-x: -14px; --float-y: -22px; }
+.cover-figure--cacomixtle { --float-duration: 5.8s; --float-delay: -3.5s; --float-x: -18px; --float-y: -28px; }
+.cover-figure--jaguar { --float-duration: 6.8s; --float-delay: -4.7s; --float-x: 14px; --float-y: -24px; }
+.cover-figure--colibri { --float-duration: 4.7s; --float-delay: -1.6s; --float-x: -20px; --float-y: -36px; }
+
+@keyframes cover-float {
+    0%, 100% { translate: 0 0; }
+    50% {
+        translate: calc(var(--float-x) * var(--float-amplitude, 1))
+                   calc(var(--float-y) * var(--float-amplitude, 1));
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .cover-figure img {
+        --float-amplitude: .35;
+    }
 }
