@@ -5,6 +5,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Envía el origen del sitio a los proveedores de mapas (evita bloqueos 403 por falta de Referer) -->
+    <meta name="referrer" content="strict-origin-when-cross-origin">
     <title>Mapa y Recorridos | Puebla, Capital de la Biodiversidad · ICCB 2027</title>
     <meta name="description"
         content="Mapa interactivo de puntos de interés y fichas de rutas por el Centro Histórico de Puebla, murales de Cholula, espacios de biodiversidad y gastronomía.">
@@ -13,7 +15,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
-    <link rel="icon" type="image/png" href="assets/img/Logo Main__Logo Complete.png">
+    <link rel="icon" type="image/png" href="assets/img/Logo_CompleteD.png">
 
     <!-- Hoja de estilos de Leaflet para el mapa interactivo -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
@@ -23,7 +25,7 @@
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
-<body>
+<body class="section-themed">
     <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
 
     <!-- ==========================================================================
@@ -32,17 +34,13 @@
     <header class="site-header">
         <div class="header-container">
             <a href="index.html" class="brand-wrapper" aria-label="ICCB 2027 Puebla · BUAP">
-                <img src="assets/img/Logo Main__Logo Complete.png" alt="ICCB 2027"
-                    class="brand-logo-img brand-logo-iccb">
+                <img src="assets/img/Logo Yellow Talavera.png" alt="ICCB 2027" class="brand-logo-img brand-logo-iccb">
                 <span class="brand-divider" aria-hidden="true"></span>
-                <img src="assets/img/Logo_BUAP.webp" alt="BUAP" class="brand-logo-img brand-logo-buap">
+                <img src="assets/img/Logo_BUAP_Blanco.png" alt="BUAP" class="brand-logo-img brand-logo-buap">
             </a>
 
             <div class="header-mobile-right">
-                <div class="lang-switcher-vertical mobile-header-lang" aria-label="Selector de idioma">
-                    <a href="#" class="lang-pill active" lang="es">ES</a>
-                    <a href="#" class="lang-pill" lang="en">EN</a>
-                </div>
+
                 <button type="button" class="nav-toggle-btn" id="nav-toggle-btn" aria-expanded="false"
                     aria-controls="main-nav" aria-label="Abrir menú">
                     <span></span><span></span><span></span>
@@ -53,90 +51,64 @@
                 <ul class="nav-list">
                     <li>
                         <a href="ccl.html" class="nav-link">
-                            <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M9 18h6" />
-                                <path d="M10 22h4" />
-                                <path d="M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z" />
-                            </svg>
-                            <span>Laboratorio</span>
+                            <span>CCLabs</span>
                         </a>
                     </li>
                     <li>
                         <a href="agenda.html" class="nav-link">
-                            <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M4 6a3 3 0 0 1 3-3h10a3 3 0 0 1 3 3v13a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V6z" />
-                                <path d="M4 10h16" />
-                                <path d="M8 2v3M16 2v3" stroke-width="2.2" />
-                            </svg>
                             <span>Agenda</span>
                         </a>
                     </li>
                     <li>
-                        <a href="exploracion.html" class="nav-link highlight">
-                            <svg class="nav-icon-gold" width="18" height="18" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                                <circle cx="12" cy="12" r="2.5" fill="currentColor" />
-                                <circle cx="12" cy="4" r="1" fill="currentColor" />
-                                <circle cx="20" cy="12" r="1" fill="currentColor" />
-                                <circle cx="12" cy="20" r="1" fill="currentColor" />
-                                <circle cx="4" cy="12" r="1" fill="currentColor" />
-                            </svg>
+                        <a href="exploracion.html" class="nav-link">
                             <span>Día de la Exploración</span>
                         </a>
                     </li>
                     <li>
                         <a href="rutas.html" class="nav-link active">
-                            <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                                <polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21" />
-                                <line x1="9" y1="3" x2="9" y2="18" />
-                                <line x1="15" y1="6" x2="15" y2="21" />
-                            </svg>
                             <span>Rutas</span>
                         </a>
                     </li>
                     <li>
                         <a href="menu.html" class="nav-link">
-                            <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M17 8h1a4 4 0 0 1 0 8h-1" />
-                                <path d="M3 8h14v7a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8z" />
-                            </svg>
                             <span>Sabores</span>
                         </a>
                     </li>
                     <li>
                         <a href="participa.html" class="nav-link">
-                            <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                                <path
-                                    d="M11 13.5l-2.5-2.5a3.5 3.5 0 0 0-5 5l4 4a4 4 0 0 0 5.6 0l5.4-5.4a3.5 3.5 0 0 0-5-5L11 12" />
-                            </svg>
                             <span>Participa</span>
                         </a>
                     </li>
-                    <li>
-                        <a href="info.html" class="nav-link">
-                            <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                                <circle cx="12" cy="12" r="9.5" />
-                                <line x1="12" y1="11" x2="12" y2="17" stroke-width="2.2" />
-                                <circle cx="12" cy="7.5" r="1.5" fill="currentColor" stroke="none" />
-                            </svg>
-                            <span>Información</span>
-                        </a>
-                    </li>
+
                 </ul>
 
-                <div class="nav-user-actions">
-                    <div class="lang-switcher-vertical desktop-header-lang" aria-label="Selector de idioma">
+
+            </nav>
+            <div class="header-tools">
+                <a href="info.html" class="nav-link nav-info-link" aria-label="Información"
+                            title="Información"><svg aria-hidden="true" focusable="false" width="22" height="22"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                                stroke-linecap="round">
+                                <circle cx="12" cy="12" r="9" />
+                                <path d="M12 11v5m0-8h.01" />
+                            </svg>
+                        </a>
+                <div class="header-language">
+                    <button type="button" class="language-toggle" aria-label="Selector de idioma"
+                        aria-expanded="false" aria-controls="header-language-options">
+                        <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <circle cx="12" cy="12" r="9"/>
+                            <ellipse cx="12" cy="12" rx="4" ry="9"/>
+                            <path d="M3 12h18M5 6.5h14M5 17.5h14"/>
+                        </svg>
+                    </button>
+                    <div id="header-language-options" class="lang-switcher-vertical header-language-options" hidden>
                         <a href="#" class="lang-pill active" lang="es" title="Español">ES</a>
                         <a href="#" class="lang-pill" lang="en" title="English">EN</a>
                     </div>
                 </div>
-            </nav>
+            </div>
         </div>
     </header>
 
@@ -273,7 +245,7 @@
                                     jardines urbanos con flora para polinizadores.</p>
 
                                 <div
-                                    style="background:var(--color-cream-light); padding:0.75rem; border-radius:var(--radius-sm); font-size:var(--font-xs); margin-bottom:0.85rem; line-height:1.55;">
+                                    style="background:#F7F5F1; padding:0.75rem; border-radius:0; font-size:var(--font-xs); margin-bottom:0.85rem; line-height:1.55; border:1px solid var(--color-cream-border);">
                                     <strong><svg width="13" height="13" viewBox="0 0 24 24" fill="none"
                                             stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                             stroke-linejoin="round" style="vertical-align:-2px; margin-right:3px;">
@@ -346,7 +318,7 @@
                                     prehispánicos y urbanos de San Pedro y San Andrés Cholula.</p>
 
                                 <div
-                                    style="background:var(--color-cream-light); padding:0.75rem; border-radius:var(--radius-sm); font-size:var(--font-xs); margin-bottom:0.85rem; line-height:1.55;">
+                                    style="background:#F7F5F1; padding:0.75rem; border-radius:0; font-size:var(--font-xs); margin-bottom:0.85rem; line-height:1.55; border:1px solid var(--color-cream-border);">
                                     <strong><svg width="13" height="13" viewBox="0 0 24 24" fill="none"
                                             stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                             stroke-linejoin="round" style="vertical-align:-2px; margin-right:3px;">
@@ -420,7 +392,7 @@
                                     cactáceas de Tehuacán y la Laguna de San Baltazar.</p>
 
                                 <div
-                                    style="background:var(--color-cream-light); padding:0.75rem; border-radius:var(--radius-sm); font-size:var(--font-xs); margin-bottom:0.85rem; line-height:1.55;">
+                                    style="background:#F7F5F1; padding:0.75rem; border-radius:0; font-size:var(--font-xs); margin-bottom:0.85rem; line-height:1.55; border:1px solid var(--color-cream-border);">
                                     <strong><svg width="13" height="13" viewBox="0 0 24 24" fill="none"
                                             stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                             stroke-linejoin="round" style="vertical-align:-2px; margin-right:3px;">
@@ -493,7 +465,7 @@
                                     de sombra, meliponarios y bosque mesófilo de montaña.</p>
 
                                 <div
-                                    style="background:var(--color-cream-light); padding:0.75rem; border-radius:var(--radius-sm); font-size:var(--font-xs); margin-bottom:0.85rem; line-height:1.55;">
+                                    style="background:#F7F5F1; padding:0.75rem; border-radius:0; font-size:var(--font-xs); margin-bottom:0.85rem; line-height:1.55; border:1px solid var(--color-cream-border);">
                                     <strong><svg width="13" height="13" viewBox="0 0 24 24" fill="none"
                                             stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                             stroke-linejoin="round" style="vertical-align:-2px; margin-right:3px;">
@@ -592,7 +564,7 @@
                 <ul class="footer-nav">
                     <li><a href="participa.html">Formularios y Participación</a></li>
                     <li><a href="info.html">Información para Visitantes y Preguntas Frecuentes</a></li>
-                    <li><a href="info.html#guia-actualizacion">Guía de Administración del Comité</a></li>
+                    <li><a href="info.html#preguntas-frecuentes">Preguntas frecuentes</a></li>
                 </ul>
             </div>
         </div>
@@ -613,7 +585,10 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
         integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     <script src="assets/js/data.js"></script>
-    <script src="assets/js/main.js"></script>
+    <script src="assets/js/i18n-en.js"></script>
+    <script src="assets/js/i18n.js"></script>
+
+<script src="assets/js/main.js"></script>
     <script src="assets/js/rutas.js"></script>
 </body>
 

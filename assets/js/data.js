@@ -2,16 +2,13 @@
  * ==============================================================================
  * ARCHIVO CENTRAL DE DATOS (UNA SOLA FUENTE DE INFORMACIÓN): data.js
  * ==============================================================================
- * ¡Hola! Este archivo cumple uno de los principios más importantes del documento
- * "Arquitectura y requerimientos del micrositio Puebla, Capital de la Biodiversidad":
  *
- * PRINCIPIO DE "UNA SOLA FUENTE DE INFORMACIÓN" (Secciones 1, 5 y 8 del PDF):
  * "Cada actividad debe tener un identificador único y almacenarse una sola vez.
- *  La agenda, el mapa y las secciones temáticas deben recuperar la información
+ *  La agenda, el mapa y las secciones temáticas recuperan la información
  *  del mismo registro. El comité puede actualizar o retirar una actividad sin
  *  modificar varias páginas manualmente."
  *
- * ¿CÓMO ACTUALIZAR EL SITIO DESPUÉS DE LA ENTREGA?
+ * ¿CÓMO ACTUALIZAR EL SITIO ?
  * - Para AGREGAR una actividad: Copia uno de los bloques {...} dentro de ACTIVIDADES_DATA
  *   y cambia sus datos con un nuevo código único (ej. "ACT-013").
  * - Para CAMBIAR EL ESTADO: Cambia el campo "estado" entre:
@@ -21,15 +18,6 @@
  * - Para RETIRAR una actividad: Cambia "visible: true" por "visible: false" o bórrala.
  * ==============================================================================
  */
-
-const SITIO_CONFIG = {
-    nombreIniciativa: "Puebla, Capital de la Biodiversidad",
-    congreso: "ICCB 2027 · 33º Congreso Internacional de Biología de la Conservación",
-    periodoGeneral: "7 de junio al 2 de julio de 2027",
-    diaExploracionFecha: "2 de julio de 2027",
-    responsableActualizacion: "Comité Organizador Local ICCB 2027 · BUAP & SCB",
-    ultimaActualizacion: "Noviembre 2026"
-};
 
 /**
  * ==============================================================================
@@ -117,6 +105,7 @@ const ACTIVIDADES_DATA = [
         publico: "familias",
         publicoEtiqueta: "Familias y todo público",
         fecha: "2027-06-14",
+        fechaFin: "2027-07-02",
         fechaTexto: "14 de junio al 2 de julio de 2027",
         horario: "10:00 – 18:00 h",
         ubicacion: "Museo Amparo, 2 Sur 708, Centro Histórico",
@@ -345,7 +334,7 @@ const SABORES_DATA = [
         nombrePlatillo: "Café de Sombra de la Sierra Norte y Pan de Maíz Azul",
         establecimiento: "Cafetería El Patio de los Azulejos",
         tipo: "Cafetería y barra de especialidad",
-        icono: "assets/img/Logo Animals__Logo_Armadilo.png",
+        icono: "assets/img/Figuras/Armadilo.png",
         descripcion: "Café arábica cultivado bajo dosel de bosque mesófilo en Cuetzalan que conserva el hábitat de aves migratorias, acompañado de repostería con maíz criollo.",
         ubicacion: "Av. 3 Poniente 312, Centro Histórico, Puebla",
         coords: [19.0439, -98.2005],
@@ -363,7 +352,7 @@ const SABORES_DATA = [
         nombrePlatillo: "Mole Poblano Tradicional con Quelites de Milpa Sustentable",
         establecimiento: "Restaurante La Casona del Quelite",
         tipo: "Restaurante de cocina patrimonial",
-        icono: "assets/img/Logo Animals__Logo_cacomixtle.png",
+        icono: "assets/img/Figuras/cacomixtle.png",
         descripcion: "Mole elaborado con chiles poblanos nativos (mulato, pasilla y chilhuacle), cacao criollo agroforestal y guarnición de quelites cultivados en milpa tradicional.",
         ubicacion: "Calle 6 Sur 404, Barrio de los Sapos, Centro Histórico",
         coords: [19.0412, -98.1951],
@@ -381,7 +370,7 @@ const SABORES_DATA = [
         nombrePlatillo: "Degustación de Mieles de Abeja Melipona (Pisilnekmej) e Infusiones",
         establecimiento: "Salón Botánico Tosepan · Sede Invitada",
         tipo: "Experiencia gastronómica y bebidas",
-        icono: "assets/img/Logo Animals__Logo_Teporingo.png",
+        icono: "assets/img/Figuras/Teporingo.png",
         descripcion: "Bebidas refrescantes e infusiones herbales endulzadas con miel virgen de abeja nativa sin aguijón manejada en ollas de barro por cooperativas totonacas y nahuas.",
         ubicacion: "Calle 5 Oriente 208, Centro Histórico",
         coords: [19.0420, -98.1968],
@@ -399,7 +388,7 @@ const SABORES_DATA = [
         nombrePlatillo: "Menú de Temporada: Hongos Comestibles de Cultura Forestal y Tlacoyos",
         establecimiento: "Cocina de Humo Malintzi (En evaluación)",
         tipo: "Restaurante / Cocina tradicional",
-        icono: "assets/img/Logo Animals__Logo_Colibri.png",
+        icono: "assets/img/Figuras/Colibri.png",
         descripcion: "Propuesta gastronómica con hongos cultivados de forma sustentable y maíces nativos de San Miguel Canoa. Sujeta a verificación de trazabilidad ecológica.",
         ubicacion: "San Andrés Cholula, Puebla",
         coords: [19.0540, -98.2980],
@@ -699,199 +688,3 @@ const RUTAS_DATA = {
         ]
     }
 };
-
-/**
- * ==============================================================================
- * LABORATORIO DE CONSERVACIÓN CREATIVA — LOS 12 EQUIPOS Y 4 EJES TEMÁTICOS
- * ==============================================================================
- * Información oficial extraída de:
- * https://iccb.viep.com.mx/respaldo/index.php?page=conservation-labs
- * (120 horas por estudiante · 12 equipos · 4 ejes · 72 estudiantes · 12 tutores ·
- *  Enero–mayo 2027 · Universidades: UDLAP, IBERO Puebla, UPAEP y BUAP).
- */
-const CCL_EQUIPOS_DATA = [
-    // =========================================================================
-    // EJE 1 · DISEÑO PARA LA CONSERVACIÓN (3 EQUIPOS)
-    // =========================================================================
-    {
-        id: "CCL-01",
-        nombreProyecto: "Equipo 1 · Conservación de Tortugas en Ecuador",
-        eje: "Eje 1 · Diseño para la Conservación (3 equipos)",
-        universidad: "UDLAP · IBERO Puebla · UPAEP · BUAP (Equipos interuniversitarios)",
-        estudiantes: "6 estudiantes interdisciplinarios (conformación por sorteo el 25 de noviembre · 120 horas por estudiante)",
-        profesorAsesor: "Profesor asesor experto en Diseño para la Conservación (16 sesiones semanales de asesoría)",
-        organizacionColaboradora: "Proyecto específico de conservación de tortugas en Ecuador (vinculado por la Coordinación General)",
-        reto: "Desarrollar soluciones aplicadas de diseño y comunicación para un proyecto concreto de conservación de tortugas en Ecuador.",
-        productoDesarrollado: "Productos de diseño y comunicación acordados con el profesor asesor según las necesidades del proyecto (entrega: principios de mayo 2027; muestra pública: finales de mayo 2027).",
-        imagen: "assets/img/Logo Animals__Logo_Teporingo.png",
-        estado: "confirmada",
-        enlaceProducto: "https://docs.google.com/forms/d/e/1FAIpQLSeNaShmbtlkITkSmOodgJaD7nTkFuyAS4eptApfbJehxj9HMg/viewform"
-    },
-    {
-        id: "CCL-02",
-        nombreProyecto: "Equipo 2 · Proyecto de Conservación Relacionado con África",
-        eje: "Eje 1 · Diseño para la Conservación (3 equipos)",
-        universidad: "UDLAP · IBERO Puebla · UPAEP · BUAP (Equipos interuniversitarios)",
-        estudiantes: "6 estudiantes interdisciplinarios (conformación por sorteo el 25 de noviembre · 120 horas por estudiante)",
-        profesorAsesor: "Profesor asesor experto en Diseño para la Conservación (16 sesiones semanales de asesoría)",
-        organizacionColaboradora: "Proyecto específico de conservación relacionado con África (identificado durante la preparación del programa)",
-        reto: "Trabajar sobre un encargo concreto de conservación en África (no sobre el continente completo), delimitando el alcance comunicativo y visual.",
-        productoDesarrollado: "Productos de diseño y comunicación definidos junto con el profesor asesor y validados para la muestra pública de mayo de 2027.",
-        imagen: "assets/img/Logo Animals__Logo_Jaguar.png",
-        estado: "confirmada",
-        enlaceProducto: "https://docs.google.com/forms/d/e/1FAIpQLSeNaShmbtlkITkSmOodgJaD7nTkFuyAS4eptApfbJehxj9HMg/viewform"
-    },
-    {
-        id: "CCL-03",
-        nombreProyecto: "Equipo 3 · Proyecto de Conservación Relacionado con Asia",
-        eje: "Eje 1 · Diseño para la Conservación (3 equipos)",
-        universidad: "UDLAP · IBERO Puebla · UPAEP · BUAP (Equipos interuniversitarios)",
-        estudiantes: "6 estudiantes interdisciplinarios (conformación por sorteo el 25 de noviembre · 120 horas por estudiante)",
-        profesorAsesor: "Profesor asesor experto en Diseño para la Conservación (16 sesiones semanales de asesoría)",
-        organizacionColaboradora: "Proyecto específico de conservación relacionado con Asia (identificado durante la preparación del programa)",
-        reto: "Desarrollar una propuesta aplicada de diseño y comunicación para un proyecto concreto de conservación en Asia.",
-        productoDesarrollado: "Productos de diseño y comunicación acordados con el profesor asesor para entrega a principios de mayo de 2027.",
-        imagen: "assets/img/Logo Animals__Logo_Colibri.png",
-        estado: "confirmada",
-        enlaceProducto: "https://docs.google.com/forms/d/e/1FAIpQLSeNaShmbtlkITkSmOodgJaD7nTkFuyAS4eptApfbJehxj9HMg/viewform"
-    },
-
-    // =========================================================================
-    // EJE 2 · GASTRONOMÍA “SABORES QUE CONECTAN” (3 EQUIPOS)
-    // =========================================================================
-    {
-        id: "CCL-04",
-        nombreProyecto: "Equipo 1 · Plantas (Atlas Gastronómico de Plantas)",
-        eje: "Eje 2 · Gastronomía “Sabores que conectan” (3 equipos)",
-        universidad: "UDLAP · IBERO Puebla · UPAEP · BUAP (Equipos interuniversitarios)",
-        estudiantes: "6 estudiantes interdisciplinarios (120 horas: 16h asesoría, 8h pláticas, 30h campo, 50h autónomo, 16h cierre)",
-        profesorAsesor: "Profesor asesor del eje de Gastronomía y Saberes Bioculturales",
-        organizacionColaboradora: "Cocineras tradicionales, productores locales y colaboradores gastronómicos de Puebla",
-        reto: "Rescate y comunicación cultural de recetas y saberes gastronómicos relacionados con plantas comestibles, mostrando sus historias, prácticas, temporada y significados culturales.",
-        productoDesarrollado: "Recetario o catálogo de plantas comestibles (nombre común y científico, uso gastronómico, temporada, región e historia), fichas informativas, material audiovisual con testimonios, muestra gastronómica y Atlas gastronómico ilustrado o digital consultable mediante QR.",
-        imagen: "assets/img/Logo Animals__Logo_Armadilo.png",
-        estado: "confirmada",
-        enlaceProducto: "menu.html"
-    },
-    {
-        id: "CCL-05",
-        nombreProyecto: "Equipo 2 · Insectos (Recetario de Entomofagia Tradicional)",
-        eje: "Eje 2 · Gastronomía “Sabores que conectan” (3 equipos)",
-        universidad: "UDLAP · IBERO Puebla · UPAEP · BUAP (Equipos interuniversitarios)",
-        estudiantes: "6 estudiantes interdisciplinarios (120 horas: 16h asesoría, 8h pláticas, 30h campo, 50h autónomo, 16h cierre)",
-        profesorAsesor: "Profesor asesor del eje de Gastronomía y Saberes Bioculturales",
-        organizacionColaboradora: "Portadores de saberes culinarios tradicionales y comunidades recolectoras de Puebla",
-        reto: "Documentar recetas y saberes relacionados con el consumo tradicional de insectos (seleccionando 3–5 insectos, su preparación tradicional, historia, contexto cultural, ingredientes y técnicas).",
-        productoDesarrollado: "Fichas gastronómicas y culturales, material audiovisual de entrevistas y procesos, muestra o degustación de preparaciones y Recetario digital o impreso de entomofagia tradicional con material audiovisual mediante QR.",
-        imagen: "assets/img/Logo Animals__Logo_cacomixtle.png",
-        estado: "confirmada",
-        enlaceProducto: "menu.html"
-    },
-    {
-        id: "CCL-06",
-        nombreProyecto: "Equipo 3 · Postres y Bebidas (“Dulces de la Biodiversidad Poblana”)",
-        eje: "Eje 2 · Gastronomía “Sabores que conectan” (3 equipos)",
-        universidad: "UDLAP · IBERO Puebla · UPAEP · BUAP (Equipos interuniversitarios)",
-        estudiantes: "6 estudiantes interdisciplinarios (120 horas: 16h asesoría, 8h pláticas, 30h campo, 50h autónomo, 16h cierre)",
-        profesorAsesor: "Profesor asesor del eje de Gastronomía y Saberes Bioculturales",
-        organizacionColaboradora: "artesanas/os gastronómicos, productores de frutos, semillas y flores comestibles de Puebla",
-        reto: "Crear y documentar una colección de 3–5 postres o bebidas inspirados en ingredientes locales o tradicionales vinculados con la biodiversidad (planta o fruto de temporada, semilla, flor comestible o ingrediente tradicional poco utilizado).",
-        productoDesarrollado: "Colección de postres y bebidas “Dulces de la biodiversidad poblana”, fichas de ingredientes, recetas e historia del ingrediente, catálogo o recetario digital y muestra gastronómica para presentación pública.",
-        imagen: "assets/img/Logo Animals__Logo_Colibri.png",
-        estado: "confirmada",
-        enlaceProducto: "menu.html"
-    },
-
-    // =========================================================================
-    // EJE 3 · ARTESANÍAS Y BIOCULTURA “MANOS QUE CONECTAN” (3 EQUIPOS)
-    // =========================================================================
-    {
-        id: "CCL-07",
-        nombreProyecto: "Equipo 1 · Cerería Tradicional y Biodiversidad",
-        eje: "Eje 3 · Artesanías y biocultura “Manos que conectan” (3 equipos)",
-        universidad: "UDLAP · IBERO Puebla · UPAEP · BUAP (Equipos interuniversitarios)",
-        estudiantes: "6 estudiantes interdisciplinarios (120 horas por estudiante · Enero–mayo 2027)",
-        profesorAsesor: "Profesor asesor experto en Artesanías, Diseño y Patrimonio Biocultural",
-        organizacionColaboradora: "Maestras y maestros artesanos cereros de Puebla",
-        reto: "Documentar las prácticas artesanales de la cerería, sus procesos y los conocimientos asociados, incluidos materiales, ceras, ingredientes o elementos naturales y sus relaciones con la biodiversidad, respetando el contexto cultural y la participación de artesanas y artesanos.",
-        productoDesarrollado: "Intercambio de saberes, documentación de procesos y materiales de divulgación o exposición pública acordados con el profesor asesor y los artesanos colaboradores.",
-        imagen: "assets/img/Logo Animals__Logo_Teporingo.png",
-        estado: "confirmada",
-        enlaceProducto: "https://docs.google.com/forms/d/e/1FAIpQLSeNaShmbtlkITkSmOodgJaD7nTkFuyAS4eptApfbJehxj9HMg/viewform"
-    },
-    {
-        id: "CCL-08",
-        nombreProyecto: "Equipo 2 · Árboles de la Vida de la Mixteca",
-        eje: "Eje 3 · Artesanías y biocultura “Manos que conectan” (3 equipos)",
-        universidad: "UDLAP · IBERO Puebla · UPAEP · BUAP (Equipos interuniversitarios)",
-        estudiantes: "6 estudiantes interdisciplinarios (120 horas por estudiante · Enero–mayo 2027)",
-        profesorAsesor: "Profesor asesor experto en Artesanías, Diseño y Patrimonio Biocultural",
-        organizacionColaboradora: "Artesanas y artesanos alfareros de la región Mixteca poblana",
-        reto: "Documentar la tradición de los Árboles de la vida de la Mixteca, sus procesos de barro y pigmentos, los conocimientos asociados y su vínculo simbólico y material con la biodiversidad regional.",
-        productoDesarrollado: "Documentación biocultural de procesos, intercambio de saberes y materiales de divulgación y exposición para la muestra pública de finales de mayo de 2027.",
-        imagen: "assets/img/Logo Animals__Logo_Jaguar.png",
-        estado: "confirmada",
-        enlaceProducto: "https://docs.google.com/forms/d/e/1FAIpQLSeNaShmbtlkITkSmOodgJaD7nTkFuyAS4eptApfbJehxj9HMg/viewform"
-    },
-    {
-        id: "CCL-09",
-        nombreProyecto: "Equipo 3 · Textiles de la Sierra Norte",
-        eje: "Eje 3 · Artesanías y biocultura “Manos que conectan” (3 equipos)",
-        universidad: "UDLAP · IBERO Puebla · UPAEP · BUAP (Equipos interuniversitarios)",
-        estudiantes: "6 estudiantes interdisciplinarios (120 horas por estudiante · Enero–mayo 2027)",
-        profesorAsesor: "Profesor asesor experto en Artesanías, Diseño y Patrimonio Biocultural",
-        organizacionColaboradora: "Colectivos de artesanas y artesanos textiles de la Sierra Norte de Puebla",
-        reto: "Documentar las prácticas textiles de la Sierra Norte, sus procesos, iconografía de flora y fauna, fibras y tintes naturales vinculados con la biodiversidad, respetando el contexto cultural de las comunidades.",
-        productoDesarrollado: "Documentación de procesos, intercambio de saberes y materiales de divulgación o exposición acordados con las artesanas y el profesor asesor.",
-        imagen: "assets/img/Logo Animals__Logo_Armadilo.png",
-        estado: "confirmada",
-        enlaceProducto: "https://docs.google.com/forms/d/e/1FAIpQLSeNaShmbtlkITkSmOodgJaD7nTkFuyAS4eptApfbJehxj9HMg/viewform"
-    },
-
-    // =========================================================================
-    // EJE 4 · DOCUMENTALES “HISTORIAS QUE CONECTAN” (3 EQUIPOS)
-    // =========================================================================
-    {
-        id: "CCL-10",
-        nombreProyecto: "Equipo 1 · Biodiversidad y Experiencias de Personas que Migran a la Ciudad",
-        eje: "Eje 4 · Documentales “Historias que conectan” (3 equipos)",
-        universidad: "UDLAP · IBERO Puebla · UPAEP · BUAP (Equipos interuniversitarios)",
-        estudiantes: "6 estudiantes interdisciplinarios (producción con dispositivos móviles: teléfono o tableta)",
-        profesorAsesor: "Profesor experto en narrativa audiovisual y documental",
-        organizacionColaboradora: "Habitantes y comunidades migrantes en la ciudad de Puebla",
-        reto: "Explorar y narrar las relaciones con la biodiversidad, memorias del territorio y saberes bioculturales a través de las experiencias de personas que migran a la ciudad.",
-        productoDesarrollado: "Cortometraje documental de 5–9 minutos creado con dispositivos móviles (incluye investigación, guion, producción, edición y validación para muestra pública).",
-        imagen: "assets/img/Logo Animals__Logo_Colibri.png",
-        estado: "confirmada",
-        enlaceProducto: "https://docs.google.com/forms/d/e/1FAIpQLSeNaShmbtlkITkSmOodgJaD7nTkFuyAS4eptApfbJehxj9HMg/viewform"
-    },
-    {
-        id: "CCL-11",
-        nombreProyecto: "Equipo 2 · Percepciones de la Biodiversidad entre Quienes Viven en la Ciudad",
-        eje: "Eje 4 · Documentales “Historias que conectan” (3 equipos)",
-        universidad: "UDLAP · IBERO Puebla · UPAEP · BUAP (Equipos interuniversitarios)",
-        estudiantes: "6 estudiantes interdisciplinarios (producción con dispositivos móviles: teléfono o tableta)",
-        profesorAsesor: "Profesor experto en narrativa audiovisual y documental",
-        organizacionColaboradora: "Ciudadanía y colectivos urbanos de Puebla",
-        reto: "Retratar cómo perciben, entienden y se relacionan con la biodiversidad cotidiana las personas que habitan en la ciudad de Puebla.",
-        productoDesarrollado: "Cortometraje documental de 5–9 minutos creado con dispositivos móviles (incluye investigación, guion, producción, edición y validación para muestra pública).",
-        imagen: "assets/img/Logo Animals__Logo_cacomixtle.png",
-        estado: "confirmada",
-        enlaceProducto: "https://docs.google.com/forms/d/e/1FAIpQLSeNaShmbtlkITkSmOodgJaD7nTkFuyAS4eptApfbJehxj9HMg/viewform"
-    },
-    {
-        id: "CCL-12",
-        nombreProyecto: "Equipo 3 · Los Huehues en Huejotzingo y Conservación de Animales",
-        eje: "Eje 4 · Documentales “Historias que conectan” (3 equipos)",
-        universidad: "UDLAP · IBERO Puebla · UPAEP · BUAP (Equipos interuniversitarios)",
-        estudiantes: "6 estudiantes interdisciplinarios (producción con dispositivos móviles: teléfono o tableta)",
-        profesorAsesor: "Profesor experto en narrativa audiovisual y documental",
-        organizacionColaboradora: "Comunidad y cuadrillas de Huehues en Huejotzingo, Puebla",
-        reto: "Documentar el diálogo entre la tradición cultural de los Huehues en Huejotzingo y los retos actuales de conservación de animales y fauna silvestre.",
-        productoDesarrollado: "Cortometraje documental de 5–9 minutos creado con dispositivos móviles (incluye investigación, guion, producción, edición y validación para muestra pública).",
-        imagen: "assets/img/Logo Animals__Logo_Jaguar.png",
-        estado: "confirmada",
-        enlaceProducto: "https://docs.google.com/forms/d/e/1FAIpQLSeNaShmbtlkITkSmOodgJaD7nTkFuyAS4eptApfbJehxj9HMg/viewform"
-    }
-];
-

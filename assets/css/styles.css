@@ -1,25 +1,3 @@
-/* ==============================================================================
-   ¡BIENVENIDO AL ARCHIVO STYLES.CSS! (EL ARMARIO Y PINTURA DE TU PÁGINA)
-   ==============================================================================
-   Si HTML es el esqueleto de tu sitio, CSS es la piel, el maquillaje y la ropa.
-   En CSS siempre se sigue esta regla mágica:
-   
-   ¿A quién quiero vestir? {
-       ¿Qué prenda o pintura le pongo?: ¿De qué color o tamaño?;
-   }
-   
-   Ejemplo:
-   h1 {
-       color: red;  <-- "Al título h1 píntalo de rojo"
-   }
-   ============================================================================== */
-
-/* ==============================================================================
-   1. :root — LA CAJA DE PINTURAS Y MEDIDAS (VARIABLES)
-   Imagina que :root es una paleta de pintor donde guardamos colores y tamaños
-   con un nombre fácil. Si un día queremos cambiar el color azul de toda la web,
-   solo cambiamos una línea aquí y ¡pum!, se actualiza en todas partes.
-   ============================================================================== */
 :root {
     /* --- COLORES CREMA Y TIERRA (FONDOS Y BORDES SUAVES) --- */
     --color-cream: #F4F0E8;
@@ -147,14 +125,13 @@
 
 /* ==============================================================================
    2. REINICIO UNIVERSAL (RESET DE ESPACIOS)
-   El asterisco (*) significa "¡Para TODO el mundo en la página!".
-   Por defecto, los navegadores le ponen márgenes raros a todo; esto lo limpia a cero.
+   El asterisco (*) significa para toda la página
    ============================================================================== */
 *,
 *::before,
 *::after {
     /* box-sizing: border-box: Si una caja mide 100px de ancho y le pones borde de 5px,
-       sigue midiendo 100px exactos en total. ¡Evita que las cosas se descuadren! */
+       sigue midiendo 100px exactos en total. */
     box-sizing: border-box;
     margin: 0;
     /* Quita el margen exterior no deseado */
@@ -238,40 +215,6 @@ img {
     /* "auto" a los lados centra la caja automáticamente en medio de la pantalla */
     padding: 0 1.25rem;
     /* Espacio de colchón a izquierda y derecha para no chocar con el borde del celular */
-}
-
-/* ======================================================================
-           3. ICONOS VECTORIALES (SVG)
-           Alinea los iconitos al lado de los textos para que no bailen chuecos.
-           ====================================================================== */
-.talavera-icon,
-.nav-icon,
-.nav-icon-gold {
-    display: inline-block;
-    /* Se comporta como letra y como caja al mismo tiempo */
-    vertical-align: middle;
-    /* Centra el icono a la altura media del renglón de texto */
-    flex-shrink: 0;
-    /* Si no hay espacio, NUNCA permitas que el icono se aplaste */
-}
-
-/* Icono normal del menú (azul) */
-.nav-icon {
-    color: var(--color-talavera-blue);
-    transition: transform var(--transition-fast), color var(--transition-fast);
-}
-
-/* Cuando pasas el ratón o la página está activa, el icono sube 1px y cambia a azul marino */
-.nav-link:hover .nav-icon,
-.nav-link.active .nav-icon {
-    color: var(--color-navy);
-    transform: translateY(-1px);
-    /* Da un efecto sutil de brinquito hacia arriba */
-}
-
-/* Icono especial dorado para el Día de Exploración */
-.nav-icon-gold {
-    color: var(--color-navy-deep);
 }
 
 /* Flechita (→) que aparece al final de las tarjetas */
@@ -383,19 +326,12 @@ img {
     }
 }
 
-/* En pantallas chicas (celulares menores a 991px): esconder el selector de escritorio */
-@media(max-width:991px) {
-    .desktop-header-lang {
-        display: none !important;
-    }
-}
-
 /* ======================================================================
            5. LA BARRA SUPERIOR FIJA (.site-header)
            Se queda pegada arriba mientras haces scroll (position: sticky).
            ====================================================================== */
 .site-header {
-    background: #fff;
+    background: #ffffffaf;
     /* Fondo blanco limpio */
     position: sticky;
     /* Se pega al techo cuando bajas la página */
@@ -589,16 +525,6 @@ img {
     box-shadow: 0 4px 12px rgba(242, 184, 36, 0.4);
 }
 
-/* Acciones de usuario en el menú */
-.nav-user-actions {
-    margin-top: 0.75rem;
-    padding-top: 0.75rem;
-    border-top: 1px solid var(--color-border);
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
 /* ======================================================================
            7. MEDIA QUERY: MODO COMPUTADORA (Pantallas de 992px en adelante)
            Aquí cambiamos el comportamiento para que el menú no sea vertical
@@ -629,15 +555,6 @@ img {
         flex-direction: row;
         align-items: center;
         gap: 0.15rem;
-    }
-
-    .nav-user-actions {
-        margin-top: 0;
-        padding-top: 0;
-        border-top: none;
-        flex-direction: row;
-        align-items: center;
-        margin-left: 0.35rem;
     }
 }
 
@@ -715,24 +632,11 @@ img {
     /* Corta cualquier adorno que se salga de los bordes */
 }
 
-/* Capa contenedora de texturas y degradados de fondo */
-.hero-bg-media {
-    position: absolute;
-    /* Ocupa todo el fondo sin estorbar a los textos */
-    inset: 0;
-    /* Atajo para: top:0, left:0, right:0, bottom:0 */
-    overflow: hidden;
-    pointer-events: none;
-    /* Los clics traspasan esta capa como si fuera aire */
-    z-index: 0;
-    /* Está al fondo de todo */
-}
-
 /* Textura geométrica con el patrón de Talavera */
 .hero-bg-texture {
     position: absolute;
     inset: 0;
-    background-image: url('../img/Logo Main__Logo TExture Light.png');
+    background-image: url('../img/Logo Main__Logo Texture Dark.png');
     background-size: cover;
     /* Llena todo el espacio sin deformarse */
     background-position: center;
@@ -743,16 +647,6 @@ img {
     mix-blend-mode: multiply;
     /* Se funde con el color crema de fondo */
     z-index: 1;
-}
-
-/* Resplandores de luz dorada y azul en las esquinas */
-.hero-bg-radial {
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(circle at 65% 50%, rgba(232, 187, 73, 0.08) 0%, rgba(250, 248, 245, 0) 65%),
-        radial-gradient(circle at 15% 30%, rgba(26, 54, 93, 0.05) 0%, rgba(250, 248, 245, 0) 50%);
-    pointer-events: none;
-    z-index: 3;
 }
 
 /* Caja interior del Hero que divide en 2 columnas */
@@ -904,186 +798,6 @@ img {
     border-color: var(--color-gold);
     color: var(--color-navy-deep);
     transform: translateY(-2px);
-}
-
-/* Tira con logos patrocinadores en el Hero */
-.hero-logos-strip {
-    display: flex;
-    align-items: center;
-    gap: 1.25rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid var(--color-cream-border);
-}
-
-.hero-strip-logo {
-    height: 36px;
-    width: auto;
-    object-fit: contain;
-    opacity: 0.85;
-}
-
-/* Columna derecha del Hero: El marco de fotos */
-.hero-right {
-    display: flex;
-    flex-direction: column;
-    gap: 1.25rem;
-}
-
-/* Marco de la fotografía con bordes redondeados y sombra */
-.hero-photo-frame {
-    position: relative;
-    border-radius: var(--radius-lg);
-    overflow: hidden;
-    /* Redondea las esquinas de la foto adentro */
-    box-shadow: 0 20px 50px rgba(21, 23, 72, 0.12);
-    /* Sombra amplia */
-    border: 3px solid var(--color-cream-border);
-}
-
-/* La fotografía panorámica de Puebla */
-.hero-photo {
-    width: 100%;
-    display: block;
-    object-fit: cover;
-    aspect-ratio: 16/10;
-    /* Proporción de foto panorámica */
-}
-
-/* Etiqueta oscura semi-transparente sobre la foto */
-.hero-photo-label {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: linear-gradient(transparent, rgba(22, 20, 86, 0.85));
-    /* Degradado negro/azul */
-    padding: 1.5rem 1.25rem 1rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.1rem;
-}
-
-.hero-photo-city {
-    font-size: var(--font-md);
-    font-weight: 800;
-    color: #fff;
-    letter-spacing: -0.01em;
-}
-
-.hero-photo-sub {
-    font-size: var(--font-xs);
-    color: rgba(255, 255, 255, 0.7);
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-}
-
-/* Insignia decorativa con el patrón de Talavera */
-.hero-pattern-badge {
-    background: var(--color-cream);
-    border: 2px solid var(--color-cream-border);
-    border-radius: var(--radius-lg);
-    padding: 0.75rem 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: var(--shadow-sm);
-}
-
-.hero-pattern-badge img {
-    height: 72px;
-    width: auto;
-    object-fit: contain;
-}
-
-/* ======================================================================
-           9. BARRA DE BÚSQUEDA RÁPIDA (.search-section-wrap)
-           ====================================================================== */
-.search-section-wrap {
-    background: var(--color-cream);
-    padding: 1.5rem 1.5rem 0;
-}
-
-/* La caja blanca flotante de la búsqueda */
-.search-agenda-section {
-    background: #fff;
-    position: relative;
-    z-index: 10;
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-lg);
-    /* Sombra fuerte que hace que parezca flotar */
-    padding: 1.5rem;
-    max-width: 1160px;
-    margin: 0 auto 2rem;
-    border: 1px solid var(--color-cream-border);
-}
-
-/* Formulario en cuadrícula */
-.search-form-flex {
-    display: grid;
-    grid-template-columns: 1fr;
-    /* En celular: una sola columna */
-    gap: 1rem;
-    align-items: center;
-}
-
-/* En computadoras (768px en adelante): 3 columnas (campo, selector, botón) */
-@media(min-width:768px) {
-    .search-form-flex {
-        grid-template-columns: 2fr 1.25fr auto;
-    }
-}
-
-/* Envoltorio de la caja de texto para poner el icono de lupa adentro */
-.search-input-wrapper {
-    position: relative;
-}
-
-/* El campo de texto para escribir */
-.search-input {
-    width: 100%;
-    padding: 0.85rem 1rem 0.85rem 2.75rem;
-    /* El 2.75rem a la izquierda da espacio para la lupa */
-    border: 1.5px solid var(--color-border);
-    border-radius: var(--radius-md);
-    font-family: inherit;
-    font-size: var(--font-base);
-    color: var(--color-text-main);
-    background: var(--color-cream-light);
-    transition: all var(--transition-fast);
-}
-
-/* Al hacer clic en el campo de texto (focus) */
-.search-input:focus {
-    border-color: var(--color-talavera-blue);
-    background: #fff;
-    box-shadow: 0 0 0 4px var(--color-soft-blue-light);
-    /* Anillo azul suave alrededor */
-    outline: none;
-    /* Quita el borde negro por defecto del navegador */
-}
-
-/* Icono de la lupa colocado exactamente adentro del campo */
-.search-icon {
-    position: absolute;
-    left: 1rem;
-    top: 50%;
-    transform: translateY(-50%);
-    /* Centrado vertical perfecto */
-    color: var(--color-text-muted);
-}
-
-/* Menú desplegable (<select>) */
-.search-select {
-    padding: 0.85rem 1rem;
-    border: 1.5px solid var(--color-border);
-    border-radius: var(--radius-md);
-    font-family: inherit;
-    font-size: var(--font-base);
-    color: var(--color-text-main);
-    background: var(--color-cream-light);
-    cursor: pointer;
-    width: 100%;
 }
 
 /* ======================================================================
@@ -1438,16 +1152,6 @@ img {
     background: var(--color-cream-light);
 }
 
-/* Encabezado del capítulo o sección */
-.page-section-header {
-    /* max-width: que el texto no se estire más de 780 píxeles, para que no canse la vista al leer */
-    max-width: 780px;
-    /* margin: 0 auto lo centra como un cuadro en la pared; y 3rem de espacio abajo */
-    margin: 0 auto 3rem;
-    /* text-align: centrado */
-    text-align: center;
-}
-
 /* ==========================================================================
            EL BANNER HERO DE LAS PÁGINAS INTERNAS (.page-hero-banner):
            Es el letrero azul grande y brillante en la parte superior de páginas como
@@ -1515,98 +1219,6 @@ img {
     margin: 0 auto;
     /* line-height: altura entre renglones para que se lea cómodamente */
     line-height: 1.6;
-}
-
-/* ==========================================================================
-           ELEMENTOS DE LA AGENDA / CALENDARIO (.agenda-item):
-           Aquí organizamos las actividades del festival por días y horarios.
-           ========================================================================== */
-/* Grupo de actividades de un día en particular */
-.agenda-day-group {
-    /* Espacio de 2.5rem antes de que comience el siguiente día */
-    margin-bottom: 2.5rem;
-}
-
-/* El título de cada día (por ejemplo: "Viernes 14 de Noviembre") */
-.agenda-day-label {
-    /* Letra grande y destacada */
-    font-size: var(--font-lg);
-    /* 800: bien gordita/negrita */
-    font-weight: 800;
-    /* Color azul marino */
-    color: var(--color-navy);
-    /* Espacio de colchón antes de la línea dorada */
-    padding-bottom: 0.75rem;
-    /* Línea dorada de 2px abajo como una regla elegante */
-    border-bottom: 2px solid var(--color-gold);
-    /* Separación con las tarjetas de eventos */
-    margin-bottom: 1.25rem;
-    /* Flexbox para alinear el texto y posibles iconitos en la misma línea */
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-/* Cada tarjetita de evento individual en el horario */
-.agenda-item {
-    /* Fondo blanco limpio */
-    background: #fff;
-    /* Borde cremita muy suave */
-    border: 1px solid var(--color-cream-border);
-    /* Esquinas redondeadas */
-    border-radius: var(--radius-md);
-    /* Relleno interno: 1.25rem arriba/abajo, 1.5rem a los lados */
-    padding: 1.25rem 1.5rem;
-    /* Separación con el siguiente evento */
-    margin-bottom: 0.75rem;
-    /* display: grid: creamos una cuadrícula de 3 columnas:
-               1. auto: el espacio justo para la hora (ej: "10:00 AM")
-               2. 1fr: todo el espacio sobrante para el título y descripción
-               3. auto: el espacio justo para el botón o etiqueta de cupo */
-    display: grid;
-    grid-template-columns: auto 1fr auto;
-    /* Distancia entre las 3 columnas */
-    gap: 1.25rem;
-    /* Centrado vertical de los 3 elementos */
-    align-items: center;
-    /* Animación suave al pasar el cursor */
-    transition: all var(--transition-fast);
-}
-
-/* Efecto al pasar el ratón sobre un evento de la agenda */
-.agenda-item:hover {
-    /* Sombra que levanta la tarjeta */
-    box-shadow: var(--shadow-md);
-    /* El borde se enciende en azul talavera */
-    border-color: var(--color-talavera-blue);
-}
-
-/* La cajita que muestra la hora */
-.agenda-time {
-    /* Negrita extra */
-    font-weight: 800;
-    /* Color azul talavera representativo */
-    color: var(--color-talavera-blue);
-    /* Tamaño pequeño pero visible */
-    font-size: var(--font-sm);
-    /* white-space: nowrap: ¡prohibido dividirse en dos líneas! (ej: "10:00" y abajo "AM") */
-    white-space: nowrap;
-    /* Ancho mínimo para que todas las horas queden bien alineadas en columna */
-    min-width: 65px;
-}
-
-/* Título del evento */
-.agenda-info h4 {
-    font-size: var(--font-base);
-    font-weight: 700;
-    color: var(--color-navy);
-    margin-bottom: 0.15rem;
-}
-
-/* Lugar o detalles del evento */
-.agenda-info p {
-    font-size: var(--font-sm);
-    color: var(--color-text-muted);
 }
 
 /* ==========================================================================
@@ -2223,22 +1835,6 @@ img {
 }
 
 /* ==========================================================================
-           LÍNEA DIVISORIA DECORATIVA (.section-divider):
-           Una línea fina pero colorida con un degradado que une oro y talavera.
-           ========================================================================== */
-.section-divider {
-    /* 4 píxeles de grosor */
-    height: 4px;
-    /* Degradado de izquierda a derecha: Dorado -> Azul Talavera -> Dorado */
-    background: linear-gradient(90deg, var(--color-gold), var(--color-talavera-blue), var(--color-gold));
-    /* Opacidad al 50% para que sea suave y no deslumbre */
-    opacity: 0.5;
-    /* Quitamos el borde por defecto de la etiqueta <hr> */
-    border: none;
-    margin: 0;
-}
-
-/* ==========================================================================
            NUEVOS COMPONENTES DE LA ARQUITECTURA ICCB 2027 (SECCIONES 2, 3, 4 Y 7):
            Aquí agregamos los estilos para:
            1. El Directorio Común de Actividades con múltiples filtros.
@@ -2300,6 +1896,87 @@ img {
     color: var(--color-text-main);
     background: var(--color-cream-light);
 }
+
+.agenda-filters {
+    margin-bottom: 1.25rem;
+}
+
+.agenda-filter-toggle {
+    background: #fff;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+}
+
+.agenda-filter-toggle:hover {
+    background: var(--color-cream-light);
+}
+
+.agenda-filter-toggle span {
+    margin-inline-end: auto;
+}
+
+.agenda-filters[open] .agenda-filter-toggle::after {
+    transform: rotate(225deg);
+}
+
+.agenda-filters .directory-filter-box {
+    margin-block: .65rem 0;
+}
+
+
+.form-demo-note {
+    margin-bottom: 1rem;
+    color: var(--color-text-muted);
+}
+
+/* Agenda por fecha */
+.agenda-date-panel {
+    margin-bottom: .8rem;
+    border: 1px solid var(--color-cream-border);
+    background: #fff;
+}
+
+.agenda-date-panel[data-fecha="2027-07-02"] {
+    border: 2px solid var(--color-gold);
+}
+
+.agenda-date-summary {
+    display: flex;
+    align-items: center;
+    gap: .65rem 1rem;
+    padding: .9rem 1rem;
+    list-style: none;
+    cursor: pointer;
+    background: #e3efed;
+    color: var(--color-navy);
+    font-weight: 800;
+}
+
+.agenda-date-summary::-webkit-details-marker { display: none; }
+.agenda-date-summary:hover { background: #d8e9e6; }
+.agenda-date-summary:focus-visible { outline: 2px solid var(--color-talavera-blue); outline-offset: -2px; }
+.agenda-date-summary time { margin-inline-end: auto; }
+.agenda-date-summary time::first-letter { text-transform: uppercase; }
+
+.agenda-date-summary::after {
+    content: "";
+    flex: 0 0 .5rem;
+    height: .5rem;
+    border-right: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+    transform: rotate(45deg);
+}
+
+.agenda-date-panel[open] .agenda-date-summary::after { transform: rotate(225deg); }
+
+.agenda-date-count {
+    font-size: var(--font-xs);
+    font-weight: 600;
+}
+
+.agenda-date-activities { padding: clamp(.65rem, 2vw, 1.25rem); }
+.agenda-date-activities .activity-full-card:last-child { margin-bottom: 0; }
+
 
 /* Tarjeta de Ficha Completa de Actividad (Sección 3.2: incluye todos los metadatos) */
 .activity-full-card {
@@ -2389,25 +2066,6 @@ img {
     color: #fff;
     border-color: var(--color-navy);
     box-shadow: var(--shadow-sm);
-}
-
-/* Tarjetas de equipo para Creative Conservation Labs (Sección 3.1) */
-.ccl-team-card {
-    background: #fff;
-    border: 1px solid var(--color-cream-border);
-    border-radius: var(--radius-lg);
-    padding: 1.75rem;
-    box-shadow: var(--shadow-sm);
-    display: flex;
-    flex-direction: column;
-    gap: 0.85rem;
-    transition: all var(--transition-normal);
-}
-
-.ccl-team-card:hover {
-    transform: translateY(-3px);
-    box-shadow: var(--shadow-md);
-    border-color: var(--color-gold);
 }
 
 /* Acordeón de Preguntas Frecuentes (FAQ - Sección 3.3 y 7) */
@@ -2507,6 +2165,7 @@ img {
         top: 68px;
         padding: 0.5rem 0.75rem;
     }
+
     .lab-toc-inner {
         flex-wrap: nowrap;
         overflow-x: auto;
@@ -2515,6 +2174,7 @@ img {
         scrollbar-width: none;
         -webkit-overflow-scrolling: touch;
     }
+
     .lab-toc-inner::-webkit-scrollbar {
         display: none;
     }
@@ -2779,4 +2439,1129 @@ img {
     display: block;
     color: var(--color-navy);
     margin-bottom: 0.4rem;
+}
+
+/* ===== Refinamiento solicitado: menú limpio y hero unificado ===== */
+.site-header .nav-link,
+.site-header .nav-link.highlight,
+.site-header .nav-link.active,
+.site-header .nav-link:hover,
+.site-header .nav-link.highlight:hover {
+    background: transparent;
+    background-image: none;
+    box-shadow: none;
+    border-radius: 0;
+    transform: none;
+}
+
+.site-header .nav-link {
+    gap: 0;
+    font-weight: 650;
+}
+
+.site-header .nav-link:hover,
+.site-header .nav-link.active {
+    color: var(--color-talavera-blue);
+    font-weight: 800;
+}
+
+.site-header .nav-link.highlight {
+    color: var(--color-navy);
+    font-weight: 650;
+}
+
+.site-header .nav-link.highlight:hover {
+    color: var(--color-talavera-blue);
+    font-weight: 800;
+}
+
+/* Dos CTA como la referencia aprobada; solo cambia su presentación. */
+.hero-section .hero-btn-primary {
+    background: var(--color-gold);
+    border-color: var(--color-gold);
+    color: var(--color-navy-deep);
+    border-radius: 999px;
+    padding: 0.78rem 1.4rem;
+    font-size: 0.91rem;
+    gap: 0.55rem;
+}
+
+.hero-section .hero-btn-primary:hover {
+    background: var(--color-gold-hover);
+    border-color: var(--color-gold-hover);
+    color: var(--color-navy-deep);
+}
+
+
+/* ===== Ronda 3: limpieza visual global solicitada ===== */
+/* 1) Todo recuadro no interactivo se vuelve recto y más limpio */
+.pillar-card,
+.route-card,
+.flavor-card,
+.form-card,
+.audience-card,
+.info-card,
+.activity-full-card,
+.activity-meta-grid,
+.faq-item,
+.lab-callout,
+.lab-table-wrap,
+.lab-hours-badge,
+.lab-date-card,
+.lab-deliverable-card,
+.lab-timeline-item,
+.lang-switcher-vertical,
+.lang-switcher-vertical .lang-pill,
+.pillar-icon-box,
+.route-stop,
+.filter-field select,
+.filter-field input,
+.disclaimer-banner,
+.lab-step-label,
+.lab-step-label span:first-child,
+.lab-toc a,
+.badge-status,
+.activity-card-top,
+.route-card-img,
+.flavor-card-img,
+.form-group input,
+.form-group select,
+.form-group textarea,
+select,
+input,
+textarea {
+    border-radius: 0 !important;
+}
+
+/* 2) Quitar rayitas/accent lines innecesarias */
+.pillar-card::before,
+.audience-card::before,
+.info-card::before,
+.route-card::before,
+.flavor-card::before {
+    display: none !important;
+    content: none !important;
+}
+
+/* 3) Tarjetas con borde sobrio, sin colores chillones */
+.pillar-card,
+.route-card,
+.flavor-card,
+.form-card,
+.audience-card,
+.info-card,
+.activity-full-card,
+.faq-item,
+.lab-table-wrap,
+.lab-deliverable-card,
+.lab-date-card,
+.lab-timeline-item {
+    border-color: var(--color-cream-border) !important;
+    box-shadow: 0 8px 24px rgba(21, 23, 72, 0.06) !important;
+}
+
+.pillar-card:hover,
+.route-card:hover,
+.flavor-card:hover,
+.audience-card:hover,
+.info-card:hover,
+.activity-full-card:hover,
+.lab-timeline-item:hover {
+    border-color: var(--color-border) !important;
+    box-shadow: 0 10px 28px rgba(21, 23, 72, 0.09) !important;
+    transform: translateY(-2px);
+}
+
+/* 4) Las etiquetas de estado dejan de verse verdes/amarillas tipo chip */
+.badge-status,
+.badge-status.confirmada,
+.badge-status.proximamente,
+.badge-status.propuesta {
+    background: var(--color-cream-light) !important;
+    color: var(--color-navy) !important;
+    border: 1px solid var(--color-cream-border) !important;
+    box-shadow: none !important;
+}
+
+/* 5) Navegación y controles rectos */
+.site-header .nav-link,
+.site-header .nav-link.highlight,
+.site-header .nav-link.active,
+.site-header .nav-link:hover,
+.site-header .nav-link.highlight:hover {
+    border-radius: 0 !important;
+}
+
+/* 6) Bloques secundarios más neutros */
+.activity-meta-grid,
+.route-card [style*="background:var(--color-cream-light)"],
+.info-card [style*="background:var(--color-cream-light)"],
+.flavor-card [style*="background:var(--color-cream-light)"],
+.activity-full-card [style*="background:var(--color-cream-light)"] {
+    background: #F7F5F1 !important;
+}
+
+.lab-callout,
+.lab-step-label,
+.lab-step-label span:first-child,
+.lab-hours-badge {
+    background: #F7F5F1 !important;
+    color: var(--color-navy) !important;
+    border: 1px solid var(--color-cream-border) !important;
+    box-shadow: none !important;
+}
+
+.lab-callout {
+    border-left: 3px solid var(--color-border) !important;
+}
+
+.lab-hours-badge strong {
+    color: var(--color-talavera-blue) !important;
+}
+
+.lab-hours-badge span {
+    color: var(--color-text-main) !important;
+}
+
+/* 8) Quitar redondeo a pequeños bloques informativos sueltos */
+.route-card div[style*="border-radius:var(--radius-sm)"],
+.route-card span[style*="border-radius:var(--radius-sm)"],
+.activity-full-card div[style*="border-radius"],
+.activity-full-card span[style*="border-radius"],
+.info-card div[style*="border-radius:var(--radius-sm)"],
+.info-card span[style*="border-radius"],
+.flavor-card div[style*="border-radius:var(--radius-sm)"],
+.flavor-card span[style*="border-radius"],
+.disclaimer-banner select[style*="border-radius"],
+#filtro-estado[style*="border-radius"] {
+    border-radius: 0 !important;
+}
+
+/* 9) Inputs y selectores más sobrios */
+.filter-field select,
+.filter-field input,
+.form-group input,
+.form-group select,
+.form-group textarea,
+.disclaimer-banner select,
+#filtro-estado {
+    border-color: var(--color-border) !important;
+    background: #fff !important;
+}
+
+/* Iniciativas de portada */
+#iniciativas > .container {
+    max-width: none;
+    width: 100%;
+    padding-inline: clamp(1rem, 3vw, 3rem);
+}
+
+.home-initiative-grid {
+    grid-template-columns: 1fr;
+    align-items: stretch;
+    gap: clamp(2.5rem, 5.5vw, 5.5rem);
+    max-width: 1180px;
+    margin-inline: auto;
+}
+
+.home-initiative-card {
+    padding: clamp(1rem, 1.8vw, 1.75rem);
+    transition: transform .65s cubic-bezier(.4, 0, .2, 1), box-shadow .65s ease;
+}
+
+#iniciativas .home-initiative-card:nth-child(1) { --initiative-shadow: 46 125 116; }
+#iniciativas .home-initiative-card:nth-child(2) { --initiative-shadow: 183 133 38; }
+#iniciativas .home-initiative-card:nth-child(3) { --initiative-shadow: 102 82 156; }
+
+#iniciativas .home-initiative-card {
+    box-shadow: 0 8px 26px rgb(var(--initiative-shadow) / 24%),
+        0 2px 6px rgb(var(--initiative-shadow) / 12%) !important;
+}
+
+#iniciativas .home-initiative-card:hover {
+    box-shadow: 0 12px 32px rgb(var(--initiative-shadow) / 34%),
+        0 3px 10px rgb(var(--initiative-shadow) / 18%) !important;
+}
+
+.home-initiative-card > div:first-child {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.home-initiative-media {
+    width: 100%;
+    height: clamp(8rem, 12vw, 11rem);
+    margin: 0 0 1rem;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none;
+}
+
+.home-initiative-media img {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    object-position: center 65%;
+    display: block;
+}
+
+.home-initiative-card .pillar-card-title { margin-bottom: .85rem; }
+.home-initiative-card .pillar-card-link { margin-top: auto; padding-top: 1rem; }
+
+@media (min-width: 768px) {
+    .home-initiative-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+.home-initiative-card:focus-visible {
+    outline: 3px solid var(--color-talavera-blue);
+    outline-offset: 4px;
+}
+
+#iniciativas .home-initiative-card,
+#iniciativas .home-initiative-media {
+    overflow: visible;
+}
+
+.home-initiative-media img {
+    position: relative;
+    scale: 1.25;
+    transform-origin: center;
+    transition: scale .65s cubic-bezier(.4, 0, .2, 1);
+}
+
+#iniciativas .home-initiative-card:is(:hover, :focus-visible) {
+    transform: translateY(-3px) scale(1.018);
+    z-index: 2;
+}
+
+#iniciativas .home-initiative-card:is(:hover, :focus-visible) .home-initiative-media img {
+    scale: 1.6;
+}
+
+/* ===== Ronda 6: accesos rápidos y tarjetas de portada ===== */
+.hero-inner .hero-quick-links {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 1fr 1fr 2.45fr;
+    gap: 1.25rem;
+    width: 100%;
+    align-items: stretch;
+    margin: 0;
+}
+
+.hero-section .hero-quick-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .65rem;
+    min-height: 72px;
+    padding: 1rem 1.4rem;
+    font-size: clamp(1.05rem, 1.75vw, 1.45rem);
+    font-weight: 800;
+    line-height: 1.2;
+    text-align: center;
+    border-radius: 24px;
+    white-space: normal;
+    text-decoration: none;
+}
+
+.hero-section .hero-btn-secondary.hero-quick-link {
+    border: 2px solid var(--color-navy);
+    background: transparent;
+    color: var(--color-navy);
+}
+
+.hero-section .hero-btn-secondary.hero-quick-link:hover,
+.hero-section .hero-btn-secondary.hero-quick-link:focus-visible {
+    background: rgba(21, 23, 72, .07);
+    border-color: var(--color-navy);
+    color: var(--color-navy);
+}
+
+.hero-section .hero-btn-primary.hero-quick-link-featured {
+    background: var(--color-navy);
+    border: 2px solid var(--color-navy);
+    color: #fff;
+}
+
+.hero-section .hero-btn-primary.hero-quick-link-featured:hover,
+.hero-section .hero-btn-primary.hero-quick-link-featured:focus-visible {
+    background: var(--color-talavera-blue);
+    border-color: var(--color-talavera-blue);
+    color: #fff;
+}
+
+#home.hero-section {
+    border-bottom: 0;
+}
+
+@media (max-width: 899px) {
+    .hero-inner .hero-quick-links {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .hero-section .hero-quick-link-featured {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 650px) {
+    .hero-inner .hero-quick-links {
+        gap: .75rem;
+    }
+
+    .hero-section .hero-quick-link {
+        min-height: 60px;
+        padding: .85rem .65rem;
+        border-radius: 18px;
+        font-size: 1rem;
+    }
+}
+
+
+/* ===== Ronda 7: accesos rápidos compactos y alineados a la izquierda ===== */
+.hero-inner .hero-quick-links {
+    display: flex;
+    grid-column: 1 / -1;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: .8rem;
+    width: 100%;
+    margin: 0;
+}
+
+.hero-section .hero-quick-links .hero-quick-link {
+    flex: 0 0 auto;
+    width: auto;
+    min-height: 48px;
+    padding: .65rem 1.1rem;
+    font-size: .95rem;
+    border-radius: 13px;
+    line-height: 1.3;
+    white-space: nowrap;
+}
+
+.hero-section .hero-quick-links .hero-btn-secondary.hero-quick-link {
+    min-width: 105px;
+}
+
+.hero-section .hero-quick-links .hero-quick-link-featured {
+    grid-column: auto;
+}
+
+@media (max-width: 650px) {
+    .hero-inner .hero-quick-links {
+        gap: .55rem;
+    }
+
+    .hero-section .hero-quick-links .hero-quick-link {
+        min-height: 43px;
+        padding: .55rem .75rem;
+        font-size: .82rem;
+        white-space: normal;
+    }
+
+    .hero-section .hero-quick-links .hero-btn-secondary.hero-quick-link {
+        min-width: 0;
+    }
+}
+
+
+/* ===== Ronda 8: portada completa en la primera pantalla ===== */
+/* Los accesos regresan a la columna del texto, directamente bajo el párrafo. */
+@media (min-width: 900px) {
+    .hero-section {
+        min-height: calc(100svh - 88px);
+        align-items: center;
+    }
+
+    .hero-inner {
+        grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr);
+        gap: clamp(1.4rem, 3.2vw, 3rem);
+        padding: clamp(1.1rem, 3vh, 2rem) clamp(1.35rem, 3vw, 2.5rem);
+    }
+
+    .hero-left {
+        min-width: 0;
+    }
+
+    .hero-title {
+        font-size: clamp(2.55rem, 4.7vw, 4.25rem);
+        line-height: 1.04;
+        margin-bottom: .9rem;
+    }
+
+    .hero-date-label {
+        margin-bottom: .9rem;
+    }
+
+    .hero-subtitle {
+        font-size: clamp(.89rem, 1.12vw, 1.02rem);
+        line-height: 1.5;
+        max-width: 680px;
+        margin-bottom: 1.25rem;
+    }
+
+    .hero-inner .hero-quick-links {
+        grid-column: auto;
+        width: 100%;
+        gap: .65rem;
+        flex-wrap: nowrap;
+        margin: 0;
+    }
+
+    .hero-section .hero-quick-links .hero-quick-link {
+        font-size: clamp(.76rem, .97vw, .92rem);
+        min-height: 44px;
+        padding: .58rem .8rem;
+        border-radius: 12px;
+    }
+
+    .hero-section .hero-quick-links .hero-btn-secondary.hero-quick-link {
+        min-width: 78px;
+    }
+}
+
+/* En portátil baja: proteger la visibilidad de todo el contenido. */
+@media (min-width: 900px) and (max-height: 760px) {
+    .hero-inner {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    .hero-title {
+        font-size: clamp(2.25rem, 4.1vw, 3.45rem);
+    }
+
+    .hero-date-label {
+        margin-bottom: .55rem;
+    }
+
+    .hero-subtitle {
+        font-size: .84rem;
+        line-height: 1.4;
+        margin-bottom: .9rem;
+    }
+
+    .hero-section .hero-quick-links .hero-quick-link {
+        min-height: 40px;
+        padding: .45rem .65rem;
+    }
+}
+
+@media (max-width: 899px) {
+    .hero-inner {
+        gap: 1.4rem;
+        padding: 2rem 1.25rem;
+    }
+
+    .hero-title {
+        font-size: clamp(2.35rem, 8vw, 3.7rem);
+    }
+
+    .hero-subtitle {
+        max-width: 680px;
+        line-height: 1.5;
+        margin-bottom: 1.3rem;
+    }
+
+    .hero-inner .hero-quick-links {
+        grid-column: auto;
+        justify-content: flex-start;
+    }
+}
+
+/* Navegación compartida y portada institucional */
+.site-header .nav-info-link {
+    justify-content: center;
+    width: 44px;
+    min-height: 44px;
+    padding: 0;
+}
+
+@media (min-width: 992px) {
+    .site-header .header-container {
+        position: relative;
+    }
+
+    .site-header .main-nav {
+        flex: 1 1 auto;
+        justify-content: center;
+        padding-inline-end: 3rem;
+    }
+
+    .site-header .nav-list {
+        gap: clamp(.5rem, 1.65vw - .5rem, 1.85rem);
+    }
+}
+
+#home .hero-quick-links {
+    flex-wrap: wrap;
+}
+
+#home .hero-quick-links .hero-quick-link {
+    min-height: 52px;
+    padding: .72rem clamp(.85rem, 1.4vw, 1.25rem);
+    font-size: clamp(.9rem, 1.2vw, 1rem);
+    border-radius: 999px;
+    white-space: normal;
+}
+
+#home .hero-quick-links .hero-btn-secondary {
+    min-width: 6rem;
+}
+/* Composición de portada ICCB 2027 */
+.cover-artwork {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: #edeae4 url('../img/ICCB_Plano_Blanco.png') 116% center / 68% auto no-repeat;
+}
+
+.cover-artwork::after {
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(237, 234, 228, .95) 3%, rgba(237, 234, 228, .91) 30%, rgba(237, 234, 228, .74) 43%, transparent 58%);
+}
+
+.cover-figures {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.cover-figure {
+    position: absolute;
+    display: block;
+    width: var(--figure-width);
+    max-width: none;
+    height: auto;
+    transform: rotate(var(--angle));
+    pointer-events: none;
+}
+
+.cover-figure--teporingo {
+    --figure-width: 43%;
+    --angle: -26deg;
+    top: -19%;
+    right: -13%;
+}
+
+.cover-figure--armadillo {
+    --figure-width: 49%;
+    --angle: -36deg;
+    top: -24%;
+    left: 36%;
+}
+
+.cover-figure--cacomixtle {
+    --figure-width: 52%;
+    --angle: -45deg;
+    top: 3%;
+    left: -4%;
+}
+
+.cover-figure--jaguar {
+    --figure-width: 53%;
+    --angle: -13deg;
+    bottom: -10%;
+    left: 2%;
+}
+
+.cover-figure--colibri {
+    --figure-width: 50%;
+    --angle: -32deg;
+    right: -12%;
+    bottom: -10%;
+}
+
+#home .hero-inner {
+    pointer-events: none;
+    grid-template-columns: minmax(0, 1fr);
+}
+
+#home .hero-quick-link {
+    pointer-events: auto;
+}
+
+#home .hero-left {
+    width: min(100%, 34rem, 48vw);
+}
+
+@media (max-width: 899px) {
+    .cover-artwork {
+        background-position: center top;
+        background-size: 100% auto;
+    }
+
+    .cover-artwork::after {
+        background: linear-gradient(180deg, transparent 12%, #edeae4 56%);
+    }
+
+    #home .hero-inner {
+        padding-top: clamp(10rem, 36vw, 18rem);
+    }
+
+    #home .hero-left {
+        width: min(100%, 34rem);
+        margin-inline: auto;
+    }
+}
+
+@media (max-width: 650px) {
+    .cover-artwork {
+        background-size: 125% auto;
+    }
+
+    .cover-figure { width: calc(var(--figure-width) * 1.28); }
+    .cover-figure--armadillo { top: -8%; }
+    .cover-figure--cacomixtle { top: 13%; left: -17%; }
+    .cover-figure--teporingo { top: 5%; right: -28%; }
+    .cover-figure--jaguar { bottom: 1%; left: -6%; }
+    .cover-figure--colibri { bottom: 9%; right: -26%; }
+}
+
+/* La zona del cursor permanece fija mientras se mueve la imagen. */
+.cover-figure::after {
+    content: "";
+    position: absolute;
+    inset: 19% 13%;
+    pointer-events: auto;
+}
+
+.cover-figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+    scale: 1;
+    animation: cover-float var(--float-duration) ease-in-out var(--float-delay) infinite;
+    transition: scale 380ms ease-out;
+}
+
+.cover-figure:hover img {
+    scale: 1.07;
+}
+
+.cover-figure--teporingo { --float-duration: 5.4s; --float-delay: -.7s; --float-x: 12px; --float-y: -26px; }
+.cover-figure--armadillo { --float-duration: 6.3s; --float-delay: -2.1s; --float-x: -14px; --float-y: -22px; }
+.cover-figure--cacomixtle { --float-duration: 5.8s; --float-delay: -3.5s; --float-x: -18px; --float-y: -28px; }
+.cover-figure--jaguar { --float-duration: 6.8s; --float-delay: -4.7s; --float-x: 14px; --float-y: -24px; }
+.cover-figure--colibri { --float-duration: 4.7s; --float-delay: -1.6s; --float-x: -20px; --float-y: -36px; }
+
+@keyframes cover-float {
+    0%, 100% { translate: 0 0; }
+    50% {
+        translate: calc(var(--float-x) * var(--float-amplitude, 1))
+                   calc(var(--float-y) * var(--float-amplitude, 1));
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .cover-figure img {
+        --float-amplitude: .35;
+    }
+}
+
+
+/* ===== Ronda 9: esquinas ligeramente redondeadas en tarjetas y recuadros ===== */
+:root {
+    --corner-card: 12px;   /* tarjetas y paneles grandes */
+    --corner-small: 8px;   /* recuadros pequeños, campos y etiquetas */
+}
+
+/* Tarjetas y paneles grandes */
+.pillar-card,
+.route-card,
+.flavor-card,
+.form-card,
+.audience-card,
+.info-card,
+.directory-filter-box,
+.activity-full-card,
+.faq-item,
+.lab-callout,
+.lab-table-wrap,
+.lab-date-card,
+.lab-deliverable-card,
+.lab-timeline-item,
+.disclaimer-banner,
+.activity-meta-grid,
+.lang-switcher-vertical {
+    border-radius: var(--corner-card) !important;
+}
+
+/* Las tarjetas con imagen/encabezado recortan el contenido a la esquina */
+.route-card,
+.flavor-card,
+.activity-full-card,
+.info-card,
+.lab-table-wrap {
+    overflow: hidden;
+}
+
+/* Imágenes y cabeceras dentro de las tarjetas */
+.route-card-img,
+.flavor-card-img,
+.activity-card-top {
+    border-radius: 0 !important;   /* la tarjeta ya las recorta */
+}
+
+/* Recuadros pequeños, etiquetas y campos */
+.pillar-icon-box,
+.route-stop,
+.lang-switcher-vertical .lang-pill,
+.badge-status,
+.lab-hours-badge,
+.lab-step-label,
+.lab-step-label span:first-child,
+.lab-toc a,
+.filter-field select,
+.filter-field input,
+.form-group input,
+.form-group select,
+.form-group textarea,
+.disclaimer-banner select,
+#filtro-estado,
+select,
+input:not([type="checkbox"]):not([type="radio"]),
+textarea {
+    border-radius: var(--corner-small) !important;
+}
+
+/* Bloques informativos pequeños con estilos en línea dentro de tarjetas */
+.route-card div[style*="border-radius"],
+.route-card span[style*="border-radius"],
+.activity-full-card div[style*="border-radius"],
+.activity-full-card span[style*="border-radius"],
+.info-card div[style*="border-radius"],
+.info-card span[style*="border-radius"],
+.flavor-card div[style*="border-radius"],
+.flavor-card span[style*="border-radius"] {
+    border-radius: var(--corner-small) !important;
+}
+
+/* Mapas */
+#map,
+#rutas-map,
+.map-container {
+    border-radius: var(--corner-card);
+    overflow: hidden;
+}
+
+/* Orden de capas: figuras (abajo) < difuminado ::after < foto (arriba) */
+
+@media (max-width: 899px) {
+    #home .hero-inner {
+        padding-top: calc(min(86vw, 420px) * 0.555 + 3rem);
+    }
+}
+
+.section-themed .site-header {
+    margin-bottom: calc(-1 * var(--agenda-header-height, 0px));
+    transition: background-color .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+
+.section-themed .site-header:not(.agenda-header-scrolled):not(:has(.nav-toggle-btn[aria-expanded="true"])) {
+    background: transparent;
+    border-bottom-color: transparent;
+    box-shadow: none;
+}
+
+.section-themed .site-header .nav-link {
+    color: #fff;
+}
+
+.section-themed .site-header .nav-link:is(:hover, .active) {
+    color: var(--color-gold);
+}
+
+.section-themed .site-header .brand-logo-img {
+    filter: none;
+}
+
+.section-themed .site-header.agenda-header-scrolled,
+.section-themed .site-header:has(.nav-toggle-btn[aria-expanded="true"]) {
+    background: #151747;
+}
+
+.section-themed .page-hero-banner {
+    padding-top: calc(var(--agenda-header-height, 0px) + clamp(4rem, 6vw, 6rem));
+    padding-bottom: clamp(4rem, 6vw, 6rem);
+    background: #151747;
+    color: #fff;
+    text-shadow: 0 2px 6px #151747;
+}
+
+.section-themed .page-hero-banner .hero-bg-texture {
+    background-image: url('../img/BannerBlanco.png');
+}
+
+.section-themed.section-yellow .page-hero-banner .hero-bg-texture {
+    background-image: url('../img/BannerAzul.png');
+}
+
+.section-themed .page-hero-banner h2 {
+    font-size: clamp(3rem, 5.5vw, 4.25rem);
+    line-height: 1.08;
+    margin-bottom: clamp(1.25rem, 2.2vw, 2rem);
+}
+
+.section-themed .page-hero-banner p {
+    color: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .section-themed .site-header { transition: none; }
+}
+
+
+.section-themed.section-yellow .page-hero-banner {
+    background: var(--color-gold);
+    color: var(--color-navy);
+    text-shadow: none;
+}
+
+.section-yellow .site-header .nav-link {
+    color: var(--color-navy);
+}
+
+.section-yellow .site-header .nav-link:is(:hover, .active) {
+    color: #344e96;
+}
+
+
+.section-themed.section-yellow .site-header.agenda-header-scrolled,
+.section-themed.section-yellow .site-header:has(.nav-toggle-btn[aria-expanded="true"]) {
+    background: var(--color-gold);
+}
+
+/* Accesos de información e idioma del encabezado. */
+.header-tools {
+    display: flex;
+    align-items: center;
+    gap: .25rem;
+    flex-shrink: 0;
+    order: 3;
+}
+
+.header-language { position: relative; }
+.language-toggle {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--color-navy);
+    cursor: pointer;
+    border-radius: var(--radius-sm);
+}
+
+.language-toggle[aria-expanded="true"] { visibility: hidden; }
+.language-toggle:hover { background: rgb(128 141 180 / 16%); }
+.language-toggle:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; }
+.header-language-options {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    z-index: 2;
+    background: #fff;
+    box-shadow: 0 5px 18px rgb(21 23 72 / 16%);
+}
+
+.header-language-options[hidden] { display: none; }
+.section-themed .language-toggle { color: #fff; }
+.section-yellow .language-toggle { color: var(--color-navy); }
+
+@media (min-width: 992px) {
+    .site-header .main-nav { padding-inline-end: 0; }
+}
+
+@media (max-width: 991px) {
+    .site-header .header-container { gap: .35rem; flex-wrap: wrap; }
+    .site-header .brand-wrapper { margin-inline-end: auto; }
+    .site-header .header-mobile-right { order: 4; }
+    .site-header .main-nav { order: 5; }
+}
+
+
+/* Programa CCLabs a pantalla completa con navegación lateral. */
+.lab-workspace {
+    display: grid;
+    grid-template-columns: 10.5rem minmax(0, 1fr);
+    gap: clamp(.75rem, 1.5vw, 1.5rem);
+    padding-inline: clamp(1rem, 3vw, 3rem);
+    background: #fff;
+    align-items: start;
+}
+
+.lab-workspace .lab-toc {
+    position: sticky;
+    top: var(--agenda-header-height, 82px);
+    max-height: calc(100dvh - var(--agenda-header-height, 82px));
+    overflow-y: auto;
+    padding: 2rem 0;
+    border: 0;
+    border-radius: 0;
+    background: #fff;
+    box-shadow: none;
+    backdrop-filter: none;
+    z-index: 10;
+}
+
+.lab-workspace .lab-toc-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    flex-wrap: nowrap;
+    gap: .4rem;
+    overflow: visible;
+}
+
+.lab-workspace .lab-toc a {
+    justify-content: flex-start;
+    padding: .6rem .65rem;
+    white-space: normal;
+}
+
+.lab-workspace .lab-toc a[aria-current="location"] {
+    color: #fff;
+    background: var(--color-navy);
+    border-color: var(--color-navy);
+}
+
+.lab-content-panel { min-width: 0; }
+.lab-content-panel > .page-section {
+    min-height: calc(100dvh - var(--agenda-header-height, 82px));
+    padding: clamp(1.5rem, 3vw, 3rem) clamp(.75rem, 2vw, 2rem);
+    scroll-margin-top: var(--agenda-header-height, 82px);
+    background: #fff !important;
+}
+
+.lab-content-panel .container { width: 100%; }
+.lab-content-panel .section-main-title { font-size: clamp(1.7rem, 3vw, 2.6rem); }
+
+@media (max-width: 767px) {
+    .lab-workspace {
+        grid-template-columns: 1fr;
+        gap: 0;
+        padding-inline: .75rem;
+    }
+    .lab-workspace .lab-toc { padding: .5rem 0; }
+    .lab-workspace .lab-toc-inner { flex-direction: row; overflow-x: auto; gap: .4rem; }
+    .lab-workspace .lab-toc a { flex-shrink: 0; padding: .5rem .7rem; }
+    .lab-content-panel > .page-section {
+        scroll-margin-top: calc(var(--agenda-header-height, 82px) + 60px);
+    }
+}
+
+/* La vida que compartimos. */
+#presentacion-iniciativa.shared-life {
+    padding: clamp(2.5rem, 5vw, 5rem) clamp(1.25rem, 5vw, 5rem);
+    background: #edeae4;
+    color: var(--color-navy);
+}
+.shared-life-inner { max-width: 1480px; margin: auto; }
+.shared-life .section-eyebrow { margin: 0 0 2rem; color: var(--color-navy); }
+.shared-life-layout { display: grid; grid-template-columns: .85fr 1.3fr; gap: clamp(2rem, 4vw, 4rem); }
+.shared-life-heading { min-width: 0; }
+.shared-life-heading h2 {
+    margin: 0;
+    font-size: clamp(2.5rem, 4.5vw, 5rem);
+    font-weight: 800;
+    line-height: 1.08;
+    text-transform: uppercase;
+    letter-spacing: -.045em;
+}
+.shared-life-heading h2 em {
+    display: block;
+    color: #626ba5;
+    font-family: Georgia, serif;
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: -.055em;
+}
+.shared-life-heading h2::after {
+    content: '';
+    display: block;
+    width: 7rem;
+    height: .4rem;
+    margin-top: 1.5rem;
+    border-radius: 1rem;
+    background: var(--color-gold);
+}
+.shared-life-animal {
+    display: block;
+    width: 100%;
+    height: clamp(10rem, 17vw, 16rem);
+    object-fit: cover;
+    object-position: center 65%;
+    margin-top: 1.5rem;
+}
+.shared-life-copy { border-left: 1px solid var(--color-gold); padding-left: clamp(1.5rem, 3vw, 3rem); }
+.shared-life-copy h3 { font-size: clamp(1.5rem, 2.5vw, 2.5rem); line-height: 1.2; margin: 0 0 1.75rem; }
+.shared-life-copy mark { color: inherit; background: #f8e4a4; border-radius: .6em; padding: 0 .15em; }
+.shared-life-copy ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 1.5rem; }
+.shared-life-copy li { display: block; }
+.shared-life-copy li p { text-align: justify; font-size: clamp(.95rem, 1.2vw, 1.15rem); line-height: 1.5; margin: 0; }
+.shared-life-values {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    list-style: none;
+    margin: 2.5rem 0 0;
+    padding: 1.2rem .5rem;
+    border: 1px solid #c7c9d4;
+    border-radius: 2rem;
+    text-align: center;
+}
+.shared-life-values li { display: flex; flex-direction: column; padding-inline: .5rem; }
+.shared-life-values li + li { border-left: 1px solid #e4c267; }
+.shared-life-values strong { font-size: clamp(.85rem, 1.6vw, 1.5rem); text-transform: uppercase; }
+.shared-life-values span { font-family: Georgia, serif; font-style: italic; font-size: clamp(1rem, 1.5vw, 1.4rem); color: #626ba5; }
+@media (max-width: 800px) {
+    .shared-life-layout { grid-template-columns: 1fr; }
+    .shared-life-heading h2 { font-size: clamp(2.5rem, 7vw, 4rem); }
+    .shared-life-animal { max-width: 30rem; height: 11rem; }
+    .shared-life-copy { padding-left: 0; border-left: 0; }
+}
+@media (max-width: 480px) {
+    .shared-life-values { grid-template-columns: repeat(2, 1fr); gap: 1rem 0; }
+    .shared-life-values li:nth-child(3) { border-left: 0; }
+}
+
+/* Espacio propio para la navegación de portada. */
+.home-page { background: #edeae4; }
+.home-page .site-header {
+    margin-bottom: 0;
+    transition: background-color .2s ease, box-shadow .2s ease;
+}
+.home-page .site-header:not(.agenda-header-scrolled):not(:has(.nav-toggle-btn[aria-expanded="true"])) {
+    background: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border-bottom-color: transparent;
+    box-shadow: none;
+}
+.home-page .site-header.agenda-header-scrolled,
+.home-page .site-header:has(.nav-toggle-btn[aria-expanded="true"]) {
+    background: #fff;
+}
+.home-page #home {
+    padding-top: 0;
+    min-height: calc(100svh - var(--agenda-header-height, 82px));
+}
+@media (prefers-reduced-motion: reduce) {
+    .home-page .site-header { transition: none; }
 }

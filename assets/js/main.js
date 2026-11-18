@@ -41,11 +41,101 @@ const ICONS = {
     sparkle: `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px; margin-right:4px;"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>`,
     utensils: `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px; margin-right:4px;"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M3 8h14v7a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8z"/></svg>`,
     price: `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px; margin-right:4px;"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>`,
-    graduation: `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px; margin-right:4px;"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>`,
-    handshake: `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px; margin-right:4px;"><path d="M18 11l-3 3m-2-2l-3 3m10-7l-6 6a2 2 0 0 1-2.83 0l-3.17-3.17a2 2 0 0 1 0-2.83l6-6a2 2 0 0 1 2.83 0l3.17 3.17a2 2 0 0 1 0 2.83z"/></svg>`
 };
 
 document.addEventListener('DOMContentLoaded', () => {
+    const labPanel = document.querySelector('.lab-content-panel');
+    if (labPanel) {
+        const labLinks = [...document.querySelectorAll('.lab-workspace .lab-toc a')];
+        const labSections = [...labPanel.querySelectorAll(':scope > section')];
+        const updateLabNavigation = () => {
+            const top = document.querySelector('.site-header').getBoundingClientRect().bottom +
+                (window.matchMedia('(max-width: 767px)').matches ? document.querySelector('.lab-toc').offsetHeight : 0);
+            const current = labSections.reduce((active, section) =>
+                section.getBoundingClientRect().top <= top + 80 ? section : active, labSections[0]);
+            for (const link of labLinks) {
+                if (link.hash === '#' + current.id) link.setAttribute('aria-current', 'location');
+                else link.removeAttribute('aria-current');
+            }
+        };
+        const moveToLabSection = (id, behavior) => {
+            const section = labSections.find(section => '#' + section.id === id);
+            if (!section) return;
+            section.scrollIntoView({ behavior, block: 'start' });
+        };
+        labLinks.forEach(link => link.addEventListener('click', event => {
+            event.preventDefault();
+            moveToLabSection(link.hash, window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth');
+            history.replaceState(null, '', link.hash);
+        }));
+        window.addEventListener('hashchange', () => moveToLabSection(location.hash, 'instant'));
+        window.addEventListener('scroll', updateLabNavigation, { passive: true });
+        new ResizeObserver(updateLabNavigation).observe(labPanel);
+        updateLabNavigation();
+        if (labSections.some(section => '#' + section.id === location.hash)) {
+            requestAnimationFrame(() => moveToLabSection(location.hash, 'instant'));
+        }
+    }
+
+    const languageToggle = document.querySelector('.language-toggle');
+    const languageOptions = document.getElementById('header-language-options');
+    if (languageToggle && languageOptions) {
+        const closeLanguageOptions = () => {
+            languageToggle.setAttribute('aria-expanded', 'false');
+            languageOptions.hidden = true;
+        };
+        languageToggle.addEventListener('click', () => {
+            const expanded = languageToggle.getAttribute('aria-expanded') === 'true';
+            languageToggle.setAttribute('aria-expanded', String(!expanded));
+            languageOptions.hidden = expanded;
+            if (!expanded) {
+                (languageOptions.querySelector('.lang-pill.active') || languageOptions.querySelector('.lang-pill')).focus();
+            }
+        });
+        window.addEventListener('idiomaCambiado', closeLanguageOptions);
+        languageOptions.addEventListener('click', event => {
+            if (event.target.closest('.lang-pill')) languageToggle.focus();
+        });
+        document.addEventListener('click', event => {
+            if (!event.target.closest('.header-language')) closeLanguageOptions();
+        });
+        document.addEventListener('keydown', event => {
+            if (event.key === 'Escape' && !languageOptions.hidden) {
+                closeLanguageOptions();
+                languageToggle.focus();
+            }
+        });
+    }
+
+    const sectionHero = document.querySelector('.section-themed .page-hero-banner, .home-page #home');
+    if (sectionHero) {
+        const header = document.querySelector('.site-header');
+        const menuToggle = header.querySelector('.nav-toggle-btn');
+        const updateHeaderBackground = () => {
+            header.classList.toggle('agenda-header-scrolled',
+                sectionHero.getBoundingClientRect().bottom <= header.getBoundingClientRect().bottom);
+        };
+        const updateHeader = () => {
+            if (menuToggle.getAttribute('aria-expanded') !== 'true') {
+                document.body.style.setProperty('--agenda-header-height', header.offsetHeight + 'px');
+            }
+            updateHeaderBackground();
+        };
+        updateHeader();
+        const headerObserver = new ResizeObserver(updateHeader);
+        headerObserver.observe(header);
+        headerObserver.observe(sectionHero);
+        window.addEventListener('scroll', updateHeaderBackground, { passive: true });
+        window.addEventListener('pageshow', updateHeaderBackground);
+    }
+
+
+    document.querySelectorAll('form[data-demo-form]').forEach(form => {
+        form.addEventListener('submit', event => {
+            event.preventDefault();
+            alert(SiteLanguage.translate('Formulario de demostración. Los datos permanecen en tu navegador.'));
+        });
+    });
 
     // ==========================================================================
     // MENÚ DE TRES RAYITAS EN CELULARES
@@ -73,7 +163,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Diccionario de textos esenciales de la interfaz para cambio instantáneo ES/EN
     const traduccionesInterfaz = {
         es: {
-            'nav-ccl': 'Laboratorio',
+            'nav-ccl': 'CCLabs',
             'nav-agenda': 'Agenda',
             'nav-exploracion': 'Día de la Exploración',
             'nav-rutas': 'Rutas',
@@ -83,7 +173,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'skip-link': 'Saltar al contenido principal'
         },
         en: {
-            'nav-ccl': 'Laboratory',
+            'nav-ccl': 'CCLabs',
             'nav-agenda': 'Biodiversity / Agenda',
             'nav-exploracion': 'Exploration Day',
             'nav-rutas': 'Routes',
@@ -95,7 +185,11 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     function aplicarIdioma(lang) {
-        localStorage.setItem('iccb_lang', lang);
+        try {
+            localStorage.setItem('iccb_lang', lang);
+        } catch {
+            // El idioma sigue disponible durante la visita si se bloquea el almacenamiento.
+        }
         document.documentElement.lang = lang;
 
         // Actualizar estado activo de las pastillas ES / EN
@@ -131,7 +225,7 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         document.querySelectorAll('.nav-list .nav-link').forEach(link => {
-            const href = link.getAttribute('href');
+            const href = link.getAttribute('href').split(/[?#]/)[0];
             const span = link.querySelector('span');
             if (span && mapaHref[href]) {
                 span.textContent = mapaHref[href];
@@ -139,6 +233,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         // Notificar a componentes dinámicos para que re-rendericen en el idioma activo
+        SiteLanguage.apply(lang);
         window.dispatchEvent(new CustomEvent('idiomaCambiado', { detail: lang }));
     }
 
@@ -147,30 +242,29 @@ document.addEventListener('DOMContentLoaded', () => {
         pill.addEventListener('click', (e) => {
             e.preventDefault();
             const nuevoIdioma = pill.getAttribute('lang') || 'es';
+            const url = new URL(window.location.href);
+            if (url.searchParams.has('lang')) {
+                url.searchParams.set('lang', nuevoIdioma);
+                try {
+                    history.replaceState(history.state, '', url);
+                } catch {
+                    // Los enlaces internos conservan el idioma en navegadores que restringen file://.
+                }
+            }
             aplicarIdioma(nuevoIdioma);
         });
     });
 
     // Cargar idioma guardado si existe
-    const idiomaGuardado = localStorage.getItem('iccb_lang') || 'es';
-    if (idiomaGuardado === 'en') {
-        aplicarIdioma('en');
+    let idiomaGuardado = 'es';
+    try {
+        idiomaGuardado = localStorage.getItem('iccb_lang') || 'es';
+    } catch {
+        // Mantener el español si el navegador bloquea el almacenamiento.
     }
-
-    // ==========================================================================
-    // BUSCADOR DESDE LA PORTADA (index.html -> agenda.html)
-    // ==========================================================================
-    const homeSearchForm = document.getElementById('home-search-form');
-    if (homeSearchForm) {
-        homeSearchForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const q = document.getElementById('home-search-input')?.value.trim() || '';
-            const tipo = document.getElementById('home-search-category')?.value || 'todos';
-            const params = new URLSearchParams();
-            if (q) params.set('q', q);
-            if (tipo && tipo !== 'todos') params.set('tipo', tipo);
-            window.location.href = 'agenda.html' + (params.toString() ? '?' + params.toString() : '') + '#directorio-comun';
-        });
+    const idiomaEnlace = new URLSearchParams(window.location.search).get('lang');
+    if ((idiomaEnlace || idiomaGuardado) === 'en') {
+        aplicarIdioma('en');
     }
 
     // ==========================================================================
@@ -178,6 +272,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // ==========================================================================
     const directorioContainer = document.getElementById('directorio-actividades-lista');
     if (directorioContainer && typeof ACTIVIDADES_DATA !== 'undefined') {
+        const personalAgenda = AgendaPersonal.mount(ACTIVIDADES_DATA, directorioContainer);
         const inputTexto = document.getElementById('filtro-texto');
         const selectTipo = document.getElementById('filtro-tipo');
         const selectPublico = document.getElementById('filtro-publico');
@@ -188,6 +283,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const selectEstado = document.getElementById('filtro-estado');
         const contadorResultados = document.getElementById('contador-actividades');
         const btnLimpiar = document.getElementById('btn-limpiar-filtros');
+        const formatoFechaAgenda = new Intl.DateTimeFormat('es-MX', { dateStyle: 'full', timeZone: 'UTC' });
 
         // Leer parámetros si el usuario viene desde el buscador de la portada
         const urlParams = new URLSearchParams(window.location.search);
@@ -208,10 +304,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const filtradas = ACTIVIDADES_DATA.filter(act => {
                 if (!act.visible) return false;
                 if (texto && !(
-                    act.titulo.toLowerCase().includes(texto) ||
-                    act.descripcion.toLowerCase().includes(texto) ||
-                    act.organizador.toLowerCase().includes(texto) ||
-                    act.ubicacion.toLowerCase().includes(texto)
+                    SiteLanguage.matches(act.titulo, texto) ||
+                    SiteLanguage.matches(act.descripcion, texto) ||
+                    SiteLanguage.matches(act.organizador, texto) ||
+                    SiteLanguage.matches(act.ubicacion, texto)
                 )) return false;
                 if (tipo !== 'todos' && act.tipo !== tipo) return false;
                 if (publico !== 'todos' && act.publico !== publico && act.publico !== 'todos') return false;
@@ -239,19 +335,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Generar cada ficha con todos los campos nombre, descripción, fecha y horario, ubicación, organizador, público, idioma,
             // costo, accesibilidad, contacto, registro y enlace al mapa.
-            directorioContainer.innerHTML = filtradas.map(act => `
+            const renderizarFicha = act => `
                 <article class="activity-full-card" id="${act.id}">
                     <div class="activity-card-top">
                         <div style="display:flex; gap:0.5rem; align-items:center; flex-wrap:wrap;">
-                            <span style="font-size:var(--font-xs); font-weight:800; color:var(--color-talavera-blue); background:var(--color-soft-blue-light); padding:0.2rem 0.6rem; border-radius:4px;">
+                            <span style="font-size:var(--font-xs); font-weight:800; color:var(--color-talavera-blue); background:#EEF2F7; padding:0.2rem 0.6rem; border-radius:0;">
                                 ID: ${act.id}
                             </span>
-                            <span style="font-size:var(--font-xs); font-weight:700; color:var(--color-navy); background:var(--color-cream); padding:0.2rem 0.65rem; border-radius:4px;">
+                            <span style="font-size:var(--font-xs); font-weight:700; color:var(--color-navy); background:#F7F5F1; padding:0.2rem 0.65rem; border-radius:0;">
                                 ${act.tipoEtiqueta}
                             </span>
                         </div>
                         ${obtenerBadgeEstado(act.estado)}
                     </div>
+                    ${personalAgenda.button(act)}
 
                     <h3 style="font-size:var(--font-lg); font-weight:800; color:var(--color-navy); margin-bottom:0.4rem;">
                         ${act.titulo}
@@ -261,7 +358,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     </p>
 
                     <div class="activity-meta-grid">
-                        <div class="activity-meta-item"><strong>${ICONS.calendar}Fecha y horario:</strong> ${act.fechaTexto} · ${act.horario}</div>
+                        <div class="activity-meta-item"><strong>${ICONS.calendar}Fecha y horario:</strong> ${act.fechaTexto} · <strong>${act.horario}</strong></div>
                         <div class="activity-meta-item"><strong>${ICONS.mapPin}Ubicación:</strong> ${act.ubicacion} (${act.zona})</div>
                         <div class="activity-meta-item"><strong>${ICONS.building}Organizador:</strong> ${act.organizador}</div>
                         <div class="activity-meta-item"><strong>${ICONS.users}Público:</strong> ${act.publicoEtiqueta}</div>
@@ -284,7 +381,36 @@ document.addEventListener('DOMContentLoaded', () => {
                         </div>
                     </div>
                 </article>
-            `).join('');
+            `;
+
+            const fechaAbierta = directorioContainer.querySelector('.agenda-date-panel[open]')?.dataset.fecha;
+            const gruposPorFecha = new Map();
+
+            for (const actividad of filtradas) {
+                if (!gruposPorFecha.has(actividad.fecha)) gruposPorFecha.set(actividad.fecha, []);
+                gruposPorFecha.get(actividad.fecha).push(actividad);
+            }
+
+            const fechas = [...gruposPorFecha.keys()].sort();
+            const fechaActiva = gruposPorFecha.has(fechaAbierta) ? fechaAbierta : fechas[0];
+            directorioContainer.innerHTML = fechas.map(fecha => {
+                const actividades = gruposPorFecha.get(fecha);
+                const etiqueta = formatoFechaAgenda.format(new Date(fecha + 'T00:00:00Z'));
+                const cantidad = actividades.length;
+                const abierta = fecha === fechaActiva ? ' open' : '';
+
+                return `
+                    <details class="agenda-date-panel" name="agenda-fechas" data-fecha="${fecha}"${abierta}>
+                        <summary class="agenda-date-summary">
+                            <time datetime="${fecha}">${etiqueta}</time>
+                            <span class="agenda-date-count">${cantidad} ${cantidad === 1 ? 'actividad' : 'actividades'}</span>
+                        </summary>
+                        <div class="agenda-date-activities">
+                            ${actividades.map(renderizarFicha).join('')}
+                        </div>
+                    </details>
+                `;
+            }).join('');
         }
 
         [inputTexto, selectTipo, selectPublico, selectFecha, selectIdioma, selectCosto, selectZona, selectEstado].forEach(ctrl => {
@@ -326,11 +452,11 @@ document.addEventListener('DOMContentLoaded', () => {
             const filtrados = STANDS_EXPLORACION_DATA.filter(s => {
                 if (tema !== 'todos' && s.categoriaTema !== tema) return false;
                 if (q && !(
-                    s.nombre.toLowerCase().includes(q) ||
-                    s.organizacion.toLowerCase().includes(q) ||
-                    s.tema.toLowerCase().includes(q) ||
-                    s.actividades.toLowerCase().includes(q) ||
-                    s.ubicacion.toLowerCase().includes(q)
+                    SiteLanguage.matches(s.nombre, q) ||
+                    SiteLanguage.matches(s.organizacion, q) ||
+                    SiteLanguage.matches(s.tema, q) ||
+                    SiteLanguage.matches(s.actividades, q) ||
+                    SiteLanguage.matches(s.ubicacion, q)
                 )) return false;
                 return true;
             });
@@ -344,7 +470,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <article class="info-card" style="display:flex; flex-direction:column; justify-content:space-between;">
                     <div>
                         <div style="display:flex; justify-content:space-between; align-items:center; gap:0.5rem; margin-bottom:0.65rem;">
-                            <span style="font-size:var(--font-xs); font-weight:800; color:var(--color-navy); background:var(--color-gold-soft); padding:0.2rem 0.6rem; border-radius:4px;">
+                            <span style="font-size:var(--font-xs); font-weight:800; color:var(--color-navy); background:#F7F5F1; padding:0.2rem 0.6rem; border-radius:0;">
                                 ${s.id}
                             </span>
                             ${obtenerBadgeEstado(s.estado)}
@@ -354,7 +480,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             ${ICONS.building} ${s.organizacion}
                         </p>
                         <p style="margin-bottom:0.75rem;">${s.descripcion}</p>
-                        <div style="background:var(--color-cream-light); padding:0.75rem; border-radius:var(--radius-sm); font-size:var(--font-xs); color:var(--color-text-main); line-height:1.6;">
+                        <div style="background:var(--color-cream-light); padding:0.75rem; border-radius:0; font-size:var(--font-xs); color:var(--color-text-main); line-height:1.6;">
                             <strong>${ICONS.microscope}Tema:</strong> ${s.tema}<br>
                             <strong>${ICONS.mapPin}Ubicación:</strong> ${s.ubicacion}<br>
                             <strong>${ICONS.clock}Horario:</strong> ${s.horario}<br>
@@ -411,7 +537,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                 ${ICONS.utensils} ${item.establecimiento} (${item.tipo})
                             </p>
                             <p>${item.descripcion}</p>
-                            <div style="background:var(--color-cream-light); padding:0.85rem; border-radius:var(--radius-sm); font-size:var(--font-xs); color:var(--color-text-main); margin-bottom:1rem; line-height:1.6;">
+                            <div style="background:var(--color-cream-light); padding:0.85rem; border-radius:0; font-size:var(--font-xs); color:var(--color-text-main); margin-bottom:1rem; line-height:1.6;">
                                 <strong>${ICONS.mapPin}Ubicación:</strong> ${item.ubicacion}<br>
                                 <strong>${ICONS.clock}Horario:</strong> ${item.horario}<br>
                                 <strong>${ICONS.price}Rango de precios:</strong> ${item.precio}<br>
@@ -432,40 +558,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ==========================================================================
-    // FICHAS DE EQUIPOS DE CREATIVE CONSERVATION LABS (ccl.html)
-    // ==========================================================================
-    const cclContainer = document.getElementById('ccl-equipos-grid');
-    if (cclContainer && typeof CCL_EQUIPOS_DATA !== 'undefined') {
-        cclContainer.innerHTML = CCL_EQUIPOS_DATA.map(eq => `
-            <article class="ccl-team-card" id="${eq.id}">
-                <div style="display:flex; justify-content:space-between; align-items:center; gap:0.5rem;">
-                    <span style="font-size:var(--font-xs); font-weight:800; color:var(--color-talavera-blue); background:var(--color-soft-blue-light); padding:0.25rem 0.65rem; border-radius:4px;">
-                        ${eq.id} · ${eq.eje}
-                    </span>
-                    ${obtenerBadgeEstado(eq.estado)}
-                </div>
-                <div style="display:flex; align-items:center; gap:0.85rem;">
-                    <img src="${eq.imagen}" alt="${eq.nombreProyecto}" style="height:48px; width:auto; object-fit:contain;">
-                    <h3 style="font-size:1.15rem; font-weight:800; color:var(--color-navy); margin:0;">${eq.nombreProyecto}</h3>
-                </div>
-                <div style="background:var(--color-cream-light); padding:0.9rem; border-radius:var(--radius-md); font-size:var(--font-xs); line-height:1.65;">
-                    <strong>${ICONS.graduation}Universidad:</strong> ${eq.universidad}<br>
-                    <strong>${ICONS.users}Estudiantes:</strong> ${eq.estudiantes}<br>
-                    <strong>${ICONS.building}Profesor asesor:</strong> ${eq.profesorAsesor}<br>
-                    <strong>${ICONS.handshake}Organización colaboradora:</strong> ${eq.organizacionColaboradora}
-                </div>
-                <p style="font-size:var(--font-sm); color:var(--color-text-muted); margin:0;">
-                    <strong style="color:var(--color-navy);">Reto abordado:</strong> ${eq.reto}
-                </p>
-                <p style="font-size:var(--font-sm); color:var(--color-text-muted); margin:0;">
-                    <strong style="color:var(--color-navy);">Producto desarrollado:</strong> ${eq.productoDesarrollado}
-                </p>
-                <div style="margin-top:auto; padding-top:0.5rem;">
-                    <a href="${eq.enlaceProducto}" class="btn btn-outline btn-sm" style="width:100%;">Ver actividad / producto vinculado →</a>
-                </div>
-            </article>
-        `).join('');
-    }
+
 });
 
 // ==============================================================================

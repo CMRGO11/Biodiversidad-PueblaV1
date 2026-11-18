@@ -16,11 +16,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
-    <link rel="icon" type="image/png" href="assets/img/Logo Main__Logo Complete.png">
+    <link rel="icon" type="image/png" href="assets/img/Logo_CompleteD.png">
     <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/agenda-personal.css">
 </head>
 
-<body>
+<body class="section-themed">
     <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
 
     <!-- ==========================================================================
@@ -29,17 +30,14 @@
     <header class="site-header">
         <div class="header-container">
             <a href="index.html" class="brand-wrapper" aria-label="ICCB 2027 Puebla · BUAP">
-                <img src="assets/img/Logo Main__Logo Complete.png" alt="ICCB 2027"
+                <img src="assets/img/Logo Yellow Talavera.png" alt="ICCB 2027"
                     class="brand-logo-img brand-logo-iccb">
                 <span class="brand-divider" aria-hidden="true"></span>
-                <img src="assets/img/Logo_BUAP.webp" alt="BUAP" class="brand-logo-img brand-logo-buap">
+                <img src="assets/img/Logo_BUAP_Blanco.png" alt="BUAP" class="brand-logo-img brand-logo-buap">
             </a>
 
             <div class="header-mobile-right">
-                <div class="lang-switcher-vertical mobile-header-lang" aria-label="Selector de idioma">
-                    <a href="#" class="lang-pill active" lang="es">ES</a>
-                    <a href="#" class="lang-pill" lang="en">EN</a>
-                </div>
+
                 <button type="button" class="nav-toggle-btn" id="nav-toggle-btn" aria-expanded="false"
                     aria-controls="main-nav" aria-label="Abrir menú">
                     <span></span><span></span><span></span>
@@ -50,90 +48,64 @@
                 <ul class="nav-list">
                     <li>
                         <a href="ccl.html" class="nav-link">
-                            <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M9 18h6" />
-                                <path d="M10 22h4" />
-                                <path d="M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z" />
-                            </svg>
-                            <span>Laboratorio</span>
+                            <span>CCLabs</span>
                         </a>
                     </li>
                     <li>
                         <a href="agenda.html" class="nav-link active">
-                            <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M4 6a3 3 0 0 1 3-3h10a3 3 0 0 1 3 3v13a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V6z" />
-                                <path d="M4 10h16" />
-                                <path d="M8 2v3M16 2v3" stroke-width="2.2" />
-                            </svg>
                             <span>Agenda</span>
                         </a>
                     </li>
                     <li>
-                        <a href="exploracion.html" class="nav-link highlight">
-                            <svg class="nav-icon-gold" width="18" height="18" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                                <circle cx="12" cy="12" r="2.5" fill="currentColor" />
-                                <circle cx="12" cy="4" r="1" fill="currentColor" />
-                                <circle cx="20" cy="12" r="1" fill="currentColor" />
-                                <circle cx="12" cy="20" r="1" fill="currentColor" />
-                                <circle cx="4" cy="12" r="1" fill="currentColor" />
-                            </svg>
+                        <a href="exploracion.html" class="nav-link">
                             <span>Día de la Exploración</span>
                         </a>
                     </li>
                     <li>
                         <a href="rutas.html" class="nav-link">
-                            <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                                <polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21" />
-                                <line x1="9" y1="3" x2="9" y2="18" />
-                                <line x1="15" y1="6" x2="15" y2="21" />
-                            </svg>
                             <span>Rutas</span>
                         </a>
                     </li>
                     <li>
                         <a href="menu.html" class="nav-link">
-                            <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M17 8h1a4 4 0 0 1 0 8h-1" />
-                                <path d="M3 8h14v7a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8z" />
-                            </svg>
                             <span>Sabores</span>
                         </a>
                     </li>
                     <li>
                         <a href="participa.html" class="nav-link">
-                            <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                                <path
-                                    d="M11 13.5l-2.5-2.5a3.5 3.5 0 0 0-5 5l4 4a4 4 0 0 0 5.6 0l5.4-5.4a3.5 3.5 0 0 0-5-5L11 12" />
-                            </svg>
                             <span>Participa</span>
                         </a>
                     </li>
-                    <li>
-                        <a href="info.html" class="nav-link">
-                            <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                                <circle cx="12" cy="12" r="9.5" />
-                                <line x1="12" y1="11" x2="12" y2="17" stroke-width="2.2" />
-                                <circle cx="12" cy="7.5" r="1.5" fill="currentColor" stroke="none" />
-                            </svg>
-                            <span>Información</span>
-                        </a>
-                    </li>
+
                 </ul>
 
-                <div class="nav-user-actions">
-                    <div class="lang-switcher-vertical desktop-header-lang" aria-label="Selector de idioma">
+
+            </nav>
+            <div class="header-tools">
+                <a href="info.html" class="nav-link nav-info-link" aria-label="Información"
+                            title="Información"><svg aria-hidden="true" focusable="false" width="22" height="22"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                                stroke-linecap="round">
+                                <circle cx="12" cy="12" r="9" />
+                                <path d="M12 11v5m0-8h.01" />
+                            </svg>
+                        </a>
+                <div class="header-language">
+                    <button type="button" class="language-toggle" aria-label="Selector de idioma"
+                        aria-expanded="false" aria-controls="header-language-options">
+                        <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <circle cx="12" cy="12" r="9"/>
+                            <ellipse cx="12" cy="12" rx="4" ry="9"/>
+                            <path d="M3 12h18M5 6.5h14M5 17.5h14"/>
+                        </svg>
+                    </button>
+                    <div id="header-language-options" class="lang-switcher-vertical header-language-options" hidden>
                         <a href="#" class="lang-pill active" lang="es" title="Español">ES</a>
                         <a href="#" class="lang-pill" lang="en" title="English">EN</a>
                     </div>
                 </div>
-            </nav>
+            </div>
         </div>
     </header>
 
@@ -148,81 +120,18 @@
                  ================================================================== -->
             <div class="page-hero-banner">
                 <div class="hero-bg-texture"></div>
-                <h2 data-en="Puebla, Capital of Biodiversity · Agenda & Directory">
-                    Puebla, Capital de la Biodiversidad
+                <h2 data-en="Schedule">
+                    Agenda
                 </h2>
                 <p
-                    data-en="Experiences, routes, gastronomy, and culture to discover Puebla's natural and cultural wealth and bring conservation into daily life.">
-                    <strong>Territorio + Cultura:</strong> Experiencias, recorridos, gastronomía y cultura para
-                    descubrir la riqueza natural y cultural de Puebla y acercar la conservación a la vida cotidiana.
+                    data-en="Experiences, routes and gastronomy to discover Puebla's natural and cultural wealth and bring conservation into daily life.">
+                    </strong> Experiencias, recorridos y gastronomía para descubrir la riqueza natural y cultural de
+                    Puebla y acercar la conservación a la vida cotidiana.
                 </p>
             </div>
 
             <!-- ==================================================================
-                 RESUMEN DE LOS COMPONENTES DE "PUEBLA, CAPITAL DE LA BIODIVERSIDAD"
-                 ================================================================== -->
-            <div class="page-section" style="padding:2.5rem 1.25rem;">
-                <div class="container">
-                    <div class="info-grid">
-                        <div class="info-card">
-                            <h3>
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
-                                    stroke="var(--color-talavera-blue)" stroke-width="1.8" stroke-linecap="round"
-                                    stroke-linejoin="round">
-                                    <path d="M3 21h18M5 21V7l7-4 7 4v14M9 9v12M15 9v12" />
-                                </svg>
-                                La Ciudad como Espacio Vivo
-                            </h3>
-                            <p>
-                                El encuentro no debe quedarse dentro de los espacios académicos: junto al
-                                <strong>ICCB 2027 (SCB)</strong> se impulsa una programación abierta que invita a
-                                habitantes y visitantes a conocer la riqueza biocultural de Puebla, acercarse a
-                                proyectos de conservación, recorrer espacios de la ciudad y participar en actividades
-                                accesibles para distintos públicos.
-                            </p>
-                        </div>
-                        <div class="info-card">
-                            <h3>
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
-                                    stroke="var(--color-talavera-blue)" stroke-width="1.8" stroke-linecap="round"
-                                    stroke-linejoin="round">
-                                    <path d="M11 20A7 7 0 0 1 4 13c0-4 3.5-7 7-9 3.5 2 7 5 7 9a7 7 0 0 1-7 7Z" />
-                                    <path d="M11 20v-9" />
-                                </svg>
-                                Aprende y Participa
-                            </h3>
-                            <p>
-                                La conservación no es un tema exclusivo de especialistas, sino una tarea colectiva
-                                conectada con la vida cotidiana. Incluye cursos, talleres ciudadanos, recomendaciones
-                                ambientales y el <strong>Curso para Servidores Públicos</strong>.
-                                <br><a href="participa.html#aprende-participa" style="font-weight:700;">Ir a Aprende y
-                                    Participa →</a>
-                            </p>
-                        </div>
-                        <div class="info-card">
-                            <h3>
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
-                                    stroke="var(--color-talavera-blue)" stroke-width="1.8" stroke-linecap="round"
-                                    stroke-linejoin="round">
-                                    <polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21" />
-                                    <line x1="9" y1="3" x2="9" y2="18" />
-                                    <line x1="15" y1="6" x2="15" y2="21" />
-                                </svg>
-                                Descubre Puebla y Sabores
-                            </h3>
-                            <p>
-                                Puebla reúne una gran diversidad de paisajes, ecosistemas y especies que también se
-                                expresa en sus prácticas agrícolas, gastronomía y patrimonio cultural. Explora
-                                <a href="rutas.html" style="font-weight:700;">Rutas y Mapa</a> o consulta
-                                <a href="menu.html" style="font-weight:700;">Sabores de la Biodiversidad</a>.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- ==================================================================
-                 C. BUSCADOR Y DIRECTORIO COMÚN DE ACTIVIDADES:
+                 BUSCADOR Y DIRECTORIO COMÚN DE ACTIVIDADES:
                  - Palabra clave
                  - Tipo: universidad/ONG, gastronomía, cursos y talleres, exposiciones y cultura, rutas y recorridos, actividades gubernamentales u otras.
                  - Público: todos, familias, participación individual, estudiantes o visitantes del congreso.
@@ -231,148 +140,187 @@
             <div class="page-section" id="directorio-comun">
                 <div class="container">
 
-                    <div class="section-head-center">
-                        <span class="section-eyebrow">Una Sola Fuente de Información</span>
-                        <h2 class="section-main-title">Directorio Común y Calendario de Actividades</h2>
-                        <p class="section-main-desc">
-                            Usa los filtros para localizar rápidamente qué hacer en Puebla. Cada ficha incluye fecha,
-                            horario, ubicación, organizador, público, idioma, costo, accesibilidad, contacto y enlace al
-                            mapa.
-                        </p>
-                    </div>
+                    <aside id="mi-agenda" class="personal-agenda-bar" aria-label="Mi Agenda" hidden>
+                        <div class="personal-agenda-stats" aria-live="polite" aria-atomic="true">
+                            <strong data-agenda-count>0 actividades</strong>
+                            <span class="personal-agenda-clock" title="Tiempo acumulado">
+                                <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" aria-hidden="true">
+                                    <circle cx="12" cy="12" r="9" />
+                                    <path d="M12 7v5l3 2" />
+                                </svg>
+                                <strong data-agenda-duration>0 min</strong>
+                            </span>
+                        </div>
+                        <button type="button" class="btn btn-primary btn-sm" aria-haspopup="dialog">Mi Agenda</button>
+                        <p data-agenda-storage role="status" hidden>La selección se conservará durante esta visita.</p>
+                    </aside>
+
+
+                    <dialog id="mi-agenda-dialog" class="personal-agenda-dialog" aria-labelledby="mi-agenda-title">
+                        <header>
+                            <h2 id="mi-agenda-title">Mi Agenda</h2>
+                            <form method="dialog">
+                                <button type="submit" class="btn btn-outline btn-sm" data-agenda-close
+                                    autofocus>Cerrar</button>
+                            </form>
+                        </header>
+                        <div class="personal-agenda-body">
+                            <p data-agenda-empty>Agrega actividades del programa para armar tu itinerario.</p>
+                            <div class="personal-agenda-calendar">
+                                <div class="personal-agenda-month">
+                                    <button type="button" class="btn btn-outline btn-sm" data-agenda-prev
+                                        aria-label="Mes anterior">‹</button>
+                                    <h3 data-agenda-month aria-live="polite"></h3>
+                                    <button type="button" class="btn btn-outline btn-sm" data-agenda-next
+                                        aria-label="Mes siguiente">›</button>
+                                </div>
+                                <table aria-labelledby="mi-agenda-title">
+                                    <thead>
+                                        <tr data-agenda-weekdays></tr>
+                                    </thead>
+                                    <tbody data-agenda-days></tbody>
+                                </table>
+                            </div>
+                            <section class="personal-agenda-day" aria-labelledby="mi-agenda-day-title">
+                                <h3 id="mi-agenda-day-title"></h3>
+                                <p data-agenda-day-empty>Sin actividades guardadas para este día.</p>
+                                <ul></ul>
+                            </section>
+                        </div>
+                        <footer>
+                            <button type="button" class="btn btn-primary btn-sm" data-agenda-download disabled>Descargar
+                                calendario (.ics)</button>
+                            <button type="button" class="btn btn-primary btn-sm" data-agenda-pdf disabled>Descargar PDF</button>
+                            <p data-agenda-export-status role="status"></p>
+                        </footer>
+                    </dialog>
 
                     <!-- CAJA DE FILTROS DEL DIRECTORIO -->
-                    <div class="directory-filter-box" role="region" aria-label="Filtros del directorio de actividades">
-                        <!-- Búsqueda por palabra clave -->
-                        <div class="filter-field">
-                            <label for="filtro-texto" style="display:inline-flex; align-items:center; gap:0.4rem;">
-                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <circle cx="11" cy="11" r="8" />
-                                    <line x1="21" y1="21" x2="16.65" y2="16.65" />
-                                </svg>
-                                Buscar por nombre, tema, sede u organizador
-                            </label>
-                            <input type="text" id="filtro-texto"
-                                placeholder="Ej. Polinizadores, Talavera, Cholula, Café, BUAP, Servidores públicos...">
-                        </div>
-
-                        <!-- Cuadrícula con los selectores -->
-                        <div class="filter-controls-grid">
-                            <!-- 1. Filtro por Tipo / Categoría -->
+                    <details class="agenda-filters">
+                        <summary class="agenda-date-summary agenda-filter-toggle">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" aria-hidden="true">
+                                <circle cx="11" cy="11" r="7" />
+                                <path d="m16 16 4 4" />
+                            </svg>
+                            <span>Filtrar Contenido</span>
+                        </summary>
+                        <div class="directory-filter-box" role="region"
+                            aria-label="Filtros del directorio de actividades">
+                            <!-- Búsqueda por palabra clave -->
                             <div class="filter-field">
-                                <label for="filtro-tipo">Categoría / Tipo de actividad</label>
-                                <select id="filtro-tipo">
-                                    <option value="todos">Todas las categorías</option>
-                                    <option value="universidad_ong">Universidad / ONG</option>
-                                    <option value="gastronomia">Gastronomía (Sabores)</option>
-                                    <option value="cursos_talleres">Cursos y talleres</option>
-                                    <option value="exposiciones_cultura">Exposiciones y cultura</option>
-                                    <option value="rutas_recorridos">Rutas y recorridos</option>
-                                    <option value="gubernamental">Actividades gubernamentales</option>
-                                    <option value="exploracion">Día de la Exploración (2 Jul)</option>
-                                </select>
-                            </div>
-
-                            <!-- 2. Filtro por Público -->
-                            <div class="filter-field">
-                                <label for="filtro-publico">Público dirigido</label>
-                                <select id="filtro-publico">
-                                    <option value="todos">Todos los públicos</option>
-                                    <option value="familias">Familias, niñas, niños y jóvenes</option>
-                                    <option value="individual">Participación individual</option>
-                                    <option value="estudiantes">Estudiantes universitarios</option>
-                                    <option value="visitantes_congreso">Visitantes del congreso ICCB</option>
-                                </select>
-                            </div>
-
-                            <!-- 3. Filtro por Fecha -->
-                            <div class="filter-field">
-                                <label for="filtro-fecha">Fecha programada</label>
-                                <select id="filtro-fecha">
-                                    <option value="todas">Todas las fechas (7 Jun – 2 Jul)</option>
-                                    <option value="2027-06-07">7 de junio 2027 (Apertura)</option>
-                                    <option value="2027-06-11">11 de junio 2027</option>
-                                    <option value="2027-06-14">14 de junio 2027</option>
-                                    <option value="2027-06-19">19 de junio 2027</option>
-                                    <option value="2027-06-25">25 de junio 2027</option>
-                                    <option value="2027-06-28">28 de junio 2027</option>
-                                    <option value="2027-06-29">29 de junio 2027</option>
-                                    <option value="2027-06-30">30 de junio 2027</option>
-                                    <option value="2027-07-01">1 de julio 2027</option>
-                                    <option value="2027-07-02">2 de julio 2027 (Día de la Exploración)</option>
-                                </select>
-                            </div>
-
-                            <!-- 4. Filtro por Ubicación / Zona -->
-                            <div class="filter-field">
-                                <label for="filtro-zona">Ubicación / Zona</label>
-                                <select id="filtro-zona">
-                                    <option value="todas">Todas las ubicaciones</option>
-                                    <option value="Centro Histórico">Centro Histórico de Puebla</option>
-                                    <option value="Ciudad Universitaria BUAP">Ciudad Universitaria BUAP</option>
-                                    <option value="Zona Angelópolis / CCU">Zona Angelópolis / CCU BUAP</option>
-                                    <option value="Cholula">San Andrés y San Pedro Cholula</option>
-                                </select>
-                            </div>
-
-                            <!-- 5. Filtro por Idioma -->
-                            <div class="filter-field">
-                                <label for="filtro-idioma">Idioma</label>
-                                <select id="filtro-idioma">
-                                    <option value="todos">Todos los idiomas</option>
-                                    <option value="Español">Español</option>
-                                    <option value="Bilingüe">Bilingüe (Español / Inglés)</option>
-                                </select>
-                            </div>
-
-                            <!-- 6. Filtro por Costo y Estado -->
-                            <div class="filter-field">
-                                <label for="filtro-costo">Costo de acceso</label>
-                                <select id="filtro-costo">
-                                    <option value="todos">Todos (Gratuitos y con cuota)</option>
-                                    <option value="Gratuito">Gratuito (Entrada libre)</option>
-                                    <option value="Con cuota">Con cuota / recuperación</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <!-- Barra inferior del filtro: Estado de confirmación y botón de limpiar -->
-                        <div
-                            style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:1rem; margin-top:1.25rem; padding-top:1rem; border-top:1px solid var(--color-cream-border);">
-                            <div style="display:flex; align-items:center; gap:0.75rem; flex-wrap:wrap;">
-                                <label for="filtro-estado"
-                                    style="font-size:var(--font-xs); font-weight:700; color:var(--color-navy);">
-                                    Estado de verificación:
+                                <label for="filtro-texto" style="display:inline-flex; align-items:center; gap:0.4rem;">
+                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="11" cy="11" r="8" />
+                                        <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                                    </svg>
+                                    Buscar por nombre, tema, sede u organizador
                                 </label>
-                                <select id="filtro-estado"
-                                    style="padding:0.4rem 0.75rem; border-radius:var(--radius-sm); border:1px solid var(--color-border); font-size:var(--font-xs);">
-                                    <option value="todos">Todos los estados</option>
-                                    <option value="confirmada">Solo Confirmadas</option>
-                                    <option value="proximamente">Próximamente</option>
-                                    <option value="propuesta">Propuestas en evaluación</option>
-                                </select>
-                                <span id="contador-actividades"
-                                    style="font-size:var(--font-xs); color:var(--color-text-muted); font-weight:600;">
-                                    Cargando actividades...
-                                </span>
+                                <input type="text" id="filtro-texto"
+                                    placeholder="Ej. Polinizadores, Talavera, Cholula, Café, BUAP, Servidores públicos...">
                             </div>
-
-                            <button type="button" id="btn-limpiar-filtros" class="btn btn-outline btn-sm">
-                                Restablecer filtros
-                            </button>
+                            <!-- Cuadrícula con los selectores -->
+                            <div class="filter-controls-grid">
+                                <!-- 1. Filtro por Tipo / Categoría -->
+                                <div class="filter-field">
+                                    <label for="filtro-tipo">Categoría / Tipo de actividad</label>
+                                    <select id="filtro-tipo">
+                                        <option value="todos">Todas las categorías</option>
+                                        <option value="universidad_ong">Universidad / ONG</option>
+                                        <option value="gastronomia">Gastronomía (Sabores)</option>
+                                        <option value="cursos_talleres">Cursos y talleres</option>
+                                        <option value="exposiciones_cultura">Exposiciones y cultura</option>
+                                        <option value="rutas_recorridos">Rutas y recorridos</option>
+                                        <option value="gubernamental">Actividades gubernamentales</option>
+                                        <option value="exploracion">Día de la Exploración (2 Jul)</option>
+                                    </select>
+                                </div>
+                                <!-- 2. Filtro por Público -->
+                                <div class="filter-field">
+                                    <label for="filtro-publico">Público dirigido</label>
+                                    <select id="filtro-publico">
+                                        <option value="todos">Todos los públicos</option>
+                                        <option value="familias">Familias, niñas, niños y jóvenes</option>
+                                        <option value="individual">Participación individual</option>
+                                        <option value="estudiantes">Estudiantes universitarios</option>
+                                        <option value="visitantes_congreso">Visitantes del congreso ICCB</option>
+                                    </select>
+                                </div>
+                                <!-- 3. Filtro por Fecha -->
+                                <div class="filter-field">
+                                    <label for="filtro-fecha">Fecha programada</label>
+                                    <select id="filtro-fecha">
+                                        <option value="todas">Todas las fechas (7 Jun – 2 Jul)</option>
+                                        <option value="2027-06-07">7 de junio 2027 (Apertura)</option>
+                                        <option value="2027-06-11">11 de junio 2027</option>
+                                        <option value="2027-06-14">14 de junio 2027</option>
+                                        <option value="2027-06-19">19 de junio 2027</option>
+                                        <option value="2027-06-25">25 de junio 2027</option>
+                                        <option value="2027-06-28">28 de junio 2027</option>
+                                        <option value="2027-06-29">29 de junio 2027</option>
+                                        <option value="2027-06-30">30 de junio 2027</option>
+                                        <option value="2027-07-01">1 de julio 2027</option>
+                                        <option value="2027-07-02">2 de julio 2027 (Día de la Exploración)</option>
+                                    </select>
+                                </div>
+                                <!-- 4. Filtro por Ubicación / Zona -->
+                                <div class="filter-field">
+                                    <label for="filtro-zona">Ubicación / Zona</label>
+                                    <select id="filtro-zona">
+                                        <option value="todas">Todas las ubicaciones</option>
+                                        <option value="Centro Histórico">Centro Histórico de Puebla</option>
+                                        <option value="Ciudad Universitaria BUAP">Ciudad Universitaria BUAP</option>
+                                        <option value="Zona Angelópolis / CCU">Zona Angelópolis / CCU BUAP</option>
+                                        <option value="Cholula">San Andrés y San Pedro Cholula</option>
+                                    </select>
+                                </div>
+                                <!-- 5. Filtro por Idioma -->
+                                <div class="filter-field">
+                                    <label for="filtro-idioma">Idioma</label>
+                                    <select id="filtro-idioma">
+                                        <option value="todos">Todos los idiomas</option>
+                                        <option value="Español">Español</option>
+                                        <option value="Bilingüe">Bilingüe (Español / Inglés)</option>
+                                    </select>
+                                </div>
+                                <!-- 6. Filtro por Costo y Estado -->
+                                <div class="filter-field">
+                                    <label for="filtro-costo">Costo de acceso</label>
+                                    <select id="filtro-costo">
+                                        <option value="todos">Todos (Gratuitos y con cuota)</option>
+                                        <option value="Gratuito">Gratuito (Entrada libre)</option>
+                                        <option value="Con cuota">Con cuota / recuperación</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <!-- Barra inferior del filtro: Estado de confirmación y botón de limpiar -->
+                            <div
+                                style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:1rem; margin-top:1.25rem; padding-top:1rem; border-top:1px solid var(--color-cream-border);">
+                                <div style="display:flex; align-items:center; gap:0.75rem; flex-wrap:wrap;">
+                                    <label for="filtro-estado"
+                                        style="font-size:var(--font-xs); font-weight:700; color:var(--color-navy);">
+                                        Estado de verificación:
+                                    </label>
+                                    <select id="filtro-estado"
+                                        style="padding:0.4rem 0.75rem; border-radius:0; border:1px solid var(--color-border); font-size:var(--font-xs); background:#fff;">
+                                        <option value="todos">Todos los estados</option>
+                                        <option value="confirmada">Solo Confirmadas</option>
+                                        <option value="proximamente">Próximamente</option>
+                                        <option value="propuesta">Propuestas en evaluación</option>
+                                    </select>
+                                    <span id="contador-actividades"
+                                        style="font-size:var(--font-xs); color:var(--color-text-muted); font-weight:600;">
+                                        Cargando actividades...
+                                    </span>
+                                </div>
+                                <button type="button" id="btn-limpiar-filtros" class="btn btn-outline btn-sm">
+                                    Restablecer filtros
+                                </button>
+                            </div>
                         </div>
-                    </div>
-
-                    <!-- Aviso de información responsable -->
-                    <div class="disclaimer-banner" style="margin-top:0; margin-bottom:1.75rem;">
-                        <div>
-                            <strong>Información responsable:</strong> Las fichas distinguen claramente entre actividades
-                            <strong>Confirmadas</strong> (verificadas con sede y horario definitivos),
-                            <strong>Próximamente</strong> (en cierre de logística) y <strong>Propuestas en
-                                evaluación</strong> por el comité organizador.
-                        </div>
-                    </div>
+                    </details>
 
                     <!-- CONTENEDOR DINÁMICO DE FICHAS DE ACTIVIDAD
                          Aquí main.js inyecta las fichas completas desde ACTIVIDADES_DATA en data.js -->
@@ -423,7 +371,7 @@
                 <ul class="footer-nav">
                     <li><a href="participa.html">Formularios y Participación</a></li>
                     <li><a href="info.html">Información para Visitantes y Preguntas Frecuentes</a></li>
-                    <li><a href="info.html#guia-actualizacion">Guía de Administración del Comité</a></li>
+                    <li><a href="info.html#preguntas-frecuentes">Preguntas frecuentes</a></li>
                 </ul>
             </div>
         </div>
@@ -442,6 +390,12 @@
 
     <!-- Scripts: data.js (fuente única) y main.js (renderizado y filtros) -->
     <script src="assets/js/data.js"></script>
+    <script src="assets/js/i18n-en.js"></script>
+    <script src="assets/js/i18n.js"></script>
+
+    <script src="assets/js/vendor/pdf-lib.min.js"></script>
+    <script src="assets/js/agenda-pdf.js"></script>
+    <script src="assets/js/agenda-personal.js"></script>
     <script src="assets/js/main.js"></script>
 </body>
 
