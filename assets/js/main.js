@@ -44,6 +44,45 @@ const ICONS = {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.lab-eje-card').forEach(card => {
+        const summary = card.querySelector('.lab-eje-summary');
+        const button = card.querySelector('.lab-eje-toggle');
+        const details = card.querySelector('.lab-eje-details');
+        let pinned = false;
+        let hovering = false;
+        let dismissed = false;
+        const update = () => {
+            const open = !dismissed && (pinned || hovering || details.contains(document.activeElement));
+            card.classList.toggle('is-open', open);
+            button.setAttribute('aria-expanded', String(open));
+            details.inert = !open;
+        };
+        card.addEventListener('pointerenter', event => {
+            if (event.pointerType !== 'mouse') return;
+            hovering = true;
+            dismissed = false;
+            update();
+        });
+        card.addEventListener('pointerleave', () => {
+            hovering = false;
+            dismissed = false;
+            update();
+        });
+        summary.addEventListener('click', () => {
+            pinned = !pinned;
+            dismissed = !pinned;
+            update();
+        });
+        card.addEventListener('focusout', () => requestAnimationFrame(update));
+        card.addEventListener('keydown', event => {
+            if (event.key !== 'Escape') return;
+            pinned = false;
+            dismissed = true;
+            button.focus();
+            update();
+        });
+    });
+
     const labPanel = document.querySelector('.lab-content-panel');
     if (labPanel) {
         const labLinks = [...document.querySelectorAll('.lab-workspace .lab-toc a')];
